@@ -35,7 +35,7 @@
     "i18next": "^23.16.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.2",
-    "json-edit-react": "^1.17.1",
+    "json-edit-react": "^1.19.2",
     "lodash": "^4.17.21",
     "material-ui-confirm": "^3.0.16",
     "prop-types": "^15.8.1",
