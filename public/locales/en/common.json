@@ -1,0 +1,198 @@
+{
+  "pages": {
+    "login": {
+      "title": "Sign in to your account",
+      "signin": "Sign in",
+      "signup": "Sign up",
+      "divider": "or",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address"
+      },
+      "buttons": {
+        "submit": "Login",
+        "forgotPassword": "Forgot password?",
+        "noAccount": "Don’t have an account?",
+        "rememberMe": "Remember me"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "fields": {
+        "email": "Email"
+      },
+      "errors": {
+        "validEmail": "Invalid email address"
+      },
+      "buttons": {
+        "submit": "Send reset instructions"
+      }
+    },
+    "register": {
+      "title": "Sign up for your account",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "validEmail": "Invalid email address"
+      },
+      "buttons": {
+        "submit": "Register",
+        "haveAccount": "Have an account?"
+      }
+    },
+
+    "updatePassword": {
+      "title": "Update password",
+      "fields": {
+        "password": "New Password",
+        "confirmPassword": "Confirm new password"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Passwords do not match"
+      },
+      "buttons": {
+        "submit": "Update"
+      }
+    },
+    "errors": {
+      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+      "notFound": "Sorry, the page you visited does not exist.",
+      "resource404": "Are you sure you have created the {{resource}} resource.",
+      "backHome": "Back Home"
+    }
+  },
+  "actions": {
+    "add": "Add",
+    "addItem": "Add {{resource}}",
+    "list": "List",
+    "create": "Create",
+    "edit": "Edit",
+    "editItem": "Edit {{resource}}",
+    "show": "Show",
+    "submit": "Submit",
+    "save": "Save",
+    "logout": "Logout",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirm": "Are you sure?",
+    "filter": "Filter",
+    "clear": "Clear",
+    "refresh": "Refresh",
+    "undo": "Undo",
+    "import": "Import",
+    "clone": "Clone",
+    "notAccessTitle": "You don't have permission to access",
+    "dismiss": "Dismiss"
+  },
+  "errors": {
+    "title_one": "Error",
+    "title_other": "Errors",
+    "default": "Something went wrong",
+    "required": "This field is required",
+    "minLength": "This field must be at least {{length}} characters",
+    "maxLength": "This field must be at most {{length}} characters",
+    "minValue": "This field must be at least {{length}}",
+    "maxValue": "This field must be at most {{length}}",
+    "minMaxLength": "This field must be between {{min}} and {{max}} characters",
+    "minMaxValue": "This field must be between {{min}} and {{max}}",
+    "email": "This field must be a valid email",
+    "oneOf": "This field must be one of {{values}}",
+    "notOneOf": "This field must not be one of {{values}}",
+    "unique": "This field must be unique",
+    "uniqueCombined": "{{fields}} must be unique",
+    "match": "This field must match {{otherField}}",
+    "fieldRequired": "{{field}} is required",
+    "fieldDefined": "{{field}} is not defined",
+    "fieldNotNull": "{{field}} must not be null",
+    "fieldMin": "{{field}} must be at least {{length}} characters",
+    "fieldMax": "{{field}} must be at most {{length}} characters",
+    "fieldMinValue": "{{field}} must be at least {{length}}",
+    "fieldMaxValue": "{{field}} must be at most {{length}}",
+    "fieldEmail": "{{field}} must be a valid email",
+    "fieldUrl": "{{field}} must be a valid URL",
+    "fieldUuid": "{{field}} must be a valid UUID",
+    "fieldTrim": "{{field}} must not have leading or trailing whitespace",
+    "fieldLowercase": "{{field}} must be lowercase",
+    "fieldUppercase": "{{field}} must be uppercase",
+    "fieldMinValueLength": "{{field}} must be at least {{length}}",
+    "fieldMaxValueLength": "{{field}} must be at most {{length}}",
+    "fieldPositive": "{{field}} must be a positive number",
+    "fieldNegative": "{{field}} must be a negative number",
+    "fieldInteger": "{{field}} must be an integer",
+    "fieldOneOf": "{{field}} must be one of {{values}}",
+    "fieldNotOneOf": "{{field}} must not be one of {{values}}",
+    "fieldUnique": "{{field}} must be unique",
+    "fieldUniqueCombined": "{{fields}} must be unique",
+    "fieldMatch": "{{field}} must match {{otherField}}",
+    "fieldMinDate": "{{field}} must be at least {{date}}",
+    "fieldMaxDate": "{{field}} must be at most {{date}}",
+    "fieldBoolean": "{{field}} must be a {{value}}",
+    "fieldNoUnknown": "{{field}} has unknown keys",
+    "fieldMinArray": "{{field}} must have at least {{length}} items",
+    "fieldMaxArray": "{{field}} must have at most {{length}} items",
+    "fieldLengthArray": "{{field}} must have {{length}} items"
+  },
+  "fields": {
+    "name": "Name",
+    "description": "Description"
+  },
+  "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",
+  "notifications": {
+    "success": "Success",
+    "error": "Error (status code: {{statusCode}})",
+    "undoable": "You have {{seconds}} seconds to undo",
+    "createSuccess": "Successfully created {{resource}}",
+    "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "Successfully deleted {{resource}}",
+    "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "Successfully edited {{resource}}",
+    "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
+    "submitSuccess": "Successfully submitted {{resource}}",
+    "submitError": "Error when submitting {{resource}} (status code: {{statusCode}})",
+    "importProgress": "Importing: {{processed}}/{{total}}",
+    "savedSuccess": "Saved Successfully",
+    "savedError": "Error saving"
+  },
+  "loading": "Loading",
+  "posts": {
+    "posts": "Posts",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "Create Post",
+      "edit": "Edit Post",
+      "list": "Posts",
+      "show": "Show Post"
+    }
+  },
+  "table": {
+    "actions": "Actions"
+  },
+  "words": {
+    "no": "No",
+    "yes": "Yes"
+  },
+  "misc": {
+    "noImageAvailable": "No image available",
+    "languageChanged": "Language changed"
+  },
+  "menu": {
+    "settings": "Settings"
+  }
+}

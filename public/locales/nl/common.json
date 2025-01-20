@@ -1,0 +1,97 @@
+{
+  "pages": {
+    "login": {
+      "title": "Meld u aan bij uw account",
+      "signin": "Aanmelden",
+      "signup": "Inschrijven",
+      "divider": "of",
+      "fields": {
+        "email": "E-mail",
+        "password": "Wachtwoord"
+      },
+      "errors": {
+        "validEmail": "Ongeldig e-mailadres"
+      },
+      "buttons": {
+        "submit": "Inloggen",
+        "forgotPassword": "Wachtwoord vergeten?",
+        "noAccount": "Heb je nog geen account?",
+        "rememberMe": "Onthoud mij"
+      }
+    },
+    "forgotPassword": {
+      "title": "Wachtwoord vergeten?",
+      "fields": {
+        "email": "E-mail"
+      },
+      "errors": {
+        "validEmail": "Ongeldig e-mailadres"
+      },
+      "buttons": {
+        "submit": "Instructies voor het opnieuw instellen verzenden"
+      }
+    },
+    "register": {
+      "title": "Meld u aan voor uw account",
+      "fields": {
+        "email": "E-mail",
+        "password": "Wachtwoord"
+      },
+      "errors": {
+        "validEmail": "Ongeldig e-mailadres"
+      },
+      "buttons": {
+        "submit": "Registreren",
+        "haveAccount": "Heb je een account?"
+      }
+    },
+    "updatePassword": {
+      "title": "Wachtwoord bijwerken",
+      "fields": {
+        "password": "Nieuw wachtwoord",
+        "confirmPassword": "Bevestig nieuw wachtwoord"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Wachtwoorden komen niet overeen"
+      },
+      "buttons": {
+        "submit": "Update"
+      }
+    },
+    "errors": {
+      "info": "Mogelijk bent u vergeten de actiecomponent toe te voegen aan de bronbron.",
+      "resource404": "Weet u zeker dat u de {{resource}} bron hebt gemaakt.",
+      "backHome": "Terug naar huis",
+      "notFound": "Sorry, de pagina die je hebt bezocht bestaat niet."
+    }
+  },
+  "actions": {
+    "list": "Lijst",
+    "create": "Scheppen",
+    "edit": "Bewerken",
+    "show": "Tonen",
+    "cancel": "Annuleren",
+    "addItem": "{{resource}} toevoegen",
+    "editItem": "{{resource}} bewerken"
+  },
+  "errors": {
+    "fieldMin": "{{field}} moet op zijn minst {{length}} tekens zijn",
+    "title_one": "Fout",
+    "title_other": "Fouten"
+  },
+  "warnWhenUnsavedChanges": "Weet je zeker dat je weg wilt? U hebt niet-opgeslagen wijzigingen.",
+  "notifications": {
+    "success": "Succesvol",
+    "error": "Fout (statuscode: {{statusCode}})",
+    "undoable": "Je hebt {{seconds}} seconden om ongedaan te maken",
+    "createSuccess": "Succesvol gemaakte {{resource}}",
+    "createError": "Er is een fout opgetreden bij het maken van {{resource}} (statuscode: {{statusCode}})",
+    "deleteSuccess": "{{resource}} is verwijderd",
+    "deleteError": "Fout bij het verwijderen van {{resource}} (statuscode: {{statusCode}})",
+    "editSuccess": "Succesvol bewerkte {{resource}}",
+    "editError": "Fout bij het bewerken van {{resource}} (statuscode: {{statusCode}})",
+    "importProgress": "Importeren: {{processed}}/{{total}}"
+  },
+  "loading": "Laden",
+  "buttons": {}
+}

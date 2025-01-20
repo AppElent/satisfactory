@@ -1,0 +1,75 @@
+{
+  "defaults": {
+    "recipes": "Recipes",
+    "recipe": "Recipe"
+  },
+  "data": {
+    "RECIPE_KEYWORDS": [
+      "fast",
+      "easy",
+      "healthy",
+      "vegetarian",
+      "vegan",
+      "gluten-free",
+      "low-carb",
+      "low-fat",
+      "low-calorie",
+      "high-protein",
+      "high-fiber",
+      "kid-friendly",
+      "budget-friendly"
+    ],
+    "RECIPE_CATEGORIES": ["breakfast", "lunch", "dinner", "dessert", "snack", "appetizer"]
+  },
+  "schemas": {
+    "recipe": {
+      "name": "Name",
+      "description": "Description",
+      "time": {
+        "prep": "Prepare",
+        "cook": "Cooking",
+        "total": "Total"
+      },
+      "yields": {
+        "quantity": "Quantity",
+        "unit": "Unit"
+      },
+      "nutrients": {
+        "value": "Nutritional information",
+        "calories": "Calories",
+        "fat": "Fat",
+        "sugar": "Sugar",
+        "protein": "Protein",
+        "fiber": "Fiber",
+        "carbs": "Carbohydrates"
+      },
+      "image": "Image",
+      "images": "Images",
+      "ingredients": "Ingredients",
+      "instructions": "Instructions",
+      "comments": "Comments",
+      "score": "Rating",
+      "url": "URL",
+      "category": "Category",
+      "keywords": "Keywords",
+      "cuisine": "Cuisine",
+      "createdAt": "Date Published",
+      "updatedAt": "Date Modified"
+    }
+  },
+  "pages": {
+    "home": {
+      "description": "Welcome to FoodHub! Your one-stop shop for all things food.",
+      "featured": "Featured Recipes",
+      "categories": "Browse recipes by category."
+    },
+    "edit-recipe": {
+      "get-recipe-information": "Get recipe information"
+    }
+  },
+  "menu": {
+    "recipes": "Recipes",
+    "allrecipes": "All Recipes",
+    "myRecipes": "My Recipes"
+  }
+}

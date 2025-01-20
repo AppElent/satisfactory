@@ -1,0 +1,19 @@
+{
+  "projects": {
+    "default": "appelent-bc868"
+  },
+  "targets": {
+    "appelent": {
+      "hosting": {
+        "stg": [
+          "appelent-stg"
+        ],
+        "prd": [
+          "appelent"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

@@ -1,0 +1,72 @@
+{
+  "data": {
+    "RECIPE_KEYWORDS": [
+      "snel",
+      "makkelijk",
+      "gemakkelijk",
+      "gezond",
+      "vegetarisch",
+      "vegan",
+      "glutenvrij",
+      "koolhydraatarm",
+      "vetarm",
+      "laag in calorieën",
+      "hoog in proteïne",
+      "hoog in vezels",
+      "kindvriendelijk",
+      "budget vriendelijk"
+    ],
+    "RECIPE_CATEGORIES": ["ontbijt", "lunch", "diner", "desert", "snack", "appetizer", "avondeten"]
+  },
+  "schemas": {
+    "recipe": {
+      "name": "Naam",
+      "description": "Beschrijving",
+      "time": {
+        "prep": "Voorbereiding",
+        "cook": "Kooktijd",
+        "total": "Totaal"
+      },
+      "yields": {
+        "quantity": "Hoeveelheid",
+        "unit": "Eenheid"
+      },
+      "nutrients": {
+        "value": "Voedingswaarden",
+        "calories": "Calorieën",
+        "fat": "Vet",
+        "sugar": "Suiker",
+        "protein": "Eiwit",
+        "fiber": "Vezel",
+        "carbs": "Koolhydraten"
+      },
+      "image": "Afbeelding",
+      "images": "Afbeeldingen",
+      "ingredients": "Ingrediënten",
+      "instructions": "Instructies",
+      "comments": "Opmerkingen",
+      "score": "Beoordeling",
+      "url": "URL",
+      "category": "Categorie",
+      "keywords": "Trefwoorden",
+      "cuisine": "Keuken",
+      "createdAt": "Datum Gepubliceerd",
+      "updatedAt": "Datum Gewijzigd"
+    }
+  },
+  "pages": {
+    "home": {
+      "description": "Welkom bij FoodHub! Jouw one-stop shop voor alles wat met eten te maken heeft.",
+      "featured": "Uitgelichte Recepten",
+      "categories": "Blader door recepten per categorie."
+    }
+  },
+  "menu": {
+    "recipes": "Recepten",
+    "allrecipes": "Alle Recepten",
+    "myRecipes": "Mijn recepten"
+  },
+  "defaults": {
+    "recipe": "Recept"
+  }
+}
