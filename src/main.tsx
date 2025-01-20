@@ -8,6 +8,7 @@ import './index.css';
 // const router = createBrowserRouter(routes);
 
 createRoot(document.getElementById('root')!).render(
+  // <StrictMode>
   <HelmetProvider>
     <BrowserRouter
       future={{
@@ -17,5 +18,8 @@ createRoot(document.getElementById('root')!).render(
     >
       <App />
     </BrowserRouter>
+    {/* <RouterProvider router={router} /> */}
+    {/* <App /> */}
   </HelmetProvider>
+  // </StrictMode>,
 );
