@@ -3,6 +3,7 @@
   "slug": "absolute-ficsit-boombox-tape",
   "className": "Schematic_AbsoluteFicsit_C",
   "name": "Absolute FICSIT Boombox Tape",
+  "icon": "schematic-absoluteficsit-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -20,6 +21,7 @@
   "slug": "adequate-pioneering-purchase",
   "className": "ResourceSink_StatueBronzePioneer_C",
   "name": "Adequate Pioneering (purchase)",
+  "icon": "resourcesink-statuebronzepioneer-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -37,6 +39,7 @@
   "slug": "advanced-aluminum-production",
   "className": "Schematic_8-2_C",
   "name": "Advanced Aluminum Production",
+  "icon": "schematic-8-2-c",
   "type": "EST_Milestone",
   "tier": 8,
   "cost": [
@@ -74,6 +77,7 @@
   "slug": "advanced-steel-production",
   "className": "Schematic_4-1_C",
   "name": "Advanced Steel Production",
+  "icon": "schematic-4-1-c",
   "type": "EST_Milestone",
   "tier": 4,
   "cost": [
@@ -109,6 +113,7 @@
   "slug": "aeronautical-engineering",
   "className": "Schematic_7-4_C",
   "name": "Aeronautical Engineering",
+  "icon": "schematic-7-4-c",
   "type": "EST_Milestone",
   "tier": 8,
   "cost": [
@@ -141,6 +146,7 @@
   "slug": "ai-limiter",
   "className": "Research_Caterium_4_1_C",
   "name": "AI Limiter",
+  "icon": "research-caterium-4-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -164,6 +170,7 @@
   "slug": "ai-limiter-purchase",
   "className": "ResourceSink_AILimiter_C",
   "name": "AI Limiter (purchase)",
+  "icon": "resourcesink-ailimiter-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -184,6 +191,7 @@
   "slug": "alclad-aluminum-sheet-purchase",
   "className": "ResourceSink_AlcladSheet_C",
   "name": "Alclad Aluminum Sheet (purchase)",
+  "icon": "resourcesink-alcladsheet-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -203,6 +211,7 @@
   "slug": "alien-energy-harnessing",
   "className": "Research_Alien_BoosterBlocker_C",
   "name": "Alien Energy Harnessing",
+  "icon": "research-alien-boosterblocker-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -220,6 +229,7 @@
   "slug": "alien-power-matrix",
   "className": "Research_Alien_BoosterFuel_C",
   "name": "Alien Power Matrix",
+  "icon": "research-alien-boosterfuel-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -247,6 +257,7 @@
   "slug": "alternate-adhered-iron-plate",
   "className": "Schematic_Alternate_AdheredIronPlate_C",
   "name": "Alternate: Adhered Iron Plate",
+  "icon": "schematic-alternate-adheredironplate-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -263,6 +274,7 @@
   "slug": "alternate-alclad-casing",
   "className": "Schematic_Alternate_AlcladCasing_C",
   "name": "Alternate: Alclad Casing",
+  "icon": "schematic-alternate-alcladcasing-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -279,6 +291,7 @@
   "slug": "alternate-aluminum-beam",
   "className": "Schematic_Alternate_SteelBeam_Aluminum_C",
   "name": "Alternate: Aluminum Beam",
+  "icon": "schematic-alternate-steelbeam-aluminum-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -295,6 +308,7 @@
   "slug": "alternate-aluminum-rod",
   "className": "Schematic_Alternate_AluminumRod_C",
   "name": "Alternate: Aluminum Rod",
+  "icon": "schematic-alternate-aluminumrod-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -311,6 +325,7 @@
   "slug": "alternate-automated-miner",
   "className": "Schematic_Alternate_AutomatedMiner_C",
   "name": "Alternate: Automated Miner",
+  "icon": "schematic-alternate-automatedminer-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -327,6 +342,7 @@
   "slug": "alternate-automated-speed-wiring",
   "className": "Schematic_Alternate_HighSpeedWiring_C",
   "name": "Alternate: Automated Speed Wiring",
+  "icon": "schematic-alternate-highspeedwiring-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -344,6 +360,7 @@
   "slug": "alternate-basic-iron-ingot",
   "className": "Schematic_Alternate_IronIngot_Basic_C",
   "name": "Alternate: Basic Iron Ingot",
+  "icon": "schematic-alternate-ironingot-basic-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -360,6 +377,7 @@
   "slug": "alternate-biocoal",
   "className": "Schematic_Alternate_Coal2_C",
   "name": "Alternate: Biocoal",
+  "icon": "schematic-alternate-coal2-c",
   "type": "EST_Alternate",
   "tier": 3,
   "cost": [],
@@ -376,6 +394,7 @@
   "slug": "alternate-bolted-frame",
   "className": "Schematic_Alternate_BoltedFrame_C",
   "name": "Alternate: Bolted Frame",
+  "icon": "schematic-alternate-boltedframe-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -392,6 +411,7 @@
   "slug": "alternate-bolted-iron-plate",
   "className": "Schematic_Alternate_ReinforcedIronPlate1_C",
   "name": "Alternate: Bolted Iron Plate",
+  "icon": "schematic-alternate-reinforcedironplate1-c",
   "type": "EST_Alternate",
   "tier": 2,
   "cost": [],
@@ -408,6 +428,7 @@
   "slug": "alternate-cast-screw",
   "className": "Schematic_Alternate_Screw_C",
   "name": "Alternate: Cast Screw",
+  "icon": "schematic-alternate-screw-c",
   "type": "EST_Alternate",
   "tier": 1,
   "cost": [],
@@ -422,6 +443,7 @@
   "slug": "alternate-caterium-circuit-board",
   "className": "Schematic_Alternate_CircuitBoard2_C",
   "name": "Alternate: Caterium Circuit Board",
+  "icon": "schematic-alternate-circuitboard2-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -439,6 +461,7 @@
   "slug": "alternate-caterium-computer",
   "className": "Schematic_Alternate_Computer1_C",
   "name": "Alternate: Caterium Computer",
+  "icon": "schematic-alternate-computer1-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -456,6 +479,7 @@
   "slug": "alternate-caterium-wire",
   "className": "Schematic_Alternate_Wire2_C",
   "name": "Alternate: Caterium Wire",
+  "icon": "schematic-alternate-wire2-c",
   "type": "EST_Alternate",
   "tier": 3,
   "cost": [],
@@ -472,6 +496,7 @@
   "slug": "alternate-charcoal",
   "className": "Schematic_Alternate_Coal1_C",
   "name": "Alternate: Charcoal",
+  "icon": "schematic-alternate-coal1-c",
   "type": "EST_Alternate",
   "tier": 3,
   "cost": [],
@@ -488,6 +513,7 @@
   "slug": "alternate-cheap-silica",
   "className": "Schematic_Alternate_Silica_C",
   "name": "Alternate: Cheap Silica",
+  "icon": "schematic-alternate-silica-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -504,6 +530,7 @@
   "slug": "alternate-classic-battery",
   "className": "Schematic_Alternate_ClassicBattery_C",
   "name": "Alternate: Classic Battery",
+  "icon": "schematic-alternate-classicbattery-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -520,6 +547,7 @@
   "slug": "alternate-cloudy-diamonds",
   "className": "Schematic_Alternate_Diamond_Cloudy_C",
   "name": "Alternate: Cloudy Diamonds",
+  "icon": "schematic-alternate-diamond-cloudy-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -536,6 +564,7 @@
   "slug": "alternate-coated-cable",
   "className": "Schematic_Alternate_CoatedCable_C",
   "name": "Alternate: Coated Cable",
+  "icon": "schematic-alternate-coatedcable-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -552,6 +581,7 @@
   "slug": "alternate-coated-iron-canister",
   "className": "Schematic_Alternate_CoatedIronCanister_C",
   "name": "Alternate: Coated Iron Canister",
+  "icon": "schematic-alternate-coatedironcanister-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -568,6 +598,7 @@
   "slug": "alternate-coated-iron-plate",
   "className": "Schematic_Alternate_CoatedIronPlate_C",
   "name": "Alternate: Coated Iron Plate",
+  "icon": "schematic-alternate-coatedironplate-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -584,6 +615,7 @@
   "slug": "alternate-coke-steel-ingot",
   "className": "Schematic_Alternate_CokeSteelIngot_C",
   "name": "Alternate: Coke Steel Ingot",
+  "icon": "schematic-alternate-cokesteelingot-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -600,6 +632,7 @@
   "slug": "alternate-compacted-steel-ingot",
   "className": "Schematic_Alternate_IngotSteel2_C",
   "name": "Alternate: Compacted Steel Ingot",
+  "icon": "schematic-alternate-ingotsteel2-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -616,6 +649,7 @@
   "slug": "alternate-cooling-device",
   "className": "Schematic_Alternate_CoolingDevice_C",
   "name": "Alternate: Cooling Device",
+  "icon": "schematic-alternate-coolingdevice-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -632,6 +666,7 @@
   "slug": "alternate-copper-alloy-ingot",
   "className": "Schematic_Alternate_CopperAlloyIngot_C",
   "name": "Alternate: Copper Alloy Ingot",
+  "icon": "schematic-alternate-copperalloyingot-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -648,6 +683,7 @@
   "slug": "alternate-copper-rotor",
   "className": "Schematic_Alternate_CopperRotor_C",
   "name": "Alternate: Copper Rotor",
+  "icon": "schematic-alternate-copperrotor-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -664,6 +700,7 @@
   "slug": "alternate-crystal-computer",
   "className": "Schematic_Alternate_Computer2_C",
   "name": "Alternate: Crystal Computer",
+  "icon": "schematic-alternate-computer2-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -681,6 +718,7 @@
   "slug": "alternate-dark-ion-fuel",
   "className": "Schematic_Alternate_IonizedFuel_Dark_C",
   "name": "Alternate: Dark-Ion Fuel",
+  "icon": "schematic-alternate-ionizedfuel-dark-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -698,6 +736,7 @@
   "slug": "alternate-dark-matter-crystallization",
   "className": "Schematic_Alternate_DarkMatter_Crystallization_C",
   "name": "Alternate: Dark Matter Crystallization",
+  "icon": "schematic-alternate-darkmatter-crystallization-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -714,6 +753,7 @@
   "slug": "alternate-dark-matter-trap",
   "className": "Schematic_Alternate_DarkMatter_Trap_C",
   "name": "Alternate: Dark Matter Trap",
+  "icon": "schematic-alternate-darkmatter-trap-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -730,6 +770,7 @@
   "slug": "alternate-diluted-fuel",
   "className": "Schematic_Alternate_DilutedFuel_C",
   "name": "Alternate: Diluted Fuel",
+  "icon": "schematic-alternate-dilutedfuel-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -746,6 +787,7 @@
   "slug": "alternate-diluted-packaged-fuel",
   "className": "Schematic_Alternate_DilutedPackagedFuel_C",
   "name": "Alternate: Diluted Packaged Fuel",
+  "icon": "schematic-alternate-dilutedpackagedfuel-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -762,6 +804,7 @@
   "slug": "alternate-electric-motor",
   "className": "Schematic_Alternate_ElectricMotor_C",
   "name": "Alternate: Electric Motor",
+  "icon": "schematic-alternate-electricmotor-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -778,6 +821,7 @@
   "slug": "alternate-electrode-aluminum-scrap",
   "className": "Schematic_Alternate_ElectroAluminumScrap_C",
   "name": "Alternate: Electrode Aluminum Scrap",
+  "icon": "schematic-alternate-electroaluminumscrap-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -794,6 +838,7 @@
   "slug": "alternate-electrode-circuit-board",
   "className": "Schematic_Alternate_ElectrodeCircuitBoard_C",
   "name": "Alternate: Electrode Circuit Board",
+  "icon": "schematic-alternate-electrodecircuitboard-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -810,6 +855,7 @@
   "slug": "alternate-electromagnetic-connection-rod",
   "className": "Schematic_Alternate_ElectromagneticControlRod1_C",
   "name": "Alternate: Electromagnetic Connection Rod",
+  "icon": "schematic-alternate-electromagneticcontrolrod1-c",
   "type": "EST_Alternate",
   "tier": 7,
   "cost": [],
@@ -827,6 +873,7 @@
   "slug": "alternate-encased-industrial-pipe",
   "className": "Schematic_Alternate_ReinforcedSteelPlate_C",
   "name": "Alternate: Encased Industrial Pipe",
+  "icon": "schematic-alternate-reinforcedsteelplate-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -843,6 +890,7 @@
   "slug": "alternate-fertile-uranium",
   "className": "Schematic_Alternate_FertileUranium_C",
   "name": "Alternate: Fertile Uranium",
+  "icon": "schematic-alternate-fertileuranium-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -859,6 +907,7 @@
   "slug": "alternate-fine-black-powder",
   "className": "Schematic_Alternate_Gunpowder1_C",
   "name": "Alternate: Fine Black Powder",
+  "icon": "schematic-alternate-gunpowder1-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -873,6 +922,7 @@
   "slug": "alternate-fine-concrete",
   "className": "Schematic_Alternate_Concrete_C",
   "name": "Alternate: Fine Concrete",
+  "icon": "schematic-alternate-concrete-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -889,6 +939,7 @@
   "slug": "alternate-flexible-framework",
   "className": "Schematic_Alternate_FlexibleFramework_C",
   "name": "Alternate: Flexible Framework",
+  "icon": "schematic-alternate-flexibleframework-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -905,6 +956,7 @@
   "slug": "alternate-fused-quartz-crystal",
   "className": "Schematic_Alternate_Quartz_Fused_C",
   "name": "Alternate: Fused Quartz Crystal",
+  "icon": "schematic-alternate-quartz-fused-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -922,6 +974,7 @@
   "slug": "alternate-fused-quickwire",
   "className": "Schematic_Alternate_Quickwire_C",
   "name": "Alternate: Fused Quickwire",
+  "icon": "schematic-alternate-quickwire-c",
   "type": "EST_Alternate",
   "tier": 3,
   "cost": [],
@@ -938,6 +991,7 @@
   "slug": "alternate-fused-wire",
   "className": "Schematic_Alternate_FusedWire_C",
   "name": "Alternate: Fused Wire",
+  "icon": "schematic-alternate-fusedwire-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -954,6 +1008,7 @@
   "slug": "alternate-heat-exchanger",
   "className": "Schematic_Alternate_HeatSink1_C",
   "name": "Alternate: Heat Exchanger",
+  "icon": "schematic-alternate-heatsink1-c",
   "type": "EST_Alternate",
   "tier": 7,
   "cost": [],
@@ -970,6 +1025,7 @@
   "slug": "alternate-heat-fused-frame",
   "className": "Schematic_Alternate_HeatFusedFrame_C",
   "name": "Alternate: Heat-Fused Frame",
+  "icon": "schematic-alternate-heatfusedframe-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -986,6 +1042,7 @@
   "slug": "alternate-heavy-encased-frame",
   "className": "Schematic_Alternate_HeavyModularFrame_C",
   "name": "Alternate: Heavy Encased Frame",
+  "icon": "schematic-alternate-heavymodularframe-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1002,6 +1059,7 @@
   "slug": "alternate-heavy-flexible-frame",
   "className": "Schematic_Alternate_HeavyFlexibleFrame_C",
   "name": "Alternate: Heavy Flexible Frame",
+  "icon": "schematic-alternate-heavyflexibleframe-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1018,6 +1076,7 @@
   "slug": "alternate-heavy-oil-residue",
   "className": "Schematic_Alternate_HeavyOilResidue_C",
   "name": "Alternate: Heavy Oil Residue",
+  "icon": "schematic-alternate-heavyoilresidue-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1034,6 +1093,7 @@
   "slug": "alternate-infused-uranium-cell",
   "className": "Schematic_Alternate_UraniumCell1_C",
   "name": "Alternate: Infused Uranium Cell",
+  "icon": "schematic-alternate-uraniumcell1-c",
   "type": "EST_Alternate",
   "tier": 7,
   "cost": [],
@@ -1053,6 +1113,7 @@
   "slug": "alternate-instant-plutonium-cell",
   "className": "Schematic_Alternate_InstantPlutoniumCell_C",
   "name": "Alternate: Instant Plutonium Cell",
+  "icon": "schematic-alternate-instantplutoniumcell-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1069,6 +1130,7 @@
   "slug": "alternate-instant-scrap",
   "className": "Schematic_Alternate_InstantScrap_C",
   "name": "Alternate: Instant Scrap",
+  "icon": "schematic-alternate-instantscrap-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1086,6 +1148,7 @@
   "slug": "alternate-insulated-cable",
   "className": "Schematic_Alternate_Cable1_C",
   "name": "Alternate: Insulated Cable",
+  "icon": "schematic-alternate-cable1-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -1102,6 +1165,7 @@
   "slug": "alternate-insulated-crystal-oscillator",
   "className": "Schematic_Alternate_CrystalOscillator_C",
   "name": "Alternate: Insulated Crystal Oscillator",
+  "icon": "schematic-alternate-crystaloscillator-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -1120,6 +1184,7 @@
   "slug": "alternate-iron-alloy-ingot",
   "className": "Schematic_Alternate_IngotIron_C",
   "name": "Alternate: Iron Alloy Ingot",
+  "icon": "schematic-alternate-ingotiron-c",
   "type": "EST_Alternate",
   "tier": 1,
   "cost": [],
@@ -1136,6 +1201,7 @@
   "slug": "alternate-iron-pipe",
   "className": "Schematic_Alternate_SteelPipe_Iron_C",
   "name": "Alternate: Iron Pipe",
+  "icon": "schematic-alternate-steelpipe-iron-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1152,6 +1218,7 @@
   "slug": "alternate-iron-wire",
   "className": "Schematic_Alternate_Wire1_C",
   "name": "Alternate: Iron Wire",
+  "icon": "schematic-alternate-wire1-c",
   "type": "EST_Alternate",
   "tier": 1,
   "cost": [],
@@ -1166,6 +1233,7 @@
   "slug": "alternate-leached-caterium-ingot",
   "className": "Schematic_Alternate_CateriumIngot_Leached_C",
   "name": "Alternate: Leached Caterium Ingot",
+  "icon": "schematic-alternate-cateriumingot-leached-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1182,6 +1250,7 @@
   "slug": "alternate-leached-copper-ingot",
   "className": "Schematic_Alternate_CopperIngot_Leached_C",
   "name": "Alternate: Leached Copper Ingot",
+  "icon": "schematic-alternate-copperingot-leached-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1198,6 +1267,7 @@
   "slug": "alternate-leached-iron-ingot",
   "className": "Schematic_Alternate_IronIngot_Leached_C",
   "name": "Alternate: Leached Iron ingot",
+  "icon": "schematic-alternate-ironingot-leached-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1214,6 +1284,7 @@
   "slug": "alternate-molded-beam",
   "className": "Schematic_Alternate_SteelBeam_Molded_C",
   "name": "Alternate: Molded Beam",
+  "icon": "schematic-alternate-steelbeam-molded-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1230,6 +1301,7 @@
   "slug": "alternate-molded-steel-pipe",
   "className": "Schematic_Alternate_SteelPipe_Molded_C",
   "name": "Alternate: Molded Steel Pipe",
+  "icon": "schematic-alternate-steelpipe-molded-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1246,6 +1318,7 @@
   "slug": "alternate-nitro-rocket-fuel",
   "className": "Schematic_Alternate_RocketFuel_Nitro_C",
   "name": "Alternate: Nitro Rocket Fuel",
+  "icon": "schematic-alternate-rocketfuel-nitro-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1262,6 +1335,7 @@
   "slug": "alternate-oc-supercomputer",
   "className": "Schematic_Alternate_OCSupercomputer_C",
   "name": "Alternate: OC Supercomputer",
+  "icon": "schematic-alternate-ocsupercomputer-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1279,6 +1353,7 @@
   "slug": "alternate-oil-based-diamonds",
   "className": "Schematic_Alternate_Diamond_OilBased_C",
   "name": "Alternate: Oil-Based Diamonds",
+  "icon": "schematic-alternate-diamond-oilbased-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1295,6 +1370,7 @@
   "slug": "alternate-petroleum-diamonds",
   "className": "Schematic_Alternate_Diamond_Petroleum_C",
   "name": "Alternate: Petroleum Diamonds",
+  "icon": "schematic-alternate-diamond-petroleum-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1311,6 +1387,7 @@
   "slug": "alternate-pink-diamonds",
   "className": "Schematic_Alternate_Diamond_Pink_C",
   "name": "Alternate: Pink Diamonds",
+  "icon": "schematic-alternate-diamond-pink-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1327,6 +1404,7 @@
   "slug": "alternate-plastic-ai-limiter",
   "className": "Schematic_Alternate_AILimiter_Plastic_C",
   "name": "Alternate: Plastic AI Limiter",
+  "icon": "schematic-alternate-ailimiter-plastic-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1344,6 +1422,7 @@
   "slug": "alternate-plastic-smart-plating",
   "className": "Schematic_Alternate_PlasticSmartPlating_C",
   "name": "Alternate: Plastic Smart Plating",
+  "icon": "schematic-alternate-plasticsmartplating-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1360,6 +1439,7 @@
   "slug": "alternate-plutonium-fuel-unit",
   "className": "Schematic_Alternate_PlutoniumFuelUnit_C",
   "name": "Alternate: Plutonium Fuel Unit",
+  "icon": "schematic-alternate-plutoniumfuelunit-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1376,6 +1456,7 @@
   "slug": "alternate-polymer-resin",
   "className": "Schematic_Alternate_PolymerResin_C",
   "name": "Alternate: Polymer Resin",
+  "icon": "schematic-alternate-polymerresin-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1392,6 +1473,7 @@
   "slug": "alternate-pure-aluminum-ingot",
   "className": "Schematic_Alternate_PureAluminumIngot_C",
   "name": "Alternate: Pure Aluminum Ingot",
+  "icon": "schematic-alternate-purealuminumingot-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1408,6 +1490,7 @@
   "slug": "alternate-pure-caterium-ingot",
   "className": "Schematic_Alternate_PureCateriumIngot_C",
   "name": "Alternate: Pure Caterium Ingot",
+  "icon": "schematic-alternate-purecateriumingot-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1425,6 +1508,7 @@
   "slug": "alternate-pure-copper-ingot",
   "className": "Schematic_Alternate_PureCopperIngot_C",
   "name": "Alternate: Pure Copper Ingot",
+  "icon": "schematic-alternate-purecopperingot-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1441,6 +1525,7 @@
   "slug": "alternate-pure-iron-ingot",
   "className": "Schematic_Alternate_PureIronIngot_C",
   "name": "Alternate: Pure Iron Ingot",
+  "icon": "schematic-alternate-pureironingot-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1457,6 +1542,7 @@
   "slug": "alternate-pure-quartz-crystal",
   "className": "Schematic_Alternate_PureQuartzCrystal_C",
   "name": "Alternate: Pure Quartz Crystal",
+  "icon": "schematic-alternate-purequartzcrystal-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1474,6 +1560,7 @@
   "slug": "alternate-quartz-purification",
   "className": "Schematic_Alternate_Quartz_Purified_C",
   "name": "Alternate: Quartz Purification",
+  "icon": "schematic-alternate-quartz-purified-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1490,6 +1577,7 @@
   "slug": "alternate-quickwire-cable",
   "className": "Schematic_Alternate_Cable2_C",
   "name": "Alternate: Quickwire Cable",
+  "icon": "schematic-alternate-cable2-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -1507,6 +1595,7 @@
   "slug": "alternate-quickwire-stator",
   "className": "Schematic_Alternate_Stator_C",
   "name": "Alternate: Quickwire Stator",
+  "icon": "schematic-alternate-stator-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1524,6 +1613,7 @@
   "slug": "alternate-radio-connection-unit",
   "className": "Schematic_Alternate_RadioControlUnit1_C",
   "name": "Alternate: Radio Connection Unit",
+  "icon": "schematic-alternate-radiocontrolunit1-c",
   "type": "EST_Alternate",
   "tier": 7,
   "cost": [],
@@ -1541,6 +1631,7 @@
   "slug": "alternate-radio-control-system",
   "className": "Schematic_Alternate_RadioControlSystem_C",
   "name": "Alternate: Radio Control System",
+  "icon": "schematic-alternate-radiocontrolsystem-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1557,6 +1648,7 @@
   "slug": "alternate-recycled-plastic",
   "className": "Schematic_Alternate_Plastic1_C",
   "name": "Alternate: Recycled Plastic",
+  "icon": "schematic-alternate-plastic1-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -1573,6 +1665,7 @@
   "slug": "alternate-recycled-rubber",
   "className": "Schematic_Alternate_RecycledRubber_C",
   "name": "Alternate: Recycled Rubber",
+  "icon": "schematic-alternate-recycledrubber-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1589,6 +1682,7 @@
   "slug": "alternate-rigor-motor",
   "className": "Schematic_Alternate_Motor1_C",
   "name": "Alternate: Rigor Motor",
+  "icon": "schematic-alternate-motor1-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1606,6 +1700,7 @@
   "slug": "alternate-rubber-concrete",
   "className": "Schematic_Alternate_RubberConcrete_C",
   "name": "Alternate: Rubber Concrete",
+  "icon": "schematic-alternate-rubberconcrete-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1622,6 +1717,7 @@
   "slug": "alternate-silicon-circuit-board",
   "className": "Schematic_Alternate_CircuitBoard1_C",
   "name": "Alternate: Silicon Circuit Board",
+  "icon": "schematic-alternate-circuitboard1-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -1639,6 +1735,7 @@
   "slug": "alternate-silicon-high-speed-connector",
   "className": "Schematic_Alternate_HighSpeedConnector_C",
   "name": "Alternate: Silicon High-Speed Connector",
+  "icon": "schematic-alternate-highspeedconnector-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -1657,6 +1754,7 @@
   "slug": "alternate-sloppy-alumina",
   "className": "Schematic_Alternate_SloppyAlumina_C",
   "name": "Alternate: Sloppy Alumina",
+  "icon": "schematic-alternate-sloppyalumina-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1673,6 +1771,7 @@
   "slug": "alternate-solid-steel-ingot",
   "className": "Schematic_Alternate_IngotSteel1_C",
   "name": "Alternate: Solid Steel Ingot",
+  "icon": "schematic-alternate-ingotsteel1-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1689,6 +1788,7 @@
   "slug": "alternate-steamed-copper-sheet",
   "className": "Schematic_Alternate_SteamedCopperSheet_C",
   "name": "Alternate: Steamed Copper Sheet",
+  "icon": "schematic-alternate-steamedcoppersheet-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1705,6 +1805,7 @@
   "slug": "alternate-steel-canister",
   "className": "Schematic_Alternate_SteelCanister_C",
   "name": "Alternate: Steel Canister",
+  "icon": "schematic-alternate-steelcanister-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1721,6 +1822,7 @@
   "slug": "alternate-steel-cast-plate",
   "className": "Schematic_Alternate_SteelCastedPlate_C",
   "name": "Alternate: Steel Cast Plate",
+  "icon": "schematic-alternate-steelcastedplate-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1737,6 +1839,7 @@
   "slug": "alternate-steel-rod",
   "className": "Schematic_Alternate_SteelRod_C",
   "name": "Alternate: Steel Rod",
+  "icon": "schematic-alternate-steelrod-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1753,6 +1856,7 @@
   "slug": "alternate-steel-rotor",
   "className": "Schematic_Alternate_Rotor_C",
   "name": "Alternate: Steel Rotor",
+  "icon": "schematic-alternate-rotor-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1769,6 +1873,7 @@
   "slug": "alternate-steel-screw",
   "className": "Schematic_Alternate_Screw2_C",
   "name": "Alternate: Steel Screw",
+  "icon": "schematic-alternate-screw2-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1785,6 +1890,7 @@
   "slug": "alternate-steeled-frame",
   "className": "Schematic_Alternate_ModularFrame_C",
   "name": "Alternate: Steeled Frame",
+  "icon": "schematic-alternate-modularframe-c",
   "type": "EST_Alternate",
   "tier": 4,
   "cost": [],
@@ -1801,6 +1907,7 @@
   "slug": "alternate-stitched-iron-plate",
   "className": "Schematic_Alternate_ReinforcedIronPlate2_C",
   "name": "Alternate: Stitched Iron Plate",
+  "icon": "schematic-alternate-reinforcedironplate2-c",
   "type": "EST_Alternate",
   "tier": 2,
   "cost": [],
@@ -1817,6 +1924,7 @@
   "slug": "alternate-super-state-computer",
   "className": "Schematic_Alternate_SuperStateComputer_C",
   "name": "Alternate: Super-State Computer",
+  "icon": "schematic-alternate-superstatecomputer-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1834,6 +1942,7 @@
   "slug": "alternate-tempered-caterium-ingot",
   "className": "Schematic_Alternate_CateriumIngot_Tempered_C",
   "name": "Alternate: Tempered Caterium Ingot",
+  "icon": "schematic-alternate-cateriumingot-tempered-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1850,6 +1959,7 @@
   "slug": "alternate-tempered-copper-ingot",
   "className": "Schematic_Alternate_CopperIngot_Tempered_C",
   "name": "Alternate: Tempered Copper Ingot",
+  "icon": "schematic-alternate-copperingot-tempered-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1866,6 +1976,7 @@
   "slug": "alternate-turbo-blend-fuel",
   "className": "Schematic_Alternate_TurboBlendFuel_C",
   "name": "Alternate: Turbo Blend Fuel",
+  "icon": "schematic-alternate-turboblendfuel-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1884,6 +1995,7 @@
   "slug": "alternate-turbo-diamonds",
   "className": "Schematic_Alternate_Diamond_Turbo_C",
   "name": "Alternate: Turbo Diamonds",
+  "icon": "schematic-alternate-diamond-turbo-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1901,6 +2013,7 @@
   "slug": "alternate-turbo-electric-motor",
   "className": "Schematic_Alternate_TurboMotor1_C",
   "name": "Alternate: Turbo Electric Motor",
+  "icon": "schematic-alternate-turbomotor1-c",
   "type": "EST_Alternate",
   "tier": 7,
   "cost": [],
@@ -1918,6 +2031,7 @@
   "slug": "alternate-turbo-heavy-fuel",
   "className": "Schematic_Alternate_TurboHeavyFuel_C",
   "name": "Alternate: Turbo Heavy Fuel",
+  "icon": "schematic-alternate-turboheavyfuel-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1936,6 +2050,7 @@
   "slug": "alternate-turbo-pressure-motor",
   "className": "Schematic_Alternate_TurboPressureMotor_C",
   "name": "Alternate: Turbo Pressure Motor",
+  "icon": "schematic-alternate-turbopressuremotor-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1952,6 +2067,7 @@
   "slug": "alternate-uranium-fuel-unit",
   "className": "Schematic_Alternate_NuclearFuelRod1_C",
   "name": "Alternate: Uranium Fuel Unit",
+  "icon": "schematic-alternate-nuclearfuelrod1-c",
   "type": "EST_Alternate",
   "tier": 7,
   "cost": [],
@@ -1969,6 +2085,7 @@
   "slug": "alternate-wet-concrete",
   "className": "Schematic_Alternate_WetConcrete_C",
   "name": "Alternate: Wet Concrete",
+  "icon": "schematic-alternate-wetconcrete-c",
   "type": "EST_Alternate",
   "tier": 0,
   "cost": [],
@@ -1985,6 +2102,7 @@
   "slug": "alternative-ficsit-build-gun",
   "className": "Schematic_Skin_Buildgun_ColoredSides_C",
   "name": "Alternative FICSIT Build Gun",
+  "icon": "schematic-skin-buildgun-coloredsides-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -1997,6 +2115,7 @@
   "slug": "aluminum-casing-purchase",
   "className": "ResourceSink_AluminumCasing_C",
   "name": "Aluminum Casing (purchase)",
+  "icon": "resourcesink-aluminumcasing-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2016,6 +2135,7 @@
   "slug": "arrow-patterns",
   "className": "ResourceSink_Arrows_FoundationPatterns_C",
   "name": "Arrow Patterns",
+  "icon": "resourcesink-arrows-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2033,6 +2153,7 @@
   "slug": "asphalt-foundation-material",
   "className": "ResourceSink_Customizer_Asphalt_FoundationMaterial_C",
   "name": "Asphalt Foundation Material",
+  "icon": "resourcesink-customizer-asphalt-foundationmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2052,6 +2173,7 @@
   "slug": "b-374-helmet",
   "className": "Schematic_Helmet_Beta_C",
   "name": "B-374 Helmet",
+  "icon": "schematic-helmet-beta-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -2064,6 +2186,7 @@
   "slug": "bacon-agaric",
   "className": "Research_Nutrients_2_C",
   "name": "Bacon Agaric",
+  "icon": "research-nutrients-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2081,6 +2204,7 @@
   "slug": "base-building",
   "className": "Schematic_1-1_C",
   "name": "Base Building",
+  "icon": "schematic-1-1-c",
   "type": "EST_Milestone",
   "tier": 1,
   "cost": [
@@ -2116,6 +2240,7 @@
   "slug": "basic-steel-production",
   "className": "Schematic_3-4_C",
   "name": "Basic Steel Production",
+  "icon": "schematic-3-4-c",
   "type": "EST_Milestone",
   "tier": 3,
   "cost": [
@@ -2151,6 +2276,7 @@
   "slug": "battery-purchase",
   "className": "ResourceSink_Battery_C",
   "name": "Battery (purchase)",
+  "icon": "resourcesink-battery-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2170,6 +2296,7 @@
   "slug": "bauxite-refinement",
   "className": "Schematic_7-1_C",
   "name": "Bauxite Refinement",
+  "icon": "schematic-7-1-c",
   "type": "EST_Milestone",
   "tier": 7,
   "cost": [
@@ -2206,6 +2333,7 @@
   "slug": "beryl-nut",
   "className": "Research_Nutrients_1_C",
   "name": "Beryl Nut",
+  "icon": "research-nutrients-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2223,6 +2351,7 @@
   "slug": "billboard-set",
   "className": "ResourceSink_BillboardSigns_C",
   "name": "Billboard Set",
+  "icon": "resourcesink-billboardsigns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2246,6 +2375,7 @@
   "slug": "bio-organic-properties",
   "className": "Research_AO_DNACapsule_C",
   "name": "Bio-Organic Properties",
+  "icon": "research-ao-dnacapsule-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2266,6 +2396,7 @@
   "slug": "biofuel-purchase",
   "className": "ResourceSink_Biofuel_C",
   "name": "Biofuel (purchase)",
+  "icon": "resourcesink-biofuel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2285,6 +2416,7 @@
   "slug": "biomass-purchase",
   "className": "ResourceSink_Biomass_C",
   "name": "Biomass (purchase)",
+  "icon": "resourcesink-biomass-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2302,6 +2434,7 @@
   "slug": "black-powder",
   "className": "Research_Sulfur_1_C",
   "name": "Black Powder",
+  "icon": "research-sulfur-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2325,6 +2458,7 @@
   "slug": "black-powder-purchase",
   "className": "ResourceSink_BlackPowder_C",
   "name": "Black Powder (purchase)",
+  "icon": "resourcesink-blackpowder-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2344,6 +2478,7 @@
   "slug": "blade-runners",
   "className": "Research_Caterium_4_3_C",
   "name": "Blade Runners",
+  "icon": "research-caterium-4-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2367,6 +2502,7 @@
   "slug": "blue-power-slugs",
   "className": "Research_PowerSlugs_1_C",
   "name": "Blue Power Slugs",
+  "icon": "research-powerslugs-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2386,6 +2522,7 @@
   "slug": "bobblehead-helmet",
   "className": "Schematic_Helmet_Bobble_C",
   "name": "Bobblehead Helmet",
+  "icon": "schematic-helmet-bobble-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -2398,6 +2535,7 @@
   "slug": "boombox-purchase",
   "className": "ResourceSink_Boombox_C",
   "name": "Boombox (purchase)",
+  "icon": "resourcesink-boombox-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2415,6 +2553,7 @@
   "slug": "bullet-guidance-system",
   "className": "Research_Caterium_6_3_C",
   "name": "Bullet Guidance System",
+  "icon": "research-caterium-6-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2438,6 +2577,7 @@
   "slug": "cable-purchase",
   "className": "ResourceSink_Cable_C",
   "name": "Cable (purchase)",
+  "icon": "resourcesink-cable-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2455,6 +2595,7 @@
   "slug": "camo-build-gun",
   "className": "Schematic_Skin_Buildgun_Camo_C",
   "name": "Camo Build Gun",
+  "icon": "schematic-skin-buildgun-camo-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -2467,6 +2608,7 @@
   "slug": "carbon-steel-finish",
   "className": "ResourceSink_CarbonSteel_PaintFinish_C",
   "name": "Carbon Steel Finish",
+  "icon": "resourcesink-carbonsteel-paintfinish-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2486,6 +2628,7 @@
   "slug": "caterium",
   "className": "Research_Caterium_0_C",
   "name": "Caterium",
+  "icon": "research-caterium-0-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2503,6 +2646,7 @@
   "slug": "caterium-electronics",
   "className": "Research_Caterium_3_C",
   "name": "Caterium Electronics",
+  "icon": "research-caterium-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2520,6 +2664,7 @@
   "slug": "caterium-ingots",
   "className": "Research_Caterium_1_C",
   "name": "Caterium Ingots",
+  "icon": "research-caterium-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2539,6 +2684,7 @@
   "slug": "caterium-paint-finish",
   "className": "ResourceSink_Caterium_PaintFinish_C",
   "name": "Caterium Paint Finish",
+  "icon": "resourcesink-caterium-paintfinish-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2558,6 +2704,7 @@
   "slug": "checkit-trinket",
   "className": "Schematic_Trinket_Checkit_C",
   "name": "Checkit Trinket",
+  "icon": "schematic-trinket-checkit-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -2570,6 +2717,7 @@
   "slug": "chrome-paint-finish",
   "className": "ResourceSink_Chrome_PaintFinish_C",
   "name": "Chrome Paint Finish",
+  "icon": "resourcesink-chrome-paintfinish-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2587,6 +2735,7 @@
   "slug": "circuit-board-purchase",
   "className": "ResourceSink_CircuitBoard_C",
   "name": "Circuit Board (purchase)",
+  "icon": "resourcesink-circuitboard-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2606,6 +2755,7 @@
   "slug": "clean-pipeline-mk-1",
   "className": "ResourceSink_NoIndicator_PipelineMK1_C",
   "name": "Clean Pipeline Mk.1",
+  "icon": "resourcesink-noindicator-pipelinemk1-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2627,6 +2777,7 @@
   "slug": "clean-pipeline-mk-2",
   "className": "ResourceSink_NoIndicator_PipelineMK2_C",
   "name": "Clean Pipeline Mk.2",
+  "icon": "resourcesink-noindicator-pipelinemk2-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2648,6 +2799,7 @@
   "slug": "cluster-nobelisk",
   "className": "Research_Sulfur_4_C",
   "name": "Cluster Nobelisk",
+  "icon": "research-sulfur-4-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2671,6 +2823,7 @@
   "slug": "cluster-nobelisk-pack-purchase",
   "className": "ResourceSink_NobeliskCluster_C",
   "name": "Cluster Nobelisk Pack (purchase)",
+  "icon": "resourcesink-nobeliskcluster-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2690,6 +2843,7 @@
   "slug": "coal-power",
   "className": "Schematic_3-1_C",
   "name": "Coal Power",
+  "icon": "schematic-3-1-c",
   "type": "EST_Milestone",
   "tier": 3,
   "cost": [
@@ -2723,6 +2877,7 @@
   "slug": "coated-concrete-foundation-material",
   "className": "ResourceSink_Customizer_PolishedConcrete_FoundationMaterial_C",
   "name": "Coated Concrete Foundation Material",
+  "icon": "resourcesink-customizer-polishedconcrete-foundationmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2743,6 +2898,7 @@
   "slug": "compacted-coal",
   "className": "Research_Sulfur_CompactedCoal_C",
   "name": "Compacted Coal",
+  "icon": "research-sulfur-compactedcoal-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -2766,6 +2922,7 @@
   "slug": "compacted-coal-purchase",
   "className": "ResourceSink_CompactedCoal_C",
   "name": "Compacted Coal (purchase)",
+  "icon": "resourcesink-compactedcoal-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2785,6 +2942,7 @@
   "slug": "computer-purchase",
   "className": "ResourceSink_Computer_C",
   "name": "Computer (purchase)",
+  "icon": "resourcesink-computer-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2804,6 +2962,7 @@
   "slug": "concrete-foundation-material",
   "className": "ResourceSink_Customizer_Concrete_FoundationMaterial_C",
   "name": "Concrete Foundation Material",
+  "icon": "resourcesink-customizer-concrete-foundationmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2823,6 +2982,7 @@
   "slug": "concrete-pillar-set",
   "className": "ResourceSink_ConcretePillarSet_C",
   "name": "Concrete Pillar Set",
+  "icon": "resourcesink-concretepillarset-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2845,6 +3005,7 @@
   "slug": "concrete-purchase",
   "className": "ResourceSink_Concrete_C",
   "name": "Concrete (purchase)",
+  "icon": "resourcesink-concrete-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2862,6 +3023,7 @@
   "slug": "concrete-wall-material",
   "className": "ResourceSink_Customizer_ConcreteWallMaterial_C",
   "name": "Concrete Wall Material",
+  "icon": "resourcesink-customizer-concretewallmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2881,6 +3043,7 @@
   "slug": "confusing-creature-purchase",
   "className": "ResourceSink_StatueSpaceGiraffe_C",
   "name": "Confusing Creature (purchase)",
+  "icon": "resourcesink-statuespacegiraffe-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2898,6 +3061,7 @@
   "slug": "construction-fences",
   "className": "ResourceSink_Fences_C",
   "name": "Construction Fences",
+  "icon": "resourcesink-fences-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2918,6 +3082,7 @@
   "slug": "control-system-development",
   "className": "Schematic_7-5_C",
   "name": "Control System Development",
+  "icon": "schematic-7-5-c",
   "type": "EST_Milestone",
   "tier": 7,
   "cost": [
@@ -2955,6 +3120,7 @@
   "slug": "conveyor-ceiling-mount",
   "className": "ResourceSink_ConveyorCeilingMount_C",
   "name": "Conveyor Ceiling Mount",
+  "icon": "resourcesink-conveyorceilingmount-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2974,6 +3140,7 @@
   "slug": "conveyor-lift-floor-hole",
   "className": "ResourceSink_ConveyorLiftHole_C",
   "name": "Conveyor Lift Floor Hole",
+  "icon": "resourcesink-conveyorlifthole-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -2993,6 +3160,7 @@
   "slug": "conveyor-wall-mount",
   "className": "ResourceSink_ConveyorWallMount_C",
   "name": "Conveyor Wall Mount",
+  "icon": "resourcesink-conveyorwallmount-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3012,6 +3180,7 @@
   "slug": "conveyor-walls",
   "className": "ResourceSink_ConveryWalls_Normal_C",
   "name": "Conveyor Walls",
+  "icon": "resourcesink-converywalls-normal-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3033,6 +3202,7 @@
   "slug": "cooling-system-purchase",
   "className": "ResourceSink_CoolingSystem_C",
   "name": "Cooling System (purchase)",
+  "icon": "resourcesink-coolingsystem-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3052,6 +3222,7 @@
   "slug": "copper-paint-finish",
   "className": "ResourceSink_Copper_PaintFinish_C",
   "name": "Copper Paint Finish",
+  "icon": "resourcesink-copper-paintfinish-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3069,6 +3240,7 @@
   "slug": "copper-powder-purchase",
   "className": "ResourceSink_CopperPowder_C",
   "name": "Copper Powder (purchase)",
+  "icon": "resourcesink-copperpowder-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3088,6 +3260,7 @@
   "slug": "copper-sheet-purchase",
   "className": "ResourceSink_CopperSheet_C",
   "name": "Copper Sheet (purchase)",
+  "icon": "resourcesink-coppersheet-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3107,6 +3280,7 @@
   "slug": "corner-ramp-pack",
   "className": "ResourceSink_DiagonalRamps_C",
   "name": "Corner Ramp Pack",
+  "icon": "resourcesink-diagonalramps-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3131,6 +3305,7 @@
   "slug": "coupon-trinket",
   "className": "Schematic_Trinket_FicsitCoupon_C",
   "name": "Coupon Trinket",
+  "icon": "schematic-trinket-ficsitcoupon-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -3143,6 +3318,7 @@
   "slug": "crystal-oscillator",
   "className": "Research_Quartz_2_C",
   "name": "Crystal Oscillator",
+  "icon": "research-quartz-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3166,6 +3342,7 @@
   "slug": "crystal-oscillator-purchase",
   "className": "ResourceSink_CrystalOscillator_C",
   "name": "Crystal Oscillator (purchase)",
+  "icon": "resourcesink-crystaloscillator-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3186,6 +3363,7 @@
   "slug": "cyber-wagon",
   "className": "ResourceSink_CyberWagon_C",
   "name": "Cyber Wagon",
+  "icon": "resourcesink-cyberwagon-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3205,6 +3383,7 @@
   "slug": "depot-expansion-200",
   "className": "Research_Alien_CentralStackExpansion_01_C",
   "name": "Depot Expansion (200%)",
+  "icon": "research-alien-centralstackexpansion-01-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -3226,6 +3405,7 @@
   "slug": "depot-expansion-300",
   "className": "Research_Alien_CentralStackExpansion_02_C",
   "name": "Depot Expansion (300%)",
+  "icon": "research-alien-centralstackexpansion-02-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -3247,6 +3427,7 @@
   "slug": "depot-expansion-400",
   "className": "Research_Alien_CentralStackExpansion_03_C",
   "name": "Depot Expansion (400%)",
+  "icon": "research-alien-centralstackexpansion-03-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -3268,6 +3449,7 @@
   "slug": "depot-expansion-500",
   "className": "Research_Alien_CentralStackExpansion_04_C",
   "name": "Depot Expansion (500%)",
+  "icon": "research-alien-centralstackexpansion-04-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -3289,6 +3471,7 @@
   "slug": "dimensional-depot",
   "className": "Research_Alien_CentralStorage_C",
   "name": "Dimensional Depot",
+  "icon": "research-alien-centralstorage-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -3312,6 +3495,7 @@
   "slug": "display-sign-bundle",
   "className": "ResourceSink_DisplaySigns_C",
   "name": "Display Sign Bundle",
+  "icon": "resourcesink-displaysigns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3336,6 +3520,7 @@
   "slug": "door-walls",
   "className": "ResourceSink_DoorWalls_Normal_C",
   "name": "Door Walls",
+  "icon": "resourcesink-doorwalls-normal-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3356,6 +3541,7 @@
   "slug": "dotted-line-patterns",
   "className": "ResourceSink_DotLines_FoundationPatterns_C",
   "name": "Dotted Line Patterns",
+  "icon": "resourcesink-dotlines-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3373,6 +3559,7 @@
   "slug": "double-ramp-set",
   "className": "ResourceSink_FoundationExpansionPack_C",
   "name": "Double Ramp Set",
+  "icon": "resourcesink-foundationexpansionpack-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3394,6 +3581,7 @@
   "slug": "electromagnetic-control-rod-purchase",
   "className": "ResourceSink_ElectromagneticControlRod_C",
   "name": "Electromagnetic Control Rod (purchase)",
+  "icon": "resourcesink-electromagneticcontrolrod-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3413,6 +3601,7 @@
   "slug": "employee-of-the-planet-cup-purchase",
   "className": "ResourceSink_GoldenCup_C",
   "name": "'Employee of the Planet' Cup (purchase)",
+  "icon": "resourcesink-goldencup-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3430,6 +3619,7 @@
   "slug": "empty-canister-purchase",
   "className": "ResourceSink_EmptyCanister_C",
   "name": "Empty Canister (purchase)",
+  "icon": "resourcesink-emptycanister-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3449,6 +3639,7 @@
   "slug": "empty-fluid-tank-purchase",
   "className": "ResourceSink_EmptyFluidTank_C",
   "name": "Empty Fluid Tank (purchase)",
+  "icon": "resourcesink-emptyfluidtank-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3468,6 +3659,7 @@
   "slug": "encased-industrial-beam-purchase",
   "className": "ResourceSink_EncasedIndustrialBeam_C",
   "name": "Encased Industrial Beam (purchase)",
+  "icon": "resourcesink-encasedindustrialbeam-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3487,6 +3679,7 @@
   "slug": "enhanced-asset-security",
   "className": "Schematic_4-2_C",
   "name": "Enhanced Asset Security",
+  "icon": "schematic-4-2-c",
   "type": "EST_Milestone",
   "tier": 3,
   "cost": [
@@ -3514,6 +3707,7 @@
   "slug": "expanded-power-infrastructure",
   "className": "Schematic_4-3_C",
   "name": "Expanded Power Infrastructure",
+  "icon": "schematic-4-3-c",
   "type": "EST_Milestone",
   "tier": 4,
   "cost": [
@@ -3547,6 +3741,7 @@
   "slug": "expanded-toolbelt",
   "className": "Research_ACarapace_3_C",
   "name": "Expanded Toolbelt",
+  "icon": "research-acarapace-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3568,6 +3763,7 @@
   "slug": "expanded-toolbelt-2",
   "className": "Research_Mycelia_7_C",
   "name": "Expanded Toolbelt",
+  "icon": "research-mycelia-7-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3589,6 +3785,7 @@
   "slug": "expanded-toolbelt-3",
   "className": "Research_Sulfur_5_C",
   "name": "Expanded Toolbelt",
+  "icon": "research-sulfur-5-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3610,6 +3807,7 @@
   "slug": "experimental-power-generation",
   "className": "Research_Sulfur_ExperimentalPower_C",
   "name": "Experimental Power Generation",
+  "icon": "research-sulfur-experimentalpower-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3635,6 +3833,7 @@
   "slug": "explosive-rebar",
   "className": "Research_Sulfur_4_2_C",
   "name": "Explosive Rebar",
+  "icon": "research-sulfur-4-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3662,6 +3861,7 @@
   "slug": "explosive-rebar-pack-purchase",
   "className": "ResourceSink_RebarExplosive_C",
   "name": "Explosive Rebar Pack (purchase)",
+  "icon": "resourcesink-rebarexplosive-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3681,6 +3881,7 @@
   "slug": "explosive-resonance-application",
   "className": "Research_Quartz_3_4_C",
   "name": "Explosive Resonance Application",
+  "icon": "research-quartz-3-4-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3704,6 +3905,7 @@
   "slug": "fabric",
   "className": "Research_Mycelia_2_C",
   "name": "Fabric",
+  "icon": "research-mycelia-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -3727,6 +3929,7 @@
   "slug": "fabric-purchase",
   "className": "ResourceSink_Fabric_C",
   "name": "Fabric (purchase)",
+  "icon": "resourcesink-fabric-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3746,6 +3949,7 @@
   "slug": "factory-icon-patterns",
   "className": "ResourceSink_IconsFactory_FoundationPatterns_C",
   "name": "Factory Icon Patterns",
+  "icon": "resourcesink-iconsfactory-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3763,6 +3967,7 @@
   "slug": "factory-ladder",
   "className": "ResourceSink_Ladders_C",
   "name": "Factory Ladder",
+  "icon": "resourcesink-ladders-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3782,6 +3987,7 @@
   "slug": "factory-zone-patterns",
   "className": "ResourceSink_Zones_FoundationPatterns_C",
   "name": "Factory Zone Patterns",
+  "icon": "resourcesink-zones-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3799,6 +4005,7 @@
   "slug": "ficsit-blueprints",
   "className": "Schematic_4-5_C",
   "name": "FICSIT Blueprints",
+  "icon": "schematic-4-5-c",
   "type": "EST_Milestone",
   "tier": 4,
   "cost": [
@@ -3830,6 +4037,7 @@
   "slug": "ficsit-blueprints-mk-2",
   "className": "Schematic_6-6_C",
   "name": "FICSIT Blueprints Mk.2",
+  "icon": "schematic-6-6-c",
   "type": "EST_Milestone",
   "tier": 6,
   "cost": [
@@ -3861,6 +4069,7 @@
   "slug": "ficsit-blueprints-mk-3",
   "className": "Schematic_9-3_C",
   "name": "FICSIT Blueprints Mk.3",
+  "icon": "schematic-9-3-c",
   "type": "EST_Milestone",
   "tier": 9,
   "cost": [
@@ -3892,6 +4101,7 @@
   "slug": "ficsit-checkmarktm",
   "className": "ResourceSink_Checkmark_C",
   "name": "FICSIT Checkmark™",
+  "icon": "resourcesink-checkmark-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -3909,6 +4119,7 @@
   "slug": "ficsit-factory-carttm",
   "className": "ResourceSink_FactoryCart_C",
   "name": "FICSIT Factory Cart™",
+  "icon": "resourcesink-factorycart-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3928,6 +4139,7 @@
   "slug": "ficsit-half-n-half-build-gun",
   "className": "Schematic_Skin_Buildgun_HalfNHalf_C",
   "name": "FICSIT Half 'n' Half Build Gun",
+  "icon": "schematic-skin-buildgun-halfnhalf-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -3940,6 +4152,7 @@
   "slug": "ficsit-roof-corners",
   "className": "ResourceSink_Roofs_Corners_C",
   "name": "FICSIT Roof Corners",
+  "icon": "resourcesink-roofs-corners-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3964,6 +4177,7 @@
   "slug": "ficsit-roofs",
   "className": "ResourceSink_Roofs_Basic_C",
   "name": "FICSIT Roofs",
+  "icon": "resourcesink-roofs-basic-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -3986,6 +4200,7 @@
   "slug": "ficsite-trigon-purchase",
   "className": "ResourceSink_FicsiteTrigon_C",
   "name": "Ficsite Trigon (purchase)",
+  "icon": "resourcesink-ficsitetrigon-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4005,6 +4220,7 @@
   "slug": "ficsittm-coffee-cup-purchase",
   "className": "ResourceSink_CoffeeCup_C",
   "name": "FICSIT™ Coffee Cup (purchase)",
+  "icon": "resourcesink-coffeecup-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4022,6 +4238,7 @@
   "slug": "field-research",
   "className": "Schematic_1-3_C",
   "name": "Field Research",
+  "icon": "schematic-1-3-c",
   "type": "EST_Milestone",
   "tier": 1,
   "cost": [
@@ -4051,6 +4268,7 @@
   "slug": "flood-lights",
   "className": "ResourceSink_LightTower_C",
   "name": "Flood Lights",
+  "icon": "resourcesink-lighttower-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4074,6 +4292,7 @@
   "slug": "fluid-packaging",
   "className": "Schematic_5-4_C",
   "name": "Fluid Packaging",
+  "icon": "schematic-5-4-c",
   "type": "EST_Milestone",
   "tier": 5,
   "cost": [
@@ -4108,6 +4327,7 @@
   "slug": "foundation-stairs-set",
   "className": "ResourceSink_FoundationStairs_C",
   "name": "Foundation Stairs Set",
+  "icon": "resourcesink-foundationstairs-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4129,6 +4349,7 @@
   "slug": "frame-pillar-set",
   "className": "ResourceSink_FramePillarSet_C",
   "name": "Frame Pillar Set",
+  "icon": "resourcesink-framepillarset-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4153,6 +4374,7 @@
   "slug": "fused-modular-frame-purchase",
   "className": "ResourceSink_FusedModularFrame_C",
   "name": "Fused Modular Frame (purchase)",
+  "icon": "resourcesink-fusedmodularframe-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4172,6 +4394,7 @@
   "slug": "gas-filters-purchase",
   "className": "ResourceSink_GasFilters_C",
   "name": "Gas Filters (purchase)",
+  "icon": "resourcesink-gasfilters-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4189,6 +4412,7 @@
   "slug": "gas-mask",
   "className": "Research_Mycelia_GasMask_C",
   "name": "Gas Mask",
+  "icon": "research-mycelia-gasmask-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -4217,6 +4441,7 @@
   "slug": "gas-nobelisk-pack-purchase",
   "className": "ResourceSink_NobeliskGas_C",
   "name": "Gas Nobelisk Pack (purchase)",
+  "icon": "resourcesink-nobeliskgas-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4236,6 +4461,7 @@
   "slug": "gates",
   "className": "ResourceSink_GateWalls_C",
   "name": "Gates",
+  "icon": "resourcesink-gatewalls-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4256,6 +4482,7 @@
   "slug": "geothermal-generator",
   "className": "Research_Caterium_7_2_C",
   "name": "Geothermal Generator",
+  "icon": "research-caterium-7-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -4283,6 +4510,7 @@
   "slug": "glass-roof-material",
   "className": "ResourceSink_Customizer_GlassRoofMaterial_C",
   "name": "Glass Roof Material",
+  "icon": "resourcesink-customizer-glassroofmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4303,6 +4531,7 @@
   "slug": "goat-music-boombox-tape",
   "className": "Schematic_Goat_C",
   "name": "Goat Music Boombox Tape",
+  "icon": "schematic-goat-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -4320,6 +4549,7 @@
   "slug": "golden-build-gun",
   "className": "Schematic_Skin_Buildgun_Golden_C",
   "name": "Golden Build Gun",
+  "icon": "schematic-skin-buildgun-golden-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -4332,6 +4562,7 @@
   "slug": "golden-ficsit-factory-carttm",
   "className": "ResourceSink_GoldenCart_C",
   "name": "Golden FICSIT Factory Cart™",
+  "icon": "resourcesink-goldencart-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4351,6 +4582,7 @@
   "slug": "golden-helmet",
   "className": "Schematic_Helmet_Golden_C",
   "name": "Golden Helmet",
+  "icon": "schematic-helmet-golden-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -4363,6 +4595,7 @@
   "slug": "golden-nut-purchase",
   "className": "ResourceSink_StatueGoldenNut_C",
   "name": "Golden Nut (purchase)",
+  "icon": "resourcesink-statuegoldennut-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4380,6 +4613,7 @@
   "slug": "golden-nut-trinket",
   "className": "Schematic_Trinket_Nut_C",
   "name": "Golden Nut Trinket",
+  "icon": "schematic-trinket-nut-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -4392,6 +4626,7 @@
   "slug": "grip-metal-foundation-material",
   "className": "ResourceSink_Customizer_GripMetal_FoundationMaterial_C",
   "name": "Grip Metal Foundation Material",
+  "icon": "resourcesink-customizer-gripmetal-foundationmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4412,6 +4647,7 @@
   "slug": "half-foundation-set",
   "className": "ResourceSink_HalfFoundations_C",
   "name": "Half Foundation Set",
+  "icon": "resourcesink-halffoundations-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4433,6 +4669,7 @@
   "slug": "hard-drive-purchase",
   "className": "ResourceSink_Purchasable_HardDrive_C",
   "name": "Hard Drive (purchase)",
+  "icon": "resourcesink-purchasable-harddrive-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4452,6 +4689,7 @@
   "slug": "hard-drives",
   "className": "Research_HardDrive_0_C",
   "name": "Hard Drives",
+  "icon": "research-harddrive-0-c",
   "type": "EST_HardDrive",
   "tier": 0,
   "cost": [],
@@ -4464,6 +4702,7 @@
   "slug": "hatcher-research",
   "className": "Research_AO_Hatcher_C",
   "name": "Hatcher Research",
+  "icon": "research-ao-hatcher-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -4483,6 +4722,7 @@
   "slug": "hazard-box-personal-storage-skin",
   "className": "ResourceSink_HazardBoxSkin_C",
   "name": "Hazard Box - Personal Storage Skin",
+  "icon": "resourcesink-hazardboxskin-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4502,6 +4742,7 @@
   "slug": "hazmat-suit",
   "className": "Schematic_7-3_C",
   "name": "Hazmat Suit",
+  "icon": "schematic-7-3-c",
   "type": "EST_Milestone",
   "tier": 7,
   "cost": [
@@ -4530,6 +4771,7 @@
   "slug": "health-pack-purchase",
   "className": "ResourceSink_HealthPack_C",
   "name": "Health Pack (purchase)",
+  "icon": "resourcesink-healthpack-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4551,6 +4793,7 @@
   "slug": "heat-sink-purchase",
   "className": "ResourceSink_HeatSink_C",
   "name": "Heat Sink (purchase)",
+  "icon": "resourcesink-heatsink-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4570,6 +4813,7 @@
   "slug": "heavy-modular-frame-purchase",
   "className": "ResourceSink_HeavyModularFrame_C",
   "name": "Heavy Modular Frame (purchase)",
+  "icon": "resourcesink-heavymodularframe-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4589,6 +4833,7 @@
   "slug": "high-speed-connector",
   "className": "Research_Caterium_5_C",
   "name": "High-Speed Connector",
+  "icon": "research-caterium-5-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -4612,6 +4857,7 @@
   "slug": "high-speed-connector-purchase",
   "className": "ResourceSink_HighSpeedConnector_C",
   "name": "High-Speed Connector (purchase)",
+  "icon": "resourcesink-highspeedconnector-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4632,6 +4878,7 @@
   "slug": "hog-research",
   "className": "Research_ACarapace_0_C",
   "name": "Hog Research",
+  "icon": "research-acarapace-0-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -4651,6 +4898,7 @@
   "slug": "homing-rifle-ammo-pack-purchase",
   "className": "ResourceSink_RifleAmmoHoming_C",
   "name": "Homing Rifle Ammo Pack (purchase)",
+  "icon": "resourcesink-rifleammohoming-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4670,6 +4918,7 @@
   "slug": "hostile-organism-detection",
   "className": "Research_AOrganisms_2_C",
   "name": "Hostile Organism Detection",
+  "icon": "research-aorganisms-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -4695,6 +4944,7 @@
   "slug": "hoverpack",
   "className": "Schematic_8-3_C",
   "name": "Hoverpack",
+  "icon": "schematic-8-3-c",
   "type": "EST_Milestone",
   "tier": 7,
   "cost": [
@@ -4726,6 +4976,7 @@
   "slug": "hub-upgrade-1",
   "className": "Schematic_Tutorial1_C",
   "name": "HUB Upgrade 1",
+  "icon": "schematic-tutorial1-c",
   "type": "EST_Tutorial",
   "tier": 0,
   "cost": [
@@ -4746,6 +4997,7 @@
   "slug": "hub-upgrade-2",
   "className": "Schematic_Tutorial1_5_C",
   "name": "HUB Upgrade 2",
+  "icon": "schematic-tutorial1-5-c",
   "type": "EST_Tutorial",
   "tier": 0,
   "cost": [
@@ -4775,6 +5027,7 @@
   "slug": "hub-upgrade-3",
   "className": "Schematic_Tutorial2_C",
   "name": "HUB Upgrade 3",
+  "icon": "schematic-tutorial2-c",
   "type": "EST_Tutorial",
   "tier": 0,
   "cost": [
@@ -4808,6 +5061,7 @@
   "slug": "hub-upgrade-4",
   "className": "Schematic_Tutorial3_C",
   "name": "HUB Upgrade 4",
+  "icon": "schematic-tutorial3-c",
   "type": "EST_Tutorial",
   "tier": 0,
   "cost": [
@@ -4838,6 +5092,7 @@
   "slug": "hub-upgrade-5",
   "className": "Schematic_Tutorial4_C",
   "name": "HUB Upgrade 5",
+  "icon": "schematic-tutorial4-c",
   "type": "EST_Tutorial",
   "tier": 0,
   "cost": [
@@ -4868,6 +5123,7 @@
   "slug": "hub-upgrade-6",
   "className": "Schematic_Tutorial5_C",
   "name": "HUB Upgrade 6",
+  "icon": "schematic-tutorial5-c",
   "type": "EST_Tutorial",
   "tier": 0,
   "cost": [
@@ -4904,6 +5160,7 @@
   "slug": "hypertube-floor-hole",
   "className": "ResourceSink_HyperTubeFloorHole_C",
   "name": "Hypertube Floor Hole",
+  "icon": "resourcesink-hypertubefloorhole-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4925,6 +5182,7 @@
   "slug": "hypertube-wall-attachments",
   "className": "ResourceSink_HyperTubeWallAttachements_C",
   "name": "Hypertube Wall Attachments",
+  "icon": "resourcesink-hypertubewallattachements-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4947,6 +5205,7 @@
   "slug": "hypertubes",
   "className": "Schematic_4-4_C",
   "name": "Hypertubes",
+  "icon": "schematic-4-4-c",
   "type": "EST_Milestone",
   "tier": 4,
   "cost": [
@@ -4977,6 +5236,7 @@
   "slug": "indoor-lighting",
   "className": "ResourceSink_CeilingLight_C",
   "name": "Indoor Lighting",
+  "icon": "resourcesink-ceilinglight-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -4999,6 +5259,7 @@
   "slug": "industrial-manufacturing",
   "className": "Schematic_5-2_C",
   "name": "Industrial Manufacturing",
+  "icon": "schematic-5-2-c",
   "type": "EST_Milestone",
   "tier": 6,
   "cost": [
@@ -5034,6 +5295,7 @@
   "slug": "industrial-railing",
   "className": "ResourceSink_FactoryRailing_C",
   "name": "Industrial Railing",
+  "icon": "resourcesink-factoryrailing-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5051,6 +5313,7 @@
   "slug": "industrial-walkways",
   "className": "ResourceSink_Walkways_C",
   "name": "Industrial Walkways",
+  "icon": "resourcesink-walkways-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5068,6 +5331,7 @@
   "slug": "inflated-pocket-dimension",
   "className": "Schematic_Alternate_InventorySlots2_C",
   "name": "Inflated Pocket Dimension",
+  "icon": "schematic-alternate-inventoryslots2-c",
   "type": "EST_Alternate",
   "tier": 5,
   "cost": [],
@@ -5082,6 +5346,7 @@
   "slug": "inflated-pocket-dimension-2",
   "className": "Schematic_Alternate_InventorySlots1_C",
   "name": "Inflated Pocket Dimension",
+  "icon": "schematic-alternate-inventoryslots1-c",
   "type": "EST_Alternate",
   "tier": 2,
   "cost": [],
@@ -5094,6 +5359,7 @@
   "slug": "inflated-pocket-dimension-3",
   "className": "Research_AOrgans_3_C",
   "name": "Inflated Pocket Dimension",
+  "icon": "research-aorgans-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -5115,6 +5381,7 @@
   "slug": "inflated-pocket-dimension-4",
   "className": "Research_Caterium_3_1_C",
   "name": "Inflated Pocket Dimension",
+  "icon": "research-caterium-3-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -5132,6 +5399,7 @@
   "slug": "inflated-pocket-dimension-5",
   "className": "Research_Sulfur_6_C",
   "name": "Inflated Pocket Dimension",
+  "icon": "research-sulfur-6-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -5153,6 +5421,7 @@
   "slug": "inverted-corner-ramp-pack",
   "className": "ResourceSink_InvertedCornerRamps_C",
   "name": "Inverted Corner Ramp Pack",
+  "icon": "resourcesink-invertedcornerramps-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5177,6 +5446,7 @@
   "slug": "inverted-ramp-set",
   "className": "ResourceSink_InvertedRampPack_C",
   "name": "Inverted Ramp Set",
+  "icon": "resourcesink-invertedramppack-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5198,6 +5468,7 @@
   "slug": "inverted-ramp-wall-bundle",
   "className": "ResourceSink_Diagonal_Down_Wallset_C",
   "name": "Inverted Ramp Wall Bundle",
+  "icon": "resourcesink-diagonal-down-wallset-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5220,6 +5491,7 @@
   "slug": "ionized-fuel",
   "className": "Research_Sulfur_IonizedFuel_C",
   "name": "Ionized Fuel",
+  "icon": "research-sulfur-ionizedfuel-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -5245,6 +5517,7 @@
   "slug": "iron-plate-purchase",
   "className": "ResourceSink_Plate_C",
   "name": "Iron Plate (purchase)",
+  "icon": "resourcesink-plate-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5262,6 +5535,7 @@
   "slug": "iron-rebar-pack-purchase",
   "className": "ResourceSink_AmmoPack_C",
   "name": "Iron Rebar Pack (purchase)",
+  "icon": "resourcesink-ammopack-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5281,6 +5555,7 @@
   "slug": "iron-rod-purchase",
   "className": "ResourceSink_Rod_C",
   "name": "Iron Rod (purchase)",
+  "icon": "resourcesink-rod-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5298,6 +5573,7 @@
   "slug": "jetpack",
   "className": "Schematic_6-2_C",
   "name": "Jetpack",
+  "icon": "schematic-6-2-c",
   "type": "EST_Milestone",
   "tier": 5,
   "cost": [
@@ -5325,6 +5601,7 @@
   "slug": "joel-syntholm-boombox-tape",
   "className": "Schematic_JoelSyntholm_C",
   "name": "Joel Syntholm Boombox Tape",
+  "icon": "schematic-joelsyntholm-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -5342,6 +5619,7 @@
   "slug": "jump-pads",
   "className": "Schematic_2-3_C",
   "name": "Jump Pads",
+  "icon": "schematic-2-3-c",
   "type": "EST_Milestone",
   "tier": 2,
   "cost": [
@@ -5370,6 +5648,7 @@
   "slug": "label-sign-bundle",
   "className": "ResourceSink_LabelSigns_C",
   "name": "Label Sign Bundle",
+  "icon": "resourcesink-labelsigns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5394,6 +5673,7 @@
   "slug": "le-michael-boombox-tape",
   "className": "Schematic_LeMichael_C",
   "name": "Le Michael Boombox Tape",
+  "icon": "schematic-lemichael-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -5411,6 +5691,7 @@
   "slug": "leading-edge-production",
   "className": "Schematic_8-4_C",
   "name": "Leading-Edge Production",
+  "icon": "schematic-8-4-c",
   "type": "EST_Milestone",
   "tier": 8,
   "cost": [
@@ -5440,6 +5721,7 @@
   "slug": "light-control-panel",
   "className": "ResourceSink_LightControlPanel_C",
   "name": "Light Control Panel",
+  "icon": "resourcesink-lightcontrolpanel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5461,6 +5743,7 @@
   "slug": "lizard-doggo-purchase",
   "className": "ResourceSink_StatueLizardDoggo_C",
   "name": "Lizard Doggo (purchase)",
+  "icon": "resourcesink-statuelizarddoggo-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5478,6 +5761,7 @@
   "slug": "logistics",
   "className": "Schematic_1-2_C",
   "name": "Logistics",
+  "icon": "schematic-1-2-c",
   "type": "EST_Milestone",
   "tier": 1,
   "cost": [
@@ -5507,6 +5791,7 @@
   "slug": "logistics-mk-2",
   "className": "Schematic_3-2_C",
   "name": "Logistics Mk.2",
+  "icon": "schematic-3-2-c",
   "type": "EST_Milestone",
   "tier": 2,
   "cost": [
@@ -5540,6 +5825,7 @@
   "slug": "logistics-mk-3",
   "className": "Schematic_5-3_C",
   "name": "Logistics Mk.3",
+  "icon": "schematic-5-3-c",
   "type": "EST_Milestone",
   "tier": 4,
   "cost": [
@@ -5570,6 +5856,7 @@
   "slug": "logistics-mk-4",
   "className": "Schematic_6-1_C",
   "name": "Logistics Mk.4",
+  "icon": "schematic-6-1-c",
   "type": "EST_Milestone",
   "tier": 5,
   "cost": [
@@ -5599,6 +5886,7 @@
   "slug": "logistics-mk-5",
   "className": "Schematic_7-2_C",
   "name": "Logistics Mk.5",
+  "icon": "schematic-7-2-c",
   "type": "EST_Milestone",
   "tier": 7,
   "cost": [
@@ -5627,6 +5915,7 @@
   "slug": "manual-depot-uploader",
   "className": "Research_Alien_CentralInventory_C",
   "name": "Manual Depot Uploader",
+  "icon": "research-alien-centralinventory-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -5652,6 +5941,7 @@
   "slug": "matter-conversion",
   "className": "Schematic_9-1_C",
   "name": "Matter Conversion",
+  "icon": "schematic-9-1-c",
   "type": "EST_Milestone",
   "tier": 9,
   "cost": [
@@ -5686,6 +5976,7 @@
   "slug": "medical-box-personal-storage-skin",
   "className": "ResourceSink_MedicalBoxSkin_C",
   "name": "Medical Box - Personal Storage Skin",
+  "icon": "resourcesink-medicalboxskin-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5705,6 +5996,7 @@
   "slug": "medical-properties",
   "className": "Research_Mycelia_4_C",
   "name": "Medical Properties",
+  "icon": "research-mycelia-4-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -5726,6 +6018,7 @@
   "slug": "mercer-sphere-analysis",
   "className": "Research_Alien_MercerSphere_C",
   "name": "Mercer Sphere Analysis",
+  "icon": "research-alien-mercersphere-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -5743,6 +6036,7 @@
   "slug": "metal-barriers",
   "className": "ResourceSink_FactoryBarrier2_C",
   "name": "Metal Barriers",
+  "icon": "resourcesink-factorybarrier2-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5763,6 +6057,7 @@
   "slug": "metal-pillar-set",
   "className": "ResourceSink_FoudationPillar_C",
   "name": "Metal Pillar Set",
+  "icon": "resourcesink-foudationpillar-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5785,6 +6080,7 @@
   "slug": "metal-roof-material",
   "className": "ResourceSink_Customizer_SteelRoofMaterial_C",
   "name": "Metal Roof Material",
+  "icon": "resourcesink-customizer-steelroofmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5805,6 +6101,7 @@
   "slug": "modern-catwalks",
   "className": "ResourceSink_Catwalks_C",
   "name": "Modern Catwalks",
+  "icon": "resourcesink-catwalks-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5829,6 +6126,7 @@
   "slug": "modern-railing",
   "className": "ResourceSink_FactoryFence_C",
   "name": "Modern Railing",
+  "icon": "resourcesink-factoryfence-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5848,6 +6146,7 @@
   "slug": "modular-frame-purchase",
   "className": "ResourceSink_ModularFrame_C",
   "name": "Modular Frame (purchase)",
+  "icon": "resourcesink-modularframe-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5867,6 +6166,7 @@
   "slug": "monorail-train-technology",
   "className": "Schematic_6-3_C",
   "name": "Monorail Train Technology",
+  "icon": "schematic-6-3-c",
   "type": "EST_Milestone",
   "tier": 6,
   "cost": [
@@ -5905,6 +6205,7 @@
   "slug": "motor-purchase",
   "className": "ResourceSink_Motor_C",
   "name": "Motor (purchase)",
+  "icon": "resourcesink-motor-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5924,6 +6225,7 @@
   "slug": "mycelia",
   "className": "Research_Mycelia_1_C",
   "name": "Mycelia",
+  "icon": "research-mycelia-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -5943,6 +6245,7 @@
   "slug": "neural-quantum-processor-purchase",
   "className": "ResourceSink_NeuralQuantumProcessor_C",
   "name": "Neural-Quantum Processor (purchase)",
+  "icon": "resourcesink-neuralquantumprocessor-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5962,6 +6265,7 @@
   "slug": "nobelisk-pack-purchase",
   "className": "ResourceSink_Explosives_C",
   "name": "Nobelisk Pack (purchase)",
+  "icon": "resourcesink-explosives-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -5981,6 +6285,7 @@
   "slug": "nuclear-deterrent-development",
   "className": "Research_Sulfur_5_1_C",
   "name": "Nuclear Deterrent Development",
+  "icon": "research-sulfur-5-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6008,6 +6313,7 @@
   "slug": "nuclear-power",
   "className": "Schematic_8-1_C",
   "name": "Nuclear Power",
+  "icon": "schematic-8-1-c",
   "type": "EST_Milestone",
   "tier": 8,
   "cost": [
@@ -6043,6 +6349,7 @@
   "slug": "nuclear-waste-trinket",
   "className": "Schematic_Trinket_NuclearWaste_C",
   "name": "Nuclear Waste Trinket",
+  "icon": "schematic-trinket-nuclearwaste-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -6055,6 +6362,7 @@
   "slug": "number-patterns",
   "className": "ResourceSink_Number_FoundationPatterns_C",
   "name": "Number Patterns",
+  "icon": "resourcesink-number-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6072,6 +6380,7 @@
   "slug": "nutritional-inhaler",
   "className": "Research_Nutrients_4_C",
   "name": "Nutritional Inhaler",
+  "icon": "research-nutrients-4-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6099,6 +6408,7 @@
   "slug": "nutritional-processor",
   "className": "Research_Nutrients_3_C",
   "name": "Nutritional Processor",
+  "icon": "research-nutrients-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6124,6 +6434,7 @@
   "slug": "obstacle-clearing",
   "className": "Schematic_2-2_C",
   "name": "Obstacle Clearing",
+  "icon": "schematic-2-2-c",
   "type": "EST_Milestone",
   "tier": 2,
   "cost": [
@@ -6152,6 +6463,7 @@
   "slug": "oil-processing",
   "className": "Schematic_5-1_C",
   "name": "Oil Processing",
+  "icon": "schematic-5-1-c",
   "type": "EST_Milestone",
   "tier": 5,
   "cost": [
@@ -6190,6 +6502,7 @@
   "slug": "overclock-production",
   "className": "Research_PowerSlugs_2_C",
   "name": "Overclock Production",
+  "icon": "research-powerslugs-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6215,6 +6528,7 @@
   "slug": "packaged-fuel-purchase",
   "className": "ResourceSink_PackagedFuel_C",
   "name": "Packaged Fuel (purchase)",
+  "icon": "resourcesink-packagedfuel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6234,6 +6548,7 @@
   "slug": "packaged-ionized-fuel-purchase",
   "className": "ResourceSink_IonizedFuel_C",
   "name": "Packaged Ionized Fuel (purchase)",
+  "icon": "resourcesink-ionizedfuel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6253,6 +6568,7 @@
   "slug": "packaged-liquid-biofuel-purchase",
   "className": "ResourceSink_PackagedBiofuel_C",
   "name": "Packaged Liquid Biofuel (purchase)",
+  "icon": "resourcesink-packagedbiofuel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6272,6 +6588,7 @@
   "slug": "packaged-rocket-fuel-purchase",
   "className": "ResourceSink_RocketFuel_C",
   "name": "Packaged Rocket Fuel (purchase)",
+  "icon": "resourcesink-rocketfuel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6291,6 +6608,7 @@
   "slug": "packaged-turbofuel-purchase",
   "className": "ResourceSink_PackagedTurboFuel_C",
   "name": "Packaged Turbofuel (purchase)",
+  "icon": "resourcesink-packagedturbofuel-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6310,6 +6628,7 @@
   "slug": "paleberry",
   "className": "Research_Nutrients_0_C",
   "name": "Paleberry",
+  "icon": "research-nutrients-0-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6327,6 +6646,7 @@
   "slug": "parachute",
   "className": "Research_Mycelia_3_C",
   "name": "Parachute",
+  "icon": "research-mycelia-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6350,6 +6670,7 @@
   "slug": "part-assembly",
   "className": "Schematic_2-1_C",
   "name": "Part Assembly",
+  "icon": "schematic-2-1-c",
   "type": "EST_Milestone",
   "tier": 2,
   "cost": [
@@ -6385,6 +6706,7 @@
   "slug": "particle-enrichment",
   "className": "Schematic_8-5_C",
   "name": "Particle Enrichment",
+  "icon": "schematic-8-5-c",
   "type": "EST_Milestone",
   "tier": 8,
   "cost": [
@@ -6425,6 +6747,7 @@
   "slug": "pathway-patterns",
   "className": "ResourceSink_Pathways_FoundationPatterns_C",
   "name": "Pathway Patterns",
+  "icon": "resourcesink-pathways-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6442,6 +6765,7 @@
   "slug": "peak-efficiency",
   "className": "Schematic_9-5_C",
   "name": "Peak Efficiency",
+  "icon": "schematic-9-5-c",
   "type": "EST_Milestone",
   "tier": 9,
   "cost": [
@@ -6476,6 +6800,7 @@
   "slug": "petroleum-power",
   "className": "Schematic_5-5_C",
   "name": "Petroleum Power",
+  "icon": "schematic-5-5-c",
   "type": "EST_Milestone",
   "tier": 5,
   "cost": [
@@ -6508,6 +6833,7 @@
   "slug": "pipeline-engineering-mk-2",
   "className": "Schematic_6-5_C",
   "name": "Pipeline Engineering Mk.2",
+  "icon": "schematic-6-5-c",
   "type": "EST_Milestone",
   "tier": 6,
   "cost": [
@@ -6536,6 +6862,7 @@
   "slug": "pipeline-floor-hole",
   "className": "ResourceSink_PipelineFloorHole_C",
   "name": "Pipeline Floor Hole",
+  "icon": "resourcesink-pipelinefloorhole-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6557,6 +6884,7 @@
   "slug": "pipeline-wall-attachments",
   "className": "ResourceSink_PipelineWallAttachments_C",
   "name": "Pipeline Wall Attachments",
+  "icon": "resourcesink-pipelinewallattachments-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6579,6 +6907,7 @@
   "slug": "plastic-purchase",
   "className": "ResourceSink_Plastic_C",
   "name": "Plastic (purchase)",
+  "icon": "resourcesink-plastic-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6598,6 +6927,7 @@
   "slug": "power-augmenter",
   "className": "Research_Alien_PowerBooster_C",
   "name": "Power Augmenter",
+  "icon": "research-alien-powerbooster-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -6625,6 +6955,7 @@
   "slug": "power-poles-mk-2",
   "className": "Research_Caterium_4_2_C",
   "name": "Power Poles Mk.2",
+  "icon": "research-caterium-4-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6644,6 +6975,7 @@
   "slug": "power-poles-mk-3",
   "className": "Research_Caterium_6_2_C",
   "name": "Power Poles Mk.3",
+  "icon": "research-caterium-6-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6667,6 +6999,7 @@
   "slug": "power-switch",
   "className": "Research_Caterium_4_1_2_C",
   "name": "Power Switch",
+  "icon": "research-caterium-4-1-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6690,6 +7023,7 @@
   "slug": "pressure-conversion-cube-purchase",
   "className": "ResourceSink_PressureConversionCube_C",
   "name": "Pressure Conversion Cube (purchase)",
+  "icon": "resourcesink-pressureconversioncube-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6709,6 +7043,7 @@
   "slug": "pretty-good-pioneering-purchase",
   "className": "ResourceSink_StatueSilverPioneer_C",
   "name": "Pretty Good Pioneering (purchase)",
+  "icon": "resourcesink-statuesilverpioneer-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6726,6 +7061,7 @@
   "slug": "priority-power-switch",
   "className": "Research_Caterium_5_1_C",
   "name": "Priority Power Switch",
+  "icon": "research-caterium-5-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6749,6 +7085,7 @@
   "slug": "production-amplifier",
   "className": "Research_Alien_ProductionBooster_C",
   "name": "Production Amplifier",
+  "icon": "research-alien-productionbooster-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -6774,6 +7111,7 @@
   "slug": "programmable-splitter",
   "className": "Research_Caterium_7_1_C",
   "name": "Programmable Splitter",
+  "icon": "research-caterium-7-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6801,6 +7139,7 @@
   "slug": "protein-inhaler",
   "className": "Research_AOrgans_2_C",
   "name": "Protein Inhaler",
+  "icon": "research-aorgans-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6828,6 +7167,7 @@
   "slug": "pulse-nobelisk-pack-purchase",
   "className": "ResourceSink_NobeliskPulse_C",
   "name": "Pulse Nobelisk Pack (purchase)",
+  "icon": "resourcesink-nobeliskpulse-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6847,6 +7187,7 @@
   "slug": "purple-power-slugs",
   "className": "Research_PowerSlugs_5_C",
   "name": "Purple Power Slugs",
+  "icon": "research-powerslugs-5-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6874,6 +7215,7 @@
   "slug": "quantum-encoding",
   "className": "Schematic_9-2_C",
   "name": "Quantum Encoding",
+  "icon": "schematic-9-2-c",
   "type": "EST_Milestone",
   "tier": 9,
   "cost": [
@@ -6911,6 +7253,7 @@
   "slug": "quarter-pipe-extensions-pack",
   "className": "ResourceSink_QuarterPipeExtensions_C",
   "name": "Quarter Pipe Extensions Pack",
+  "icon": "resourcesink-quarterpipeextensions-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6935,6 +7278,7 @@
   "slug": "quarter-pipes-pack",
   "className": "ResourceSink_CurvedFoundationPack_C",
   "name": "Quarter Pipes Pack",
+  "icon": "resourcesink-curvedfoundationpack-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6959,6 +7303,7 @@
   "slug": "quartz",
   "className": "Research_Quartz_0_C",
   "name": "Quartz",
+  "icon": "research-quartz-0-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -6976,6 +7321,7 @@
   "slug": "quartz-crystal-purchase",
   "className": "ResourceSink_QuartzCrystal_C",
   "name": "Quartz Crystal (purchase)",
+  "icon": "resourcesink-quartzcrystal-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -6996,6 +7342,7 @@
   "slug": "quartz-crystals",
   "className": "Research_Quartz_1_1_C",
   "name": "Quartz Crystals",
+  "icon": "research-quartz-1-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7015,6 +7362,7 @@
   "slug": "quickwire",
   "className": "Research_Caterium_2_C",
   "name": "Quickwire",
+  "icon": "research-caterium-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7034,6 +7382,7 @@
   "slug": "quickwire-purchase",
   "className": "ResourceSink_Quickwire_C",
   "name": "Quickwire (purchase)",
+  "icon": "resourcesink-quickwire-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7053,6 +7402,7 @@
   "slug": "radar-technology",
   "className": "Research_Quartz_4_C",
   "name": "Radar Technology",
+  "icon": "research-quartz-4-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7080,6 +7430,7 @@
   "slug": "radiation-filters-purchase",
   "className": "ResourceSink_RadiationFilters_C",
   "name": "Radiation Filters (purchase)",
+  "icon": "resourcesink-radiationfilters-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7099,6 +7450,7 @@
   "slug": "radio-control-unit-purchase",
   "className": "ResourceSink_RadioControlUnit_C",
   "name": "Radio Control Unit (purchase)",
+  "icon": "resourcesink-radiocontrolunit-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7118,6 +7470,7 @@
   "slug": "radio-signal-scanning",
   "className": "Research_Quartz_4_1_C",
   "name": "Radio Signal Scanning",
+  "icon": "research-quartz-4-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7143,6 +7496,7 @@
   "slug": "railway-signalling",
   "className": "Schematic_6-7_C",
   "name": "Railway Signalling",
+  "icon": "schematic-6-7-c",
   "type": "EST_Milestone",
   "tier": 6,
   "cost": [
@@ -7171,6 +7525,7 @@
   "slug": "ramp-wall-bundle",
   "className": "ResourceSink_Diagonal_Up_WallSet_C",
   "name": "Ramp Wall Bundle",
+  "icon": "resourcesink-diagonal-up-wallset-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7193,6 +7548,7 @@
   "slug": "reinforced-iron-plate-purchase",
   "className": "ResourceSink_ReinforcedIronPlate_C",
   "name": "Reinforced Iron Plate (purchase)",
+  "icon": "resourcesink-reinforcedironplate-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7210,6 +7566,7 @@
   "slug": "resource-sink-bonus-program",
   "className": "Schematic_2-5_C",
   "name": "Resource Sink Bonus Program",
+  "icon": "schematic-2-5-c",
   "type": "EST_Milestone",
   "tier": 2,
   "cost": [
@@ -7242,6 +7599,7 @@
   "slug": "rifle-ammo-pack-purchase",
   "className": "ResourceSink_AdvancedAmmoPack_C",
   "name": "Rifle Ammo Pack (purchase)",
+  "icon": "resourcesink-advancedammopack-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7261,6 +7619,7 @@
   "slug": "road-barrier",
   "className": "ResourceSink_FactoryBarrier_C",
   "name": "Road Barrier",
+  "icon": "resourcesink-factorybarrier-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7280,6 +7639,7 @@
   "slug": "rocket-fuel",
   "className": "Research_Sulfur_RocketFuel_C",
   "name": "Rocket Fuel",
+  "icon": "research-sulfur-rocketfuel-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7305,6 +7665,7 @@
   "slug": "rotor-purchase",
   "className": "ResourceSink_Rotor_C",
   "name": "Rotor (purchase)",
+  "icon": "resourcesink-rotor-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7324,6 +7685,7 @@
   "slug": "rubber-purchase",
   "className": "ResourceSink_Rubber_C",
   "name": "Rubber (purchase)",
+  "icon": "resourcesink-rubber-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7343,6 +7705,7 @@
   "slug": "sam-analysis",
   "className": "Research_Alien_SAM_C",
   "name": "SAM Analysis",
+  "icon": "research-alien-sam-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -7360,6 +7723,7 @@
   "slug": "sam-fluctuator",
   "className": "Research_Alien_SAMFluctuator_C",
   "name": "SAM Fluctuator",
+  "icon": "research-alien-samfluctuator-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -7387,6 +7751,7 @@
   "slug": "sam-reanimation",
   "className": "Research_Alien_ActiveSAM_C",
   "name": "SAM Reanimation",
+  "icon": "research-alien-activesam-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -7406,6 +7771,7 @@
   "slug": "sanctum-2-boombox-tape",
   "className": "Schematic_Sanctum2_C",
   "name": "Sanctum 2 Boombox Tape",
+  "icon": "schematic-sanctum2-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -7423,6 +7789,7 @@
   "slug": "sanctum-boombox-tape",
   "className": "Schematic_Sanctum_C",
   "name": "Sanctum Boombox Tape",
+  "icon": "schematic-sanctum-c",
   "type": "EST_ResourceSink",
   "tier": 0,
   "cost": [
@@ -7440,6 +7807,7 @@
   "slug": "satisfactory-pioneering-purchase",
   "className": "ResourceSink_StatueGoldPioneer_C",
   "name": "Satisfactory Pioneering (purchase)",
+  "icon": "resourcesink-statuegoldpioneer-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7457,6 +7825,7 @@
   "slug": "scout-helmet",
   "className": "Schematic_Helmet_Scout_C",
   "name": "Scout Helmet",
+  "icon": "schematic-helmet-scout-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -7469,6 +7838,7 @@
   "slug": "screw-purchase",
   "className": "ResourceSink_Screw_C",
   "name": "Screw (purchase)",
+  "icon": "resourcesink-screw-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7486,6 +7856,7 @@
   "slug": "shatter-rebar",
   "className": "Research_Quartz_2_1_C",
   "name": "Shatter Rebar",
+  "icon": "research-quartz-2-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7509,6 +7880,7 @@
   "slug": "shatter-rebar-pack-purchase",
   "className": "ResourceSink_RebarShatter_C",
   "name": "Shatter Rebar Pack (purchase)",
+  "icon": "resourcesink-rebarshatter-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7528,6 +7900,7 @@
   "slug": "signal-systems",
   "className": "Research_Quartz_3_C",
   "name": "Signal Systems",
+  "icon": "research-quartz-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7549,6 +7922,7 @@
   "slug": "silica",
   "className": "Research_Quartz_1_2_C",
   "name": "Silica",
+  "icon": "research-quartz-1-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7568,6 +7942,7 @@
   "slug": "silica-purchase",
   "className": "ResourceSink_Silica_C",
   "name": "Silica (purchase)",
+  "icon": "resourcesink-silica-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7588,6 +7963,7 @@
   "slug": "silver-hog-purchase",
   "className": "ResourceSink_Statue_Hoggo_C",
   "name": "Silver Hog (purchase)",
+  "icon": "resourcesink-statue-hoggo-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7605,6 +7981,7 @@
   "slug": "slug-scanning",
   "className": "Research_PowerSlugs_3_C",
   "name": "Slug Scanning",
+  "icon": "research-powerslugs-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7630,6 +8007,7 @@
   "slug": "smart-splitter",
   "className": "Research_Caterium_4_1_1_C",
   "name": "Smart Splitter",
+  "icon": "research-caterium-4-1-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7653,6 +8031,7 @@
   "slug": "smokeless-powder",
   "className": "Research_Sulfur_3_C",
   "name": "Smokeless Powder",
+  "icon": "research-sulfur-3-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7676,6 +8055,7 @@
   "slug": "smokeless-powder-purchase",
   "className": "ResourceSink_SmokelessPowder_C",
   "name": "Smokeless Powder (purchase)",
+  "icon": "resourcesink-smokelesspowder-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7695,6 +8075,7 @@
   "slug": "solid-line-patterns",
   "className": "ResourceSink_FullLines_FoundationPatterns_C",
   "name": "Solid Line Patterns",
+  "icon": "resourcesink-fulllines-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7712,6 +8093,7 @@
   "slug": "somersloop-analysis",
   "className": "Research_Alien_Somersloop_C",
   "name": "Somersloop Analysis",
+  "icon": "research-alien-somersloop-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -7729,6 +8111,7 @@
   "slug": "somersloop-trinket",
   "className": "Schematic_Trinket_Somersloop_C",
   "name": "Somersloop Trinket",
+  "icon": "schematic-trinket-somersloop-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -7741,6 +8124,7 @@
   "slug": "spatial-energy-regulation",
   "className": "Schematic_9-4_C",
   "name": "Spatial Energy Regulation",
+  "icon": "schematic-9-4-c",
   "type": "EST_Milestone",
   "tier": 9,
   "cost": [
@@ -7775,6 +8159,7 @@
   "slug": "spitter-research",
   "className": "Research_AOrgans_0_C",
   "name": "Spitter Research",
+  "icon": "research-aorgans-0-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7794,6 +8179,7 @@
   "slug": "standard-ficsit-build-gun",
   "className": "Schematic_Skin_Buildgun_Default_C",
   "name": "Standard FICSIT Build Gun",
+  "icon": "schematic-skin-buildgun-default-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -7806,6 +8192,7 @@
   "slug": "standard-ficsit-helmet",
   "className": "Schematic_Helmet_Default_C",
   "name": "Standard FICSIT Helmet",
+  "icon": "schematic-helmet-default-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -7818,6 +8205,7 @@
   "slug": "stator-purchase",
   "className": "ResourceSink_Stator_C",
   "name": "Stator (purchase)",
+  "icon": "resourcesink-stator-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7837,6 +8225,7 @@
   "slug": "steel-beam-purchase",
   "className": "ResourceSink_SteelBeam_C",
   "name": "Steel Beam (purchase)",
+  "icon": "resourcesink-steelbeam-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7856,6 +8245,7 @@
   "slug": "steel-framed-windows",
   "className": "ResourceSink_FrameWindows_C",
   "name": "Steel-Framed Windows",
+  "icon": "resourcesink-framewindows-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7882,6 +8272,7 @@
   "slug": "steel-pipe-purchase",
   "className": "ResourceSink_SteelPipe_C",
   "name": "Steel Pipe (purchase)",
+  "icon": "resourcesink-steelpipe-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7901,6 +8292,7 @@
   "slug": "steel-wall-material",
   "className": "ResourceSink_Customizer_SteelWallMaterial_C",
   "name": "Steel Wall Material",
+  "icon": "resourcesink-customizer-steelwallmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7921,6 +8313,7 @@
   "slug": "stinger-research",
   "className": "Research_AO_Stinger_C",
   "name": "Stinger Research",
+  "icon": "research-ao-stinger-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7940,6 +8333,7 @@
   "slug": "street-light",
   "className": "ResourceSink_StreetLight_C",
   "name": "Street Light",
+  "icon": "resourcesink-streetlight-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -7961,6 +8355,7 @@
   "slug": "striped-build-gun",
   "className": "Schematic_Skin_Buildgun_Striped_C",
   "name": "Striped Build Gun",
+  "icon": "schematic-skin-buildgun-striped-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -7973,6 +8368,7 @@
   "slug": "structural-analysis",
   "className": "Research_AO_Pre_Rebar_C",
   "name": "Structural Analysis",
+  "icon": "research-ao-pre-rebar-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -7994,6 +8390,7 @@
   "slug": "structural-beam-pack",
   "className": "ResourceSink_BeamSet_C",
   "name": "Structural Beam Pack",
+  "icon": "resourcesink-beamset-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8019,6 +8416,7 @@
   "slug": "structural-frame-set",
   "className": "ResourceSink_FrameworkFoundations_C",
   "name": "Structural Frame Set",
+  "icon": "resourcesink-frameworkfoundations-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8045,6 +8443,7 @@
   "slug": "stun-rebar",
   "className": "Research_Caterium_3_2_C",
   "name": "Stun Rebar",
+  "icon": "research-caterium-3-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8068,6 +8467,7 @@
   "slug": "stun-rebar-pack-purchase",
   "className": "ResourceSink_RebarStun_C",
   "name": "Stun Rebar Pack (purchase)",
+  "icon": "resourcesink-rebarstun-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8087,6 +8487,7 @@
   "slug": "sulfur",
   "className": "Research_Sulfur_0_C",
   "name": "Sulfur",
+  "icon": "research-sulfur-0-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8104,6 +8505,7 @@
   "slug": "supercomputer-purchase",
   "className": "ResourceSink_SuperComputer_C",
   "name": "Supercomputer (purchase)",
+  "icon": "resourcesink-supercomputer-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8123,6 +8525,7 @@
   "slug": "superposition-oscillator-purchase",
   "className": "ResourceSink_SuperPositionOscillator_C",
   "name": "Superposition Oscillator (purchase)",
+  "icon": "resourcesink-superpositionoscillator-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8142,6 +8545,7 @@
   "slug": "synthetic-polyester-fabric",
   "className": "Research_Mycelia_2_1_C",
   "name": "Synthetic Polyester Fabric",
+  "icon": "research-mycelia-2-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8165,6 +8569,7 @@
   "slug": "synthetic-power-shard-purchase",
   "className": "ResourceSink_SyntheticPowerShard_C",
   "name": "Synthetic Power Shard (purchase)",
+  "icon": "resourcesink-syntheticpowershard-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8184,6 +8589,7 @@
   "slug": "synthetic-power-shards",
   "className": "Research_PowerSlugs_6_C",
   "name": "Synthetic Power Shards",
+  "icon": "research-powerslugs-6-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8211,6 +8617,7 @@
   "slug": "tar-roof-material",
   "className": "ResourceSink_Customizer_TarRoofMaterial_C",
   "name": "Tar Roof Material",
+  "icon": "resourcesink-customizer-tarroofmaterial-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8230,6 +8637,7 @@
   "slug": "the-explorer",
   "className": "Research_Quartz_3_1_C",
   "name": "The Explorer",
+  "icon": "research-quartz-3-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8253,6 +8661,7 @@
   "slug": "the-nobelisk-detonator",
   "className": "Research_Sulfur_3_1_C",
   "name": "The Nobelisk Detonator",
+  "icon": "research-sulfur-3-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8281,6 +8690,7 @@
   "slug": "the-rebar-gun",
   "className": "Research_ACarapace_2_C",
   "name": "The Rebar Gun",
+  "icon": "research-acarapace-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8309,6 +8719,7 @@
   "slug": "the-rifle",
   "className": "Research_Sulfur_4_1_C",
   "name": "The Rifle",
+  "icon": "research-sulfur-4-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8337,6 +8748,7 @@
   "slug": "therapeutic-inhaler",
   "className": "Research_Mycelia_6_C",
   "name": "Therapeutic Inhaler",
+  "icon": "research-mycelia-6-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8364,6 +8776,7 @@
   "slug": "tilted-walls",
   "className": "ResourceSink_Tilted_Walls_C",
   "name": "Tilted Walls",
+  "icon": "resourcesink-tilted-walls-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8388,6 +8801,7 @@
   "slug": "time-crystal-purchase",
   "className": "ResourceSink_TimeCrystal_C",
   "name": "Time Crystal (purchase)",
+  "icon": "resourcesink-timecrystal-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8407,6 +8821,7 @@
   "slug": "toxic-cellular-modification",
   "className": "Research_Mycelia_8_C",
   "name": "Toxic Cellular Modification",
+  "icon": "research-mycelia-8-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8434,6 +8849,7 @@
   "slug": "transportation-icon-patterns",
   "className": "ResourceSink_IconsTransport_FoundationPatterns_C",
   "name": "Transportation Icon Patterns",
+  "icon": "resourcesink-iconstransport-foundationpatterns-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8451,6 +8867,7 @@
   "slug": "turbo-motor-purchase",
   "className": "ResourceSink_TurboMotor_C",
   "name": "Turbo Motor (purchase)",
+  "icon": "resourcesink-turbomotor-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8470,6 +8887,7 @@
   "slug": "turbo-rifle-ammo",
   "className": "Research_Sulfur_5_2_C",
   "name": "Turbo Rifle Ammo",
+  "icon": "research-sulfur-5-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8497,6 +8915,7 @@
   "slug": "turbo-rifle-ammo-pack-purchase",
   "className": "ResourceSink_RifleAmmoTurbo_C",
   "name": "Turbo Rifle Ammo Pack (purchase)",
+  "icon": "resourcesink-rifleammoturbo-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8516,6 +8935,7 @@
   "slug": "turbofuel",
   "className": "Research_Sulfur_TurboFuel_C",
   "name": "Turbofuel",
+  "icon": "research-sulfur-turbofuel-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8540,6 +8960,7 @@
   "slug": "unpainted-finish",
   "className": "ResourceSink_UnPainted_PaintFinish_C",
   "name": "Unpainted Finish",
+  "icon": "resourcesink-unpainted-paintfinish-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8557,6 +8978,7 @@
   "slug": "upload-upgrade-120-min",
   "className": "Research_Alien_CentralUploadBoost_03_C",
   "name": "Upload Upgrade: 120/min",
+  "icon": "research-alien-centraluploadboost-03-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -8578,6 +9000,7 @@
   "slug": "upload-upgrade-240-min",
   "className": "Research_Alien_CentralUploadBoost_04_C",
   "name": "Upload Upgrade: 240/min",
+  "icon": "research-alien-centraluploadboost-04-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -8599,6 +9022,7 @@
   "slug": "upload-upgrade-30-min",
   "className": "Research_Alien_CentralUploadBoost_01_C",
   "name": "Upload Upgrade: 30/min",
+  "icon": "research-alien-centraluploadboost-01-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -8620,6 +9044,7 @@
   "slug": "upload-upgrade-60-min",
   "className": "Research_Alien_CentralUploadBoost_02_C",
   "name": "Upload Upgrade: 60/min",
+  "icon": "research-alien-centraluploadboost-02-c",
   "type": "EST_MAM",
   "tier": 0,
   "cost": [
@@ -8641,6 +9066,7 @@
   "slug": "vehicular-transport",
   "className": "Schematic_3-3_C",
   "name": "Vehicular Transport",
+  "icon": "schematic-3-3-c",
   "type": "EST_Milestone",
   "tier": 3,
   "cost": [
@@ -8673,6 +9099,7 @@
   "slug": "vitamin-inhaler",
   "className": "Research_Mycelia_5_C",
   "name": "Vitamin Inhaler",
+  "icon": "research-mycelia-5-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8696,6 +9123,7 @@
   "slug": "volatile-applications",
   "className": "Research_Sulfur_2_C",
   "name": "Volatile Applications",
+  "icon": "research-sulfur-2-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8713,6 +9141,7 @@
   "slug": "wall-power-outlets-mk-1",
   "className": "ResourceSink_WallPowerPoles_C",
   "name": "Wall Power Outlets Mk.1",
+  "icon": "resourcesink-wallpowerpoles-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8733,6 +9162,7 @@
   "slug": "wall-power-outlets-mk-2",
   "className": "ResourceSink_WallPowerPolesMK2_C",
   "name": "Wall Power Outlets Mk.2",
+  "icon": "resourcesink-wallpowerpolesmk2-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8755,6 +9185,7 @@
   "slug": "wall-power-outlets-mk-3",
   "className": "ResourceSink_WallPowerPolesMK3_C",
   "name": "Wall Power Outlets Mk.3",
+  "icon": "resourcesink-wallpowerpolesmk3-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8777,6 +9208,7 @@
   "slug": "welder-helmet",
   "className": "Schematic_Helmet_Welder_C",
   "name": "Welder Helmet",
+  "icon": "schematic-helmet-welder-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -8789,6 +9221,7 @@
   "slug": "windowed-walls",
   "className": "ResourceSink_WindowedWalls_C",
   "name": "Windowed Walls",
+  "icon": "resourcesink-windowedwalls-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8813,6 +9246,7 @@
   "slug": "wire-purchase",
   "className": "ResourceSink_Wire_C",
   "name": "Wire (purchase)",
+  "icon": "resourcesink-wire-c",
   "type": "EST_ResourceSink",
   "tier": 1,
   "cost": [
@@ -8830,6 +9264,7 @@
   "slug": "wrench-trinket",
   "className": "Schematic_Trinket_Default_C",
   "name": "Wrench Trinket",
+  "icon": "schematic-trinket-default-c",
   "type": "EST_Customization",
   "tier": 0,
   "cost": [],
@@ -8842,6 +9277,7 @@
   "slug": "yellow-power-slugs",
   "className": "Research_PowerSlugs_4_C",
   "name": "Yellow Power Slugs",
+  "icon": "research-powerslugs-4-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [
@@ -8869,6 +9305,7 @@
   "slug": "zipline",
   "className": "Research_Caterium_2_1_C",
   "name": "Zipline",
+  "icon": "research-caterium-2-1-c",
   "type": "EST_MAM",
   "tier": 3,
   "cost": [

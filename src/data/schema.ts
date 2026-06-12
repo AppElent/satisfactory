@@ -73,6 +73,7 @@ export const schematicSchema = z.object({
 	slug: z.string(),
 	className: z.string(),
 	name: z.string(),
+	icon: z.string(),
 	type: z.string(),
 	tier: z.number(),
 	cost: z.array(itemAmountSchema),
