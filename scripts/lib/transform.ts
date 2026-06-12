@@ -146,16 +146,19 @@ export function transform(source: SourceData): TransformResult {
         else
           warnings.push(`schematic ${s.className}: unknown required schematic ${c}`)
       }
+      const cost: { item: string; amount: number }[] = []
+      for (const x of s.cost) {
+        const slug = itemSlugs.get(x.item) ?? buildingSlugs.get(x.item)
+        if (slug) cost.push({ item: slug, amount: x.amount })
+        else warnings.push(`schematic ${s.className}: unknown cost item ${x.item}`)
+      }
       return {
         slug: schematicSlugs.get(s.className) as string,
         className: s.className,
         name: s.name,
         type: s.type,
         tier: s.tier,
-        cost: s.cost.map((x) => ({
-          item: resolveItemRef(x.item, `schematic ${s.className} cost`),
-          amount: x.amount,
-        })),
+        cost,
         unlockRecipes,
         requiredSchematics,
         mam: s.mam,

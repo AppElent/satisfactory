@@ -22,7 +22,8 @@
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "generate-data": "node scripts/generate-data.ts"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.61.3",

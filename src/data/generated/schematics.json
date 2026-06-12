@@ -1,0 +1,8037 @@
+[
+	{
+		"slug": "absolute-ficsit-boombox-tape",
+		"className": "Schematic_AbsoluteFicsit_C",
+		"name": "Absolute FICSIT Boombox Tape",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "adequate-pioneering-purchase",
+		"className": "ResourceSink_StatueBronzePioneer_C",
+		"name": "Adequate Pioneering (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 25
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "advanced-aluminum-production",
+		"className": "Schematic_8-2_C",
+		"name": "Advanced Aluminum Production",
+		"type": "EST_Milestone",
+		"tier": 8,
+		"cost": [
+			{
+				"item": "radio-control-unit",
+				"amount": 50
+			},
+			{
+				"item": "aluminum-casing",
+				"amount": 200
+			},
+			{
+				"item": "alclad-aluminum-sheet",
+				"amount": 400
+			},
+			{
+				"item": "wire",
+				"amount": 3000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-frackingsmasher-c",
+			"recipe-frackingextractor-c",
+			"recipe-gastank-c",
+			"recipe-packagednitrogen-c",
+			"recipe-heatsink-c",
+			"recipe-coolingsystem-c",
+			"recipe-fusedmodularframe-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "advanced-steel-production",
+		"className": "Schematic_4-1_C",
+		"name": "Advanced Steel Production",
+		"type": "EST_Milestone",
+		"tier": 4,
+		"cost": [
+			{
+				"item": "steel-pipe",
+				"amount": 100
+			},
+			{
+				"item": "modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "rotor",
+				"amount": 200
+			},
+			{
+				"item": "concrete",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-minermk2-c",
+			"recipe-encasedindustrialbeam-c",
+			"recipe-stator-c",
+			"recipe-motor-c",
+			"recipe-spaceelevatorpart-3-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "aeronautical-engineering",
+		"className": "Schematic_7-4_C",
+		"name": "Aeronautical Engineering",
+		"type": "EST_Milestone",
+		"tier": 8,
+		"cost": [
+			{
+				"item": "radio-control-unit",
+				"amount": 50
+			},
+			{
+				"item": "alclad-aluminum-sheet",
+				"amount": 100
+			},
+			{
+				"item": "aluminum-casing",
+				"amount": 200
+			},
+			{
+				"item": "motor",
+				"amount": 300
+			}
+		],
+		"unlockRecipes": ["recipe-dronetransport-c", "recipe-dronestation-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ai-limiter",
+		"className": "Research_Caterium_4_1_C",
+		"name": "AI Limiter",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quickwire",
+				"amount": 200
+			},
+			{
+				"item": "copper-sheet",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-ailimiter-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "ai-limiter-purchase",
+		"className": "ResourceSink_AILimiter_C",
+		"name": "AI Limiter (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["ai-limiter", "aeronautical-engineering"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "alclad-aluminum-sheet-purchase",
+		"className": "ResourceSink_AlcladSheet_C",
+		"name": "Alclad Aluminum Sheet (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "alien-energy-harnessing",
+		"className": "Research_Alien_BoosterBlocker_C",
+		"name": "Alien Energy Harnessing",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "sam-fluctuator",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "alien-power-matrix",
+		"className": "Research_Alien_BoosterFuel_C",
+		"name": "Alien Power Matrix",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "singularity-cell",
+				"amount": 50
+			},
+			{
+				"item": "power-shard",
+				"amount": 100
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": ["recipe-alienpowerfuel-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "alternate-adhered-iron-plate",
+		"className": "Schematic_Alternate_AdheredIronPlate_C",
+		"name": "Alternate: Adhered Iron Plate",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-adheredironplate-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-alclad-casing",
+		"className": "Schematic_Alternate_AlcladCasing_C",
+		"name": "Alternate: Alclad Casing",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-alcladcasing-c"],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-aluminum-beam",
+		"className": "Schematic_Alternate_SteelBeam_Aluminum_C",
+		"name": "Alternate: Aluminum Beam",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelbeam-aluminum-c"],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-aluminum-rod",
+		"className": "Schematic_Alternate_AluminumRod_C",
+		"name": "Alternate: Aluminum Rod",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-aluminumrod-c"],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-automated-miner",
+		"className": "Schematic_Alternate_AutomatedMiner_C",
+		"name": "Alternate: Automated Miner",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-automatedminer-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-automated-speed-wiring",
+		"className": "Schematic_Alternate_HighSpeedWiring_C",
+		"name": "Alternate: Automated Speed Wiring",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-highspeedwiring-c"],
+		"requiredSchematics": ["advanced-steel-production", "ai-limiter"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-basic-iron-ingot",
+		"className": "Schematic_Alternate_IronIngot_Basic_C",
+		"name": "Alternate: Basic Iron Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ironingot-basic-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-biocoal",
+		"className": "Schematic_Alternate_Coal2_C",
+		"name": "Alternate: Biocoal",
+		"type": "EST_Alternate",
+		"tier": 3,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-coal-2-c"],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-bolted-frame",
+		"className": "Schematic_Alternate_BoltedFrame_C",
+		"name": "Alternate: Bolted Frame",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-boltedframe-c"],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-bolted-iron-plate",
+		"className": "Schematic_Alternate_ReinforcedIronPlate1_C",
+		"name": "Alternate: Bolted Iron Plate",
+		"type": "EST_Alternate",
+		"tier": 2,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-reinforcedironplate-1-c"],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-cast-screw",
+		"className": "Schematic_Alternate_Screw_C",
+		"name": "Alternate: Cast Screw",
+		"type": "EST_Alternate",
+		"tier": 1,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-screw-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-caterium-circuit-board",
+		"className": "Schematic_Alternate_CircuitBoard2_C",
+		"name": "Alternate: Caterium Circuit Board",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-circuitboard-2-c"],
+		"requiredSchematics": ["oil-processing", "caterium-ingots"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-caterium-computer",
+		"className": "Schematic_Alternate_Computer1_C",
+		"name": "Alternate: Caterium Computer",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-computer-1-c"],
+		"requiredSchematics": ["industrial-manufacturing", "caterium-ingots"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-caterium-wire",
+		"className": "Schematic_Alternate_Wire2_C",
+		"name": "Alternate: Caterium Wire",
+		"type": "EST_Alternate",
+		"tier": 3,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-wire-2-c"],
+		"requiredSchematics": ["caterium"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-charcoal",
+		"className": "Schematic_Alternate_Coal1_C",
+		"name": "Alternate: Charcoal",
+		"type": "EST_Alternate",
+		"tier": 3,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-coal-1-c"],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-cheap-silica",
+		"className": "Schematic_Alternate_Silica_C",
+		"name": "Alternate: Cheap Silica",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-silica-c"],
+		"requiredSchematics": ["silica"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-classic-battery",
+		"className": "Schematic_Alternate_ClassicBattery_C",
+		"name": "Alternate: Classic Battery",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-classicbattery-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-cloudy-diamonds",
+		"className": "Schematic_Alternate_Diamond_Cloudy_C",
+		"name": "Alternate: Cloudy Diamonds",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-diamond-cloudy-c"],
+		"requiredSchematics": ["matter-conversion"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-coated-cable",
+		"className": "Schematic_Alternate_CoatedCable_C",
+		"name": "Alternate: Coated Cable",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-coatedcable-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-coated-iron-canister",
+		"className": "Schematic_Alternate_CoatedIronCanister_C",
+		"name": "Alternate: Coated Iron Canister",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-coatedironcanister-c"],
+		"requiredSchematics": ["fluid-packaging"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-coated-iron-plate",
+		"className": "Schematic_Alternate_CoatedIronPlate_C",
+		"name": "Alternate: Coated Iron Plate",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-coatedironplate-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-coke-steel-ingot",
+		"className": "Schematic_Alternate_CokeSteelIngot_C",
+		"name": "Alternate: Coke Steel Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-cokesteelingot-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-compacted-steel-ingot",
+		"className": "Schematic_Alternate_IngotSteel2_C",
+		"name": "Alternate: Compacted Steel Ingot",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ingotsteel-2-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-cooling-device",
+		"className": "Schematic_Alternate_CoolingDevice_C",
+		"name": "Alternate: Cooling Device",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-coolingdevice-c"],
+		"requiredSchematics": ["advanced-aluminum-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-copper-alloy-ingot",
+		"className": "Schematic_Alternate_CopperAlloyIngot_C",
+		"name": "Alternate: Copper Alloy Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-copperalloyingot-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-copper-rotor",
+		"className": "Schematic_Alternate_CopperRotor_C",
+		"name": "Alternate: Copper Rotor",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-copperrotor-c"],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-crystal-computer",
+		"className": "Schematic_Alternate_Computer2_C",
+		"name": "Alternate: Crystal Computer",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-computer-2-c"],
+		"requiredSchematics": ["industrial-manufacturing", "quartz-crystals"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-dark-ion-fuel",
+		"className": "Schematic_Alternate_IonizedFuel_Dark_C",
+		"name": "Alternate: Dark-Ion Fuel",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ionizedfuel-dark-c"],
+		"requiredSchematics": ["quantum-encoding", "ionized-fuel"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-dark-matter-crystallization",
+		"className": "Schematic_Alternate_DarkMatter_Crystallization_C",
+		"name": "Alternate: Dark Matter Crystallization",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-darkmatter-crystallization-c"],
+		"requiredSchematics": ["quantum-encoding"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-dark-matter-trap",
+		"className": "Schematic_Alternate_DarkMatter_Trap_C",
+		"name": "Alternate: Dark Matter Trap",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-darkmatter-trap-c"],
+		"requiredSchematics": ["quantum-encoding"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-diluted-fuel",
+		"className": "Schematic_Alternate_DilutedFuel_C",
+		"name": "Alternate: Diluted Fuel",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-dilutedfuel-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-diluted-packaged-fuel",
+		"className": "Schematic_Alternate_DilutedPackagedFuel_C",
+		"name": "Alternate: Diluted Packaged Fuel",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-dilutedpackagedfuel-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-electric-motor",
+		"className": "Schematic_Alternate_ElectricMotor_C",
+		"name": "Alternate: Electric Motor",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-electricmotor-c"],
+		"requiredSchematics": ["nuclear-power"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-electrode-aluminum-scrap",
+		"className": "Schematic_Alternate_ElectroAluminumScrap_C",
+		"name": "Alternate: Electrode Aluminum Scrap",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-electroaluminumscrap-c"],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-electrode-circuit-board",
+		"className": "Schematic_Alternate_ElectrodeCircuitBoard_C",
+		"name": "Alternate: Electrode Circuit Board",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-electrodecircuitboard-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-electromagnetic-connection-rod",
+		"className": "Schematic_Alternate_ElectromagneticControlRod1_C",
+		"name": "Alternate: Electromagnetic Connection Rod",
+		"type": "EST_Alternate",
+		"tier": 7,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-electromagneticcontrolrod-1-c"],
+		"requiredSchematics": ["nuclear-power", "ai-limiter"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-encased-industrial-pipe",
+		"className": "Schematic_Alternate_ReinforcedSteelPlate_C",
+		"name": "Alternate: Encased Industrial Pipe",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-encasedindustrialbeam-c"],
+		"requiredSchematics": ["advanced-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-fertile-uranium",
+		"className": "Schematic_Alternate_FertileUranium_C",
+		"name": "Alternate: Fertile Uranium",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-fertileuranium-c"],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-fine-black-powder",
+		"className": "Schematic_Alternate_Gunpowder1_C",
+		"name": "Alternate: Fine Black Powder",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-gunpowder-1-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-fine-concrete",
+		"className": "Schematic_Alternate_Concrete_C",
+		"name": "Alternate: Fine Concrete",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-concrete-c"],
+		"requiredSchematics": ["quartz"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-flexible-framework",
+		"className": "Schematic_Alternate_FlexibleFramework_C",
+		"name": "Alternate: Flexible Framework",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-flexibleframework-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-fused-quartz-crystal",
+		"className": "Schematic_Alternate_Quartz_Fused_C",
+		"name": "Alternate: Fused Quartz Crystal",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-quartz-fused-c"],
+		"requiredSchematics": ["quartz-crystals", "basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-fused-quickwire",
+		"className": "Schematic_Alternate_Quickwire_C",
+		"name": "Alternate: Fused Quickwire",
+		"type": "EST_Alternate",
+		"tier": 3,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-quickwire-c"],
+		"requiredSchematics": ["caterium-ingots"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-fused-wire",
+		"className": "Schematic_Alternate_FusedWire_C",
+		"name": "Alternate: Fused Wire",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-fusedwire-c"],
+		"requiredSchematics": ["caterium"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-heat-exchanger",
+		"className": "Schematic_Alternate_HeatSink1_C",
+		"name": "Alternate: Heat Exchanger",
+		"type": "EST_Alternate",
+		"tier": 7,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-heatsink-1-c"],
+		"requiredSchematics": ["advanced-aluminum-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-heat-fused-frame",
+		"className": "Schematic_Alternate_HeatFusedFrame_C",
+		"name": "Alternate: Heat-Fused Frame",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-heatfusedframe-c"],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-heavy-encased-frame",
+		"className": "Schematic_Alternate_HeavyModularFrame_C",
+		"name": "Alternate: Heavy Encased Frame",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-modularframeheavy-c"],
+		"requiredSchematics": ["industrial-manufacturing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-heavy-flexible-frame",
+		"className": "Schematic_Alternate_HeavyFlexibleFrame_C",
+		"name": "Alternate: Heavy Flexible Frame",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-heavyflexibleframe-c"],
+		"requiredSchematics": ["industrial-manufacturing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-heavy-oil-residue",
+		"className": "Schematic_Alternate_HeavyOilResidue_C",
+		"name": "Alternate: Heavy Oil Residue",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-heavyoilresidue-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-infused-uranium-cell",
+		"className": "Schematic_Alternate_UraniumCell1_C",
+		"name": "Alternate: Infused Uranium Cell",
+		"type": "EST_Alternate",
+		"tier": 7,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-uraniumcell-1-c"],
+		"requiredSchematics": [
+			"nuclear-power",
+			"caterium-ingots",
+			"quartz",
+			"sulfur"
+		],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-instant-plutonium-cell",
+		"className": "Schematic_Alternate_InstantPlutoniumCell_C",
+		"name": "Alternate: Instant Plutonium Cell",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-instantplutoniumcell-c"],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-instant-scrap",
+		"className": "Schematic_Alternate_InstantScrap_C",
+		"name": "Alternate: Instant Scrap",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-instantscrap-c"],
+		"requiredSchematics": ["bauxite-refinement", "control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-insulated-cable",
+		"className": "Schematic_Alternate_Cable1_C",
+		"name": "Alternate: Insulated Cable",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-cable-1-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-insulated-crystal-oscillator",
+		"className": "Schematic_Alternate_CrystalOscillator_C",
+		"name": "Alternate: Insulated Crystal Oscillator",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-crystaloscillator-c"],
+		"requiredSchematics": [
+			"crystal-oscillator",
+			"caterium-electronics",
+			"oil-processing"
+		],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-iron-alloy-ingot",
+		"className": "Schematic_Alternate_IngotIron_C",
+		"name": "Alternate: Iron Alloy Ingot",
+		"type": "EST_Alternate",
+		"tier": 1,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ingotiron-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-iron-pipe",
+		"className": "Schematic_Alternate_SteelPipe_Iron_C",
+		"name": "Alternate: Iron Pipe",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelpipe-iron-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-iron-wire",
+		"className": "Schematic_Alternate_Wire1_C",
+		"name": "Alternate: Iron Wire",
+		"type": "EST_Alternate",
+		"tier": 1,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-wire-1-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-leached-caterium-ingot",
+		"className": "Schematic_Alternate_CateriumIngot_Leached_C",
+		"name": "Alternate: Leached Caterium Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-cateriumingot-leached-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-leached-copper-ingot",
+		"className": "Schematic_Alternate_CopperIngot_Leached_C",
+		"name": "Alternate: Leached Copper Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-copperingot-leached-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-leached-iron-ingot",
+		"className": "Schematic_Alternate_IronIngot_Leached_C",
+		"name": "Alternate: Leached Iron ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ironingot-leached-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-molded-beam",
+		"className": "Schematic_Alternate_SteelBeam_Molded_C",
+		"name": "Alternate: Molded Beam",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelbeam-molded-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-molded-steel-pipe",
+		"className": "Schematic_Alternate_SteelPipe_Molded_C",
+		"name": "Alternate: Molded Steel Pipe",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelpipe-molded-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-nitro-rocket-fuel",
+		"className": "Schematic_Alternate_RocketFuel_Nitro_C",
+		"name": "Alternate: Nitro Rocket Fuel",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-rocketfuel-nitro-c"],
+		"requiredSchematics": ["rocket-fuel"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-oc-supercomputer",
+		"className": "Schematic_Alternate_OCSupercomputer_C",
+		"name": "Alternate: OC Supercomputer",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ocsupercomputer-c"],
+		"requiredSchematics": [
+			"control-system-development",
+			"advanced-aluminum-production"
+		],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-oil-based-diamonds",
+		"className": "Schematic_Alternate_Diamond_OilBased_C",
+		"name": "Alternate: Oil-Based Diamonds",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-diamond-oilbased-c"],
+		"requiredSchematics": ["matter-conversion"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-petroleum-diamonds",
+		"className": "Schematic_Alternate_Diamond_Petroleum_C",
+		"name": "Alternate: Petroleum Diamonds",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-diamond-petroleum-c"],
+		"requiredSchematics": ["matter-conversion"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-pink-diamonds",
+		"className": "Schematic_Alternate_Diamond_Pink_C",
+		"name": "Alternate: Pink Diamonds",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-diamond-pink-c"],
+		"requiredSchematics": ["matter-conversion"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-plastic-ai-limiter",
+		"className": "Schematic_Alternate_AILimiter_Plastic_C",
+		"name": "Alternate: Plastic AI Limiter",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ailimiter-plastic-c"],
+		"requiredSchematics": ["ai-limiter", "oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-plastic-smart-plating",
+		"className": "Schematic_Alternate_PlasticSmartPlating_C",
+		"name": "Alternate: Plastic Smart Plating",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-plasticsmartplating-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-plutonium-fuel-unit",
+		"className": "Schematic_Alternate_PlutoniumFuelUnit_C",
+		"name": "Alternate: Plutonium Fuel Unit",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-plutoniumfuelunit-c"],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-polymer-resin",
+		"className": "Schematic_Alternate_PolymerResin_C",
+		"name": "Alternate: Polymer Resin",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-polymerresin-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-pure-aluminum-ingot",
+		"className": "Schematic_Alternate_PureAluminumIngot_C",
+		"name": "Alternate: Pure Aluminum Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-purealuminumingot-c"],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-pure-caterium-ingot",
+		"className": "Schematic_Alternate_PureCateriumIngot_C",
+		"name": "Alternate: Pure Caterium Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-purecateriumingot-c"],
+		"requiredSchematics": ["caterium", "oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-pure-copper-ingot",
+		"className": "Schematic_Alternate_PureCopperIngot_C",
+		"name": "Alternate: Pure Copper Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-purecopperingot-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-pure-iron-ingot",
+		"className": "Schematic_Alternate_PureIronIngot_C",
+		"name": "Alternate: Pure Iron Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-pureironingot-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-pure-quartz-crystal",
+		"className": "Schematic_Alternate_PureQuartzCrystal_C",
+		"name": "Alternate: Pure Quartz Crystal",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-purequartzcrystal-c"],
+		"requiredSchematics": ["quartz-crystals", "oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-quartz-purification",
+		"className": "Schematic_Alternate_Quartz_Purified_C",
+		"name": "Alternate: Quartz Purification",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-quartz-purified-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-quickwire-cable",
+		"className": "Schematic_Alternate_Cable2_C",
+		"name": "Alternate: Quickwire Cable",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-cable-2-c"],
+		"requiredSchematics": ["oil-processing", "caterium-ingots"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-quickwire-stator",
+		"className": "Schematic_Alternate_Stator_C",
+		"name": "Alternate: Quickwire Stator",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-stator-c"],
+		"requiredSchematics": ["advanced-steel-production", "caterium-ingots"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-radio-connection-unit",
+		"className": "Schematic_Alternate_RadioControlUnit1_C",
+		"name": "Alternate: Radio Connection Unit",
+		"type": "EST_Alternate",
+		"tier": 7,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-radiocontrolunit-1-c"],
+		"requiredSchematics": ["advanced-aluminum-production", "ai-limiter"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-radio-control-system",
+		"className": "Schematic_Alternate_RadioControlSystem_C",
+		"name": "Alternate: Radio Control System",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-radiocontrolsystem-c"],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-recycled-plastic",
+		"className": "Schematic_Alternate_Plastic1_C",
+		"name": "Alternate: Recycled Plastic",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-plastic-1-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-recycled-rubber",
+		"className": "Schematic_Alternate_RecycledRubber_C",
+		"name": "Alternate: Recycled Rubber",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-recycledrubber-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-rigor-motor",
+		"className": "Schematic_Alternate_Motor1_C",
+		"name": "Alternate: Rigor Motor",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-motor-1-c"],
+		"requiredSchematics": ["advanced-steel-production", "quartz-crystals"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-rubber-concrete",
+		"className": "Schematic_Alternate_RubberConcrete_C",
+		"name": "Alternate: Rubber Concrete",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-rubberconcrete-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-silicon-circuit-board",
+		"className": "Schematic_Alternate_CircuitBoard1_C",
+		"name": "Alternate: Silicon Circuit Board",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-circuitboard-1-c"],
+		"requiredSchematics": ["oil-processing", "quartz"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-silicon-high-speed-connector",
+		"className": "Schematic_Alternate_HighSpeedConnector_C",
+		"name": "Alternate: Silicon High-Speed Connector",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-highspeedconnector-c"],
+		"requiredSchematics": ["high-speed-connector", "oil-processing", "quartz"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-sloppy-alumina",
+		"className": "Schematic_Alternate_SloppyAlumina_C",
+		"name": "Alternate: Sloppy Alumina",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-sloppyalumina-c"],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-solid-steel-ingot",
+		"className": "Schematic_Alternate_IngotSteel1_C",
+		"name": "Alternate: Solid Steel Ingot",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-ingotsteel-1-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steamed-copper-sheet",
+		"className": "Schematic_Alternate_SteamedCopperSheet_C",
+		"name": "Alternate: Steamed Copper Sheet",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steamedcoppersheet-c"],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steel-canister",
+		"className": "Schematic_Alternate_SteelCanister_C",
+		"name": "Alternate: Steel Canister",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelcanister-c"],
+		"requiredSchematics": ["fluid-packaging"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steel-cast-plate",
+		"className": "Schematic_Alternate_SteelCastedPlate_C",
+		"name": "Alternate: Steel Cast Plate",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelcastedplate-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steel-rod",
+		"className": "Schematic_Alternate_SteelRod_C",
+		"name": "Alternate: Steel Rod",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-steelrod-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steel-rotor",
+		"className": "Schematic_Alternate_Rotor_C",
+		"name": "Alternate: Steel Rotor",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-rotor-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steel-screw",
+		"className": "Schematic_Alternate_Screw2_C",
+		"name": "Alternate: Steel Screw",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-screw-2-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-steeled-frame",
+		"className": "Schematic_Alternate_ModularFrame_C",
+		"name": "Alternate: Steeled Frame",
+		"type": "EST_Alternate",
+		"tier": 4,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-modularframe-c"],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-stitched-iron-plate",
+		"className": "Schematic_Alternate_ReinforcedIronPlate2_C",
+		"name": "Alternate: Stitched Iron Plate",
+		"type": "EST_Alternate",
+		"tier": 2,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-reinforcedironplate-2-c"],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-super-state-computer",
+		"className": "Schematic_Alternate_SuperStateComputer_C",
+		"name": "Alternate: Super-State Computer",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-superstatecomputer-c"],
+		"requiredSchematics": ["nuclear-power", "control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-tempered-caterium-ingot",
+		"className": "Schematic_Alternate_CateriumIngot_Tempered_C",
+		"name": "Alternate: Tempered Caterium Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-cateriumingot-tempered-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-tempered-copper-ingot",
+		"className": "Schematic_Alternate_CopperIngot_Tempered_C",
+		"name": "Alternate: Tempered Copper Ingot",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-copperingot-tempered-c"],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-turbo-blend-fuel",
+		"className": "Schematic_Alternate_TurboBlendFuel_C",
+		"name": "Alternate: Turbo Blend Fuel",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [
+			"recipe-alternate-turboblendfuel-c",
+			"recipe-packagedturbofuel-c",
+			"recipe-unpackageturbofuel-c"
+		],
+		"requiredSchematics": ["control-system-development"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-turbo-diamonds",
+		"className": "Schematic_Alternate_Diamond_Turbo_C",
+		"name": "Alternate: Turbo Diamonds",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-diamond-turbo-c"],
+		"requiredSchematics": ["matter-conversion", "turbofuel"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-turbo-electric-motor",
+		"className": "Schematic_Alternate_TurboMotor1_C",
+		"name": "Alternate: Turbo Electric Motor",
+		"type": "EST_Alternate",
+		"tier": 7,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-turbomotor-1-c"],
+		"requiredSchematics": ["leading-edge-production", "nuclear-power"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-turbo-heavy-fuel",
+		"className": "Schematic_Alternate_TurboHeavyFuel_C",
+		"name": "Alternate: Turbo Heavy Fuel",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [
+			"recipe-alternate-turboheavyfuel-c",
+			"recipe-packagedturbofuel-c",
+			"recipe-unpackageturbofuel-c"
+		],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-turbo-pressure-motor",
+		"className": "Schematic_Alternate_TurboPressureMotor_C",
+		"name": "Alternate: Turbo Pressure Motor",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-turbopressuremotor-c"],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-uranium-fuel-unit",
+		"className": "Schematic_Alternate_NuclearFuelRod1_C",
+		"name": "Alternate: Uranium Fuel Unit",
+		"type": "EST_Alternate",
+		"tier": 7,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-nuclearfuelrod-1-c"],
+		"requiredSchematics": ["nuclear-power", "quartz-crystals"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternate-wet-concrete",
+		"className": "Schematic_Alternate_WetConcrete_C",
+		"name": "Alternate: Wet Concrete",
+		"type": "EST_Alternate",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": ["recipe-alternate-wetconcrete-c"],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "alternative-ficsit-build-gun",
+		"className": "Schematic_Skin_Buildgun_ColoredSides_C",
+		"name": "Alternative FICSIT Build Gun",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "aluminum-casing-purchase",
+		"className": "ResourceSink_AluminumCasing_C",
+		"name": "Aluminum Casing (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "arrow-patterns",
+		"className": "ResourceSink_Arrows_FoundationPatterns_C",
+		"name": "Arrow Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "asphalt-foundation-material",
+		"className": "ResourceSink_Customizer_Asphalt_FoundationMaterial_C",
+		"name": "Asphalt Foundation Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["base-building"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "b-374-helmet",
+		"className": "Schematic_Helmet_Beta_C",
+		"name": "B-374 Helmet",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "bacon-agaric",
+		"className": "Research_Nutrients_2_C",
+		"name": "Bacon Agaric",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "bacon-agaric",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "base-building",
+		"className": "Schematic_1-1_C",
+		"name": "Base Building",
+		"type": "EST_Milestone",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "concrete",
+				"amount": 200
+			},
+			{
+				"item": "iron-plate",
+				"amount": 100
+			},
+			{
+				"item": "iron-rod",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [
+			"recipe-lookouttower-c",
+			"recipe-foundation-8x1-01-c",
+			"recipe-foundation-8x2-01-c",
+			"recipe-foundation-8x4-01-c",
+			"recipe-ramp-8x1-01-c",
+			"recipe-ramp-8x2-01-c",
+			"recipe-ramp-8x4-01-c",
+			"recipe-wall-8x4-01-c",
+			"recipe-wall-orange-8x1-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "basic-steel-production",
+		"className": "Schematic_3-4_C",
+		"name": "Basic Steel Production",
+		"type": "EST_Milestone",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "modular-frame",
+				"amount": 50
+			},
+			{
+				"item": "rotor",
+				"amount": 150
+			},
+			{
+				"item": "concrete",
+				"amount": 500
+			},
+			{
+				"item": "wire",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-smeltermk1-c",
+			"recipe-ingotsteel-c",
+			"recipe-steelbeam-c",
+			"recipe-steelpipe-c",
+			"recipe-spaceelevatorpart-2-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "battery-purchase",
+		"className": "ResourceSink_Battery_C",
+		"name": "Battery (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["aeronautical-engineering"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "bauxite-refinement",
+		"className": "Schematic_7-1_C",
+		"name": "Bauxite Refinement",
+		"type": "EST_Milestone",
+		"tier": 7,
+		"cost": [
+			{
+				"item": "computer",
+				"amount": 100
+			},
+			{
+				"item": "heavy-modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "motor",
+				"amount": 250
+			},
+			{
+				"item": "rubber",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-aluminasolution-c",
+			"recipe-packagedalumina-c",
+			"recipe-aluminumscrap-c",
+			"recipe-ingotaluminum-c",
+			"recipe-aluminumsheet-c",
+			"recipe-aluminumcasing-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "beryl-nut",
+		"className": "Research_Nutrients_1_C",
+		"name": "Beryl Nut",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "beryl-nut",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "billboard-set",
+		"className": "ResourceSink_BillboardSigns_C",
+		"name": "Billboard Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [
+			"recipe-standalonewidgetsign-large-c",
+			"recipe-standalonewidgetsign-huge-c"
+		],
+		"requiredSchematics": ["quartz-crystals", "advanced-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "bio-organic-properties",
+		"className": "Research_AO_DNACapsule_C",
+		"name": "Bio-Organic Properties",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "alien-protein",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-aliendnacapsule-c",
+			"recipe-biomass-alienprotein-c"
+		],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "biofuel-purchase",
+		"className": "ResourceSink_Biofuel_C",
+		"name": "Biofuel (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["obstacle-clearing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "biomass-purchase",
+		"className": "ResourceSink_Biomass_C",
+		"name": "Biomass (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "black-powder",
+		"className": "Research_Sulfur_1_C",
+		"name": "Black Powder",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "sulfur",
+				"amount": 50
+			},
+			{
+				"item": "coal",
+				"amount": 25
+			}
+		],
+		"unlockRecipes": ["recipe-gunpowder-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "black-powder-purchase",
+		"className": "ResourceSink_BlackPowder_C",
+		"name": "Black Powder (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["black-powder"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "blade-runners",
+		"className": "Research_Caterium_4_3_C",
+		"name": "Blade Runners",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "silica",
+				"amount": 50
+			},
+			{
+				"item": "modular-frame",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": ["recipe-bladerunners-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "blue-power-slugs",
+		"className": "Research_PowerSlugs_1_C",
+		"name": "Blue Power Slugs",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "blue-power-slug",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-powercrystalshard-1-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "bobblehead-helmet",
+		"className": "Schematic_Helmet_Bobble_C",
+		"name": "Bobblehead Helmet",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "boombox-purchase",
+		"className": "ResourceSink_Boombox_C",
+		"name": "Boombox (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "bullet-guidance-system",
+		"className": "Research_Caterium_6_3_C",
+		"name": "Bullet Guidance System",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "high-speed-connector",
+				"amount": 10
+			},
+			{
+				"item": "rifle-ammo",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": ["recipe-cartridgesmart-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "cable-purchase",
+		"className": "ResourceSink_Cable_C",
+		"name": "Cable (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "camo-build-gun",
+		"className": "Schematic_Skin_Buildgun_Camo_C",
+		"name": "Camo Build Gun",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "carbon-steel-finish",
+		"className": "ResourceSink_CarbonSteel_PaintFinish_C",
+		"name": "Carbon Steel Finish",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 8
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "caterium",
+		"className": "Research_Caterium_0_C",
+		"name": "Caterium",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "caterium-ore",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "caterium-electronics",
+		"className": "Research_Caterium_3_C",
+		"name": "Caterium Electronics",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quickwire",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "caterium-ingots",
+		"className": "Research_Caterium_1_C",
+		"name": "Caterium Ingots",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "caterium-ore",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-ingotcaterium-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "caterium-paint-finish",
+		"className": "ResourceSink_Caterium_PaintFinish_C",
+		"name": "Caterium Paint Finish",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["quickwire"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "checkit-trinket",
+		"className": "Schematic_Trinket_Checkit_C",
+		"name": "Checkit Trinket",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "chrome-paint-finish",
+		"className": "ResourceSink_Chrome_PaintFinish_C",
+		"name": "Chrome Paint Finish",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "circuit-board-purchase",
+		"className": "ResourceSink_CircuitBoard_C",
+		"name": "Circuit Board (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "clean-pipeline-mk-1",
+		"className": "ResourceSink_NoIndicator_PipelineMK1_C",
+		"name": "Clean Pipeline Mk.1",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-pipeline-noindicator-c"],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "clean-pipeline-mk-2",
+		"className": "ResourceSink_NoIndicator_PipelineMK2_C",
+		"name": "Clean Pipeline Mk.2",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-pipelinemk2-noindicator-c"],
+		"requiredSchematics": ["pipeline-engineering-mk-2"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "cluster-nobelisk",
+		"className": "Research_Sulfur_4_C",
+		"name": "Cluster Nobelisk",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "smokeless-powder",
+				"amount": 100
+			},
+			{
+				"item": "nobelisk",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-nobeliskcluster-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "cluster-nobelisk-pack-purchase",
+		"className": "ResourceSink_NobeliskCluster_C",
+		"name": "Cluster Nobelisk Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["cluster-nobelisk"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "coal-power",
+		"className": "Schematic_3-1_C",
+		"name": "Coal Power",
+		"type": "EST_Milestone",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 150
+			},
+			{
+				"item": "rotor",
+				"amount": 50
+			},
+			{
+				"item": "cable",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-generatorcoal-c",
+			"recipe-waterpump-c",
+			"recipe-pipeline-c",
+			"recipe-pipesupport-c",
+			"recipe-pipelinejunction-cross-c",
+			"recipe-pipelinepump-c",
+			"recipe-pipestoragetank-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "coated-concrete-foundation-material",
+		"className": "ResourceSink_Customizer_PolishedConcrete_FoundationMaterial_C",
+		"name": "Coated Concrete Foundation Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["oil-processing", "base-building"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "compacted-coal",
+		"className": "Research_Sulfur_CompactedCoal_C",
+		"name": "Compacted Coal",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "sulfur",
+				"amount": 25
+			},
+			{
+				"item": "coal",
+				"amount": 25
+			}
+		],
+		"unlockRecipes": ["recipe-alternate-enrichedcoal-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "compacted-coal-purchase",
+		"className": "ResourceSink_CompactedCoal_C",
+		"name": "Compacted Coal (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["compacted-coal"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "computer-purchase",
+		"className": "ResourceSink_Computer_C",
+		"name": "Computer (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["industrial-manufacturing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "concrete-foundation-material",
+		"className": "ResourceSink_Customizer_Concrete_FoundationMaterial_C",
+		"name": "Concrete Foundation Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["base-building"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "concrete-pillar-set",
+		"className": "ResourceSink_ConcretePillarSet_C",
+		"name": "Concrete Pillar Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-pillarmiddle-concrete-c",
+			"recipe-pillarbase-c",
+			"recipe-pillar-small-concrete-c",
+			"recipe-pillarbase-small-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "concrete-purchase",
+		"className": "ResourceSink_Concrete_C",
+		"name": "Concrete (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "concrete-wall-material",
+		"className": "ResourceSink_Customizer_ConcreteWallMaterial_C",
+		"name": "Concrete Wall Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["base-building"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "confusing-creature-purchase",
+		"className": "ResourceSink_StatueSpaceGiraffe_C",
+		"name": "Confusing Creature (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "construction-fences",
+		"className": "ResourceSink_Fences_C",
+		"name": "Construction Fences",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": ["recipe-tarpfence-c", "recipe-chainlinkfence-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "control-system-development",
+		"className": "Schematic_7-5_C",
+		"name": "Control System Development",
+		"type": "EST_Milestone",
+		"tier": 7,
+		"cost": [
+			{
+				"item": "alclad-aluminum-sheet",
+				"amount": 200
+			},
+			{
+				"item": "aluminum-casing",
+				"amount": 400
+			},
+			{
+				"item": "computer",
+				"amount": 200
+			},
+			{
+				"item": "plastic",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-sulfuricacid-c",
+			"recipe-packagedsulfuricacid-c",
+			"recipe-battery-c",
+			"recipe-radiocontrolunit-c",
+			"recipe-computersuper-c",
+			"recipe-spaceelevatorpart-7-c",
+			"recipe-blender-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "conveyor-ceiling-mount",
+		"className": "ResourceSink_ConveyorCeilingMount_C",
+		"name": "Conveyor Ceiling Mount",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-conveyorceilingattachment-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "conveyor-lift-floor-hole",
+		"className": "ResourceSink_ConveyorLiftHole_C",
+		"name": "Conveyor Lift Floor Hole",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-foundationpassthrough-lift-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "conveyor-wall-mount",
+		"className": "ResourceSink_ConveyorWallMount_C",
+		"name": "Conveyor Wall Mount",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-conveyorpolewall-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "conveyor-walls",
+		"className": "ResourceSink_ConveryWalls_Normal_C",
+		"name": "Conveyor Walls",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-conveyor-8x4-01-c",
+			"recipe-wall-conveyor-8x4-02-c",
+			"recipe-wall-conveyor-8x4-03-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "cooling-system-purchase",
+		"className": "ResourceSink_CoolingSystem_C",
+		"name": "Cooling System (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-aluminum-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "copper-paint-finish",
+		"className": "ResourceSink_Copper_PaintFinish_C",
+		"name": "Copper Paint Finish",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "copper-powder-purchase",
+		"className": "ResourceSink_CopperPowder_C",
+		"name": "Copper Powder (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "copper-sheet-purchase",
+		"className": "ResourceSink_CopperSheet_C",
+		"name": "Copper Sheet (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "corner-ramp-pack",
+		"className": "ResourceSink_DiagonalRamps_C",
+		"name": "Corner Ramp Pack",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-ramp-diagonal-8x1-02-c",
+			"recipe-ramp-diagonal-8x2-02-c",
+			"recipe-ramp-diagonal-8x4-02-c",
+			"recipe-ramp-diagonal-8x1-01-c",
+			"recipe-ramp-diagonal-8x2-01-c",
+			"recipe-ramp-diagonal-8x4-01-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "coupon-trinket",
+		"className": "Schematic_Trinket_FicsitCoupon_C",
+		"name": "Coupon Trinket",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "crystal-oscillator",
+		"className": "Research_Quartz_2_C",
+		"name": "Crystal Oscillator",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quartz-crystal",
+				"amount": 100
+			},
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-crystaloscillator-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "crystal-oscillator-purchase",
+		"className": "ResourceSink_CrystalOscillator_C",
+		"name": "Crystal Oscillator (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["crystal-oscillator", "bauxite-refinement"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "cyber-wagon",
+		"className": "ResourceSink_CyberWagon_C",
+		"name": "Cyber Wagon",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 20
+			}
+		],
+		"unlockRecipes": ["recipe-cyberwagon-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "depot-expansion-200",
+		"className": "Research_Alien_CentralStackExpansion_01_C",
+		"name": "Depot Expansion (200%)",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 3
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 47
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "depot-expansion-300",
+		"className": "Research_Alien_CentralStackExpansion_02_C",
+		"name": "Depot Expansion (300%)",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 7
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 103
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "depot-expansion-400",
+		"className": "Research_Alien_CentralStackExpansion_03_C",
+		"name": "Depot Expansion (400%)",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 13
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 151
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "depot-expansion-500",
+		"className": "Research_Alien_CentralStackExpansion_04_C",
+		"name": "Depot Expansion (500%)",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 23
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 199
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "dimensional-depot",
+		"className": "Research_Alien_CentralStorage_C",
+		"name": "Dimensional Depot",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 1
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 11
+			}
+		],
+		"unlockRecipes": ["recipe-centralstorage-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "display-sign-bundle",
+		"className": "ResourceSink_DisplaySigns_C",
+		"name": "Display Sign Bundle",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-standalonewidgetsign-medium-c",
+			"recipe-standalonewidgetsign-portrait-c",
+			"recipe-standalonewidgetsign-square-small-c",
+			"recipe-standalonewidgetsign-square-c"
+		],
+		"requiredSchematics": ["quartz-crystals"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "door-walls",
+		"className": "ResourceSink_DoorWalls_Normal_C",
+		"name": "Door Walls",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": ["recipe-wall-door-8x4-01-c", "recipe-wall-door-8x4-03-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "dotted-line-patterns",
+		"className": "ResourceSink_DotLines_FoundationPatterns_C",
+		"name": "Dotted Line Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "double-ramp-set",
+		"className": "ResourceSink_FoundationExpansionPack_C",
+		"name": "Double Ramp Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [
+			"recipe-rampdouble-8x1-c",
+			"recipe-rampdouble-c",
+			"recipe-ramp-8x8x8-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "electromagnetic-control-rod-purchase",
+		"className": "ResourceSink_ElectromagneticControlRod_C",
+		"name": "Electromagnetic Control Rod (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["nuclear-power"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "employee-of-the-planet-cup-purchase",
+		"className": "ResourceSink_GoldenCup_C",
+		"name": "'Employee of the Planet' Cup (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "empty-canister-purchase",
+		"className": "ResourceSink_EmptyCanister_C",
+		"name": "Empty Canister (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "empty-fluid-tank-purchase",
+		"className": "ResourceSink_EmptyFluidTank_C",
+		"name": "Empty Fluid Tank (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-aluminum-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "encased-industrial-beam-purchase",
+		"className": "ResourceSink_EncasedIndustrialBeam_C",
+		"name": "Encased Industrial Beam (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "enhanced-asset-security",
+		"className": "Schematic_4-2_C",
+		"name": "Enhanced Asset Security",
+		"type": "EST_Milestone",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 100
+			},
+			{
+				"item": "iron-rod",
+				"amount": 600
+			},
+			{
+				"item": "wire",
+				"amount": 1500
+			}
+		],
+		"unlockRecipes": ["recipe-xenobasher-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "expanded-power-infrastructure",
+		"className": "Schematic_4-3_C",
+		"name": "Expanded Power Infrastructure",
+		"type": "EST_Milestone",
+		"tier": 4,
+		"cost": [
+			{
+				"item": "encased-industrial-beam",
+				"amount": 50
+			},
+			{
+				"item": "steel-beam",
+				"amount": 100
+			},
+			{
+				"item": "modular-frame",
+				"amount": 200
+			},
+			{
+				"item": "wire",
+				"amount": 2000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-powerstoragemk1-c",
+			"recipe-powertower-c",
+			"recipe-powertowerplatform-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "expanded-toolbelt",
+		"className": "Research_ACarapace_3_C",
+		"name": "Expanded Toolbelt",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "alien-dna-capsule",
+				"amount": 5
+			},
+			{
+				"item": "steel-beam",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "expanded-toolbelt-2",
+		"className": "Research_Mycelia_7_C",
+		"name": "Expanded Toolbelt",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "fabric",
+				"amount": 50
+			},
+			{
+				"item": "rotor",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "expanded-toolbelt-3",
+		"className": "Research_Sulfur_5_C",
+		"name": "Expanded Toolbelt",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "black-powder",
+				"amount": 100
+			},
+			{
+				"item": "encased-industrial-beam",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "experimental-power-generation",
+		"className": "Research_Sulfur_ExperimentalPower_C",
+		"name": "Experimental Power Generation",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "sulfur",
+				"amount": 25
+			},
+			{
+				"item": "modular-frame",
+				"amount": 50
+			},
+			{
+				"item": "rotor",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "explosive-rebar",
+		"className": "Research_Sulfur_4_2_C",
+		"name": "Explosive Rebar",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "smokeless-powder",
+				"amount": 200
+			},
+			{
+				"item": "iron-rebar",
+				"amount": 200
+			},
+			{
+				"item": "steel-beam",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-rebar-explosive-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "explosive-rebar-pack-purchase",
+		"className": "ResourceSink_RebarExplosive_C",
+		"name": "Explosive Rebar Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["explosive-rebar"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "explosive-resonance-application",
+		"className": "Research_Quartz_3_4_C",
+		"name": "Explosive Resonance Application",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "crystal-oscillator",
+				"amount": 5
+			},
+			{
+				"item": "nobelisk",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-nobeliskshockwave-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "fabric",
+		"className": "Research_Mycelia_2_C",
+		"name": "Fabric",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "mycelia",
+				"amount": 25
+			},
+			{
+				"item": "biomass",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-fabric-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "fabric-purchase",
+		"className": "ResourceSink_Fabric_C",
+		"name": "Fabric (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["fabric"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "factory-icon-patterns",
+		"className": "ResourceSink_IconsFactory_FoundationPatterns_C",
+		"name": "Factory Icon Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "factory-ladder",
+		"className": "ResourceSink_Ladders_C",
+		"name": "Factory Ladder",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": ["recipe-ladder-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "factory-zone-patterns",
+		"className": "ResourceSink_Zones_FoundationPatterns_C",
+		"name": "Factory Zone Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-blueprints",
+		"className": "Schematic_4-5_C",
+		"name": "FICSIT Blueprints",
+		"type": "EST_Milestone",
+		"tier": 4,
+		"cost": [
+			{
+				"item": "modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "steel-beam",
+				"amount": 200
+			},
+			{
+				"item": "cable",
+				"amount": 500
+			},
+			{
+				"item": "concrete",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": ["recipe-blueprintdesigner-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-blueprints-mk-2",
+		"className": "Schematic_6-6_C",
+		"name": "FICSIT Blueprints Mk.2",
+		"type": "EST_Milestone",
+		"tier": 6,
+		"cost": [
+			{
+				"item": "heavy-modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "computer",
+				"amount": 100
+			},
+			{
+				"item": "rubber",
+				"amount": 400
+			},
+			{
+				"item": "concrete",
+				"amount": 1500
+			}
+		],
+		"unlockRecipes": ["recipe-blueprintdesigner-mk2-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-blueprints-mk-3",
+		"className": "Schematic_9-3_C",
+		"name": "FICSIT Blueprints Mk.3",
+		"type": "EST_Milestone",
+		"tier": 9,
+		"cost": [
+			{
+				"item": "neural-quantum-processor",
+				"amount": 100
+			},
+			{
+				"item": "time-crystal",
+				"amount": 250
+			},
+			{
+				"item": "ficsite-trigon",
+				"amount": 500
+			},
+			{
+				"item": "fused-modular-frame",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": ["recipe-blueprintdesigner-mk3-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-checkmarktm",
+		"className": "ResourceSink_Checkmark_C",
+		"name": "FICSIT Checkmark™",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 8
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-factory-carttm",
+		"className": "ResourceSink_FactoryCart_C",
+		"name": "FICSIT Factory Cart™",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": ["recipe-factorycart-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-half-n-half-build-gun",
+		"className": "Schematic_Skin_Buildgun_HalfNHalf_C",
+		"name": "FICSIT Half 'n' Half Build Gun",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-roof-corners",
+		"className": "ResourceSink_Roofs_Corners_C",
+		"name": "FICSIT Roof Corners",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [
+			"recipe-roof-orange-incorner-01-c",
+			"recipe-roof-orange-incorner-02-c",
+			"recipe-roof-orange-incorner-03-c",
+			"recipe-roof-orange-outcorner-01-c",
+			"recipe-roof-orange-outcorner-02-c",
+			"recipe-roof-orange-outcorner-03-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsit-roofs",
+		"className": "ResourceSink_Roofs_Basic_C",
+		"name": "FICSIT Roofs",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [
+			"recipe-roof-orange-01-c",
+			"recipe-roof-orange-02-c",
+			"recipe-roof-orange-03-c",
+			"recipe-roof-orange-04-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsite-trigon-purchase",
+		"className": "ResourceSink_FicsiteTrigon_C",
+		"name": "Ficsite Trigon (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["matter-conversion"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ficsittm-coffee-cup-purchase",
+		"className": "ResourceSink_CoffeeCup_C",
+		"name": "FICSIT™ Coffee Cup (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "field-research",
+		"className": "Schematic_1-3_C",
+		"name": "Field Research",
+		"type": "EST_Milestone",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "wire",
+				"amount": 300
+			},
+			{
+				"item": "screw",
+				"amount": 300
+			},
+			{
+				"item": "iron-plate",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [
+			"recipe-mam-c",
+			"recipe-objectscanner-c",
+			"recipe-storageplayer-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "flood-lights",
+		"className": "ResourceSink_LightTower_C",
+		"name": "Flood Lights",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": ["recipe-floodlightpole-c", "recipe-floodlightwall-c"],
+		"requiredSchematics": ["quickwire", "advanced-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "fluid-packaging",
+		"className": "Schematic_5-4_C",
+		"name": "Fluid Packaging",
+		"type": "EST_Milestone",
+		"tier": 5,
+		"cost": [
+			{
+				"item": "plastic",
+				"amount": 200
+			},
+			{
+				"item": "steel-beam",
+				"amount": 400
+			},
+			{
+				"item": "copper-sheet",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-packager-c",
+			"recipe-fluidcanister-c",
+			"recipe-packagedwater-c",
+			"recipe-packagedcrudeoil-c",
+			"recipe-fuel-c",
+			"recipe-packagedoilresidue-c",
+			"recipe-packagedbiofuel-c",
+			"recipe-liquidbiofuel-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "foundation-stairs-set",
+		"className": "ResourceSink_FoundationStairs_C",
+		"name": "Foundation Stairs Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-stair-ficsitset-8x1-01-c",
+			"recipe-stair-ficsitset-8x2-01-c",
+			"recipe-stair-ficsitset-8x4-01-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "frame-pillar-set",
+		"className": "ResourceSink_FramePillarSet_C",
+		"name": "Frame Pillar Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-pillarmiddle-frame-c",
+			"recipe-pillarbase-c",
+			"recipe-pillar-small-frame-c",
+			"recipe-pillarbase-small-c"
+		],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "fused-modular-frame-purchase",
+		"className": "ResourceSink_FusedModularFrame_C",
+		"name": "Fused Modular Frame (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 7
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-aluminum-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "gas-filters-purchase",
+		"className": "ResourceSink_GasFilters_C",
+		"name": "Gas Filters (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "gas-mask",
+		"className": "Research_Mycelia_GasMask_C",
+		"name": "Gas Mask",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "coal",
+				"amount": 10
+			},
+			{
+				"item": "fabric",
+				"amount": 50
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-gasmask-c", "recipe-filtergasmask-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "gas-nobelisk-pack-purchase",
+		"className": "ResourceSink_NobeliskGas_C",
+		"name": "Gas Nobelisk Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["toxic-cellular-modification"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "gates",
+		"className": "ResourceSink_GateWalls_C",
+		"name": "Gates",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-gate-8x4-01-c",
+			"recipe-gate-automated-8x4-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "geothermal-generator",
+		"className": "Research_Caterium_7_2_C",
+		"name": "Geothermal Generator",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "high-speed-connector",
+				"amount": 100
+			},
+			{
+				"item": "quickwire",
+				"amount": 1000
+			},
+			{
+				"item": "motor",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-generatorgeothermal-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "glass-roof-material",
+		"className": "ResourceSink_Customizer_GlassRoofMaterial_C",
+		"name": "Glass Roof Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["ficsit-roofs", "silica"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "goat-music-boombox-tape",
+		"className": "Schematic_Goat_C",
+		"name": "Goat Music Boombox Tape",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "golden-build-gun",
+		"className": "Schematic_Skin_Buildgun_Golden_C",
+		"name": "Golden Build Gun",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "golden-ficsit-factory-carttm",
+		"className": "ResourceSink_GoldenCart_C",
+		"name": "Golden FICSIT Factory Cart™",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-goldencart-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "golden-helmet",
+		"className": "Schematic_Helmet_Golden_C",
+		"name": "Golden Helmet",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "golden-nut-purchase",
+		"className": "ResourceSink_StatueGoldenNut_C",
+		"name": "Golden Nut (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "golden-nut-trinket",
+		"className": "Schematic_Trinket_Nut_C",
+		"name": "Golden Nut Trinket",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "grip-metal-foundation-material",
+		"className": "ResourceSink_Customizer_GripMetal_FoundationMaterial_C",
+		"name": "Grip Metal Foundation Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["basic-steel-production", "base-building"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "half-foundation-set",
+		"className": "ResourceSink_HalfFoundations_C",
+		"name": "Half Foundation Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [
+			"recipe-quarterpipemiddle-ficsit-4x1-c",
+			"recipe-quarterpipemiddle-ficsit-4x2-c",
+			"recipe-quarterpipemiddle-ficsit-4x4-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hard-drive-purchase",
+		"className": "ResourceSink_Purchasable_HardDrive_C",
+		"name": "Hard Drive (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hard-drives",
+		"className": "Research_HardDrive_0_C",
+		"name": "Hard Drives",
+		"type": "EST_HardDrive",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hatcher-research",
+		"className": "Research_AO_Hatcher_C",
+		"name": "Hatcher Research",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "hatcher-remains",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-protein-crab-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "hazard-box-personal-storage-skin",
+		"className": "ResourceSink_HazardBoxSkin_C",
+		"name": "Hazard Box - Personal Storage Skin",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-storagehazard-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hazmat-suit",
+		"className": "Schematic_7-3_C",
+		"name": "Hazmat Suit",
+		"type": "EST_Milestone",
+		"tier": 7,
+		"cost": [
+			{
+				"item": "gas-filter",
+				"amount": 50
+			},
+			{
+				"item": "aluminum-casing",
+				"amount": 100
+			},
+			{
+				"item": "quickwire",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": ["recipe-hazmatsuit-c", "recipe-filterhazmat-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "health-pack-purchase",
+		"className": "ResourceSink_HealthPack_C",
+		"name": "Health Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [
+			"protein-inhaler",
+			"nutritional-inhaler",
+			"vitamin-inhaler"
+		],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "heat-sink-purchase",
+		"className": "ResourceSink_HeatSink_C",
+		"name": "Heat Sink (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-aluminum-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "heavy-modular-frame-purchase",
+		"className": "ResourceSink_HeavyModularFrame_C",
+		"name": "Heavy Modular Frame (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["industrial-manufacturing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "high-speed-connector",
+		"className": "Research_Caterium_5_C",
+		"name": "High-Speed Connector",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quickwire",
+				"amount": 500
+			},
+			{
+				"item": "plastic",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-highspeedconnector-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "high-speed-connector-purchase",
+		"className": "ResourceSink_HighSpeedConnector_C",
+		"name": "High-Speed Connector (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["high-speed-connector", "aeronautical-engineering"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hog-research",
+		"className": "Research_ACarapace_0_C",
+		"name": "Hog Research",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "hog-remains",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-protein-hog-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "homing-rifle-ammo-pack-purchase",
+		"className": "ResourceSink_RifleAmmoHoming_C",
+		"name": "Homing Rifle Ammo Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["bullet-guidance-system"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hostile-organism-detection",
+		"className": "Research_AOrganisms_2_C",
+		"name": "Hostile Organism Detection",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "alien-dna-capsule",
+				"amount": 10
+			},
+			{
+				"item": "crystal-oscillator",
+				"amount": 5
+			},
+			{
+				"item": "high-speed-connector",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "hoverpack",
+		"className": "Schematic_8-3_C",
+		"name": "Hoverpack",
+		"type": "EST_Milestone",
+		"tier": 7,
+		"cost": [
+			{
+				"item": "alclad-aluminum-sheet",
+				"amount": 100
+			},
+			{
+				"item": "heavy-modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "computer",
+				"amount": 100
+			},
+			{
+				"item": "motor",
+				"amount": 250
+			}
+		],
+		"unlockRecipes": ["recipe-hoverpack-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hub-upgrade-1",
+		"className": "Schematic_Tutorial1_C",
+		"name": "HUB Upgrade 1",
+		"type": "EST_Tutorial",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "iron-rod",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": ["recipe-workshop-c", "recipe-portableminer-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hub-upgrade-2",
+		"className": "Schematic_Tutorial1_5_C",
+		"name": "HUB Upgrade 2",
+		"type": "EST_Tutorial",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "iron-rod",
+				"amount": 20
+			},
+			{
+				"item": "iron-plate",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [
+			"recipe-smelterbasicmk1-c",
+			"recipe-powerline-c",
+			"recipe-ingotcopper-c",
+			"recipe-wire-c",
+			"recipe-cable-c"
+		],
+		"requiredSchematics": ["hub-upgrade-1"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hub-upgrade-3",
+		"className": "Schematic_Tutorial2_C",
+		"name": "HUB Upgrade 3",
+		"type": "EST_Tutorial",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "iron-plate",
+				"amount": 20
+			},
+			{
+				"item": "iron-rod",
+				"amount": 20
+			},
+			{
+				"item": "wire",
+				"amount": 20
+			}
+		],
+		"unlockRecipes": [
+			"recipe-constructormk1-c",
+			"recipe-powerpolemk1-c",
+			"recipe-concrete-c",
+			"recipe-screw-c",
+			"recipe-ironplatereinforced-c"
+		],
+		"requiredSchematics": ["hub-upgrade-2"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hub-upgrade-4",
+		"className": "Schematic_Tutorial3_C",
+		"name": "HUB Upgrade 4",
+		"type": "EST_Tutorial",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "iron-plate",
+				"amount": 75
+			},
+			{
+				"item": "cable",
+				"amount": 20
+			},
+			{
+				"item": "concrete",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": ["recipe-conveyorpole-c", "recipe-conveyorbeltmk1-c"],
+		"requiredSchematics": ["hub-upgrade-3"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hub-upgrade-5",
+		"className": "Schematic_Tutorial4_C",
+		"name": "HUB Upgrade 5",
+		"type": "EST_Tutorial",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "iron-rod",
+				"amount": 75
+			},
+			{
+				"item": "cable",
+				"amount": 50
+			},
+			{
+				"item": "concrete",
+				"amount": 20
+			}
+		],
+		"unlockRecipes": ["recipe-minermk1-c", "recipe-storagecontainermk1-c"],
+		"requiredSchematics": ["hub-upgrade-4"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hub-upgrade-6",
+		"className": "Schematic_Tutorial5_C",
+		"name": "HUB Upgrade 6",
+		"type": "EST_Tutorial",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "iron-rod",
+				"amount": 100
+			},
+			{
+				"item": "iron-plate",
+				"amount": 100
+			},
+			{
+				"item": "wire",
+				"amount": 100
+			},
+			{
+				"item": "concrete",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [
+			"recipe-spaceelevator-c",
+			"recipe-biomass-wood-c",
+			"recipe-biomass-leaves-c",
+			"recipe-generatorbiomass-automated-c"
+		],
+		"requiredSchematics": ["hub-upgrade-5"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hypertube-floor-hole",
+		"className": "ResourceSink_HyperTubeFloorHole_C",
+		"name": "Hypertube Floor Hole",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-foundationpassthrough-hypertube-c"],
+		"requiredSchematics": ["hypertubes"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hypertube-wall-attachments",
+		"className": "ResourceSink_HyperTubeWallAttachements_C",
+		"name": "Hypertube Wall Attachments",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-hypertubewallsupport-c",
+			"recipe-hypertubewallhole-c"
+		],
+		"requiredSchematics": ["hypertubes"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "hypertubes",
+		"className": "Schematic_4-4_C",
+		"name": "Hypertubes",
+		"type": "EST_Milestone",
+		"tier": 4,
+		"cost": [
+			{
+				"item": "encased-industrial-beam",
+				"amount": 50
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 300
+			},
+			{
+				"item": "copper-sheet",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-pipehyperstart-c",
+			"recipe-pipehyper-c",
+			"recipe-pipehypersupport-c",
+			"recipe-hyperpolestackable-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "indoor-lighting",
+		"className": "ResourceSink_CeilingLight_C",
+		"name": "Indoor Lighting",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": ["recipe-ceilinglight-c"],
+		"requiredSchematics": ["quickwire", "basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "industrial-manufacturing",
+		"className": "Schematic_5-2_C",
+		"name": "Industrial Manufacturing",
+		"type": "EST_Milestone",
+		"tier": 6,
+		"cost": [
+			{
+				"item": "motor",
+				"amount": 200
+			},
+			{
+				"item": "modular-frame",
+				"amount": 200
+			},
+			{
+				"item": "plastic",
+				"amount": 400
+			},
+			{
+				"item": "cable",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-manufacturermk1-c",
+			"recipe-computer-c",
+			"recipe-modularframeheavy-c",
+			"recipe-spaceelevatorpart-4-c",
+			"recipe-spaceelevatorpart-5-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "industrial-railing",
+		"className": "ResourceSink_FactoryRailing_C",
+		"name": "Industrial Railing",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "industrial-walkways",
+		"className": "ResourceSink_Walkways_C",
+		"name": "Industrial Walkways",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "inflated-pocket-dimension",
+		"className": "Schematic_Alternate_InventorySlots2_C",
+		"name": "Inflated Pocket Dimension",
+		"type": "EST_Alternate",
+		"tier": 5,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": ["industrial-manufacturing"],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "inflated-pocket-dimension-2",
+		"className": "Schematic_Alternate_InventorySlots1_C",
+		"name": "Inflated Pocket Dimension",
+		"type": "EST_Alternate",
+		"tier": 2,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": true
+	},
+	{
+		"slug": "inflated-pocket-dimension-3",
+		"className": "Research_AOrgans_3_C",
+		"name": "Inflated Pocket Dimension",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "alien-protein",
+				"amount": 3
+			},
+			{
+				"item": "cable",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "inflated-pocket-dimension-4",
+		"className": "Research_Caterium_3_1_C",
+		"name": "Inflated Pocket Dimension",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "silica",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "inflated-pocket-dimension-5",
+		"className": "Research_Sulfur_6_C",
+		"name": "Inflated Pocket Dimension",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "smokeless-powder",
+				"amount": 50
+			},
+			{
+				"item": "computer",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "inverted-corner-ramp-pack",
+		"className": "ResourceSink_InvertedCornerRamps_C",
+		"name": "Inverted Corner Ramp Pack",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-rampinverted-8x1-corner-01-c",
+			"recipe-rampinverted-8x2-corner-01-c",
+			"recipe-rampinverted-8x4-corner-01-c",
+			"recipe-rampinverted-8x1-corner-02-c",
+			"recipe-rampinverted-8x2-corner-02-c",
+			"recipe-rampinverted-8x4-corner-02-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "inverted-ramp-set",
+		"className": "ResourceSink_InvertedRampPack_C",
+		"name": "Inverted Ramp Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-rampinverted-8x1-c",
+			"recipe-rampinverted-8x2-01-c",
+			"recipe-ramp-8x4-inverted-01-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "inverted-ramp-wall-bundle",
+		"className": "ResourceSink_Diagonal_Down_Wallset_C",
+		"name": "Inverted Ramp Wall Bundle",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-orange-fliptris-8x1-c",
+			"recipe-wall-orange-fliptris-8x2-c",
+			"recipe-wall-orange-fliptris-8x4-c",
+			"recipe-wall-orange-fliptris-8x8-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ionized-fuel",
+		"className": "Research_Sulfur_IonizedFuel_C",
+		"name": "Ionized Fuel",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "power-shard",
+				"amount": 100
+			},
+			{
+				"item": "packaged-rocket-fuel",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": [
+			"recipe-ionizedfuel-c",
+			"recipe-packagedionizedfuel-c",
+			"recipe-unpackageionizedfuel-c"
+		],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "iron-plate-purchase",
+		"className": "ResourceSink_Plate_C",
+		"name": "Iron Plate (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "iron-rebar-pack-purchase",
+		"className": "ResourceSink_AmmoPack_C",
+		"name": "Iron Rebar Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["the-rebar-gun"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "iron-rod-purchase",
+		"className": "ResourceSink_Rod_C",
+		"name": "Iron Rod (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "jetpack",
+		"className": "Schematic_6-2_C",
+		"name": "Jetpack",
+		"type": "EST_Milestone",
+		"tier": 5,
+		"cost": [
+			{
+				"item": "motor",
+				"amount": 50
+			},
+			{
+				"item": "cable",
+				"amount": 1000
+			},
+			{
+				"item": "iron-plate",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": ["recipe-jetpack-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "joel-syntholm-boombox-tape",
+		"className": "Schematic_JoelSyntholm_C",
+		"name": "Joel Syntholm Boombox Tape",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "jump-pads",
+		"className": "Schematic_2-3_C",
+		"name": "Jump Pads",
+		"type": "EST_Milestone",
+		"tier": 2,
+		"cost": [
+			{
+				"item": "rotor",
+				"amount": 50
+			},
+			{
+				"item": "iron-plate",
+				"amount": 300
+			},
+			{
+				"item": "cable",
+				"amount": 150
+			}
+		],
+		"unlockRecipes": [
+			"recipe-jumppadadjustable-c",
+			"recipe-ujellylandingpad-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "label-sign-bundle",
+		"className": "ResourceSink_LabelSigns_C",
+		"name": "Label Sign Bundle",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-standalonewidgetsign-small-c",
+			"recipe-standalonewidgetsign-smallwide-c",
+			"recipe-standalonewidgetsign-smallverywide-c",
+			"recipe-standalonewidgetsign-square-tiny-c"
+		],
+		"requiredSchematics": ["quartz-crystals"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "le-michael-boombox-tape",
+		"className": "Schematic_LeMichael_C",
+		"name": "Le Michael Boombox Tape",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "leading-edge-production",
+		"className": "Schematic_8-4_C",
+		"name": "Leading-Edge Production",
+		"type": "EST_Milestone",
+		"tier": 8,
+		"cost": [
+			{
+				"item": "fused-modular-frame",
+				"amount": 50
+			},
+			{
+				"item": "supercomputer",
+				"amount": 100
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-motorturbo-c",
+			"recipe-minermk3-c",
+			"recipe-spaceelevatorpart-8-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "light-control-panel",
+		"className": "ResourceSink_LightControlPanel_C",
+		"name": "Light Control Panel",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": ["recipe-lightscontrolpanel-c"],
+		"requiredSchematics": ["quickwire"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "lizard-doggo-purchase",
+		"className": "ResourceSink_StatueLizardDoggo_C",
+		"name": "Lizard Doggo (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "logistics",
+		"className": "Schematic_1-2_C",
+		"name": "Logistics",
+		"type": "EST_Milestone",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "iron-plate",
+				"amount": 150
+			},
+			{
+				"item": "iron-rod",
+				"amount": 150
+			},
+			{
+				"item": "wire",
+				"amount": 300
+			}
+		],
+		"unlockRecipes": [
+			"recipe-conveyorattachmentsplitter-c",
+			"recipe-conveyorattachmentmerger-c",
+			"recipe-conveyorliftmk1-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "logistics-mk-2",
+		"className": "Schematic_3-2_C",
+		"name": "Logistics Mk.2",
+		"type": "EST_Milestone",
+		"tier": 2,
+		"cost": [
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 50
+			},
+			{
+				"item": "concrete",
+				"amount": 200
+			},
+			{
+				"item": "iron-rod",
+				"amount": 300
+			},
+			{
+				"item": "iron-plate",
+				"amount": 300
+			}
+		],
+		"unlockRecipes": [
+			"recipe-conveyorbeltmk2-c",
+			"recipe-conveyorpolestackable-c",
+			"recipe-conveyorliftmk2-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "logistics-mk-3",
+		"className": "Schematic_5-3_C",
+		"name": "Logistics Mk.3",
+		"type": "EST_Milestone",
+		"tier": 4,
+		"cost": [
+			{
+				"item": "steel-beam",
+				"amount": 200
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 200
+			},
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 400
+			}
+		],
+		"unlockRecipes": [
+			"recipe-storagecontainermk2-c",
+			"recipe-conveyorbeltmk3-c",
+			"recipe-conveyorliftmk3-c",
+			"recipe-pipesupportstackable-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "logistics-mk-4",
+		"className": "Schematic_6-1_C",
+		"name": "Logistics Mk.4",
+		"type": "EST_Milestone",
+		"tier": 5,
+		"cost": [
+			{
+				"item": "rubber",
+				"amount": 200
+			},
+			{
+				"item": "encased-industrial-beam",
+				"amount": 300
+			},
+			{
+				"item": "modular-frame",
+				"amount": 400
+			}
+		],
+		"unlockRecipes": [
+			"recipe-conveyorbeltmk4-c",
+			"recipe-conveyorliftmk4-c",
+			"recipe-truck-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "logistics-mk-5",
+		"className": "Schematic_7-2_C",
+		"name": "Logistics Mk.5",
+		"type": "EST_Milestone",
+		"tier": 7,
+		"cost": [
+			{
+				"item": "alclad-aluminum-sheet",
+				"amount": 200
+			},
+			{
+				"item": "encased-industrial-beam",
+				"amount": 400
+			},
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 600
+			}
+		],
+		"unlockRecipes": ["recipe-conveyorbeltmk5-c", "recipe-conveyorliftmk5-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "manual-depot-uploader",
+		"className": "Research_Alien_CentralInventory_C",
+		"name": "Manual Depot Uploader",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 3
+			},
+			{
+				"item": "computer",
+				"amount": 17
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 29
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "matter-conversion",
+		"className": "Schematic_9-1_C",
+		"name": "Matter Conversion",
+		"type": "EST_Milestone",
+		"tier": 9,
+		"cost": [
+			{
+				"item": "fused-modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "radio-control-unit",
+				"amount": 250
+			},
+			{
+				"item": "cooling-system",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-converter-c",
+			"recipe-ficsiteingot-iron-c",
+			"recipe-ficsitemesh-c",
+			"recipe-diamond-c",
+			"recipe-timecrystal-c",
+			"recipe-spaceelevatorpart-10-c",
+			"recipe-ingotsam-c",
+			"recipe-samfluctuator-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "medical-box-personal-storage-skin",
+		"className": "ResourceSink_MedicalBoxSkin_C",
+		"name": "Medical Box - Personal Storage Skin",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-storagemedkit-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "medical-properties",
+		"className": "Research_Mycelia_4_C",
+		"name": "Medical Properties",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "mycelia",
+				"amount": 25
+			},
+			{
+				"item": "stator",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "mercer-sphere-analysis",
+		"className": "Research_Alien_MercerSphere_C",
+		"name": "Mercer Sphere Analysis",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "metal-barriers",
+		"className": "ResourceSink_FactoryBarrier2_C",
+		"name": "Metal Barriers",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": ["recipe-barrier-low-01-c", "recipe-barrier-tall-01-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "metal-pillar-set",
+		"className": "ResourceSink_FoudationPillar_C",
+		"name": "Metal Pillar Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-pillarmiddle-c",
+			"recipe-pillarbase-c",
+			"recipe-pillar-small-metal-c",
+			"recipe-pillarbase-small-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "metal-roof-material",
+		"className": "ResourceSink_Customizer_SteelRoofMaterial_C",
+		"name": "Metal Roof Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["ficsit-roofs", "basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "modern-catwalks",
+		"className": "ResourceSink_Catwalks_C",
+		"name": "Modern Catwalks",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-catwalk-straight-c",
+			"recipe-catwalk-cross-c",
+			"recipe-catwalk-t-c",
+			"recipe-catwalk-turn-c",
+			"recipe-catwalk-ramp-c",
+			"recipe-catwalk-stairs-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "modern-railing",
+		"className": "ResourceSink_FactoryFence_C",
+		"name": "Modern Railing",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-railing-01-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "modular-frame-purchase",
+		"className": "ResourceSink_ModularFrame_C",
+		"name": "Modular Frame (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "monorail-train-technology",
+		"className": "Schematic_6-3_C",
+		"name": "Monorail Train Technology",
+		"type": "EST_Milestone",
+		"tier": 6,
+		"cost": [
+			{
+				"item": "motor",
+				"amount": 250
+			},
+			{
+				"item": "encased-industrial-beam",
+				"amount": 500
+			},
+			{
+				"item": "steel-beam",
+				"amount": 1000
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-locomotive-c",
+			"recipe-freightwagon-c",
+			"recipe-railroadtrack-c",
+			"recipe-trainstation-c",
+			"recipe-traindockingstation-c",
+			"recipe-traindockingstationliquid-c",
+			"recipe-trainplatformempty-c",
+			"recipe-trainplatformempty-02-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "motor-purchase",
+		"className": "ResourceSink_Motor_C",
+		"name": "Motor (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "mycelia",
+		"className": "Research_Mycelia_1_C",
+		"name": "Mycelia",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "mycelia",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": ["recipe-biomass-mycelia-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "neural-quantum-processor-purchase",
+		"className": "ResourceSink_NeuralQuantumProcessor_C",
+		"name": "Neural-Quantum Processor (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["quantum-encoding"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "nobelisk-pack-purchase",
+		"className": "ResourceSink_Explosives_C",
+		"name": "Nobelisk Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["the-nobelisk-detonator"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "nuclear-deterrent-development",
+		"className": "Research_Sulfur_5_1_C",
+		"name": "Nuclear Deterrent Development",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "nobelisk",
+				"amount": 500
+			},
+			{
+				"item": "encased-uranium-cell",
+				"amount": 10
+			},
+			{
+				"item": "ai-limiter",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-nobelisknuke-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "nuclear-power",
+		"className": "Schematic_8-1_C",
+		"name": "Nuclear Power",
+		"type": "EST_Milestone",
+		"tier": 8,
+		"cost": [
+			{
+				"item": "supercomputer",
+				"amount": 50
+			},
+			{
+				"item": "heavy-modular-frame",
+				"amount": 200
+			},
+			{
+				"item": "cable",
+				"amount": 1000
+			},
+			{
+				"item": "concrete",
+				"amount": 2000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-uraniumcell-c",
+			"recipe-electromagneticcontrolrod-c",
+			"recipe-nuclearfuelrod-c",
+			"recipe-generatornuclear-c",
+			"recipe-spaceelevatorpart-6-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "nuclear-waste-trinket",
+		"className": "Schematic_Trinket_NuclearWaste_C",
+		"name": "Nuclear Waste Trinket",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "number-patterns",
+		"className": "ResourceSink_Number_FoundationPatterns_C",
+		"name": "Number Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "nutritional-inhaler",
+		"className": "Research_Nutrients_4_C",
+		"name": "Nutritional Inhaler",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "bacon-agaric",
+				"amount": 2
+			},
+			{
+				"item": "paleberry",
+				"amount": 4
+			},
+			{
+				"item": "beryl-nut",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": ["recipe-nutritionalinhaler-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "nutritional-processor",
+		"className": "Research_Nutrients_3_C",
+		"name": "Nutritional Processor",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "modular-frame",
+				"amount": 25
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 50
+			},
+			{
+				"item": "wire",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "obstacle-clearing",
+		"className": "Schematic_2-2_C",
+		"name": "Obstacle Clearing",
+		"type": "EST_Milestone",
+		"tier": 2,
+		"cost": [
+			{
+				"item": "screw",
+				"amount": 500
+			},
+			{
+				"item": "cable",
+				"amount": 100
+			},
+			{
+				"item": "concrete",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-chainsaw-c", "recipe-biofuel-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "oil-processing",
+		"className": "Schematic_5-1_C",
+		"name": "Oil Processing",
+		"type": "EST_Milestone",
+		"tier": 5,
+		"cost": [
+			{
+				"item": "motor",
+				"amount": 50
+			},
+			{
+				"item": "encased-industrial-beam",
+				"amount": 100
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 500
+			},
+			{
+				"item": "copper-sheet",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-petroleumcoke-c",
+			"recipe-circuitboard-c",
+			"recipe-oilpump-c",
+			"recipe-oilrefinery-c",
+			"recipe-valve-c",
+			"recipe-plastic-c",
+			"recipe-rubber-c",
+			"recipe-liquidfuel-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "overclock-production",
+		"className": "Research_PowerSlugs_2_C",
+		"name": "Overclock Production",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "power-shard",
+				"amount": 1
+			},
+			{
+				"item": "iron-plate",
+				"amount": 50
+			},
+			{
+				"item": "wire",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "packaged-fuel-purchase",
+		"className": "ResourceSink_PackagedFuel_C",
+		"name": "Packaged Fuel (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["fluid-packaging"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "packaged-ionized-fuel-purchase",
+		"className": "ResourceSink_IonizedFuel_C",
+		"name": "Packaged Ionized Fuel (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 8
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["ionized-fuel"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "packaged-liquid-biofuel-purchase",
+		"className": "ResourceSink_PackagedBiofuel_C",
+		"name": "Packaged Liquid Biofuel (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["fluid-packaging"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "packaged-rocket-fuel-purchase",
+		"className": "ResourceSink_RocketFuel_C",
+		"name": "Packaged Rocket Fuel (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["rocket-fuel"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "packaged-turbofuel-purchase",
+		"className": "ResourceSink_PackagedTurboFuel_C",
+		"name": "Packaged Turbofuel (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["turbofuel"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "paleberry",
+		"className": "Research_Nutrients_0_C",
+		"name": "Paleberry",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "paleberry",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "parachute",
+		"className": "Research_Mycelia_3_C",
+		"name": "Parachute",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "fabric",
+				"amount": 10
+			},
+			{
+				"item": "cable",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-parachute-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "part-assembly",
+		"className": "Schematic_2-1_C",
+		"name": "Part Assembly",
+		"type": "EST_Milestone",
+		"tier": 2,
+		"cost": [
+			{
+				"item": "cable",
+				"amount": 200
+			},
+			{
+				"item": "iron-rod",
+				"amount": 200
+			},
+			{
+				"item": "screw",
+				"amount": 500
+			},
+			{
+				"item": "iron-plate",
+				"amount": 300
+			}
+		],
+		"unlockRecipes": [
+			"recipe-assemblermk1-c",
+			"recipe-coppersheet-c",
+			"recipe-rotor-c",
+			"recipe-modularframe-c",
+			"recipe-spaceelevatorpart-1-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "particle-enrichment",
+		"className": "Schematic_8-5_C",
+		"name": "Particle Enrichment",
+		"type": "EST_Milestone",
+		"tier": 8,
+		"cost": [
+			{
+				"item": "turbo-motor",
+				"amount": 50
+			},
+			{
+				"item": "fused-modular-frame",
+				"amount": 100
+			},
+			{
+				"item": "cooling-system",
+				"amount": 200
+			},
+			{
+				"item": "quickwire",
+				"amount": 2500
+			}
+		],
+		"unlockRecipes": [
+			"recipe-nitricacid-c",
+			"recipe-packagednitricacid-c",
+			"recipe-nonfissileuranium-c",
+			"recipe-plutonium-c",
+			"recipe-plutoniumcell-c",
+			"recipe-plutoniumfuelrod-c",
+			"recipe-hadroncollider-c",
+			"recipe-copperdust-c",
+			"recipe-pressureconversioncube-c",
+			"recipe-spaceelevatorpart-9-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "pathway-patterns",
+		"className": "ResourceSink_Pathways_FoundationPatterns_C",
+		"name": "Pathway Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "peak-efficiency",
+		"className": "Schematic_9-5_C",
+		"name": "Peak Efficiency",
+		"type": "EST_Milestone",
+		"tier": 9,
+		"cost": [
+			{
+				"item": "time-crystal",
+				"amount": 250
+			},
+			{
+				"item": "ficsite-trigon",
+				"amount": 250
+			},
+			{
+				"item": "alclad-aluminum-sheet",
+				"amount": 5000
+			},
+			{
+				"item": "iron-plate",
+				"amount": 10000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-conveyorbeltmk6-c",
+			"recipe-conveyorliftmk6-c",
+			"recipe-ficsonium-c",
+			"recipe-ficsoniumfuelrod-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "petroleum-power",
+		"className": "Schematic_5-5_C",
+		"name": "Petroleum Power",
+		"type": "EST_Milestone",
+		"tier": 5,
+		"cost": [
+			{
+				"item": "motor",
+				"amount": 100
+			},
+			{
+				"item": "encased-industrial-beam",
+				"amount": 100
+			},
+			{
+				"item": "rubber",
+				"amount": 200
+			},
+			{
+				"item": "plastic",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-generatorfuel-c", "recipe-industrialtank-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "pipeline-engineering-mk-2",
+		"className": "Schematic_6-5_C",
+		"name": "Pipeline Engineering Mk.2",
+		"type": "EST_Milestone",
+		"tier": 6,
+		"cost": [
+			{
+				"item": "heavy-modular-frame",
+				"amount": 50
+			},
+			{
+				"item": "plastic",
+				"amount": 1000
+			},
+			{
+				"item": "rubber",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": ["recipe-pipelinemk2-c", "recipe-pipelinepumpmk2-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "pipeline-floor-hole",
+		"className": "ResourceSink_PipelineFloorHole_C",
+		"name": "Pipeline Floor Hole",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-foundationpassthrough-pipe-c"],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "pipeline-wall-attachments",
+		"className": "ResourceSink_PipelineWallAttachments_C",
+		"name": "Pipeline Wall Attachments",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [
+			"recipe-pipesupportwall-c",
+			"recipe-pipesupportwallhole-c"
+		],
+		"requiredSchematics": ["coal-power"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "plastic-purchase",
+		"className": "ResourceSink_Plastic_C",
+		"name": "Plastic (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "power-augmenter",
+		"className": "Research_Alien_PowerBooster_C",
+		"name": "Power Augmenter",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "somersloop",
+				"amount": 1
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 100
+			},
+			{
+				"item": "computer",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-alienpowerbuilding-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "power-poles-mk-2",
+		"className": "Research_Caterium_4_2_C",
+		"name": "Power Poles Mk.2",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quickwire",
+				"amount": 300
+			}
+		],
+		"unlockRecipes": ["recipe-powerpolemk2-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "power-poles-mk-3",
+		"className": "Research_Caterium_6_2_C",
+		"name": "Power Poles Mk.3",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "high-speed-connector",
+				"amount": 50
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-powerpolemk3-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "power-switch",
+		"className": "Research_Caterium_4_1_2_C",
+		"name": "Power Switch",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "steel-beam",
+				"amount": 100
+			},
+			{
+				"item": "ai-limiter",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-powerswitch-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "pressure-conversion-cube-purchase",
+		"className": "ResourceSink_PressureConversionCube_C",
+		"name": "Pressure Conversion Cube (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 8
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["particle-enrichment"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "pretty-good-pioneering-purchase",
+		"className": "ResourceSink_StatueSilverPioneer_C",
+		"name": "Pretty Good Pioneering (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "priority-power-switch",
+		"className": "Research_Caterium_5_1_C",
+		"name": "Priority Power Switch",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "high-speed-connector",
+				"amount": 25
+			},
+			{
+				"item": "quickwire",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": ["recipe-prioritypowerswitch-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "production-amplifier",
+		"className": "Research_Alien_ProductionBooster_C",
+		"name": "Production Amplifier",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "somersloop",
+				"amount": 1
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 100
+			},
+			{
+				"item": "circuit-board",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "programmable-splitter",
+		"className": "Research_Caterium_7_1_C",
+		"name": "Programmable Splitter",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "ai-limiter",
+				"amount": 100
+			},
+			{
+				"item": "computer",
+				"amount": 50
+			},
+			{
+				"item": "heavy-modular-frame",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-conveyorattachmentsplitterprogrammable-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "protein-inhaler",
+		"className": "Research_AOrgans_2_C",
+		"name": "Protein Inhaler",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "alien-protein",
+				"amount": 2
+			},
+			{
+				"item": "beryl-nut",
+				"amount": 20
+			},
+			{
+				"item": "rotor",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-medicinalinhaleralienorgans-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "pulse-nobelisk-pack-purchase",
+		"className": "ResourceSink_NobeliskPulse_C",
+		"name": "Pulse Nobelisk Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["explosive-resonance-application"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "purple-power-slugs",
+		"className": "Research_PowerSlugs_5_C",
+		"name": "Purple Power Slugs",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "purple-power-slug",
+				"amount": 1
+			},
+			{
+				"item": "modular-frame",
+				"amount": 25
+			},
+			{
+				"item": "copper-sheet",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-powercrystalshard-3-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "quantum-encoding",
+		"className": "Schematic_9-2_C",
+		"name": "Quantum Encoding",
+		"type": "EST_Milestone",
+		"tier": 9,
+		"cost": [
+			{
+				"item": "time-crystal",
+				"amount": 50
+			},
+			{
+				"item": "ficsite-trigon",
+				"amount": 100
+			},
+			{
+				"item": "turbo-motor",
+				"amount": 200
+			},
+			{
+				"item": "supercomputer",
+				"amount": 400
+			}
+		],
+		"unlockRecipes": [
+			"recipe-quantumencoder-c",
+			"recipe-quantumenergy-c",
+			"recipe-darkenergy-c",
+			"recipe-darkmatter-c",
+			"recipe-superpositionoscillator-c",
+			"recipe-temporalprocessor-c",
+			"recipe-spaceelevatorpart-12-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "quarter-pipe-extensions-pack",
+		"className": "ResourceSink_QuarterPipeExtensions_C",
+		"name": "Quarter Pipe Extensions Pack",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [
+			"recipe-quarterpipemiddleincorner-ficsit-8x1-c",
+			"recipe-quarterpipemiddleincorner-ficsit-8x2-c",
+			"recipe-quarterpipemiddleincorner-ficsit-8x4-c",
+			"recipe-quarterpipemiddleoutcorner-ficsit-4x1-c",
+			"recipe-quarterpipemiddleoutcorner-ficsit-4x2-c",
+			"recipe-quarterpipemiddleoutcorner-ficsit-4x4-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "quarter-pipes-pack",
+		"className": "ResourceSink_CurvedFoundationPack_C",
+		"name": "Quarter Pipes Pack",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [
+			"recipe-quarterpipe-c",
+			"recipe-quarterpipe-02-c",
+			"recipe-quarterpipecorner-01-c",
+			"recipe-quarterpipecorner-02-c",
+			"recipe-quarterpipecorner-03-c",
+			"recipe-quarterpipecorner-04-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "quartz",
+		"className": "Research_Quartz_0_C",
+		"name": "Quartz",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "raw-quartz",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "quartz-crystal-purchase",
+		"className": "ResourceSink_QuartzCrystal_C",
+		"name": "Quartz Crystal (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["quartz-crystals", "bauxite-refinement"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "quartz-crystals",
+		"className": "Research_Quartz_1_1_C",
+		"name": "Quartz Crystals",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "raw-quartz",
+				"amount": 20
+			}
+		],
+		"unlockRecipes": ["recipe-quartzcrystal-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "quickwire",
+		"className": "Research_Caterium_2_C",
+		"name": "Quickwire",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "caterium-ingot",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-quickwire-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "quickwire-purchase",
+		"className": "ResourceSink_Quickwire_C",
+		"name": "Quickwire (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["quickwire"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "radar-technology",
+		"className": "Research_Quartz_4_C",
+		"name": "Radar Technology",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "crystal-oscillator",
+				"amount": 50
+			},
+			{
+				"item": "heavy-modular-frame",
+				"amount": 50
+			},
+			{
+				"item": "computer",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-radartower-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "radiation-filters-purchase",
+		"className": "ResourceSink_RadiationFilters_C",
+		"name": "Radiation Filters (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["hazmat-suit"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "radio-control-unit-purchase",
+		"className": "ResourceSink_RadioControlUnit_C",
+		"name": "Radio Control Unit (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 7
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["bauxite-refinement"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "radio-signal-scanning",
+		"className": "Research_Quartz_4_1_C",
+		"name": "Radio Signal Scanning",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "crystal-oscillator",
+				"amount": 100
+			},
+			{
+				"item": "motor",
+				"amount": 100
+			},
+			{
+				"item": "object-scanner",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "railway-signalling",
+		"className": "Schematic_6-7_C",
+		"name": "Railway Signalling",
+		"type": "EST_Milestone",
+		"tier": 6,
+		"cost": [
+			{
+				"item": "computer",
+				"amount": 50
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 400
+			},
+			{
+				"item": "copper-sheet",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-railroadblocksignal-c",
+			"recipe-railroadpathsignal-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "ramp-wall-bundle",
+		"className": "ResourceSink_Diagonal_Up_WallSet_C",
+		"name": "Ramp Wall Bundle",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-orange-tris-8x1-c",
+			"recipe-wall-orange-tris-8x2-c",
+			"recipe-wall-orange-tris-8x4-c",
+			"recipe-wall-orange-tris-8x8-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "reinforced-iron-plate-purchase",
+		"className": "ResourceSink_ReinforcedIronPlate_C",
+		"name": "Reinforced Iron Plate (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "resource-sink-bonus-program",
+		"className": "Schematic_2-5_C",
+		"name": "Resource Sink Bonus Program",
+		"type": "EST_Milestone",
+		"tier": 2,
+		"cost": [
+			{
+				"item": "concrete",
+				"amount": 400
+			},
+			{
+				"item": "wire",
+				"amount": 500
+			},
+			{
+				"item": "iron-rod",
+				"amount": 200
+			},
+			{
+				"item": "iron-plate",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-resourcesink-c", "recipe-resourcesinkshop-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "rifle-ammo-pack-purchase",
+		"className": "ResourceSink_AdvancedAmmoPack_C",
+		"name": "Rifle Ammo Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["the-rifle"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "road-barrier",
+		"className": "ResourceSink_FactoryBarrier_C",
+		"name": "Road Barrier",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-concrete-barrier-01-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "rocket-fuel",
+		"className": "Research_Sulfur_RocketFuel_C",
+		"name": "Rocket Fuel",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "empty-fluid-tank",
+				"amount": 10
+			},
+			{
+				"item": "packaged-turbofuel",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [
+			"recipe-rocketfuel-c",
+			"recipe-packagedrocketfuel-c",
+			"recipe-unpackagerocketfuel-c"
+		],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "rotor-purchase",
+		"className": "ResourceSink_Rotor_C",
+		"name": "Rotor (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["part-assembly"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "rubber-purchase",
+		"className": "ResourceSink_Rubber_C",
+		"name": "Rubber (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["oil-processing"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "sam-analysis",
+		"className": "Research_Alien_SAM_C",
+		"name": "SAM Analysis",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "sam",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "sam-fluctuator",
+		"className": "Research_Alien_SAMFluctuator_C",
+		"name": "SAM Fluctuator",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "reanimated-sam",
+				"amount": 10
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 100
+			},
+			{
+				"item": "wire",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-samfluctuator-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "sam-reanimation",
+		"className": "Research_Alien_ActiveSAM_C",
+		"name": "SAM Reanimation",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "sam",
+				"amount": 20
+			}
+		],
+		"unlockRecipes": ["recipe-ingotsam-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "sanctum-2-boombox-tape",
+		"className": "Schematic_Sanctum2_C",
+		"name": "Sanctum 2 Boombox Tape",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "sanctum-boombox-tape",
+		"className": "Schematic_Sanctum_C",
+		"name": "Sanctum Boombox Tape",
+		"type": "EST_ResourceSink",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "satisfactory-pioneering-purchase",
+		"className": "ResourceSink_StatueGoldPioneer_C",
+		"name": "Satisfactory Pioneering (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 150
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "scout-helmet",
+		"className": "Schematic_Helmet_Scout_C",
+		"name": "Scout Helmet",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "screw-purchase",
+		"className": "ResourceSink_Screw_C",
+		"name": "Screw (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "shatter-rebar",
+		"className": "Research_Quartz_2_1_C",
+		"name": "Shatter Rebar",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quartz-crystal",
+				"amount": 30
+			},
+			{
+				"item": "iron-rebar",
+				"amount": 150
+			}
+		],
+		"unlockRecipes": ["recipe-rebar-spreadshot-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "shatter-rebar-pack-purchase",
+		"className": "ResourceSink_RebarShatter_C",
+		"name": "Shatter Rebar Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["shatter-rebar"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "signal-systems",
+		"className": "Research_Quartz_3_C",
+		"name": "Signal Systems",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "crystal-oscillator",
+				"amount": 5
+			},
+			{
+				"item": "circuit-board",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "silica",
+		"className": "Research_Quartz_1_2_C",
+		"name": "Silica",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "raw-quartz",
+				"amount": 20
+			}
+		],
+		"unlockRecipes": ["recipe-silica-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "silica-purchase",
+		"className": "ResourceSink_Silica_C",
+		"name": "Silica (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["silica", "bauxite-refinement"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "silver-hog-purchase",
+		"className": "ResourceSink_Statue_Hoggo_C",
+		"name": "Silver Hog (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "slug-scanning",
+		"className": "Research_PowerSlugs_3_C",
+		"name": "Slug Scanning",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "iron-rod",
+				"amount": 50
+			},
+			{
+				"item": "wire",
+				"amount": 100
+			},
+			{
+				"item": "screw",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "smart-splitter",
+		"className": "Research_Caterium_4_1_1_C",
+		"name": "Smart Splitter",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "ai-limiter",
+				"amount": 10
+			},
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-conveyorattachmentsplittersmart-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "smokeless-powder",
+		"className": "Research_Sulfur_3_C",
+		"name": "Smokeless Powder",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "black-powder",
+				"amount": 100
+			},
+			{
+				"item": "plastic",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-gunpowdermk2-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "smokeless-powder-purchase",
+		"className": "ResourceSink_SmokelessPowder_C",
+		"name": "Smokeless Powder (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["smokeless-powder"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "solid-line-patterns",
+		"className": "ResourceSink_FullLines_FoundationPatterns_C",
+		"name": "Solid Line Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "somersloop-analysis",
+		"className": "Research_Alien_Somersloop_C",
+		"name": "Somersloop Analysis",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "somersloop",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "somersloop-trinket",
+		"className": "Schematic_Trinket_Somersloop_C",
+		"name": "Somersloop Trinket",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "spatial-energy-regulation",
+		"className": "Schematic_9-4_C",
+		"name": "Spatial Energy Regulation",
+		"type": "EST_Milestone",
+		"tier": 9,
+		"cost": [
+			{
+				"item": "superposition-oscillator",
+				"amount": 100
+			},
+			{
+				"item": "turbo-motor",
+				"amount": 250
+			},
+			{
+				"item": "radio-control-unit",
+				"amount": 500
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 1000
+			}
+		],
+		"unlockRecipes": [
+			"recipe-portal-c",
+			"recipe-portalsatellite-c",
+			"recipe-singularitycell-c",
+			"recipe-spaceelevatorpart-11-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "spitter-research",
+		"className": "Research_AOrgans_0_C",
+		"name": "Spitter Research",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "spitter-remains",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-protein-spitter-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "standard-ficsit-build-gun",
+		"className": "Schematic_Skin_Buildgun_Default_C",
+		"name": "Standard FICSIT Build Gun",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "standard-ficsit-helmet",
+		"className": "Schematic_Helmet_Default_C",
+		"name": "Standard FICSIT Helmet",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "stator-purchase",
+		"className": "ResourceSink_Stator_C",
+		"name": "Stator (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["advanced-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "steel-beam-purchase",
+		"className": "ResourceSink_SteelBeam_C",
+		"name": "Steel Beam (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "steel-framed-windows",
+		"className": "ResourceSink_FrameWindows_C",
+		"name": "Steel-Framed Windows",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-window-thin-8x4-01-c",
+			"recipe-wall-window-thin-8x4-02-c",
+			"recipe-wall-window-8x4-06-c",
+			"recipe-wall-window-8x4-07-c",
+			"recipe-wall-window-8x4-05-c"
+		],
+		"requiredSchematics": ["silica", "basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "steel-pipe-purchase",
+		"className": "ResourceSink_SteelPipe_C",
+		"name": "Steel Pipe (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "steel-wall-material",
+		"className": "ResourceSink_Customizer_SteelWallMaterial_C",
+		"name": "Steel Wall Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["basic-steel-production", "base-building"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "stinger-research",
+		"className": "Research_AO_Stinger_C",
+		"name": "Stinger Research",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "stinger-remains",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-protein-stinger-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "street-light",
+		"className": "ResourceSink_StreetLight_C",
+		"name": "Street Light",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-streetlight-c"],
+		"requiredSchematics": ["quickwire"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "striped-build-gun",
+		"className": "Schematic_Skin_Buildgun_Striped_C",
+		"name": "Striped Build Gun",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "structural-analysis",
+		"className": "Research_AO_Pre_Rebar_C",
+		"name": "Structural Analysis",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "alien-dna-capsule",
+				"amount": 5
+			},
+			{
+				"item": "iron-rod",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "structural-beam-pack",
+		"className": "ResourceSink_BeamSet_C",
+		"name": "Structural Beam Pack",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [
+			"recipe-beam-c",
+			"recipe-beam-painted-c",
+			"recipe-beam-support-c",
+			"recipe-beam-connector-c",
+			"recipe-beam-connector-double-c"
+		],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "structural-frame-set",
+		"className": "ResourceSink_FrameworkFoundations_C",
+		"name": "Structural Frame Set",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [
+			"recipe-flat-frame-01-c",
+			"recipe-foundationglass-01-c",
+			"recipe-foundation-frame-01-c",
+			"recipe-wall-frame-01-c",
+			"recipe-ramp-frame-01-c",
+			"recipe-ramp-frame-inverted-01-c"
+		],
+		"requiredSchematics": ["basic-steel-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "stun-rebar",
+		"className": "Research_Caterium_3_2_C",
+		"name": "Stun Rebar",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quickwire",
+				"amount": 50
+			},
+			{
+				"item": "iron-rebar",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": ["recipe-rebar-stunshot-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "stun-rebar-pack-purchase",
+		"className": "ResourceSink_RebarStun_C",
+		"name": "Stun Rebar Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["stun-rebar"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "sulfur",
+		"className": "Research_Sulfur_0_C",
+		"name": "Sulfur",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "sulfur",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "supercomputer-purchase",
+		"className": "ResourceSink_SuperComputer_C",
+		"name": "Supercomputer (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 8
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["aeronautical-engineering"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "superposition-oscillator-purchase",
+		"className": "ResourceSink_SuperPositionOscillator_C",
+		"name": "Superposition Oscillator (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 9
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["quantum-encoding"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "synthetic-polyester-fabric",
+		"className": "Research_Mycelia_2_1_C",
+		"name": "Synthetic Polyester Fabric",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "fabric",
+				"amount": 25
+			},
+			{
+				"item": "polymer-resin",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-alternate-polyesterfabric-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "synthetic-power-shard-purchase",
+		"className": "ResourceSink_SyntheticPowerShard_C",
+		"name": "Synthetic Power Shard (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 10
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["synthetic-power-shards"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "synthetic-power-shards",
+		"className": "Research_PowerSlugs_6_C",
+		"name": "Synthetic Power Shards",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "power-shard",
+				"amount": 10
+			},
+			{
+				"item": "time-crystal",
+				"amount": 100
+			},
+			{
+				"item": "quartz-crystal",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-syntheticpowershard-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "tar-roof-material",
+		"className": "ResourceSink_Customizer_TarRoofMaterial_C",
+		"name": "Tar Roof Material",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 2
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["ficsit-roofs"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "the-explorer",
+		"className": "Research_Quartz_3_1_C",
+		"name": "The Explorer",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "crystal-oscillator",
+				"amount": 10
+			},
+			{
+				"item": "modular-frame",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-explorer-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "the-nobelisk-detonator",
+		"className": "Research_Sulfur_3_1_C",
+		"name": "The Nobelisk Detonator",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "black-powder",
+				"amount": 50
+			},
+			{
+				"item": "steel-pipe",
+				"amount": 100
+			},
+			{
+				"item": "cable",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-nobeliskdetonator-c", "recipe-nobelisk-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "the-rebar-gun",
+		"className": "Research_ACarapace_2_C",
+		"name": "The Rebar Gun",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "rotor",
+				"amount": 25
+			},
+			{
+				"item": "reinforced-iron-plate",
+				"amount": 50
+			},
+			{
+				"item": "screw",
+				"amount": 500
+			}
+		],
+		"unlockRecipes": ["recipe-rebargun-c", "recipe-spikedrebar-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "the-rifle",
+		"className": "Research_Sulfur_4_1_C",
+		"name": "The Rifle",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "smokeless-powder",
+				"amount": 50
+			},
+			{
+				"item": "motor",
+				"amount": 100
+			},
+			{
+				"item": "rubber",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-spaceriflemk1-c", "recipe-cartridge-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "therapeutic-inhaler",
+		"className": "Research_Mycelia_6_C",
+		"name": "Therapeutic Inhaler",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "mycelia",
+				"amount": 15
+			},
+			{
+				"item": "bacon-agaric",
+				"amount": 1
+			},
+			{
+				"item": "alien-protein",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": ["recipe-therapeuticinhaler-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "tilted-walls",
+		"className": "ResourceSink_Tilted_Walls_C",
+		"name": "Tilted Walls",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-orange-angular-8x4-c",
+			"recipe-wall-orange-angular-8x8-c",
+			"recipe-wall-orange-8x4-corner-01-c",
+			"recipe-wall-orange-8x8-corner-01-c",
+			"recipe-wall-orange-8x4-corner-02-c",
+			"recipe-wall-orange-8x8-corner-02-c"
+		],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "time-crystal-purchase",
+		"className": "ResourceSink_TimeCrystal_C",
+		"name": "Time Crystal (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["matter-conversion"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "toxic-cellular-modification",
+		"className": "Research_Mycelia_8_C",
+		"name": "Toxic Cellular Modification",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "nobelisk",
+				"amount": 10
+			},
+			{
+				"item": "mycelia",
+				"amount": 100
+			},
+			{
+				"item": "biomass",
+				"amount": 200
+			}
+		],
+		"unlockRecipes": ["recipe-nobeliskgas-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "transportation-icon-patterns",
+		"className": "ResourceSink_IconsTransport_FoundationPatterns_C",
+		"name": "Transportation Icon Patterns",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "turbo-motor-purchase",
+		"className": "ResourceSink_TurboMotor_C",
+		"name": "Turbo Motor (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 8
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["leading-edge-production"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "turbo-rifle-ammo",
+		"className": "Research_Sulfur_5_2_C",
+		"name": "Turbo Rifle Ammo",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "rifle-ammo",
+				"amount": 1000
+			},
+			{
+				"item": "packaged-turbofuel",
+				"amount": 50
+			},
+			{
+				"item": "aluminum-casing",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-cartridgechaos-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "turbo-rifle-ammo-pack-purchase",
+		"className": "ResourceSink_RifleAmmoTurbo_C",
+		"name": "Turbo Rifle Ammo Pack (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": ["turbo-rifle-ammo"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "turbofuel",
+		"className": "Research_Sulfur_TurboFuel_C",
+		"name": "Turbofuel",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "compacted-coal",
+				"amount": 15
+			},
+			{
+				"item": "packaged-fuel",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [
+			"recipe-alternate-turbofuel-c",
+			"recipe-packagedturbofuel-c"
+		],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "unpainted-finish",
+		"className": "ResourceSink_UnPainted_PaintFinish_C",
+		"name": "Unpainted Finish",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "upload-upgrade-120-min",
+		"className": "Research_Alien_CentralUploadBoost_03_C",
+		"name": "Upload Upgrade: 120/min",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 13
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 151
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "upload-upgrade-240-min",
+		"className": "Research_Alien_CentralUploadBoost_04_C",
+		"name": "Upload Upgrade: 240/min",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 23
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 199
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "upload-upgrade-30-min",
+		"className": "Research_Alien_CentralUploadBoost_01_C",
+		"name": "Upload Upgrade: 30/min",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 3
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 47
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "upload-upgrade-60-min",
+		"className": "Research_Alien_CentralUploadBoost_02_C",
+		"name": "Upload Upgrade: 60/min",
+		"type": "EST_MAM",
+		"tier": 0,
+		"cost": [
+			{
+				"item": "mercer-sphere",
+				"amount": 7
+			},
+			{
+				"item": "sam-fluctuator",
+				"amount": 103
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "vehicular-transport",
+		"className": "Schematic_3-3_C",
+		"name": "Vehicular Transport",
+		"type": "EST_Milestone",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "modular-frame",
+				"amount": 25
+			},
+			{
+				"item": "rotor",
+				"amount": 100
+			},
+			{
+				"item": "cable",
+				"amount": 200
+			},
+			{
+				"item": "iron-plate",
+				"amount": 400
+			}
+		],
+		"unlockRecipes": ["recipe-tractor-c", "recipe-truckstation-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "vitamin-inhaler",
+		"className": "Research_Mycelia_5_C",
+		"name": "Vitamin Inhaler",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "mycelia",
+				"amount": 10
+			},
+			{
+				"item": "paleberry",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": ["recipe-medicinalinhaler-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "volatile-applications",
+		"className": "Research_Sulfur_2_C",
+		"name": "Volatile Applications",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "black-powder",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "wall-power-outlets-mk-1",
+		"className": "ResourceSink_WallPowerPoles_C",
+		"name": "Wall Power Outlets Mk.1",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 3
+			}
+		],
+		"unlockRecipes": ["recipe-powerpolewall-c", "recipe-powerpolewalldouble-c"],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "wall-power-outlets-mk-2",
+		"className": "ResourceSink_WallPowerPolesMK2_C",
+		"name": "Wall Power Outlets Mk.2",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 4
+			}
+		],
+		"unlockRecipes": [
+			"recipe-powerpolewallmk2-c",
+			"recipe-powerpolewalldoublemk2-c"
+		],
+		"requiredSchematics": ["power-poles-mk-2"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "wall-power-outlets-mk-3",
+		"className": "ResourceSink_WallPowerPolesMK3_C",
+		"name": "Wall Power Outlets Mk.3",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 5
+			}
+		],
+		"unlockRecipes": [
+			"recipe-powerpolewallmk3-c",
+			"recipe-powerpolewalldoublemk3-c"
+		],
+		"requiredSchematics": ["power-poles-mk-3"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "welder-helmet",
+		"className": "Schematic_Helmet_Welder_C",
+		"name": "Welder Helmet",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "windowed-walls",
+		"className": "ResourceSink_WindowedWalls_C",
+		"name": "Windowed Walls",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 6
+			}
+		],
+		"unlockRecipes": [
+			"recipe-wall-window-8x4-01-c",
+			"recipe-wall-window-8x4-02-c",
+			"recipe-wall-window-8x4-03-c",
+			"recipe-wall-window-8x4-04-c"
+		],
+		"requiredSchematics": ["silica"],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "wire-purchase",
+		"className": "ResourceSink_Wire_C",
+		"name": "Wire (purchase)",
+		"type": "EST_ResourceSink",
+		"tier": 1,
+		"cost": [
+			{
+				"item": "ficsit-coupon",
+				"amount": 1
+			}
+		],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "wrench-trinket",
+		"className": "Schematic_Trinket_Default_C",
+		"name": "Wrench Trinket",
+		"type": "EST_Customization",
+		"tier": 0,
+		"cost": [],
+		"unlockRecipes": [],
+		"requiredSchematics": [],
+		"mam": false,
+		"alternate": false
+	},
+	{
+		"slug": "yellow-power-slugs",
+		"className": "Research_PowerSlugs_4_C",
+		"name": "Yellow Power Slugs",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "yellow-power-slug",
+				"amount": 1
+			},
+			{
+				"item": "rotor",
+				"amount": 25
+			},
+			{
+				"item": "cable",
+				"amount": 100
+			}
+		],
+		"unlockRecipes": ["recipe-powercrystalshard-2-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	},
+	{
+		"slug": "zipline",
+		"className": "Research_Caterium_2_1_C",
+		"name": "Zipline",
+		"type": "EST_MAM",
+		"tier": 3,
+		"cost": [
+			{
+				"item": "quickwire",
+				"amount": 100
+			},
+			{
+				"item": "cable",
+				"amount": 50
+			}
+		],
+		"unlockRecipes": ["recipe-zipline-c"],
+		"requiredSchematics": [],
+		"mam": true,
+		"alternate": false
+	}
+]

@@ -178,4 +178,16 @@ describe('transform', () => {
     expect(schem?.requiredSchematics).toEqual([])
     expect(warnings).toHaveLength(2)
   })
+
+  it('drops unresolved schematic cost items with a warning', () => {
+    const source = fixture()
+    source.schematics.Schematic_T1_C.cost.push({
+      item: 'Desc_Missing_C',
+      amount: 5,
+    })
+    const { data, warnings } = transform(source)
+    const schem = data.schematics[0]
+    expect(schem?.cost).toEqual([{ item: 'iron-ore', amount: 10 }])
+    expect(warnings).toHaveLength(1)
+  })
 })
