@@ -24,7 +24,8 @@
     "check": "biome check",
     "typecheck": "tsc --noEmit",
     "deploy": "npm run build && wrangler deploy",
-    "generate-data": "node scripts/generate-data.ts"
+    "generate-data": "node scripts/generate-data.ts",
+    "vendor-icons": "node scripts/vendor-icons.ts"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.61.3",
