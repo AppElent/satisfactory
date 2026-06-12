@@ -9,6 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as FactoriesRouteImport } from './routes/factories'
+import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as DataRouteRouteImport } from './routes/data/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DataIndexRouteImport } from './routes/data/index'
@@ -18,6 +22,26 @@ import { Route as DataItemsRouteImport } from './routes/data/items'
 import { Route as DataBuildingsRouteImport } from './routes/data/buildings'
 import { Route as DataBuildablesRouteImport } from './routes/data/buildables'
 
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogisticsRoute = LogisticsRouteImport.update({
+  id: '/logistics',
+  path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FactoriesRoute = FactoriesRouteImport.update({
+  id: '/factories',
+  path: '/factories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DataRouteRoute = DataRouteRouteImport.update({
   id: '/data',
   path: '/data',
@@ -62,6 +86,10 @@ const DataBuildablesRoute = DataBuildablesRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
+  '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
+  '/logistics': typeof LogisticsRoute
+  '/map': typeof MapRoute
   '/data/buildables': typeof DataBuildablesRoute
   '/data/buildings': typeof DataBuildingsRoute
   '/data/items': typeof DataItemsRoute
@@ -71,6 +99,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
+  '/logistics': typeof LogisticsRoute
+  '/map': typeof MapRoute
   '/data/buildables': typeof DataBuildablesRoute
   '/data/buildings': typeof DataBuildingsRoute
   '/data/items': typeof DataItemsRoute
@@ -82,6 +114,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
+  '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
+  '/logistics': typeof LogisticsRoute
+  '/map': typeof MapRoute
   '/data/buildables': typeof DataBuildablesRoute
   '/data/buildings': typeof DataBuildingsRoute
   '/data/items': typeof DataItemsRoute
@@ -94,6 +130,10 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/data'
+    | '/calculator'
+    | '/factories'
+    | '/logistics'
+    | '/map'
     | '/data/buildables'
     | '/data/buildings'
     | '/data/items'
@@ -103,6 +143,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/calculator'
+    | '/factories'
+    | '/logistics'
+    | '/map'
     | '/data/buildables'
     | '/data/buildings'
     | '/data/items'
@@ -113,6 +157,10 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/data'
+    | '/calculator'
+    | '/factories'
+    | '/logistics'
+    | '/map'
     | '/data/buildables'
     | '/data/buildings'
     | '/data/items'
@@ -124,10 +172,42 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DataRouteRoute: typeof DataRouteRouteWithChildren
+  CalculatorRoute: typeof CalculatorRoute
+  FactoriesRoute: typeof FactoriesRoute
+  LogisticsRoute: typeof LogisticsRoute
+  MapRoute: typeof MapRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistics': {
+      id: '/logistics'
+      path: '/logistics'
+      fullPath: '/logistics'
+      preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/factories': {
+      id: '/factories'
+      path: '/factories'
+      fullPath: '/factories'
+      preLoaderRoute: typeof FactoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/data': {
       id: '/data'
       path: '/data'
@@ -212,6 +292,10 @@ const DataRouteRouteWithChildren = DataRouteRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DataRouteRoute: DataRouteRouteWithChildren,
+  CalculatorRoute: CalculatorRoute,
+  FactoriesRoute: FactoriesRoute,
+  LogisticsRoute: LogisticsRoute,
+  MapRoute: MapRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
