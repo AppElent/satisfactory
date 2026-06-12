@@ -22,6 +22,7 @@
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check",
+    "typecheck": "tsc --noEmit",
     "deploy": "npm run build && wrangler deploy",
     "generate-data": "node scripts/generate-data.ts"
   },
