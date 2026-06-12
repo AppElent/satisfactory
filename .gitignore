@@ -19,3 +19,6 @@ CLAUDE.local.md
 
 # generated docs
 docs/.generated
+
+# playwright mcp artifacts
+.playwright-mcp/
