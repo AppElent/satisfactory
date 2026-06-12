@@ -1,47 +1,55 @@
 [
-	{
-		"className": "Desc_GeneratorBiomass_Automated_C",
-		"building": "biomass-burner",
-		"fuels": [
-			"leaves",
-			"wood",
-			"mycelia",
-			"biomass",
-			"solid-biofuel",
-			"packaged-liquid-biofuel"
-		],
-		"powerProduction": 30,
-		"powerProductionExponent": 1.6,
-		"waterToPowerRatio": 0
-	},
-	{
-		"className": "Desc_GeneratorCoal_C",
-		"building": "coal-powered-generator",
-		"fuels": ["coal", "compacted-coal", "petroleum-coke"],
-		"powerProduction": 75,
-		"powerProductionExponent": 1.6,
-		"waterToPowerRatio": 10
-	},
-	{
-		"className": "Desc_GeneratorFuel_C",
-		"building": "fuel-powered-generator",
-		"fuels": [
-			"fuel",
-			"turbofuel",
-			"liquid-biofuel",
-			"rocket-fuel",
-			"ionized-fuel"
-		],
-		"powerProduction": 250,
-		"powerProductionExponent": 1.6,
-		"waterToPowerRatio": 0
-	},
-	{
-		"className": "Desc_GeneratorNuclear_C",
-		"building": "nuclear-power-plant",
-		"fuels": ["uranium-fuel-rod", "plutonium-fuel-rod", "ficsonium-fuel-rod"],
-		"powerProduction": 2500,
-		"powerProductionExponent": 1.6,
-		"waterToPowerRatio": 1.6
-	}
+ {
+  "className": "Desc_GeneratorBiomass_Automated_C",
+  "building": "biomass-burner",
+  "fuels": [
+   "leaves",
+   "wood",
+   "mycelia",
+   "biomass",
+   "solid-biofuel",
+   "packaged-liquid-biofuel"
+  ],
+  "powerProduction": 30,
+  "powerProductionExponent": 1.6,
+  "waterToPowerRatio": 0
+ },
+ {
+  "className": "Desc_GeneratorCoal_C",
+  "building": "coal-powered-generator",
+  "fuels": [
+   "coal",
+   "compacted-coal",
+   "petroleum-coke"
+  ],
+  "powerProduction": 75,
+  "powerProductionExponent": 1.6,
+  "waterToPowerRatio": 10
+ },
+ {
+  "className": "Desc_GeneratorFuel_C",
+  "building": "fuel-powered-generator",
+  "fuels": [
+   "fuel",
+   "turbofuel",
+   "liquid-biofuel",
+   "rocket-fuel",
+   "ionized-fuel"
+  ],
+  "powerProduction": 250,
+  "powerProductionExponent": 1.6,
+  "waterToPowerRatio": 0
+ },
+ {
+  "className": "Desc_GeneratorNuclear_C",
+  "building": "nuclear-power-plant",
+  "fuels": [
+   "uranium-fuel-rod",
+   "plutonium-fuel-rod",
+   "ficsonium-fuel-rod"
+  ],
+  "powerProduction": 2500,
+  "powerProductionExponent": 1.6,
+  "waterToPowerRatio": 1.6
+ }
 ]
