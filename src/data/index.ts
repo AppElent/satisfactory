@@ -1,3 +1,7 @@
+// The generated JSON under ./generated is produced by `npm run generate-data`
+// (validated there against gameDataSchema). It is NOT hand-edited and NOT
+// re-validated at runtime — the casts below trust that invariant. Regenerate
+// after any change to scripts/lib or the vendored source data.
 import buildablesJson from "./generated/buildables.json";
 import buildingsJson from "./generated/buildings.json";
 import generatorsJson from "./generated/generators.json";
