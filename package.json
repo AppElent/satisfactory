@@ -2,7 +2,7 @@
   "name": "satisfactory",
   "version": "1.0.0",
   "private": true,
-  "description": "Welcome to your new TanStack Start app!",
+  "description": "Satisfactory Planner — game data, production calculator, factory and logistics tools.",
   "license": "ISC",
   "author": "",
   "type": "module",
