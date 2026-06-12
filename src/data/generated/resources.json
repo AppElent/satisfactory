@@ -1,0 +1,54 @@
+[
+ {
+  "item": "bauxite",
+  "speed": 1
+ },
+ {
+  "item": "caterium-ore",
+  "speed": 1
+ },
+ {
+  "item": "coal",
+  "speed": 1
+ },
+ {
+  "item": "copper-ore",
+  "speed": 1
+ },
+ {
+  "item": "crude-oil",
+  "speed": 1
+ },
+ {
+  "item": "iron-ore",
+  "speed": 1
+ },
+ {
+  "item": "limestone",
+  "speed": 1
+ },
+ {
+  "item": "nitrogen-gas",
+  "speed": 1
+ },
+ {
+  "item": "raw-quartz",
+  "speed": 1
+ },
+ {
+  "item": "sam",
+  "speed": 1
+ },
+ {
+  "item": "sulfur",
+  "speed": 1
+ },
+ {
+  "item": "uranium",
+  "speed": 1
+ },
+ {
+  "item": "water",
+  "speed": 1
+ }
+]

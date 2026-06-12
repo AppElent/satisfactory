@@ -9,15 +9,42 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as FactoriesRouteImport } from './routes/factories'
+import { Route as CalculatorRouteImport } from './routes/calculator'
+import { Route as DataRouteRouteImport } from './routes/data/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
-import { Route as DemoConvexRouteImport } from './routes/demo/convex'
-import { Route as DemoClerkRouteImport } from './routes/demo/clerk'
+import { Route as DataIndexRouteImport } from './routes/data/index'
+import { Route as DataSchematicsRouteImport } from './routes/data/schematics'
+import { Route as DataRecipesRouteImport } from './routes/data/recipes'
+import { Route as DataItemsRouteImport } from './routes/data/items'
+import { Route as DataBuildingsRouteImport } from './routes/data/buildings'
+import { Route as DataBuildablesRouteImport } from './routes/data/buildables'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogisticsRoute = LogisticsRouteImport.update({
+  id: '/logistics',
+  path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FactoriesRoute = FactoriesRouteImport.update({
+  id: '/factories',
+  path: '/factories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataRouteRoute = DataRouteRouteImport.update({
+  id: '/data',
+  path: '/data',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,78 +52,167 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
-  id: '/demo/tanstack-query',
-  path: '/demo/tanstack-query',
-  getParentRoute: () => rootRouteImport,
+const DataIndexRoute = DataIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DataRouteRoute,
 } as any)
-const DemoConvexRoute = DemoConvexRouteImport.update({
-  id: '/demo/convex',
-  path: '/demo/convex',
-  getParentRoute: () => rootRouteImport,
+const DataSchematicsRoute = DataSchematicsRouteImport.update({
+  id: '/schematics',
+  path: '/schematics',
+  getParentRoute: () => DataRouteRoute,
 } as any)
-const DemoClerkRoute = DemoClerkRouteImport.update({
-  id: '/demo/clerk',
-  path: '/demo/clerk',
-  getParentRoute: () => rootRouteImport,
+const DataRecipesRoute = DataRecipesRouteImport.update({
+  id: '/recipes',
+  path: '/recipes',
+  getParentRoute: () => DataRouteRoute,
+} as any)
+const DataItemsRoute = DataItemsRouteImport.update({
+  id: '/items',
+  path: '/items',
+  getParentRoute: () => DataRouteRoute,
+} as any)
+const DataBuildingsRoute = DataBuildingsRouteImport.update({
+  id: '/buildings',
+  path: '/buildings',
+  getParentRoute: () => DataRouteRoute,
+} as any)
+const DataBuildablesRoute = DataBuildablesRouteImport.update({
+  id: '/buildables',
+  path: '/buildables',
+  getParentRoute: () => DataRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/demo/clerk': typeof DemoClerkRoute
-  '/demo/convex': typeof DemoConvexRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/data': typeof DataRouteRouteWithChildren
+  '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
+  '/logistics': typeof LogisticsRoute
+  '/map': typeof MapRoute
+  '/data/buildables': typeof DataBuildablesRoute
+  '/data/buildings': typeof DataBuildingsRoute
+  '/data/items': typeof DataItemsRoute
+  '/data/recipes': typeof DataRecipesRoute
+  '/data/schematics': typeof DataSchematicsRoute
+  '/data/': typeof DataIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/demo/clerk': typeof DemoClerkRoute
-  '/demo/convex': typeof DemoConvexRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
+  '/logistics': typeof LogisticsRoute
+  '/map': typeof MapRoute
+  '/data/buildables': typeof DataBuildablesRoute
+  '/data/buildings': typeof DataBuildingsRoute
+  '/data/items': typeof DataItemsRoute
+  '/data/recipes': typeof DataRecipesRoute
+  '/data/schematics': typeof DataSchematicsRoute
+  '/data': typeof DataIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/demo/clerk': typeof DemoClerkRoute
-  '/demo/convex': typeof DemoConvexRoute
-  '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/data': typeof DataRouteRouteWithChildren
+  '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
+  '/logistics': typeof LogisticsRoute
+  '/map': typeof MapRoute
+  '/data/buildables': typeof DataBuildablesRoute
+  '/data/buildings': typeof DataBuildingsRoute
+  '/data/items': typeof DataItemsRoute
+  '/data/recipes': typeof DataRecipesRoute
+  '/data/schematics': typeof DataSchematicsRoute
+  '/data/': typeof DataIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/about'
-    | '/demo/clerk'
-    | '/demo/convex'
-    | '/demo/tanstack-query'
+    | '/data'
+    | '/calculator'
+    | '/factories'
+    | '/logistics'
+    | '/map'
+    | '/data/buildables'
+    | '/data/buildings'
+    | '/data/items'
+    | '/data/recipes'
+    | '/data/schematics'
+    | '/data/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/demo/clerk' | '/demo/convex' | '/demo/tanstack-query'
+  to:
+    | '/'
+    | '/calculator'
+    | '/factories'
+    | '/logistics'
+    | '/map'
+    | '/data/buildables'
+    | '/data/buildings'
+    | '/data/items'
+    | '/data/recipes'
+    | '/data/schematics'
+    | '/data'
   id:
     | '__root__'
     | '/'
-    | '/about'
-    | '/demo/clerk'
-    | '/demo/convex'
-    | '/demo/tanstack-query'
+    | '/data'
+    | '/calculator'
+    | '/factories'
+    | '/logistics'
+    | '/map'
+    | '/data/buildables'
+    | '/data/buildings'
+    | '/data/items'
+    | '/data/recipes'
+    | '/data/schematics'
+    | '/data/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  DemoClerkRoute: typeof DemoClerkRoute
-  DemoConvexRoute: typeof DemoConvexRoute
-  DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  DataRouteRoute: typeof DataRouteRouteWithChildren
+  CalculatorRoute: typeof CalculatorRoute
+  FactoriesRoute: typeof FactoriesRoute
+  LogisticsRoute: typeof LogisticsRoute
+  MapRoute: typeof MapRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logistics': {
+      id: '/logistics'
+      path: '/logistics'
+      fullPath: '/logistics'
+      preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/factories': {
+      id: '/factories'
+      path: '/factories'
+      fullPath: '/factories'
+      preLoaderRoute: typeof FactoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data': {
+      id: '/data'
+      path: '/data'
+      fullPath: '/data'
+      preLoaderRoute: typeof DataRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -106,37 +222,90 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demo/tanstack-query': {
-      id: '/demo/tanstack-query'
-      path: '/demo/tanstack-query'
-      fullPath: '/demo/tanstack-query'
-      preLoaderRoute: typeof DemoTanstackQueryRouteImport
-      parentRoute: typeof rootRouteImport
+    '/data/': {
+      id: '/data/'
+      path: '/'
+      fullPath: '/data/'
+      preLoaderRoute: typeof DataIndexRouteImport
+      parentRoute: typeof DataRouteRoute
     }
-    '/demo/convex': {
-      id: '/demo/convex'
-      path: '/demo/convex'
-      fullPath: '/demo/convex'
-      preLoaderRoute: typeof DemoConvexRouteImport
-      parentRoute: typeof rootRouteImport
+    '/data/schematics': {
+      id: '/data/schematics'
+      path: '/schematics'
+      fullPath: '/data/schematics'
+      preLoaderRoute: typeof DataSchematicsRouteImport
+      parentRoute: typeof DataRouteRoute
     }
-    '/demo/clerk': {
-      id: '/demo/clerk'
-      path: '/demo/clerk'
-      fullPath: '/demo/clerk'
-      preLoaderRoute: typeof DemoClerkRouteImport
-      parentRoute: typeof rootRouteImport
+    '/data/recipes': {
+      id: '/data/recipes'
+      path: '/recipes'
+      fullPath: '/data/recipes'
+      preLoaderRoute: typeof DataRecipesRouteImport
+      parentRoute: typeof DataRouteRoute
+    }
+    '/data/items': {
+      id: '/data/items'
+      path: '/items'
+      fullPath: '/data/items'
+      preLoaderRoute: typeof DataItemsRouteImport
+      parentRoute: typeof DataRouteRoute
+    }
+    '/data/buildings': {
+      id: '/data/buildings'
+      path: '/buildings'
+      fullPath: '/data/buildings'
+      preLoaderRoute: typeof DataBuildingsRouteImport
+      parentRoute: typeof DataRouteRoute
+    }
+    '/data/buildables': {
+      id: '/data/buildables'
+      path: '/buildables'
+      fullPath: '/data/buildables'
+      preLoaderRoute: typeof DataBuildablesRouteImport
+      parentRoute: typeof DataRouteRoute
     }
   }
 }
 
+interface DataRouteRouteChildren {
+  DataBuildablesRoute: typeof DataBuildablesRoute
+  DataBuildingsRoute: typeof DataBuildingsRoute
+  DataItemsRoute: typeof DataItemsRoute
+  DataRecipesRoute: typeof DataRecipesRoute
+  DataSchematicsRoute: typeof DataSchematicsRoute
+  DataIndexRoute: typeof DataIndexRoute
+}
+
+const DataRouteRouteChildren: DataRouteRouteChildren = {
+  DataBuildablesRoute: DataBuildablesRoute,
+  DataBuildingsRoute: DataBuildingsRoute,
+  DataItemsRoute: DataItemsRoute,
+  DataRecipesRoute: DataRecipesRoute,
+  DataSchematicsRoute: DataSchematicsRoute,
+  DataIndexRoute: DataIndexRoute,
+}
+
+const DataRouteRouteWithChildren = DataRouteRoute._addFileChildren(
+  DataRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  DemoClerkRoute: DemoClerkRoute,
-  DemoConvexRoute: DemoConvexRoute,
-  DemoTanstackQueryRoute: DemoTanstackQueryRoute,
+  DataRouteRoute: DataRouteRouteWithChildren,
+  CalculatorRoute: CalculatorRoute,
+  FactoriesRoute: FactoriesRoute,
+  LogisticsRoute: LogisticsRoute,
+  MapRoute: MapRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

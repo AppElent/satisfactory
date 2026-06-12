@@ -17,8 +17,8 @@
 `data/vendor/greeny-data1.0.json` (1.7MB, already downloaded) has top-level keys `items` (175), `recipes` (797), `schematics` (437), `generators` (4), `resources` (13), `miners` (5), `buildings` (500). All keyed by `className`. Every field listed in the Zod schemas below is present and non-null on every entry (verified exhaustively). Known quirks the transform must handle:
 
 - **Duplicate slugs:** 1 duplicate in `buildings`, 6 in `schematics` → de-dupe by suffixing `-2`, `-3`, …
-- **Dangling refs (drop + warn, do NOT fail):** 86 `schematics[].unlock.recipes` entries and 8 `schematics[].requiredSchematics` entries reference classNames absent from the file.
-- **Clean refs (resolve strictly, fail on miss):** all recipe `ingredients`/`products`/`producedIn`, all generator `fuel`, all miner `allowedResources`, all `resources[].item`, all schematic `cost` items. Generator/miner classNames all exist in `buildings`.
+- **Dangling refs (drop + warn, do NOT fail):** 86 `schematics[].unlock.recipes` entries, 8 `schematics[].requiredSchematics` entries, and 5 `schematics[].cost` entries (all referencing `Desc_HardDrive_C`, which is absent from `items` and `buildings`) reference classNames absent from the file. Total dropped = 99.
+- **Clean refs (resolve strictly, fail on miss):** all recipe `ingredients`/`products`/`producedIn`, all generator `fuel`, all miner `allowedResources`, all `resources[].item`. Generator/miner classNames all exist in `buildings`.
 - **Classification:** the producer set = every className in any recipe's `producedIn` ∪ generator keys ∪ miner keys = exactly 20 classes, all present in `buildings` → 20 buildings, 480 buildables.
 - Fluid amounts are already in m³ (no ÷1000 conversion needed).
 
@@ -926,10 +926,10 @@ schematics: 437
 resources: 13
 generators: 4
 miners: 5
-warnings: 94
+warnings: 99
 ```
 
-(94 = 86 unknown unlock recipes + 8 unknown required schematics.)
+(99 = 86 unknown unlock recipes + 8 unknown required schematics + 5 unknown cost items. Schematic `cost` resolution drops+warns like the other schematic refs, since 5 entries reference the absent `Desc_HardDrive_C`.)
 
 - [ ] **Step 4: Commit (generated output included)**
 
@@ -1409,6 +1409,15 @@ export default function Header() {
 - [ ] **Step 2: Update the title in `src/routes/__root.tsx`**
 
 Change `title: 'TanStack Start Starter'` to `title: 'Satisfactory Planner'`.
+
+Also suppress the pre-existing Biome error on the theme-init script (the inline script is the standard SSR theme-flash guard and is intentional). Add a Biome-ignore comment immediately above the offending line:
+
+```tsx
+{/* biome-ignore lint/security/noDangerouslySetInnerHtml: inline theme-flash guard, no user input */}
+<script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+```
+
+(Use whatever exact suppression syntax Biome accepts for a JSX expression — verify `npm run check` no longer reports `noDangerouslySetInnerHtml` for this file afterward.)
 
 - [ ] **Step 3: Commit**
 
