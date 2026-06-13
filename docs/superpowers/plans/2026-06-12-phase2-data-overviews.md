@@ -893,7 +893,7 @@ export const Route = createFileRoute("/data/items")({
 		form: typeof search.form === "string" ? search.form : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={itemsListConfig} routeId="/data/items" />
+		<EntityListPage config={itemsListConfig} />
 	),
 });
 ```
@@ -1246,7 +1246,7 @@ export const Route = createFileRoute("/data/recipes")({
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={recipesListConfig} routeId="/data/recipes" />
+		<EntityListPage config={recipesListConfig} />
 	),
 });
 ```
@@ -1448,7 +1448,7 @@ export const Route = createFileRoute("/data/buildings")({
 		power: typeof search.power === "string" ? search.power : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={buildingsListConfig} routeId="/data/buildings" />
+		<EntityListPage config={buildingsListConfig} />
 	),
 });
 ```
@@ -1626,7 +1626,7 @@ export const Route = createFileRoute("/data/buildables")({
 		category: typeof search.category === "string" ? search.category : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={buildablesListConfig} routeId="/data/buildables" />
+		<EntityListPage config={buildablesListConfig} />
 	),
 });
 ```
@@ -1794,7 +1794,7 @@ export const Route = createFileRoute("/data/schematics")({
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={schematicsListConfig} routeId="/data/schematics" />
+		<EntityListPage config={schematicsListConfig} />
 	),
 });
 ```
