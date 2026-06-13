@@ -21,6 +21,8 @@ import { Route as DataRecipesRouteImport } from './routes/data/recipes'
 import { Route as DataItemsRouteImport } from './routes/data/items'
 import { Route as DataBuildingsRouteImport } from './routes/data/buildings'
 import { Route as DataBuildablesRouteImport } from './routes/data/buildables'
+import { Route as DataRecipesSlugRouteImport } from './routes/data/recipes.$slug'
+import { Route as DataItemsSlugRouteImport } from './routes/data/items.$slug'
 
 const MapRoute = MapRouteImport.update({
   id: '/map',
@@ -82,6 +84,16 @@ const DataBuildablesRoute = DataBuildablesRouteImport.update({
   path: '/buildables',
   getParentRoute: () => DataRouteRoute,
 } as any)
+const DataRecipesSlugRoute = DataRecipesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DataRecipesRoute,
+} as any)
+const DataItemsSlugRoute = DataItemsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DataItemsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -92,10 +104,12 @@ export interface FileRoutesByFullPath {
   '/map': typeof MapRoute
   '/data/buildables': typeof DataBuildablesRoute
   '/data/buildings': typeof DataBuildingsRoute
-  '/data/items': typeof DataItemsRoute
-  '/data/recipes': typeof DataRecipesRoute
+  '/data/items': typeof DataItemsRouteWithChildren
+  '/data/recipes': typeof DataRecipesRouteWithChildren
   '/data/schematics': typeof DataSchematicsRoute
   '/data/': typeof DataIndexRoute
+  '/data/items/$slug': typeof DataItemsSlugRoute
+  '/data/recipes/$slug': typeof DataRecipesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -105,10 +119,12 @@ export interface FileRoutesByTo {
   '/map': typeof MapRoute
   '/data/buildables': typeof DataBuildablesRoute
   '/data/buildings': typeof DataBuildingsRoute
-  '/data/items': typeof DataItemsRoute
-  '/data/recipes': typeof DataRecipesRoute
+  '/data/items': typeof DataItemsRouteWithChildren
+  '/data/recipes': typeof DataRecipesRouteWithChildren
   '/data/schematics': typeof DataSchematicsRoute
   '/data': typeof DataIndexRoute
+  '/data/items/$slug': typeof DataItemsSlugRoute
+  '/data/recipes/$slug': typeof DataRecipesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -120,10 +136,12 @@ export interface FileRoutesById {
   '/map': typeof MapRoute
   '/data/buildables': typeof DataBuildablesRoute
   '/data/buildings': typeof DataBuildingsRoute
-  '/data/items': typeof DataItemsRoute
-  '/data/recipes': typeof DataRecipesRoute
+  '/data/items': typeof DataItemsRouteWithChildren
+  '/data/recipes': typeof DataRecipesRouteWithChildren
   '/data/schematics': typeof DataSchematicsRoute
   '/data/': typeof DataIndexRoute
+  '/data/items/$slug': typeof DataItemsSlugRoute
+  '/data/recipes/$slug': typeof DataRecipesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,6 +158,8 @@ export interface FileRouteTypes {
     | '/data/recipes'
     | '/data/schematics'
     | '/data/'
+    | '/data/items/$slug'
+    | '/data/recipes/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -153,6 +173,8 @@ export interface FileRouteTypes {
     | '/data/recipes'
     | '/data/schematics'
     | '/data'
+    | '/data/items/$slug'
+    | '/data/recipes/$slug'
   id:
     | '__root__'
     | '/'
@@ -167,6 +189,8 @@ export interface FileRouteTypes {
     | '/data/recipes'
     | '/data/schematics'
     | '/data/'
+    | '/data/items/$slug'
+    | '/data/recipes/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -264,14 +288,52 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataBuildablesRouteImport
       parentRoute: typeof DataRouteRoute
     }
+    '/data/recipes/$slug': {
+      id: '/data/recipes/$slug'
+      path: '/$slug'
+      fullPath: '/data/recipes/$slug'
+      preLoaderRoute: typeof DataRecipesSlugRouteImport
+      parentRoute: typeof DataRecipesRoute
+    }
+    '/data/items/$slug': {
+      id: '/data/items/$slug'
+      path: '/$slug'
+      fullPath: '/data/items/$slug'
+      preLoaderRoute: typeof DataItemsSlugRouteImport
+      parentRoute: typeof DataItemsRoute
+    }
   }
 }
+
+interface DataItemsRouteChildren {
+  DataItemsSlugRoute: typeof DataItemsSlugRoute
+}
+
+const DataItemsRouteChildren: DataItemsRouteChildren = {
+  DataItemsSlugRoute: DataItemsSlugRoute,
+}
+
+const DataItemsRouteWithChildren = DataItemsRoute._addFileChildren(
+  DataItemsRouteChildren,
+)
+
+interface DataRecipesRouteChildren {
+  DataRecipesSlugRoute: typeof DataRecipesSlugRoute
+}
+
+const DataRecipesRouteChildren: DataRecipesRouteChildren = {
+  DataRecipesSlugRoute: DataRecipesSlugRoute,
+}
+
+const DataRecipesRouteWithChildren = DataRecipesRoute._addFileChildren(
+  DataRecipesRouteChildren,
+)
 
 interface DataRouteRouteChildren {
   DataBuildablesRoute: typeof DataBuildablesRoute
   DataBuildingsRoute: typeof DataBuildingsRoute
-  DataItemsRoute: typeof DataItemsRoute
-  DataRecipesRoute: typeof DataRecipesRoute
+  DataItemsRoute: typeof DataItemsRouteWithChildren
+  DataRecipesRoute: typeof DataRecipesRouteWithChildren
   DataSchematicsRoute: typeof DataSchematicsRoute
   DataIndexRoute: typeof DataIndexRoute
 }
@@ -279,8 +341,8 @@ interface DataRouteRouteChildren {
 const DataRouteRouteChildren: DataRouteRouteChildren = {
   DataBuildablesRoute: DataBuildablesRoute,
   DataBuildingsRoute: DataBuildingsRoute,
-  DataItemsRoute: DataItemsRoute,
-  DataRecipesRoute: DataRecipesRoute,
+  DataItemsRoute: DataItemsRouteWithChildren,
+  DataRecipesRoute: DataRecipesRouteWithChildren,
   DataSchematicsRoute: DataSchematicsRoute,
   DataIndexRoute: DataIndexRoute,
 }
