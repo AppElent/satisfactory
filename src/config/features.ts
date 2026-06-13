@@ -31,7 +31,7 @@ export const FEATURES: Feature[] = [
 		id: "data",
 		title: "Game data",
 		path: "/data",
-		status: "planned",
+		status: "live",
 		icon: Database,
 		description:
 			"Browse every item, recipe, building, buildable and schematic — searchable, filterable and fully cross-linked.",
