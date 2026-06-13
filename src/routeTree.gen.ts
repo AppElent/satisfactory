@@ -21,6 +21,7 @@ import { Route as DataRecipesRouteImport } from './routes/data/recipes'
 import { Route as DataItemsRouteImport } from './routes/data/items'
 import { Route as DataBuildingsRouteImport } from './routes/data/buildings'
 import { Route as DataBuildablesRouteImport } from './routes/data/buildables'
+import { Route as DataSchematicsSlugRouteImport } from './routes/data/schematics.$slug'
 import { Route as DataRecipesSlugRouteImport } from './routes/data/recipes.$slug'
 import { Route as DataItemsSlugRouteImport } from './routes/data/items.$slug'
 import { Route as DataBuildingsSlugRouteImport } from './routes/data/buildings.$slug'
@@ -86,6 +87,11 @@ const DataBuildablesRoute = DataBuildablesRouteImport.update({
   path: '/buildables',
   getParentRoute: () => DataRouteRoute,
 } as any)
+const DataSchematicsSlugRoute = DataSchematicsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DataSchematicsRoute,
+} as any)
 const DataRecipesSlugRoute = DataRecipesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -118,12 +124,13 @@ export interface FileRoutesByFullPath {
   '/data/buildings': typeof DataBuildingsRouteWithChildren
   '/data/items': typeof DataItemsRouteWithChildren
   '/data/recipes': typeof DataRecipesRouteWithChildren
-  '/data/schematics': typeof DataSchematicsRoute
+  '/data/schematics': typeof DataSchematicsRouteWithChildren
   '/data/': typeof DataIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
   '/data/recipes/$slug': typeof DataRecipesSlugRoute
+  '/data/schematics/$slug': typeof DataSchematicsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -135,12 +142,13 @@ export interface FileRoutesByTo {
   '/data/buildings': typeof DataBuildingsRouteWithChildren
   '/data/items': typeof DataItemsRouteWithChildren
   '/data/recipes': typeof DataRecipesRouteWithChildren
-  '/data/schematics': typeof DataSchematicsRoute
+  '/data/schematics': typeof DataSchematicsRouteWithChildren
   '/data': typeof DataIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
   '/data/recipes/$slug': typeof DataRecipesSlugRoute
+  '/data/schematics/$slug': typeof DataSchematicsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -154,12 +162,13 @@ export interface FileRoutesById {
   '/data/buildings': typeof DataBuildingsRouteWithChildren
   '/data/items': typeof DataItemsRouteWithChildren
   '/data/recipes': typeof DataRecipesRouteWithChildren
-  '/data/schematics': typeof DataSchematicsRoute
+  '/data/schematics': typeof DataSchematicsRouteWithChildren
   '/data/': typeof DataIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
   '/data/recipes/$slug': typeof DataRecipesSlugRoute
+  '/data/schematics/$slug': typeof DataSchematicsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/data/buildings/$slug'
     | '/data/items/$slug'
     | '/data/recipes/$slug'
+    | '/data/schematics/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -197,6 +207,7 @@ export interface FileRouteTypes {
     | '/data/buildings/$slug'
     | '/data/items/$slug'
     | '/data/recipes/$slug'
+    | '/data/schematics/$slug'
   id:
     | '__root__'
     | '/'
@@ -215,6 +226,7 @@ export interface FileRouteTypes {
     | '/data/buildings/$slug'
     | '/data/items/$slug'
     | '/data/recipes/$slug'
+    | '/data/schematics/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -312,6 +324,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataBuildablesRouteImport
       parentRoute: typeof DataRouteRoute
     }
+    '/data/schematics/$slug': {
+      id: '/data/schematics/$slug'
+      path: '/$slug'
+      fullPath: '/data/schematics/$slug'
+      preLoaderRoute: typeof DataSchematicsSlugRouteImport
+      parentRoute: typeof DataSchematicsRoute
+    }
     '/data/recipes/$slug': {
       id: '/data/recipes/$slug'
       path: '/$slug'
@@ -391,12 +410,24 @@ const DataRecipesRouteWithChildren = DataRecipesRoute._addFileChildren(
   DataRecipesRouteChildren,
 )
 
+interface DataSchematicsRouteChildren {
+  DataSchematicsSlugRoute: typeof DataSchematicsSlugRoute
+}
+
+const DataSchematicsRouteChildren: DataSchematicsRouteChildren = {
+  DataSchematicsSlugRoute: DataSchematicsSlugRoute,
+}
+
+const DataSchematicsRouteWithChildren = DataSchematicsRoute._addFileChildren(
+  DataSchematicsRouteChildren,
+)
+
 interface DataRouteRouteChildren {
   DataBuildablesRoute: typeof DataBuildablesRouteWithChildren
   DataBuildingsRoute: typeof DataBuildingsRouteWithChildren
   DataItemsRoute: typeof DataItemsRouteWithChildren
   DataRecipesRoute: typeof DataRecipesRouteWithChildren
-  DataSchematicsRoute: typeof DataSchematicsRoute
+  DataSchematicsRoute: typeof DataSchematicsRouteWithChildren
   DataIndexRoute: typeof DataIndexRoute
 }
 
@@ -405,7 +436,7 @@ const DataRouteRouteChildren: DataRouteRouteChildren = {
   DataBuildingsRoute: DataBuildingsRouteWithChildren,
   DataItemsRoute: DataItemsRouteWithChildren,
   DataRecipesRoute: DataRecipesRouteWithChildren,
-  DataSchematicsRoute: DataSchematicsRoute,
+  DataSchematicsRoute: DataSchematicsRouteWithChildren,
   DataIndexRoute: DataIndexRoute,
 }
 
@@ -424,12 +455,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

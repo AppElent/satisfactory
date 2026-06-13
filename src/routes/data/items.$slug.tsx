@@ -92,12 +92,14 @@ function ItemDetail() {
 				) : (
 					<div className="flex flex-wrap gap-2">
 						{unlocks.map((schematic) => (
-							<span
+							<Link
 								key={schematic.slug}
-								className="rounded-full border border-[var(--line)] px-3 py-1 text-xs"
+								to="/data/schematics/$slug"
+								params={{ slug: schematic.slug }}
+								className="rounded-full border border-[var(--line)] px-3 py-1 text-xs no-underline hover:border-[var(--chip-line)]"
 							>
 								{schematic.name}
-							</span>
+							</Link>
 						))}
 					</div>
 				)}
