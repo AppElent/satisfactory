@@ -2017,7 +2017,7 @@ npx biome check --write . && git add -A && git commit -m "feat: home search into
 
 The spec requires overview pages to be SSR-rendered with proper meta tags so they rank in search. TanStack Start SSRs route components already; this task adds per-route `head`.
 
-**Files:** Modify all five list routes (`src/routes/data/{items,recipes,buildings,buildables,schematics}.tsx`) and all five detail routes (`src/routes/data/*.$slug.tsx`).
+**Files:** Modify all five list routes (`src/routes/data/{items,recipes,buildings,buildables,schematics}.index.tsx` — note: these are `.index.tsx`, since each entity's list is the index route and the bare `<entity>.tsx` parent was removed so the `$slug` detail child can render under the `/data` layout's `<Outlet/>`) and all five detail routes (`src/routes/data/*.$slug.tsx`).
 
 - [ ] **Step 1: Add `head` to each list route**
 
