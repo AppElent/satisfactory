@@ -7,7 +7,7 @@ interface ItemsSearch {
 	form?: string;
 }
 
-export const Route = createFileRoute("/data/items")({
+export const Route = createFileRoute("/data/items/")({
 	validateSearch: (search: Record<string, unknown>): ItemsSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		form: typeof search.form === "string" ? search.form : undefined,

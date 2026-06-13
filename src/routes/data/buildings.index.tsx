@@ -10,7 +10,7 @@ interface BuildingsSearch {
 	power?: string;
 }
 
-export const Route = createFileRoute("/data/buildings")({
+export const Route = createFileRoute("/data/buildings/")({
 	validateSearch: (search: Record<string, unknown>): BuildingsSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		power: typeof search.power === "string" ? search.power : undefined,

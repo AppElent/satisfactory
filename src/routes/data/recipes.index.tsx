@@ -7,7 +7,7 @@ interface RecipesSearch {
 	kind?: string;
 }
 
-export const Route = createFileRoute("/data/recipes")({
+export const Route = createFileRoute("/data/recipes/")({
 	validateSearch: (search: Record<string, unknown>): RecipesSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		kind: typeof search.kind === "string" ? search.kind : undefined,
