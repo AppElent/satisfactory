@@ -6,18 +6,22 @@ import type { EntityListConfig } from "./list-config";
 
 interface EntityListPageProps<T extends { slug: string }> {
 	config: EntityListConfig<T>;
-	/** The route id whose search params back this page (for useSearch/navigate). */
-	routeId: string;
+}
+
+/** Read a search param as a string, tolerating the router coercing e.g. ?q=123
+ *  to a number when a route omits validateSearch or the URL is hand-edited. */
+function strParam(search: Record<string, unknown>, key: string): string {
+	const value = search[key];
+	return typeof value === "string" ? value : "";
 }
 
 export default function EntityListPage<T extends { slug: string }>({
 	config,
-	routeId: _routeId,
 }: EntityListPageProps<T>) {
-	// Search params are typed per-route; index by key generically here.
-	const search = useSearch({ strict: false }) as Record<string, string>;
+	// Search params are typed per-route; read them generically and defensively.
+	const search = useSearch({ strict: false }) as Record<string, unknown>;
 	const navigate = useNavigate();
-	const query = search.q ?? "";
+	const query = strParam(search, "q");
 
 	const setParam = (key: string, value: string) => {
 		navigate({
@@ -37,7 +41,7 @@ export default function EntityListPage<T extends { slug: string }>({
 				return false;
 			}
 			for (const filter of config.filters) {
-				const selected = search[filter.key] ?? "";
+				const selected = strParam(search, filter.key);
 				if (selected && !filter.matches(entity, selected)) return false;
 			}
 			return true;
@@ -53,7 +57,7 @@ export default function EntityListPage<T extends { slug: string }>({
 					key: filter.key,
 					label: filter.label,
 					options: filter.options,
-					selected: search[filter.key] ?? "",
+					selected: strParam(search, filter.key),
 					onChange: (v) => setParam(filter.key, v),
 				}))}
 			/>

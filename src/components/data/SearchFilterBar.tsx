@@ -27,6 +27,7 @@ export default function SearchFilterBar({
 		<div className="flex flex-col gap-3">
 			<input
 				type="search"
+				aria-label="Search"
 				value={search}
 				onChange={(e) => onSearchChange(e.target.value)}
 				placeholder="Search…"
@@ -68,6 +69,7 @@ function Chip({
 	return (
 		<button
 			type="button"
+			aria-pressed={active}
 			onClick={onClick}
 			className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
 				active

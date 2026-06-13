@@ -30,14 +30,20 @@ for (const slug of slugs) {
 		skipped++;
 		continue;
 	}
-	const res = await fetch(`${BASE}/${slug}_64.png`);
-	if (!res.ok) {
+	try {
+		const res = await fetch(`${BASE}/${slug}_64.png`);
+		if (!res.ok) {
+			failed.push(slug);
+			continue;
+		}
+		const buf = Buffer.from(await res.arrayBuffer());
+		writeFileSync(dest, buf);
+		downloaded++;
+	} catch {
+		// Transient network error (DNS, reset, timeout) — count as failed and
+		// keep going; a re-run retries it via the existsSync skip above.
 		failed.push(slug);
-		continue;
 	}
-	const buf = Buffer.from(await res.arrayBuffer());
-	writeFileSync(dest, buf);
-	downloaded++;
 }
 
 console.log(

@@ -7,8 +7,14 @@ describe("format", () => {
 		expect(perMinute(2, 6)).toBe(20);
 	});
 
-	it("rounds per-minute to at most 4 significant decimals", () => {
-		expect(perMinute(1, 3)).toBeCloseTo(20, 5);
+	it("returns the raw (unrounded) float from perMinute", () => {
+		// perMinute itself does not round; formatNumber does.
+		expect(perMinute(1, 7)).toBeCloseTo(8.571428571, 9);
+	});
+
+	it("rounds composed rate display to 4 decimals via formatNumber", () => {
+		// This is what recipe-rate UI actually renders.
+		expect(formatNumber(perMinute(1, 7))).toBe("8.5714");
 	});
 
 	it("formats numbers without trailing float noise", () => {
