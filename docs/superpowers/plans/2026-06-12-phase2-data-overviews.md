@@ -1442,14 +1442,20 @@ import { createFileRoute } from "@tanstack/react-router";
 import EntityListPage from "#/features/data/EntityListPage";
 import { buildingsListConfig } from "#/features/data/configs/buildings";
 
+// Explicit interface with OPTIONAL props: typing validateSearch's return as a
+// shape with optional keys keeps `<Link to="/data/buildings">` from requiring a
+// `search` arg (TanStack treats non-optional search keys as required on links).
+interface BuildingsSearch {
+	q?: string;
+	power?: string;
+}
+
 export const Route = createFileRoute("/data/buildings")({
-	validateSearch: (search: Record<string, unknown>) => ({
+	validateSearch: (search: Record<string, unknown>): BuildingsSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		power: typeof search.power === "string" ? search.power : undefined,
 	}),
-	component: () => (
-		<EntityListPage config={buildingsListConfig} />
-	),
+	component: () => <EntityListPage config={buildingsListConfig} />,
 });
 ```
 
@@ -1620,14 +1626,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import EntityListPage from "#/features/data/EntityListPage";
 import { buildablesListConfig } from "#/features/data/configs/buildables";
 
+interface BuildablesSearch {
+	q?: string;
+	category?: string;
+}
+
 export const Route = createFileRoute("/data/buildables")({
-	validateSearch: (search: Record<string, unknown>) => ({
+	validateSearch: (search: Record<string, unknown>): BuildablesSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		category: typeof search.category === "string" ? search.category : undefined,
 	}),
-	component: () => (
-		<EntityListPage config={buildablesListConfig} />
-	),
+	component: () => <EntityListPage config={buildablesListConfig} />,
 });
 ```
 
@@ -1787,15 +1796,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import EntityListPage from "#/features/data/EntityListPage";
 import { schematicsListConfig } from "#/features/data/configs/schematics";
 
+interface SchematicsSearch {
+	q?: string;
+	tier?: string;
+	kind?: string;
+}
+
 export const Route = createFileRoute("/data/schematics")({
-	validateSearch: (search: Record<string, unknown>) => ({
+	validateSearch: (search: Record<string, unknown>): SchematicsSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		tier: typeof search.tier === "string" ? search.tier : undefined,
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
-	component: () => (
-		<EntityListPage config={schematicsListConfig} />
-	),
+	component: () => <EntityListPage config={schematicsListConfig} />,
 });
 ```
 
@@ -1905,6 +1918,23 @@ function SchematicDetail() {
 	);
 }
 ```
+
+- [ ] **Step 3b: Restore the item → schematic cross-links**
+
+`src/routes/data/items.$slug.tsx` currently renders its "Unlocked by" schematics as plain `<span>` badges (the `/data/schematics/$slug` route didn't exist when items were built in Task 9). Now that it exists, convert each badge back to a link. Replace the `<span … >{schematic.name}</span>` in the "Unlocked by" section with:
+
+```tsx
+<Link
+	key={schematic.slug}
+	to="/data/schematics/$slug"
+	params={{ slug: schematic.slug }}
+	className="rounded-full border border-[var(--line)] px-3 py-1 text-xs no-underline hover:border-[var(--chip-line)]"
+>
+	{schematic.name}
+</Link>
+```
+
+Ensure `Link` is imported in `items.$slug.tsx` (it already imports from `@tanstack/react-router`). Run `npm run typecheck` → 0 errors (the route now exists so the typed `to` resolves).
 
 - [ ] **Step 4: Regenerate routes, typecheck, smoke**
 
