@@ -22,6 +22,17 @@ export const Route = createFileRoute("/data/schematics/$slug")({
 			</Link>
 		</p>
 	),
+	head: ({ loaderData }) => ({
+		meta: loaderData
+			? [
+					{ title: `${loaderData.schematic.name} — Satisfactory Planner` },
+					{
+						name: "description",
+						content: `Cost, unlocked recipes and tier for ${loaderData.schematic.name}.`,
+					},
+				]
+			: [],
+	}),
 });
 
 function SchematicDetail() {

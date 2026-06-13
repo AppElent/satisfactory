@@ -13,4 +13,14 @@ export const Route = createFileRoute("/data/recipes/")({
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
 	component: () => <EntityListPage config={recipesListConfig} />,
+	head: () => ({
+		meta: [
+			{ title: "Recipes — Satisfactory Planner" },
+			{
+				name: "description",
+				content:
+					"Browse every Satisfactory recipe with ingredients, products and the machine that crafts it.",
+			},
+		],
+	}),
 });

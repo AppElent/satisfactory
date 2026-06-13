@@ -15,4 +15,14 @@ export const Route = createFileRoute("/data/schematics/")({
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
 	component: () => <EntityListPage config={schematicsListConfig} />,
+	head: () => ({
+		meta: [
+			{ title: "Schematics — Satisfactory Planner" },
+			{
+				name: "description",
+				content:
+					"Browse every Satisfactory schematic with tier, cost and the recipes it unlocks.",
+			},
+		],
+	}),
 });

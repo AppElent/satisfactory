@@ -24,6 +24,19 @@ export const Route = createFileRoute("/data/buildings/$slug")({
 			</Link>
 		</p>
 	),
+	head: ({ loaderData }) => ({
+		meta: loaderData
+			? [
+					{ title: `${loaderData.building.name} — Satisfactory Planner` },
+					{
+						name: "description",
+						content:
+							loaderData.building.description?.slice(0, 150) ||
+							`Power use, build cost and recipes for ${loaderData.building.name} in Satisfactory.`,
+					},
+				]
+			: [],
+	}),
 });
 
 function BuildingDetail() {

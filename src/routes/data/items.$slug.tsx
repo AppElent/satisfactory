@@ -27,6 +27,19 @@ export const Route = createFileRoute("/data/items/$slug")({
 			</Link>
 		</p>
 	),
+	head: ({ loaderData }) => ({
+		meta: loaderData
+			? [
+					{ title: `${loaderData.item.name} — Satisfactory Planner` },
+					{
+						name: "description",
+						content:
+							loaderData.item.description?.slice(0, 150) ||
+							`Recipes, uses and unlocks for ${loaderData.item.name} in Satisfactory.`,
+					},
+				]
+			: [],
+	}),
 });
 
 function ItemDetail() {

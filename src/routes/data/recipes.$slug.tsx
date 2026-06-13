@@ -23,6 +23,17 @@ export const Route = createFileRoute("/data/recipes/$slug")({
 			</Link>
 		</p>
 	),
+	head: ({ loaderData }) => ({
+		meta: loaderData
+			? [
+					{ title: `${loaderData.recipe.name} — Satisfactory Planner` },
+					{
+						name: "description",
+						content: `Ingredients, products and machine for ${loaderData.recipe.name}.`,
+					},
+				]
+			: [],
+	}),
 });
 
 function ref(slug: string): { name: string; icon?: string; to?: string } {

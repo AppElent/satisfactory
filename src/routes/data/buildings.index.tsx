@@ -16,4 +16,14 @@ export const Route = createFileRoute("/data/buildings/")({
 		power: typeof search.power === "string" ? search.power : undefined,
 	}),
 	component: () => <EntityListPage config={buildingsListConfig} />,
+	head: () => ({
+		meta: [
+			{ title: "Buildings — Satisfactory Planner" },
+			{
+				name: "description",
+				content:
+					"Browse every Satisfactory building with power use, build costs and the recipes it produces.",
+			},
+		],
+	}),
 });

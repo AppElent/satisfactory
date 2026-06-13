@@ -13,4 +13,14 @@ export const Route = createFileRoute("/data/buildables/")({
 		category: typeof search.category === "string" ? search.category : undefined,
 	}),
 	component: () => <EntityListPage config={buildablesListConfig} />,
+	head: () => ({
+		meta: [
+			{ title: "Buildables — Satisfactory Planner" },
+			{
+				name: "description",
+				content:
+					"Browse every Satisfactory buildable with build costs, footprints and categories.",
+			},
+		],
+	}),
 });
