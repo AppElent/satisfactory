@@ -1010,14 +1010,17 @@ export function StatGrid({
 ```tsx
 import { Link } from "@tanstack/react-router";
 import EntityIcon from "#/components/EntityIcon";
-import { getBuilding, getItem } from "#/data";
+import { getBuildable, getBuilding, getItem } from "#/data";
 import type { Recipe } from "#/data/schema";
 import { perMinute, formatNumber } from "#/lib/format";
 
-/** Resolve an amount-ref slug to a display name + icon (item or building). */
+/** Resolve an amount-ref slug to a display name + icon. A recipe product can be
+ *  an item, a building, or a buildable (~460 build recipes produce buildables). */
 function resolveRef(slug: string): { name: string; icon?: string } {
 	const item = getItem(slug);
 	if (item) return { name: item.name, icon: item.icon };
+	const buildable = getBuildable(slug);
+	if (buildable) return { name: buildable.name, icon: buildable.icon };
 	const building = getBuilding(slug);
 	if (building) return { name: building.name, icon: building.icon };
 	return { name: slug };
@@ -1260,7 +1263,7 @@ import DetailLayout, {
 	StatGrid,
 } from "#/components/data/DetailLayout";
 import EntityIcon from "#/components/EntityIcon";
-import { getBuilding, getItem, getRecipe } from "#/data";
+import { getBuildable, getBuilding, getItem, getRecipe } from "#/data";
 import type { Recipe } from "#/data/schema";
 import { formatNumber, formatPower, perMinute } from "#/lib/format";
 
@@ -1284,6 +1287,9 @@ export const Route = createFileRoute("/data/recipes/$slug")({
 function ref(slug: string): { name: string; icon?: string; to?: string } {
 	const item = getItem(slug);
 	if (item) return { name: item.name, icon: item.icon, to: "item" };
+	const buildable = getBuildable(slug);
+	if (buildable)
+		return { name: buildable.name, icon: buildable.icon, to: "buildable" };
 	const building = getBuilding(slug);
 	if (building) return { name: building.name, icon: building.icon, to: "building" };
 	return { name: slug };

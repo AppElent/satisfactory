@@ -1,13 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import EntityIcon from "#/components/EntityIcon";
-import { getBuilding, getItem } from "#/data";
+import { getBuildable, getBuilding, getItem } from "#/data";
 import type { Recipe } from "#/data/schema";
 import { formatNumber, perMinute } from "#/lib/format";
 
-/** Resolve an amount-ref slug to a display name + icon (item or building). */
+/** Resolve an amount-ref slug to a display name + icon. A recipe product can be
+ *  an item, a building, or a buildable (~460 build recipes produce buildables). */
 function resolveRef(slug: string): { name: string; icon?: string } {
 	const item = getItem(slug);
 	if (item) return { name: item.name, icon: item.icon };
+	const buildable = getBuildable(slug);
+	if (buildable) return { name: buildable.name, icon: buildable.icon };
 	const building = getBuilding(slug);
 	if (building) return { name: building.name, icon: building.icon };
 	return { name: slug };
