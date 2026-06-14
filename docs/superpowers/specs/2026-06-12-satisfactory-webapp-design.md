@@ -27,7 +27,7 @@ TanStack Start (React 19, file-based routing, SSR) · TanStack Query · Convex (
 Each phase ships independently. Every feature has at least a placeholder route from phase 1.
 
 1. **Foundation** — data pipeline + app shell with ALL routes (placeholders via feature registry)
-2. **Overviews** — items, recipes, buildings, buildables, schematics
+2. **Overviews** — items, recipes, buildings, buildables, schematics — done
 3. **Calculator** — LP solver + graph/table results
 4. **Factories** — save, efficiency, build costs
 5. **Map** — tiles, resource nodes, factory pins

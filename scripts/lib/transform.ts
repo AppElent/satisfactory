@@ -161,6 +161,7 @@ export function transform(source: SourceData): TransformResult {
 				slug: schematicSlugs.get(s.className) as string,
 				className: s.className,
 				name: s.name,
+				icon: s.icon,
 				type: s.type,
 				tier: s.tier,
 				cost,

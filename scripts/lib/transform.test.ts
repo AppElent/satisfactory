@@ -191,6 +191,11 @@ describe("transform", () => {
 		expect(schem?.cost).toEqual([{ item: "iron-ore", amount: 10 }]);
 		expect(warnings).toHaveLength(1);
 	});
+
+	it("carries the schematic icon through", () => {
+		const { data } = transform(fixture());
+		expect(data.schematics[0]?.icon).toBe("tier-1");
+	});
 });
 
 describe("transform on the real vendored data", () => {

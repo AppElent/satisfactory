@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 import { FEATURES } from "#/config/features";
 
 export const Route = createFileRoute("/")({
@@ -12,6 +13,9 @@ const STATUS_LABEL = {
 } as const;
 
 function Home() {
+	const navigate = useNavigate();
+	const [q, setQ] = useState("");
+
 	return (
 		<main className="page-wrap px-4 py-10">
 			<section className="mx-auto max-w-2xl text-center">
@@ -22,12 +26,21 @@ function Home() {
 					Game data, an optimizing production calculator, factory management,
 					the world map and logistics planning — all in one place.
 				</p>
-				<input
-					type="search"
-					disabled
-					placeholder="Search items, recipes, buildings… (arrives with the data overviews)"
-					className="mt-6 w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-5 py-3 text-sm text-[var(--sea-ink)] placeholder:text-[var(--sea-ink-soft)] disabled:cursor-not-allowed disabled:opacity-70"
-				/>
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+						navigate({ to: "/data/items", search: { q } });
+					}}
+					className="mt-6"
+				>
+					<input
+						type="search"
+						value={q}
+						onChange={(e) => setQ(e.target.value)}
+						placeholder="Search items, recipes, buildings…"
+						className="w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-5 py-3 text-sm text-[var(--sea-ink)] placeholder:text-[var(--sea-ink-soft)]"
+					/>
+				</form>
 			</section>
 
 			<section className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">

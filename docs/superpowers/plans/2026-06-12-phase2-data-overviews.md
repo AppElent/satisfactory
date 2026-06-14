@@ -893,7 +893,7 @@ export const Route = createFileRoute("/data/items")({
 		form: typeof search.form === "string" ? search.form : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={itemsListConfig} routeId="/data/items" />
+		<EntityListPage config={itemsListConfig} />
 	),
 });
 ```
@@ -1010,14 +1010,17 @@ export function StatGrid({
 ```tsx
 import { Link } from "@tanstack/react-router";
 import EntityIcon from "#/components/EntityIcon";
-import { getBuilding, getItem } from "#/data";
+import { getBuildable, getBuilding, getItem } from "#/data";
 import type { Recipe } from "#/data/schema";
 import { perMinute, formatNumber } from "#/lib/format";
 
-/** Resolve an amount-ref slug to a display name + icon (item or building). */
+/** Resolve an amount-ref slug to a display name + icon. A recipe product can be
+ *  an item, a building, or a buildable (~460 build recipes produce buildables). */
 function resolveRef(slug: string): { name: string; icon?: string } {
 	const item = getItem(slug);
 	if (item) return { name: item.name, icon: item.icon };
+	const buildable = getBuildable(slug);
+	if (buildable) return { name: buildable.name, icon: buildable.icon };
 	const building = getBuilding(slug);
 	if (building) return { name: building.name, icon: building.icon };
 	return { name: slug };
@@ -1246,7 +1249,7 @@ export const Route = createFileRoute("/data/recipes")({
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
 	component: () => (
-		<EntityListPage config={recipesListConfig} routeId="/data/recipes" />
+		<EntityListPage config={recipesListConfig} />
 	),
 });
 ```
@@ -1260,7 +1263,7 @@ import DetailLayout, {
 	StatGrid,
 } from "#/components/data/DetailLayout";
 import EntityIcon from "#/components/EntityIcon";
-import { getBuilding, getItem, getRecipe } from "#/data";
+import { getBuildable, getBuilding, getItem, getRecipe } from "#/data";
 import type { Recipe } from "#/data/schema";
 import { formatNumber, formatPower, perMinute } from "#/lib/format";
 
@@ -1284,6 +1287,9 @@ export const Route = createFileRoute("/data/recipes/$slug")({
 function ref(slug: string): { name: string; icon?: string; to?: string } {
 	const item = getItem(slug);
 	if (item) return { name: item.name, icon: item.icon, to: "item" };
+	const buildable = getBuildable(slug);
+	if (buildable)
+		return { name: buildable.name, icon: buildable.icon, to: "buildable" };
 	const building = getBuilding(slug);
 	if (building) return { name: building.name, icon: building.icon, to: "building" };
 	return { name: slug };
@@ -1442,14 +1448,20 @@ import { createFileRoute } from "@tanstack/react-router";
 import EntityListPage from "#/features/data/EntityListPage";
 import { buildingsListConfig } from "#/features/data/configs/buildings";
 
+// Explicit interface with OPTIONAL props: typing validateSearch's return as a
+// shape with optional keys keeps `<Link to="/data/buildings">` from requiring a
+// `search` arg (TanStack treats non-optional search keys as required on links).
+interface BuildingsSearch {
+	q?: string;
+	power?: string;
+}
+
 export const Route = createFileRoute("/data/buildings")({
-	validateSearch: (search: Record<string, unknown>) => ({
+	validateSearch: (search: Record<string, unknown>): BuildingsSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		power: typeof search.power === "string" ? search.power : undefined,
 	}),
-	component: () => (
-		<EntityListPage config={buildingsListConfig} routeId="/data/buildings" />
-	),
+	component: () => <EntityListPage config={buildingsListConfig} />,
 });
 ```
 
@@ -1620,14 +1632,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import EntityListPage from "#/features/data/EntityListPage";
 import { buildablesListConfig } from "#/features/data/configs/buildables";
 
+interface BuildablesSearch {
+	q?: string;
+	category?: string;
+}
+
 export const Route = createFileRoute("/data/buildables")({
-	validateSearch: (search: Record<string, unknown>) => ({
+	validateSearch: (search: Record<string, unknown>): BuildablesSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		category: typeof search.category === "string" ? search.category : undefined,
 	}),
-	component: () => (
-		<EntityListPage config={buildablesListConfig} routeId="/data/buildables" />
-	),
+	component: () => <EntityListPage config={buildablesListConfig} />,
 });
 ```
 
@@ -1787,15 +1802,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import EntityListPage from "#/features/data/EntityListPage";
 import { schematicsListConfig } from "#/features/data/configs/schematics";
 
+interface SchematicsSearch {
+	q?: string;
+	tier?: string;
+	kind?: string;
+}
+
 export const Route = createFileRoute("/data/schematics")({
-	validateSearch: (search: Record<string, unknown>) => ({
+	validateSearch: (search: Record<string, unknown>): SchematicsSearch => ({
 		q: typeof search.q === "string" ? search.q : undefined,
 		tier: typeof search.tier === "string" ? search.tier : undefined,
 		kind: typeof search.kind === "string" ? search.kind : undefined,
 	}),
-	component: () => (
-		<EntityListPage config={schematicsListConfig} routeId="/data/schematics" />
-	),
+	component: () => <EntityListPage config={schematicsListConfig} />,
 });
 ```
 
@@ -1906,6 +1925,23 @@ function SchematicDetail() {
 }
 ```
 
+- [ ] **Step 3b: Restore the item → schematic cross-links**
+
+`src/routes/data/items.$slug.tsx` currently renders its "Unlocked by" schematics as plain `<span>` badges (the `/data/schematics/$slug` route didn't exist when items were built in Task 9). Now that it exists, convert each badge back to a link. Replace the `<span … >{schematic.name}</span>` in the "Unlocked by" section with:
+
+```tsx
+<Link
+	key={schematic.slug}
+	to="/data/schematics/$slug"
+	params={{ slug: schematic.slug }}
+	className="rounded-full border border-[var(--line)] px-3 py-1 text-xs no-underline hover:border-[var(--chip-line)]"
+>
+	{schematic.name}
+</Link>
+```
+
+Ensure `Link` is imported in `items.$slug.tsx` (it already imports from `@tanstack/react-router`). Run `npm run typecheck` → 0 errors (the route now exists so the typed `to` resolves).
+
 - [ ] **Step 4: Regenerate routes, typecheck, smoke**
 
 Run: `npm run generate-routes && npm run typecheck`
@@ -1981,7 +2017,7 @@ npx biome check --write . && git add -A && git commit -m "feat: home search into
 
 The spec requires overview pages to be SSR-rendered with proper meta tags so they rank in search. TanStack Start SSRs route components already; this task adds per-route `head`.
 
-**Files:** Modify all five list routes (`src/routes/data/{items,recipes,buildings,buildables,schematics}.tsx`) and all five detail routes (`src/routes/data/*.$slug.tsx`).
+**Files:** Modify all five list routes (`src/routes/data/{items,recipes,buildings,buildables,schematics}.index.tsx` — note: these are `.index.tsx`, since each entity's list is the index route and the bare `<entity>.tsx` parent was removed so the `$slug` detail child can render under the `/data` layout's `<Outlet/>`) and all five detail routes (`src/routes/data/*.$slug.tsx`).
 
 - [ ] **Step 1: Add `head` to each list route**
 
