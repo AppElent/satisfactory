@@ -13,6 +13,23 @@ import type {
 
 const EPSILON = 1e-6;
 
+/** Sanitize user input so `solve` always returns a Solution rather than feeding
+ *  NaN/negative values into the LP: drop targets that aren't finite and positive,
+ *  sum duplicate targets for the same item, and drop available inputs with an
+ *  invalid (non-finite or negative) rate cap. */
+function normalizeSpec(spec: ProblemSpec): ProblemSpec {
+	const byItem = new Map<string, number>();
+	for (const t of spec.targets) {
+		if (!Number.isFinite(t.rate) || t.rate <= 0) continue;
+		byItem.set(t.item, (byItem.get(t.item) ?? 0) + t.rate);
+	}
+	const targets = [...byItem].map(([item, rate]) => ({ item, rate }));
+	const availableInputs = (spec.availableInputs ?? []).filter(
+		(a) => a.rate === undefined || (Number.isFinite(a.rate) && a.rate >= 0),
+	);
+	return { ...spec, targets, availableInputs };
+}
+
 /** Targets whose item has no enabled producing recipe → unreachable. */
 function unreachableTargets(spec: ProblemSpec, model: LpModel): string[] {
 	const producible = new Set<string>();
@@ -30,6 +47,7 @@ function infeasible(unreachable: string[]): Solution {
 		status: "infeasible",
 		recipes: [],
 		rawInputs: [],
+		providedInputs: [],
 		byproducts: [],
 		flows: [],
 		power: 0,
@@ -38,7 +56,8 @@ function infeasible(unreachable: string[]): Solution {
 	};
 }
 
-export async function solve(spec: ProblemSpec): Promise<Solution> {
+export async function solve(rawSpec: ProblemSpec): Promise<Solution> {
+	const spec = normalizeSpec(rawSpec);
 	const model = buildModel(spec);
 
 	// Fast pre-check: a target nothing produces is definitively infeasible.
@@ -61,13 +80,19 @@ export async function solve(spec: ProblemSpec): Promise<Solution> {
 		}
 	});
 
-	// Raw inputs (import variables).
+	// Imports: split raw resources (to mine/import) from user-provided inputs.
 	const rawInputs: Flow[] = [];
+	const providedInputs: Flow[] = [];
 	for (const [item, varName] of model.importVars) {
 		const rate = primal(varName);
-		if (rate > EPSILON) rawInputs.push({ item, rate });
+		if (rate <= EPSILON) continue;
+		(model.providedInputs.has(item) ? providedInputs : rawInputs).push({
+			item,
+			rate,
+		});
 	}
 	rawInputs.sort((a, b) => b.rate - a.rate);
+	providedInputs.sort((a, b) => b.rate - a.rate);
 
 	// Per-item produced/consumed across the plan.
 	const flowMap = new Map<string, ItemFlow>();
@@ -104,6 +129,7 @@ export async function solve(spec: ProblemSpec): Promise<Solution> {
 		status: "optimal",
 		recipes,
 		rawInputs,
+		providedInputs,
 		byproducts,
 		flows,
 		power: totalPower(recipes),

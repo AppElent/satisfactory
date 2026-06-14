@@ -55,7 +55,9 @@ describe("solve (real data, standard recipes)", () => {
 		expect(slugs).toContain("recipe-ironplate-c");
 		expect(slugs).not.toContain("recipe-ingotiron-c");
 		expect(sol.rawInputs.find((f) => f.item === "iron-ore")).toBeUndefined();
-		const ingot = sol.rawInputs.find((f) => f.item === "iron-ingot");
+		// the consumed ingot is a provided input, not a raw resource
+		expect(sol.rawInputs.find((f) => f.item === "iron-ingot")).toBeUndefined();
+		const ingot = sol.providedInputs.find((f) => f.item === "iron-ingot");
 		expect(ingot?.rate).toBeCloseTo(90, 1);
 	});
 
@@ -67,9 +69,9 @@ describe("solve (real data, standard recipes)", () => {
 			availableInputs: [{ item: "iron-ingot", rate: 30 }],
 		});
 		expect(sol.status).toBe("optimal");
-		const ingot = sol.rawInputs.find((f) => f.item === "iron-ingot");
+		const ingot = sol.providedInputs.find((f) => f.item === "iron-ingot");
 		expect(ingot?.rate).toBeCloseTo(30, 1);
-		// remaining 60 ingot smelted from 60 ore
+		// remaining 60 ingot smelted from 60 ore (a raw resource)
 		const ore = sol.rawInputs.find((f) => f.item === "iron-ore");
 		expect(ore?.rate).toBeCloseTo(60, 1);
 	});
@@ -85,5 +87,39 @@ describe("solve (real data, standard recipes)", () => {
 		// machines is infeasible; diagnosis names it.
 		expect(sol.status).toBe("infeasible");
 		expect(sol.diagnosis?.unreachable).toContain("wood");
+	});
+
+	it("sums duplicate targets for the same item", async () => {
+		// 30 + 30 iron-plate should solve the same as a single 60 target.
+		const sol = await solve({
+			targets: [
+				{ item: "iron-plate", rate: 30 },
+				{ item: "iron-plate", rate: 30 },
+			],
+			allowedAlternates: [],
+		});
+		expect(sol.status).toBe("optimal");
+		const ore = sol.rawInputs.find((f) => f.item === "iron-ore");
+		expect(ore?.rate).toBeCloseTo(90, 1);
+	});
+
+	it("ignores non-finite / non-positive target rates instead of crashing", async () => {
+		// A half-typed numeric field can yield NaN; a stray negative is invalid.
+		// Neither should throw or emit a malformed LP — they're dropped.
+		const sol = await solve({
+			targets: [
+				{ item: "iron-plate", rate: Number.NaN },
+				{ item: "iron-rod", rate: -5 },
+				{ item: "iron-plate", rate: 60 },
+			],
+			allowedAlternates: [],
+		});
+		expect(sol.status).toBe("optimal");
+		// only the valid 60 iron-plate target survives → 90 ore
+		const ore = sol.rawInputs.find((f) => f.item === "iron-ore");
+		expect(ore?.rate).toBeCloseTo(90, 1);
+		expect(sol.recipes.some((r) => r.recipe === "recipe-ironrod-c")).toBe(
+			false,
+		);
 	});
 });

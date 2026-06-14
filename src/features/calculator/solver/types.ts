@@ -49,8 +49,10 @@ export interface ItemFlow {
 export interface Solution {
 	status: "optimal" | "infeasible";
 	recipes: RecipeUsage[];
-	/** Raw/imported inputs consumed (the factory's "shopping list"). */
+	/** Raw resources / unproducible items consumed (must be mined or imported). */
 	rawInputs: Flow[];
+	/** User-declared available inputs that the plan consumed. */
+	providedInputs: Flow[];
 	/** Items produced beyond demand (byproducts / overflow). */
 	byproducts: Flow[];
 	/** Per-item produced vs consumed, for the table view. */
