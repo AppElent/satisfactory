@@ -28,7 +28,7 @@ Each phase ships independently. Every feature has at least a placeholder route f
 
 1. **Foundation** — data pipeline + app shell with ALL routes (placeholders via feature registry)
 2. **Overviews** — items, recipes, buildings, buildables, schematics — done
-3. **Calculator** — LP solver + graph/table results
+3. **Calculator** — LP solver + graph/table results — done (3a+3b)
 4. **Factories** — save, efficiency, build costs
 5. **Map** — tiles, resource nodes, factory pins
 6. **Logistics** — factory network + transport math
