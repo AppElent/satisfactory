@@ -65,4 +65,35 @@ describe("buildGraph", () => {
 		// 3 smelters × 30/min = 90 iron-ingot/min flows to the plate recipe
 		expect(ironIngotOut).toBeCloseTo(90, 1);
 	});
+
+	it("nets recirculated items so a recipe never self-loops", () => {
+		// recipe-uraniumcell-c (blender) consumes 8 and produces 2 sulfuric-acid
+		// per craft — a recirculating item. The recipe should be a net SINK of
+		// sulfuric-acid with no source→self edge.
+		const recirc: Solution = {
+			status: "optimal",
+			recipes: [
+				{ recipe: "recipe-uraniumcell-c", machines: 2, building: "blender" },
+				{ recipe: "recipe-sulfuricacid-c", machines: 4, building: "refinery" },
+			],
+			outputs: [{ item: "uranium-fuel-rod-stub", rate: 0 }],
+			rawInputs: [],
+			providedInputs: [],
+			byproducts: [],
+			flows: [],
+			power: 0,
+			buildCost: [],
+		};
+		const { edges } = buildGraph(recirc);
+		expect(edges.some((e) => e.source === e.target)).toBe(false);
+		// sulfuric-acid flows from the acid recipe INTO uranium-cell (net consumer)
+		expect(
+			edges.some(
+				(e) =>
+					e.item === "sulfuric-acid" &&
+					e.source === "recipe:recipe-sulfuricacid-c" &&
+					e.target === "recipe:recipe-uraniumcell-c",
+			),
+		).toBe(true);
+	});
 });

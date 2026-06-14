@@ -46,16 +46,30 @@ export function buildGraph(solution: Solution): {
 		sinks.set(item, [...(sinks.get(item) ?? []), { node, rate }]);
 	};
 
-	// Recipe nodes (and their per-item production/consumption rates).
+	// Recipe nodes. For each item a recipe touches, use the NET rate (produced −
+	// consumed) so a recipe is a source or a sink of an item but never both —
+	// this avoids degenerate self-loop edges for recipes that recirculate an item
+	// (e.g. recycled plastic/rubber, uranium-cell + sulfuric-acid).
 	for (const u of solution.recipes) {
 		const id = `recipe:${u.recipe}`;
 		nodes.push({ id, kind: "recipe", slug: u.recipe, rate: u.machines });
 		const recipe = getRecipe(u.recipe);
 		if (!recipe) continue;
+		const net = new Map<string, number>();
 		for (const p of recipe.products)
-			addSource(p.item, id, perMinute(p.amount, recipe.time) * u.machines);
+			net.set(
+				p.item,
+				(net.get(p.item) ?? 0) + perMinute(p.amount, recipe.time) * u.machines,
+			);
 		for (const g of recipe.ingredients)
-			addSink(g.item, id, perMinute(g.amount, recipe.time) * u.machines);
+			net.set(
+				g.item,
+				(net.get(g.item) ?? 0) - perMinute(g.amount, recipe.time) * u.machines,
+			);
+		for (const [item, rate] of net) {
+			if (rate > EPSILON) addSource(item, id, rate);
+			else if (rate < -EPSILON) addSink(item, id, -rate);
+		}
 	}
 
 	// Input nodes supply their item.
