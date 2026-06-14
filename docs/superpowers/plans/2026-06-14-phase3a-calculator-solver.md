@@ -121,8 +121,10 @@ export interface ItemFlow {
 export interface Solution {
 	status: "optimal" | "infeasible";
 	recipes: RecipeUsage[];
-	/** Raw/imported inputs consumed (the factory's "shopping list"). */
+	/** Raw resources / unproducible items consumed (must be mined or imported). */
 	rawInputs: Flow[];
+	/** User-declared available inputs that the plan consumed. */
+	providedInputs: Flow[];
 	/** Items produced beyond demand (byproducts / overflow). */
 	byproducts: Flow[];
 	/** Per-item produced vs consumed, for the table view. */
@@ -755,6 +757,14 @@ export async function solve(spec: ProblemSpec): Promise<Solution> {
 }
 ```
 
+> **Post-review hardening (already applied in the committed solver):** `solve()`
+> begins with a `normalizeSpec` pass that drops non-finite/non-positive target
+> rates (so a half-typed numeric field never crashes the LP), sums duplicate
+> targets per item, and drops invalid available-input caps. Imports are split into
+> `Solution.rawInputs` (raw resources to mine) and `Solution.providedInputs` (the
+> user's declared available inputs that were consumed). The code blocks above show
+> the original shape; the committed `solve.ts`/`types.ts` include these additions.
+
 - [ ] **Step 4: Create `src/features/calculator/solver/index.ts`**
 
 ```ts
@@ -1150,7 +1160,7 @@ import { useState } from "react";
 import EntityIcon from "#/components/EntityIcon";
 import { getBuilding, getItem } from "#/data";
 import { formatNumber, formatPower } from "#/lib/format";
-import type { Solution } from "./solver";
+import type { Flow, Solution } from "./solver";
 
 const TABS = ["Table", "Resources", "Power & cost"] as const;
 type Tab = (typeof TABS)[number];
@@ -1160,6 +1170,31 @@ function name(slug: string): string {
 }
 function icon(slug: string): string | undefined {
 	return getItem(slug)?.icon ?? getBuilding(slug)?.icon;
+}
+
+function FlowList({ title, flows }: { title: string; flows: Flow[] }) {
+	if (flows.length === 0) {
+		return (
+			<p className="text-sm text-[var(--sea-ink-soft)]">
+				No {title.toLowerCase()}.
+			</p>
+		);
+	}
+	return (
+		<div className="flex flex-col gap-2">
+			<p className="text-xs uppercase text-[var(--sea-ink-soft)]">{title}</p>
+			{flows.map((f) => (
+				<div
+					key={f.item}
+					className="flex items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2 text-sm"
+				>
+					<EntityIcon icon={icon(f.item)} name={name(f.item)} size={24} />
+					<span className="flex-1 text-[var(--sea-ink)]">{name(f.item)}</span>
+					<span className="font-semibold">{formatNumber(f.rate)}/min</span>
+				</div>
+			))}
+		</div>
+	);
 }
 
 export default function ResultTabs({ solution }: { solution: Solution }) {
@@ -1229,17 +1264,14 @@ export default function ResultTabs({ solution }: { solution: Solution }) {
 			)}
 
 			{tab === "Resources" && (
-				<div className="flex flex-col gap-2">
-					{solution.rawInputs.map((f) => (
-						<div
-							key={f.item}
-							className="flex items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2 text-sm"
-						>
-							<EntityIcon icon={icon(f.item)} name={name(f.item)} size={24} />
-							<span className="flex-1 text-[var(--sea-ink)]">{name(f.item)}</span>
-							<span className="font-semibold">{formatNumber(f.rate)}/min</span>
-						</div>
-					))}
+				<div className="flex flex-col gap-4">
+					<FlowList title="Raw resources" flows={solution.rawInputs} />
+					{solution.providedInputs.length > 0 && (
+						<FlowList
+							title="From your existing production"
+							flows={solution.providedInputs}
+						/>
+					)}
 				</div>
 			)}
 
