@@ -1,10 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import ComingSoon from "#/components/ComingSoon";
+import CalculatorPage from "#/features/calculator/CalculatorPage";
 
 export const Route = createFileRoute("/calculator")({
-	component: () => (
-		<main className="page-wrap px-4 py-10">
-			<ComingSoon featureId="calculator" />
-		</main>
-	),
+	head: () => ({
+		meta: [
+			{ title: "Production calculator — Satisfactory Planner" },
+			{
+				name: "description",
+				content:
+					"Plan optimal Satisfactory production lines: set targets, toggle alternate recipes, and see machines, raw resources, power and build cost.",
+			},
+		],
+	}),
+	component: CalculatorPage,
 });
