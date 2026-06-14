@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import EntityIcon from "#/components/EntityIcon";
 import { getBuilding, getItem, getRecipe } from "#/data";
 import { formatNumber, formatPower } from "#/lib/format";
 import type { Flow, Solution } from "./solver";
 
-const TABS = ["Table", "Resources", "Power & cost"] as const;
+const ProductionGraph = lazy(() => import("./ProductionGraph"));
+
+const TABS = ["Graph", "Table", "Resources", "Power & cost"] as const;
 type Tab = (typeof TABS)[number];
 
 function name(slug: string): string {
@@ -45,7 +47,7 @@ function FlowList({ title, flows }: { title: string; flows: Flow[] }) {
 }
 
 export default function ResultTabs({ solution }: { solution: Solution }) {
-	const [tab, setTab] = useState<Tab>("Table");
+	const [tab, setTab] = useState<Tab>("Graph");
 
 	if (solution.status === "infeasible") {
 		return (
@@ -76,6 +78,18 @@ export default function ResultTabs({ solution }: { solution: Solution }) {
 					</button>
 				))}
 			</div>
+
+			{tab === "Graph" && (
+				<Suspense
+					fallback={
+						<p className="p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+							Loading graph…
+						</p>
+					}
+				>
+					<ProductionGraph solution={solution} />
+				</Suspense>
+			)}
 
 			{tab === "Table" && (
 				<div className="flex flex-col gap-2">
