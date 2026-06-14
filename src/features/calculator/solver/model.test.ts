@@ -84,3 +84,44 @@ describe("toLpString", () => {
 		expect(lp).toMatch(/obj:.*m\d+/);
 	});
 });
+
+describe("buildModel — maximize mode", () => {
+	const maxSpec = {
+		mode: "maximize" as const,
+		targets: [{ item: "plastic", rate: 1 }],
+		allowedAlternates: [],
+		availableInputs: [{ item: "crude-oil", rate: 480 }],
+	};
+
+	it("uses the maximize sense", () => {
+		expect(buildModel(maxSpec).sense).toBe("maximize");
+		expect(toLpString(buildModel(maxSpec))).toMatch(/^Maximize/);
+	});
+
+	it("only makes provided inputs importable (not free raw resources)", () => {
+		const model = buildModel(maxSpec);
+		// crude-oil is provided → import var; other raws (iron-ore) are NOT importable
+		expect(model.importVars.has("crude-oil")).toBe(true);
+		expect(model.importVars.has("iron-ore")).toBe(false);
+	});
+
+	it("puts the target's net coefficients in the objective", () => {
+		const model = buildModel(maxSpec);
+		// at least one recipe var has a positive plastic coefficient in the objective
+		const anyPositive = [...model.objective.values()].some((c) => c > 0);
+		expect(anyPositive).toBe(true);
+	});
+
+	it("uses rhs 0 on all rows in maximize mode", () => {
+		const model = buildModel(maxSpec);
+		expect(model.rows.every((r) => r.rhs === 0)).toBe(true);
+	});
+
+	it("produce mode still minimizes (regression)", () => {
+		const model = buildModel({
+			targets: [{ item: "iron-plate", rate: 60 }],
+			allowedAlternates: [],
+		});
+		expect(model.sense).toBe("minimize");
+	});
+});

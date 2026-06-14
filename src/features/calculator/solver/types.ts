@@ -14,6 +14,9 @@ export interface AvailableInput {
 /** Inputs to the solver. */
 export interface ProblemSpec {
 	targets: Target[];
+	/** "produce": hit the target rates minimizing raw resources (default).
+	 *  "maximize": maximize the target's output given the available inputs. */
+	mode?: "produce" | "maximize";
 	/** Slugs of alternate recipes the user has enabled. Standard recipes are
 	 *  always enabled; alternates only when listed here. */
 	allowedAlternates: string[];
@@ -49,6 +52,9 @@ export interface ItemFlow {
 export interface Solution {
 	status: "optimal" | "infeasible";
 	recipes: RecipeUsage[];
+	/** Net production of each target item (the demanded rate in produce mode,
+	 *  the achieved maximum in maximize mode). */
+	outputs: Flow[];
 	/** Raw resources / unproducible items consumed (must be mined or imported). */
 	rawInputs: Flow[];
 	/** User-declared available inputs that the plan consumed. */
@@ -69,6 +75,8 @@ export interface Solution {
 export interface LpModel {
 	/** Enabled recipes, index-aligned with `recipeVar(i)` = `r{i}`. */
 	recipes: import("#/data/schema").Recipe[];
+	/** LP objective sense. */
+	sense: "minimize" | "maximize";
 	/** Input item slug → import var name `m{i}`. */
 	importVars: Map<string, string>;
 	/** Item slugs that are user-provided available inputs (subset of importVars keys). */
