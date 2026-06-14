@@ -122,4 +122,30 @@ describe("solve (real data, standard recipes)", () => {
 			false,
 		);
 	});
+
+	it("maximizes target output from a bounded input", async () => {
+		// Only 480 crude-oil available → max plastic is 320/min (standard recipes).
+		const sol = await solve({
+			mode: "maximize",
+			targets: [{ item: "plastic", rate: 1 }],
+			allowedAlternates: [],
+			availableInputs: [{ item: "crude-oil", rate: 480 }],
+		});
+		expect(sol.status).toBe("optimal");
+		const plastic = sol.outputs.find((o) => o.item === "plastic");
+		expect(plastic?.rate).toBeCloseTo(320, 0);
+		const oil = sol.providedInputs.find((f) => f.item === "crude-oil");
+		expect(oil?.rate).toBeCloseTo(480, 0);
+	});
+
+	it("reports outputs at the demanded rate in produce mode", async () => {
+		const sol = await solve({
+			targets: [{ item: "iron-plate", rate: 60 }],
+			allowedAlternates: [],
+		});
+		expect(sol.outputs.find((o) => o.item === "iron-plate")?.rate).toBeCloseTo(
+			60,
+			1,
+		);
+	});
 });

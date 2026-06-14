@@ -18,10 +18,17 @@ const EPSILON = 1e-6;
  *  sum duplicate targets for the same item, and drop available inputs with an
  *  invalid (non-finite or negative) rate cap. */
 function normalizeSpec(spec: ProblemSpec): ProblemSpec {
+	const mode = spec.mode ?? "produce";
 	const byItem = new Map<string, number>();
 	for (const t of spec.targets) {
-		if (!Number.isFinite(t.rate) || t.rate <= 0) continue;
-		byItem.set(t.item, (byItem.get(t.item) ?? 0) + t.rate);
+		// In produce mode a target needs a finite positive rate; in maximize mode
+		// the rate is ignored (the target is maximized), so keep any listed item.
+		if (mode === "produce" && (!Number.isFinite(t.rate) || t.rate <= 0))
+			continue;
+		byItem.set(
+			t.item,
+			(byItem.get(t.item) ?? 0) + (Number.isFinite(t.rate) ? t.rate : 0),
+		);
 	}
 	const targets = [...byItem].map(([item, rate]) => ({ item, rate }));
 	const availableInputs = (spec.availableInputs ?? []).filter(
@@ -46,6 +53,7 @@ function infeasible(unreachable: string[]): Solution {
 	return {
 		status: "infeasible",
 		recipes: [],
+		outputs: [],
 		rawInputs: [],
 		providedInputs: [],
 		byproducts: [],
@@ -112,6 +120,15 @@ export async function solve(rawSpec: ProblemSpec): Promise<Solution> {
 	});
 	const flows = [...flowMap.values()].sort((a, b) => b.produced - a.produced);
 
+	// Outputs: net production of each target item (achieved rate).
+	const targetItems = new Set(spec.targets.map((t) => t.item));
+	const outputs: Flow[] = [];
+	for (const f of flows) {
+		if (!targetItems.has(f.item)) continue;
+		const net = f.produced - f.consumed;
+		if (net > EPSILON) outputs.push({ item: f.item, rate: net });
+	}
+
 	// Byproducts: anything produced beyond what's consumed + demanded — including
 	// raw resources produced as a byproduct (e.g. surplus water from aluminium or
 	// unpackage-water), which the factory must still sink. Importing an item makes
@@ -128,6 +145,7 @@ export async function solve(rawSpec: ProblemSpec): Promise<Solution> {
 	return {
 		status: "optimal",
 		recipes,
+		outputs,
 		rawInputs,
 		providedInputs,
 		byproducts,
