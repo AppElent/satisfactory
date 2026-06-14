@@ -1,4 +1,4 @@
-import { Link, useParams } from "@tanstack/react-router";
+import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { useMutation, useQuery } from "convex/react";
 import { useState } from "react";
 import { getItem } from "#/data";
@@ -21,6 +21,7 @@ export default function FactoryDetail() {
 	});
 	const update = useMutation(api.factories.update);
 	const remove = useMutation(api.factories.remove);
+	const navigate = useNavigate();
 	const [tab, setTab] = useState<Tab>("Overview");
 
 	if (factory === undefined) {
@@ -76,7 +77,7 @@ export default function FactoryDetail() {
 					type="button"
 					onClick={async () => {
 						await remove({ id: factory._id });
-						window.location.href = "/factories";
+						navigate({ to: "/factories" });
 					}}
 					className="text-sm text-[var(--sea-ink-soft)] hover:text-red-500"
 				>
