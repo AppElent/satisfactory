@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Ship a working production calculator: a pure, tested LP-solver module (HiGHS/WASM) that turns production targets into optimal machine counts, plus a functional UI with target editing, alternate-recipe toggles, and table / raw-resources / power+build-cost result views.
+**Goal:** Ship a working production calculator: a pure, tested LP-solver module (HiGHS/WASM) that turns production targets into optimal machine counts — accounting for inputs the user already produces — plus a functional UI with target editing, available-input declaration, alternate-recipe toggles, and table / raw-resources / power+build-cost result views.
 
 **Architecture:** A pure solver module (`src/features/calculator/solver/`) builds a linear program from the recipe graph — one variable per enabled recipe (= machines at 100%), one balance row per item, and a per-input "import" variable — minimizes weighted raw-resource imports, solves with `highs` (HiGHS compiled to WASM), and parses the result into a typed `Solution` (machines, imports, byproducts, item flows, power, build cost) or a structured infeasibility diagnosis. The UI calls the solver through an async hook and renders the result as tabs. Graph view, maximize-output mode, shareable URLs, and save-as-factory are deferred to Phase 3b.
 
@@ -18,7 +18,9 @@
 - **LP-string (CPLEX LP format) is the interface.** Variables are `>= 0` by default. Use machine-safe var names (`r0`, `r1`, … for recipes; `m0`, `m1`, … for imports) and map back via arrays — never embed slugs in the LP.
 - **Formulation (verified correct on real data):** For target 30 `reinforced-iron-plate`/min the solver returns 12 iron-ingot + 9 iron-plate + 6 iron-rod + 9 screw + 6 reinforced-iron-plate machines importing 360 `iron-ore`/min; for 60 `iron-plate`/min → 3 constructors + 3 smelters, 90 ore. Infeasible targets return `Status: "Infeasible"`. Continuous LP yields fractional machine counts (e.g. 1.4286).
 - **Recipe data:** 276 automatable recipes (`inMachine === true && producedIn.length > 0`); 111 are alternates; 37 are multi-product. Per-minute rate of an item in a recipe = `amount * 60 / time`. The producing machine is `producedIn[0]` (a building slug).
-- **Inputs are dynamic, not just the 13 resources.** 13 mineable resources (`resources.json`: bauxite, caterium-ore, coal, copper-ore, crude-oil, iron-ore, limestone, nitrogen-gas, raw-quartz, sam, sulfur, uranium, water) PLUS 13 items no recipe produces (wood, leaves, mycelia, sam, the 3 power-slugs, the 4 creature-remains, uranium-waste, plutonium-waste). Rule: an item is an **input** (freely importable, weighted in the objective) iff it is a raw resource OR it is produced by no *enabled* recipe. Every other item gets a `net >= demand` balance row.
+- **Inputs are dynamic, not just the 13 resources.** 13 mineable resources (`resources.json`: bauxite, caterium-ore, coal, copper-ore, crude-oil, iron-ore, limestone, nitrogen-gas, raw-quartz, sam, sulfur, uranium, water) PLUS 13 items no recipe produces (wood, leaves, mycelia, sam, the 3 power-slugs, the 4 creature-remains, uranium-waste, plutonium-waste). Rule: an item is an **input** (freely importable, weighted in the objective) iff it is a raw resource OR it is produced by no *enabled* recipe OR the user declared it as an available input. Every other item gets a `net >= demand` balance row.
+- **Available inputs** (items the user already produces) get a weight-0 import variable with an optional upper bound — the solver consumes them before building machines. Verified: target 60 iron-plate/min with iron-ingot available → 3 constructors, 0 smelters, 90 ingot imported, 0 ore; cap ingot at 30 → smelters return and 60 ore reappears.
+- **Raw resources double as recipe products.** 12 of 13 raws are also produced by some recipe; water alone has 8 producers (byproducts of aluminium scrap / battery / non-fissile uranium, and the *standard* `recipe-unpackagewater-c`). The import-variable + balance-row formulation handles this: byproduct production offsets imports, and `unpackage`/alternate water recipes are used when enabled. Byproduct reporting includes raw resources whose `produced − consumed − demand > 0` (e.g. surplus water the factory must sink).
 - **Power/build cost:** machine count for recipe `r` = its LP variable value (machines at 100%). Power (MW) = Σ machines × `producedIn` building `powerConsumption`. Build cost = Σ `ceil(machines)` × the build recipe's ingredients (from `getBuildCost(buildingSlug)` — Phase 2, returns the `forBuilding` recipe). Constructor `powerConsumption` = 4 MW.
 - **Alternate recipes default OFF.** Standards always enabled; alternates only when the user enables them.
 
@@ -42,10 +44,12 @@ src/features/calculator/solver/highs.ts          # env-aware HiGHS loader
 src/features/calculator/solver/solve.ts          # solve(spec): Promise<Solution>
 src/features/calculator/solver/solve.test.ts     # golden tests vs real data
 src/features/calculator/solver/index.ts          # re-exports solve + types
-src/features/calculator/useSolver.ts             # React hook (async, debounced)
+src/features/calculator/useSolver.ts             # React hook (async)
 src/features/calculator/CalculatorPage.tsx       # page shell + state
+src/features/calculator/ItemPicker.tsx           # shared item search/add control
 src/features/calculator/TargetEditor.tsx         # add/edit production targets
-src/features/calculator/RecipeOptions.tsx        # alternate-recipe toggles + weighting
+src/features/calculator/AvailableInputsEditor.tsx# declare items already produced
+src/features/calculator/RecipeOptions.tsx        # alternate-recipe toggles
 src/features/calculator/ResultTabs.tsx           # table / resources / power+cost views
 src/routes/calculator.tsx                         # route (replace ComingSoon)
 ```
@@ -72,12 +76,22 @@ export interface Target {
 	rate: number;
 }
 
+/** An item the user already produces elsewhere, available to this plan as a
+ *  free input. `rate` caps how much per minute (omit = unlimited). */
+export interface AvailableInput {
+	item: string;
+	rate?: number;
+}
+
 /** Inputs to the solver. */
 export interface ProblemSpec {
 	targets: Target[];
 	/** Slugs of alternate recipes the user has enabled. Standard recipes are
 	 *  always enabled; alternates only when listed here. */
 	allowedAlternates: string[];
+	/** Items the user already produces — consumed before building from scratch,
+	 *  at zero raw-resource cost, up to their optional `rate` cap. */
+	availableInputs?: AvailableInput[];
 	/** Per-resource objective weight (higher = more costly to consume). Missing
 	 *  resources default to 1; non-resource imports always weigh 1. */
 	resourceWeights?: Record<string, number>;
@@ -127,8 +141,12 @@ export interface LpModel {
 	recipes: import("#/data/schema").Recipe[];
 	/** Input item slug → import var name `m{i}`. */
 	importVars: Map<string, string>;
+	/** Item slugs that are user-provided available inputs (subset of importVars keys). */
+	providedInputs: Set<string>;
 	/** Objective coefficient per variable name. */
 	objective: Map<string, number>;
+	/** Upper bounds per variable name (e.g. a capped available input). */
+	bounds: Map<string, number>;
 	/** One row per constrained item: Σ coef·var >= rhs. */
 	rows: Array<{ item: string; coefs: Map<string, number>; rhs: number }>;
 }
@@ -207,6 +225,26 @@ describe("buildModel", () => {
 		const oreVar = model.importVars.get("iron-ore") as string;
 		expect(model.objective.get(oreVar)).toBe(0.5);
 	});
+
+	it("gives a provided input a zero-weight import var", () => {
+		const model = buildModel(
+			spec({ availableInputs: [{ item: "iron-ingot" }] }),
+		);
+		expect(model.providedInputs.has("iron-ingot")).toBe(true);
+		const v = model.importVars.get("iron-ingot") as string;
+		expect(model.objective.get(v)).toBe(0);
+		// unbounded → no entry in bounds
+		expect(model.bounds.has(v)).toBe(false);
+	});
+
+	it("caps a provided input with an upper bound", () => {
+		const model = buildModel(
+			spec({ availableInputs: [{ item: "iron-ingot", rate: 30 }] }),
+		);
+		const v = model.importVars.get("iron-ingot") as string;
+		expect(model.bounds.get(v)).toBe(30);
+		expect(toLpString(model)).toContain("Bounds");
+	});
 });
 
 describe("toLpString", () => {
@@ -256,23 +294,38 @@ export function buildModel(spec: ProblemSpec): LpModel {
 		for (const x of [...r.ingredients, ...r.products]) items.add(x.item);
 	}
 
+	// User-provided available inputs (consumed before building, at zero cost).
+	const provided = new Map(
+		(spec.availableInputs ?? []).map((a) => [a.item, a.rate]),
+	);
+
 	const isInput = (item: string) =>
-		rawResources.has(item) || !producible.has(item);
+		rawResources.has(item) || !producible.has(item) || provided.has(item);
 
 	const demand = new Map(spec.targets.map((t) => [t.item, t.rate]));
 
-	// Import variable per input item.
+	// Import variable per input item (raw resource, unproducible, or provided).
 	const importVars = new Map<string, string>();
+	const providedInputs = new Set<string>();
 	const objective = new Map<string, number>();
+	const bounds = new Map<string, number>();
 	let m = 0;
 	for (const item of items) {
 		if (!isInput(item)) continue;
 		const name = `m${m++}`;
 		importVars.set(item, name);
-		const weight = rawResources.has(item)
-			? (spec.resourceWeights?.[item] ?? 1)
-			: 1;
-		objective.set(name, weight);
+		if (provided.has(item)) {
+			// Provided inputs are free (weight 0) and optionally capped.
+			providedInputs.add(item);
+			objective.set(name, 0);
+			const cap = provided.get(item);
+			if (cap !== undefined) bounds.set(name, cap);
+		} else {
+			const weight = rawResources.has(item)
+				? (spec.resourceWeights?.[item] ?? 1)
+				: 1;
+			objective.set(name, weight);
+		}
 	}
 
 	// One balance row per item: Σ (perMin product − perMin ingredient)·r + import >= demand.
@@ -291,7 +344,7 @@ export function buildModel(spec: ProblemSpec): LpModel {
 		rows.push({ item, coefs, rhs: demand.get(item) ?? 0 });
 	}
 
-	return { recipes, importVars, objective, rows };
+	return { recipes, importVars, providedInputs, objective, bounds, rows };
 }
 
 function terms(coefs: Map<string, number>): string {
@@ -311,6 +364,10 @@ export function toLpString(model: LpModel): string {
 	model.rows.forEach((row, i) => {
 		lines.push(` c${i}: ${terms(row.coefs)} >= ${row.rhs}`);
 	});
+	if (model.bounds.size > 0) {
+		lines.push("Bounds");
+		for (const [name, ub] of model.bounds) lines.push(` ${name} <= ${ub}`);
+	}
 	lines.push("End");
 	return lines.join("\n");
 }
@@ -532,6 +589,38 @@ describe("solve (real data, standard recipes)", () => {
 		expect(slugs).toContain("recipe-ironrod-c");
 	});
 
+	it("consumes a provided input instead of building it from scratch", async () => {
+		// iron-plate (60/min) needs 90 iron-ingot/min. If ingot is available, the
+		// solver should skip smelting: 3 constructors, 90 ingot imported, 0 ore.
+		const sol = await solve({
+			targets: [{ item: "iron-plate", rate: 60 }],
+			allowedAlternates: [],
+			availableInputs: [{ item: "iron-ingot" }],
+		});
+		expect(sol.status).toBe("optimal");
+		const slugs = sol.recipes.map((r) => r.recipe);
+		expect(slugs).toContain("recipe-ironplate-c");
+		expect(slugs).not.toContain("recipe-ingotiron-c");
+		expect(sol.rawInputs.find((f) => f.item === "iron-ore")).toBeUndefined();
+		const ingot = sol.rawInputs.find((f) => f.item === "iron-ingot");
+		expect(ingot?.rate).toBeCloseTo(90, 1);
+	});
+
+	it("caps a provided input and builds machines for the shortfall", async () => {
+		// Only 30 ingot/min available (need 90) → solver smelts the other 60.
+		const sol = await solve({
+			targets: [{ item: "iron-plate", rate: 60 }],
+			allowedAlternates: [],
+			availableInputs: [{ item: "iron-ingot", rate: 30 }],
+		});
+		expect(sol.status).toBe("optimal");
+		const ingot = sol.rawInputs.find((f) => f.item === "iron-ingot");
+		expect(ingot?.rate).toBeCloseTo(30, 1);
+		// remaining 60 ingot smelted from 60 ore
+		const ore = sol.rawInputs.find((f) => f.item === "iron-ore");
+		expect(ore?.rate).toBeCloseTo(60, 1);
+	});
+
 	it("returns infeasible with a diagnosis for an unmakeable target", async () => {
 		// plastic needs crude-oil refining; with only standard recipes it's fine,
 		// so instead target an item whose only recipes are alternates we didn't enable.
@@ -641,14 +730,18 @@ export async function solve(spec: ProblemSpec): Promise<Solution> {
 	});
 	const flows = [...flowMap.values()].sort((a, b) => b.produced - a.produced);
 
-	// Byproducts: produced beyond consumed + demand, excluding raw inputs.
+	// Byproducts: anything produced beyond what's consumed + demanded — including
+	// raw resources produced as a byproduct (e.g. surplus water from aluminium or
+	// unpackage-water), which the factory must still sink. Importing an item makes
+	// its surplus <= 0, so imports never show up here.
 	const demand = new Map(spec.targets.map((t) => [t.item, t.rate]));
 	const byproducts: Flow[] = [];
 	for (const f of flows) {
-		if (model.importVars.has(f.item)) continue;
+		if (f.produced <= EPSILON) continue;
 		const surplus = f.produced - f.consumed - (demand.get(f.item) ?? 0);
 		if (surplus > EPSILON) byproducts.push({ item: f.item, rate: surplus });
 	}
+	byproducts.sort((a, b) => b.rate - a.rate);
 
 	return {
 		status: "optimal",
@@ -667,6 +760,7 @@ export async function solve(spec: ProblemSpec): Promise<Solution> {
 ```ts
 export { solve } from "./solve";
 export type {
+	AvailableInput,
 	Flow,
 	ItemFlow,
 	ProblemSpec,
@@ -746,18 +840,87 @@ npx biome check --write . && git add -A && git commit -m "feat: useSolver hook"
 
 ---
 
-### Task 7: Target editor + recipe options components
+### Task 7: Target editor + available inputs + recipe options components
 
 **Files:**
+- Create: `src/features/calculator/ItemPicker.tsx`
 - Create: `src/features/calculator/TargetEditor.tsx`
+- Create: `src/features/calculator/AvailableInputsEditor.tsx`
 - Create: `src/features/calculator/RecipeOptions.tsx`
 
-- [ ] **Step 1: Create `src/features/calculator/TargetEditor.tsx`**
+- [ ] **Step 0: Create the shared `src/features/calculator/ItemPicker.tsx`**
+
+Both the target editor and the available-inputs editor search items and add one. Factor the picker out:
 
 ```tsx
 import { useState } from "react";
 import EntityIcon from "#/components/EntityIcon";
-import { getItem, listItems } from "#/data";
+import { listItems } from "#/data";
+
+interface ItemPickerProps {
+	placeholder: string;
+	/** Slugs already chosen — excluded from results. */
+	exclude: string[];
+	onPick: (slug: string) => void;
+}
+
+export default function ItemPicker({
+	placeholder,
+	exclude,
+	onPick,
+}: ItemPickerProps) {
+	const [query, setQuery] = useState("");
+	const excluded = new Set(exclude);
+	const matches =
+		query.trim().length > 0
+			? listItems()
+					.filter(
+						(i) =>
+							!excluded.has(i.slug) &&
+							i.name.toLowerCase().includes(query.toLowerCase()),
+					)
+					.slice(0, 6)
+			: [];
+
+	return (
+		<div className="relative">
+			<input
+				type="search"
+				value={query}
+				onChange={(e) => setQuery(e.target.value)}
+				placeholder={placeholder}
+				aria-label={placeholder}
+				className="w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-4 py-2 text-sm"
+			/>
+			{matches.length > 0 && (
+				<div className="absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--header-bg)] shadow-lg">
+					{matches.map((i) => (
+						<button
+							key={i.slug}
+							type="button"
+							onClick={() => {
+								onPick(i.slug);
+								setQuery("");
+							}}
+							className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-[var(--link-bg-hover)]"
+						>
+							<EntityIcon icon={i.icon} name={i.name} size={20} />
+							{i.name}
+						</button>
+					))}
+				</div>
+			)}
+		</div>
+	);
+}
+```
+
+- [ ] **Step 1: Create `src/features/calculator/TargetEditor.tsx`**
+
+```tsx
+import EntityIcon from "#/components/EntityIcon";
+import { getItem } from "#/data";
+import ItemPicker from "./ItemPicker";
 import type { Target } from "./solver";
 
 interface TargetEditorProps {
@@ -766,20 +929,7 @@ interface TargetEditorProps {
 }
 
 export default function TargetEditor({ targets, onChange }: TargetEditorProps) {
-	const [query, setQuery] = useState("");
-	const matches =
-		query.trim().length > 0
-			? listItems()
-					.filter((i) => i.name.toLowerCase().includes(query.toLowerCase()))
-					.slice(0, 6)
-			: [];
-
-	const add = (item: string) => {
-		if (!targets.some((t) => t.item === item)) {
-			onChange([...targets, { item, rate: 60 }]);
-		}
-		setQuery("");
-	};
+	const add = (item: string) => onChange([...targets, { item, rate: 60 }]);
 	const setRate = (item: string, rate: number) =>
 		onChange(targets.map((t) => (t.item === item ? { ...t, rate } : t)));
 	const remove = (item: string) =>
@@ -818,31 +968,89 @@ export default function TargetEditor({ targets, onChange }: TargetEditorProps) {
 					</div>
 				);
 			})}
-			<div className="relative">
-				<input
-					type="search"
-					value={query}
-					onChange={(e) => setQuery(e.target.value)}
-					placeholder="Add an item to produce…"
-					aria-label="Add a production target"
-					className="w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-4 py-2 text-sm"
-				/>
-				{matches.length > 0 && (
-					<div className="absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--header-bg)] shadow-lg">
-						{matches.map((i) => (
-							<button
-								key={i.slug}
-								type="button"
-								onClick={() => add(i.slug)}
-								className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-[var(--link-bg-hover)]"
-							>
-								<EntityIcon icon={i.icon} name={i.name} size={20} />
-								{i.name}
-							</button>
-						))}
+			<ItemPicker
+				placeholder="Add an item to produce…"
+				exclude={targets.map((t) => t.item)}
+				onPick={add}
+			/>
+		</div>
+	);
+}
+```
+
+- [ ] **Step 1b: Create `src/features/calculator/AvailableInputsEditor.tsx`**
+
+```tsx
+import EntityIcon from "#/components/EntityIcon";
+import { getItem } from "#/data";
+import ItemPicker from "./ItemPicker";
+import type { AvailableInput } from "./solver";
+
+interface AvailableInputsEditorProps {
+	inputs: AvailableInput[];
+	onChange: (inputs: AvailableInput[]) => void;
+}
+
+/** Items the user already produces. A blank rate means "unlimited". */
+export default function AvailableInputsEditor({
+	inputs,
+	onChange,
+}: AvailableInputsEditorProps) {
+	const add = (item: string) => onChange([...inputs, { item }]);
+	const setRate = (item: string, rate: number | undefined) =>
+		onChange(inputs.map((i) => (i.item === item ? { ...i, rate } : i)));
+	const remove = (item: string) =>
+		onChange(inputs.filter((i) => i.item !== item));
+
+	return (
+		<div className="flex flex-col gap-3">
+			<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+				Available inputs{" "}
+				<span className="font-normal normal-case">(already produced)</span>
+			</h2>
+			{inputs.map((input) => {
+				const item = getItem(input.item);
+				return (
+					<div key={input.item} className="flex items-center gap-2">
+						<EntityIcon
+							icon={item?.icon}
+							name={item?.name ?? input.item}
+							size={24}
+						/>
+						<span className="flex-1 text-sm text-[var(--sea-ink)]">
+							{item?.name ?? input.item}
+						</span>
+						<input
+							type="number"
+							min={0}
+							value={input.rate ?? ""}
+							placeholder="∞"
+							onChange={(e) =>
+								setRate(
+									input.item,
+									e.target.value === "" ? undefined : Number(e.target.value),
+								)
+							}
+							aria-label={`${item?.name ?? input.item} available per minute`}
+							className="w-20 rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-right text-sm"
+						/>
+						<span className="text-xs text-[var(--sea-ink-soft)]">/min</span>
+						<button
+							type="button"
+							onClick={() => remove(input.item)}
+							aria-label={`Remove ${item?.name ?? input.item}`}
+							className="rounded-md px-2 text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)]"
+						>
+							×
+						</button>
 					</div>
-				)}
-			</div>
+				);
+			})}
+			<ItemPicker
+				placeholder="Add an input you already make…"
+				exclude={inputs.map((i) => i.item)}
+				onPick={add}
+			/>
 		</div>
 	);
 }
@@ -925,7 +1133,7 @@ Expected: 0 errors.
 - [ ] **Step 4: Commit**
 
 ```bash
-npx biome check --write . && git add -A && git commit -m "feat: target editor and recipe-options panels"
+npx biome check --write . && git add -A && git commit -m "feat: target, available-inputs and recipe-options panels"
 ```
 
 ---
@@ -1088,7 +1296,8 @@ npx biome check --write . && git add -A && git commit -m "feat: calculator resul
 
 ```tsx
 import { useState } from "react";
-import type { Target } from "./solver";
+import type { AvailableInput, Target } from "./solver";
+import AvailableInputsEditor from "./AvailableInputsEditor";
 import RecipeOptions from "./RecipeOptions";
 import ResultTabs from "./ResultTabs";
 import TargetEditor from "./TargetEditor";
@@ -1096,8 +1305,13 @@ import { useSolver } from "./useSolver";
 
 export default function CalculatorPage() {
 	const [targets, setTargets] = useState<Target[]>([]);
+	const [availableInputs, setAvailableInputs] = useState<AvailableInput[]>([]);
 	const [allowedAlternates, setAllowedAlternates] = useState<string[]>([]);
-	const { solution, solving } = useSolver({ targets, allowedAlternates });
+	const { solution, solving } = useSolver({
+		targets,
+		availableInputs,
+		allowedAlternates,
+	});
 
 	return (
 		<main className="page-wrap px-4 py-8">
@@ -1107,6 +1321,10 @@ export default function CalculatorPage() {
 			<div className="grid gap-8 lg:grid-cols-[320px_1fr]">
 				<div className="flex flex-col gap-6">
 					<TargetEditor targets={targets} onChange={setTargets} />
+					<AvailableInputsEditor
+						inputs={availableInputs}
+						onChange={setAvailableInputs}
+					/>
 					<RecipeOptions
 						allowedAlternates={allowedAlternates}
 						onChange={setAllowedAlternates}
@@ -1177,7 +1395,7 @@ In `src/config/features.ts`, change the `calculator` feature's `status` from `"p
 - [ ] **Step 2: Full gate run**
 
 Run: `npm run check && npm run typecheck && npm test && npm run build`
-Expected: all pass. New solver tests (8 model + 3 derive + 4 solve = 15) join the suite.
+Expected: all pass. New solver tests (9 model + 3 derive + 6 solve = 18) join the suite.
 
 - [ ] **Step 3: Browser smoke**
 
@@ -1185,6 +1403,7 @@ Run `npm run build && npm run preview` (read the port from output — often 4173
 - Add target "Iron Plate", set 60/min → results appear: Table shows 3× Constructor + 3× Smelter; Resources shows 90/min Iron Ore; Power & cost shows 24 MW + build cost.
 - Add target "Reinforced Iron Plate" 30/min → plan expands (screws, rods); Resources shows 360/min Iron Ore.
 - Enable an alternate recipe (e.g. filter "Coated Iron Plate", check it) → the plan re-solves and may change.
+- Under "Available inputs", add "Iron Ingot" (leave rate blank = unlimited) → the Smelter rows disappear, Iron Ore drops to 0, and Iron Ingot shows in Resources as a consumed input. Set its rate to 30 → Smelters return for the shortfall and Iron Ore reappears (~60/min for a 60/min plate target).
 - Type a target then clear all targets → results clear, prompt returns.
 - 0 console errors (Clerk dev-key warning is expected).
 Kill node watchers afterward (`taskkill //F //IM node.exe`).
