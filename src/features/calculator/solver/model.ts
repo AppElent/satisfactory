@@ -33,20 +33,25 @@ export function buildModel(spec: ProblemSpec): LpModel {
 	const isInput = (item: string) =>
 		rawResources.has(item) || !producible.has(item) || provided.has(item);
 
+	const mode = spec.mode ?? "produce";
 	const demand = new Map(spec.targets.map((t) => [t.item, t.rate]));
+	const targetItems = new Set(spec.targets.map((t) => t.item));
 
-	// Import variable per input item (raw resource, unproducible, or provided).
+	// Import variables.
+	//  - produce mode: every input (raw / unproducible / provided) is importable.
+	//  - maximize mode: only the user's provided inputs are importable (you only
+	//    have what you declared); raws are NOT free.
 	const importVars = new Map<string, string>();
 	const providedInputs = new Set<string>();
 	const objective = new Map<string, number>();
 	const bounds = new Map<string, number>();
 	let m = 0;
 	for (const item of items) {
-		if (!isInput(item)) continue;
+		const importable = mode === "produce" ? isInput(item) : provided.has(item);
+		if (!importable) continue;
 		const name = `m${m++}`;
 		importVars.set(item, name);
 		if (provided.has(item)) {
-			// Provided inputs are free (weight 0) and optionally capped.
 			providedInputs.add(item);
 			objective.set(name, 0);
 			const cap = provided.get(item);
@@ -59,7 +64,9 @@ export function buildModel(spec: ProblemSpec): LpModel {
 		}
 	}
 
-	// One balance row per item: Σ (perMin product − perMin ingredient)·r + import >= demand.
+	// Balance rows: Σ (perMin product − perMin ingredient)·r + import >= rhs.
+	//  - produce mode: rhs = demand (target rates), import offsets shortfall.
+	//  - maximize mode: rhs = 0 (no fixed demand; the target is maximized).
 	const rows: LpModel["rows"] = [];
 	for (const item of items) {
 		const coefs = new Map<string, number>();
@@ -74,10 +81,35 @@ export function buildModel(spec: ProblemSpec): LpModel {
 		const imp = importVars.get(item);
 		if (imp) coefs.set(imp, 1);
 		if (coefs.size === 0) continue;
-		rows.push({ item, coefs, rhs: demand.get(item) ?? 0 });
+		rows.push({
+			item,
+			coefs,
+			rhs: mode === "produce" ? (demand.get(item) ?? 0) : 0,
+		});
 	}
 
-	return { recipes, importVars, providedInputs, objective, bounds, rows };
+	// Maximize objective: net production of the target item(s).
+	if (mode === "maximize") {
+		objective.clear();
+		recipes.forEach((r, i) => {
+			let c = 0;
+			for (const p of r.products)
+				if (targetItems.has(p.item)) c += perMinute(p.amount, r.time);
+			for (const g of r.ingredients)
+				if (targetItems.has(g.item)) c -= perMinute(g.amount, r.time);
+			if (Math.abs(c) > EPSILON) objective.set(`r${i}`, c);
+		});
+	}
+
+	return {
+		recipes,
+		importVars,
+		providedInputs,
+		objective,
+		bounds,
+		rows,
+		sense: mode === "maximize" ? "maximize" : "minimize",
+	};
 }
 
 function terms(coefs: Map<string, number>): string {
@@ -93,7 +125,11 @@ export function toLpString(model: LpModel): string {
 	const obj = [...model.objective]
 		.map(([name, c]) => `${c} ${name}`)
 		.join(" + ");
-	const lines = ["Minimize", ` obj: ${obj || "0"}`, "Subject To"];
+	const lines = [
+		model.sense === "maximize" ? "Maximize" : "Minimize",
+		` obj: ${obj || "0"}`,
+		"Subject To",
+	];
 	model.rows.forEach((row, i) => {
 		lines.push(` c${i}: ${terms(row.coefs)} >= ${row.rhs}`);
 	});
