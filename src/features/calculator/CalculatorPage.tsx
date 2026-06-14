@@ -29,7 +29,9 @@ export default function CalculatorPage() {
 	const [mode, setMode] = useState<"produce" | "maximize">(
 		initial?.mode ?? "produce",
 	);
-	const [weighting, setWeighting] = useState<Weighting>("balanced");
+	const [weighting, setWeighting] = useState<Weighting>(
+		initial?.resourceWeights ? "minimize-ore" : "balanced",
+	);
 
 	const spec: ProblemSpec = {
 		mode,

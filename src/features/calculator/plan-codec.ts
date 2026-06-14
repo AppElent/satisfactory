@@ -17,7 +17,10 @@ export function decodePlan(encoded: string): ProblemSpec | undefined {
 		if (
 			!parsed ||
 			!Array.isArray(parsed.targets) ||
-			!Array.isArray(parsed.allowedAlternates)
+			!Array.isArray(parsed.allowedAlternates) ||
+			(parsed.mode !== undefined &&
+				parsed.mode !== "produce" &&
+				parsed.mode !== "maximize")
 		) {
 			return undefined;
 		}
