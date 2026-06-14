@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import CalculatorPage from "#/features/calculator/CalculatorPage";
 
 export const Route = createFileRoute("/calculator")({
+	validateSearch: (search: Record<string, unknown>): { plan?: string } => ({
+		plan: typeof search.plan === "string" ? search.plan : undefined,
+	}),
 	head: () => ({
 		meta: [
 			{ title: "Production calculator — Satisfactory Planner" },
