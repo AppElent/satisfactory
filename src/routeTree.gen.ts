@@ -11,11 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as LogisticsRouteImport } from './routes/logistics'
-import { Route as FactoriesRouteImport } from './routes/factories'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as DataRouteRouteImport } from './routes/data/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FactoriesIndexRouteImport } from './routes/factories.index'
 import { Route as DataIndexRouteImport } from './routes/data/index'
+import { Route as FactoriesFactoryIdRouteImport } from './routes/factories.$factoryId'
 import { Route as DataSchematicsIndexRouteImport } from './routes/data/schematics.index'
 import { Route as DataRecipesIndexRouteImport } from './routes/data/recipes.index'
 import { Route as DataItemsIndexRouteImport } from './routes/data/items.index'
@@ -37,11 +38,6 @@ const LogisticsRoute = LogisticsRouteImport.update({
   path: '/logistics',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FactoriesRoute = FactoriesRouteImport.update({
-  id: '/factories',
-  path: '/factories',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CalculatorRoute = CalculatorRouteImport.update({
   id: '/calculator',
   path: '/calculator',
@@ -57,10 +53,20 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FactoriesIndexRoute = FactoriesIndexRouteImport.update({
+  id: '/factories/',
+  path: '/factories/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DataIndexRoute = DataIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => DataRouteRoute,
+} as any)
+const FactoriesFactoryIdRoute = FactoriesFactoryIdRouteImport.update({
+  id: '/factories/$factoryId',
+  path: '/factories/$factoryId',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DataSchematicsIndexRoute = DataSchematicsIndexRouteImport.update({
   id: '/schematics/',
@@ -117,10 +123,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
   '/calculator': typeof CalculatorRoute
-  '/factories': typeof FactoriesRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
+  '/factories/$factoryId': typeof FactoriesFactoryIdRoute
   '/data/': typeof DataIndexRoute
+  '/factories/': typeof FactoriesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
@@ -135,10 +142,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
-  '/factories': typeof FactoriesRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
+  '/factories/$factoryId': typeof FactoriesFactoryIdRoute
   '/data': typeof DataIndexRoute
+  '/factories': typeof FactoriesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
@@ -155,10 +163,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
   '/calculator': typeof CalculatorRoute
-  '/factories': typeof FactoriesRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
+  '/factories/$factoryId': typeof FactoriesFactoryIdRoute
   '/data/': typeof DataIndexRoute
+  '/factories/': typeof FactoriesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
@@ -176,10 +185,11 @@ export interface FileRouteTypes {
     | '/'
     | '/data'
     | '/calculator'
-    | '/factories'
     | '/logistics'
     | '/map'
+    | '/factories/$factoryId'
     | '/data/'
+    | '/factories/'
     | '/data/buildables/$slug'
     | '/data/buildings/$slug'
     | '/data/items/$slug'
@@ -194,10 +204,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/calculator'
-    | '/factories'
     | '/logistics'
     | '/map'
+    | '/factories/$factoryId'
     | '/data'
+    | '/factories'
     | '/data/buildables/$slug'
     | '/data/buildings/$slug'
     | '/data/items/$slug'
@@ -213,10 +224,11 @@ export interface FileRouteTypes {
     | '/'
     | '/data'
     | '/calculator'
-    | '/factories'
     | '/logistics'
     | '/map'
+    | '/factories/$factoryId'
     | '/data/'
+    | '/factories/'
     | '/data/buildables/$slug'
     | '/data/buildings/$slug'
     | '/data/items/$slug'
@@ -233,9 +245,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DataRouteRoute: typeof DataRouteRouteWithChildren
   CalculatorRoute: typeof CalculatorRoute
-  FactoriesRoute: typeof FactoriesRoute
   LogisticsRoute: typeof LogisticsRoute
   MapRoute: typeof MapRoute
+  FactoriesFactoryIdRoute: typeof FactoriesFactoryIdRoute
+  FactoriesIndexRoute: typeof FactoriesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -252,13 +265,6 @@ declare module '@tanstack/react-router' {
       path: '/logistics'
       fullPath: '/logistics'
       preLoaderRoute: typeof LogisticsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/factories': {
-      id: '/factories'
-      path: '/factories'
-      fullPath: '/factories'
-      preLoaderRoute: typeof FactoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculator': {
@@ -282,12 +288,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/factories/': {
+      id: '/factories/'
+      path: '/factories'
+      fullPath: '/factories/'
+      preLoaderRoute: typeof FactoriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/data/': {
       id: '/data/'
       path: '/'
       fullPath: '/data/'
       preLoaderRoute: typeof DataIndexRouteImport
       parentRoute: typeof DataRouteRoute
+    }
+    '/factories/$factoryId': {
+      id: '/factories/$factoryId'
+      path: '/factories/$factoryId'
+      fullPath: '/factories/$factoryId'
+      preLoaderRoute: typeof FactoriesFactoryIdRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/data/schematics/': {
       id: '/data/schematics/'
@@ -398,9 +418,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DataRouteRoute: DataRouteRouteWithChildren,
   CalculatorRoute: CalculatorRoute,
-  FactoriesRoute: FactoriesRoute,
   LogisticsRoute: LogisticsRoute,
   MapRoute: MapRoute,
+  FactoriesFactoryIdRoute: FactoriesFactoryIdRoute,
+  FactoriesIndexRoute: FactoriesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

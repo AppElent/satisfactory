@@ -1,5 +1,6 @@
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import SaveAsFactoryButton from "#/features/factories/SaveAsFactoryButton";
 import AvailableInputsEditor from "./AvailableInputsEditor";
 import CalculatorControls, { WEIGHTING_PRESETS } from "./CalculatorControls";
 import { decodePlan, encodePlan } from "./plan-codec";
@@ -87,7 +88,12 @@ export default function CalculatorPage() {
 							Solving…
 						</p>
 					) : solution ? (
-						<ResultTabs solution={solution} />
+						<div className="flex flex-col gap-4">
+							<div className="flex justify-end">
+								<SaveAsFactoryButton spec={spec} solution={solution} />
+							</div>
+							<ResultTabs solution={solution} />
+						</div>
 					) : null}
 				</div>
 			</div>

@@ -60,7 +60,7 @@ export const FEATURES: Feature[] = [
 		id: "factories",
 		title: "Factories",
 		path: "/factories",
-		status: "planned",
+		status: "beta",
 		icon: Factory,
 		description:
 			"Save your factories with their production plans, track efficiency against reality and see total build costs.",
