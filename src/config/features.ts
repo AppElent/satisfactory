@@ -45,7 +45,7 @@ export const FEATURES: Feature[] = [
 		id: "calculator",
 		title: "Calculator",
 		path: "/calculator",
-		status: "planned",
+		status: "beta",
 		icon: Calculator,
 		description:
 			"Plan optimal production chains with a linear-programming solver — alternate recipes, byproduct loops and resource weighting included.",

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import EntityIcon from "#/components/EntityIcon";
-import { getBuilding, getItem } from "#/data";
+import { getBuilding, getItem, getRecipe } from "#/data";
 import { formatNumber, formatPower } from "#/lib/format";
 import type { Flow, Solution } from "./solver";
 
@@ -8,7 +8,12 @@ const TABS = ["Table", "Resources", "Power & cost"] as const;
 type Tab = (typeof TABS)[number];
 
 function name(slug: string): string {
-	return getItem(slug)?.name ?? getBuilding(slug)?.name ?? slug;
+	return (
+		getItem(slug)?.name ??
+		getBuilding(slug)?.name ??
+		getRecipe(slug)?.name ??
+		slug
+	);
 }
 function icon(slug: string): string | undefined {
 	return getItem(slug)?.icon ?? getBuilding(slug)?.icon;
