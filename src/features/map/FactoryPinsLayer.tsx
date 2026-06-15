@@ -6,7 +6,7 @@ import { efficiency } from "#/features/factories/derive";
 import { plannedOutputs } from "#/features/factories/factory-view";
 import { api } from "#convex/_generated/api";
 import type { Doc } from "#convex/_generated/dataModel";
-import { pixelToWorld, worldToPixel } from "./coords";
+import { gameToLatLng, latLngToGame } from "./coords";
 
 const pinIcon = L.divIcon({
 	className: "",
@@ -17,8 +17,7 @@ const pinIcon = L.divIcon({
 
 function pinLatLng(factory: Doc<"factories">): [number, number] | undefined {
 	if (!factory.location) return undefined;
-	const { px, py } = worldToPixel(factory.location);
-	return [py, px];
+	return gameToLatLng(factory.location);
 }
 
 export default function FactoryPinsLayer() {
@@ -29,7 +28,7 @@ export default function FactoryPinsLayer() {
 
 	useMapEvents({
 		contextmenu: async (e) => {
-			const location = pixelToWorld({ px: e.latlng.lng, py: e.latlng.lat });
+			const location = latLngToGame(e.latlng.lat, e.latlng.lng);
 			const id = await create({
 				name: "New factory",
 				status: "planned",
@@ -61,7 +60,7 @@ export default function FactoryPinsLayer() {
 								const ll = e.target.getLatLng();
 								update({
 									id: factory._id,
-									location: pixelToWorld({ px: ll.lng, py: ll.lat }),
+									location: latLngToGame(ll.lat, ll.lng),
 								});
 							},
 						}}

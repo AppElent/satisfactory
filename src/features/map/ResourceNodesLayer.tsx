@@ -2,7 +2,7 @@ import L from "leaflet";
 import { Marker, Popup } from "react-leaflet";
 import { getItem, listResourceNodes } from "#/data";
 import type { ResourceNode } from "#/data/schema";
-import { worldToPixel } from "./coords";
+import { gameToLatLng } from "./coords";
 
 const PURITY_COLOR: Record<ResourceNode["purity"], string> = {
 	impure: "#b07d4b",
@@ -28,12 +28,11 @@ export default function ResourceNodesLayer({
 	return (
 		<>
 			{nodes.map((node) => {
-				const { px, py } = worldToPixel(node);
 				const item = getItem(node.type);
 				return (
 					<Marker
 						key={node.id}
-						position={[py, px]}
+						position={gameToLatLng(node)}
 						icon={nodeIcon(node.purity)}
 					>
 						<Popup>
