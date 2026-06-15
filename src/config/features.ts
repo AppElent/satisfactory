@@ -88,7 +88,7 @@ export const FEATURES: Feature[] = [
 		id: "logistics",
 		title: "Logistics",
 		path: "/logistics",
-		status: "planned",
+		status: "beta",
 		icon: RouteIcon,
 		description:
 			"Connect your factories into a logistics network: spot shortfalls, match surpluses and get transport suggestions.",
