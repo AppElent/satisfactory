@@ -38,9 +38,17 @@ export default function SummaryCard({
 						const item = getItem(t.item);
 						return (
 							<div key={t.item} className="flex items-center gap-2 text-sm">
-								<EntityIcon icon={item?.icon} name={item?.name ?? t.item} size={20} />
+								<EntityIcon
+									icon={item?.icon}
+									name={item?.name ?? t.item}
+									size={20}
+								/>
 								<span className="flex-1">{item?.name ?? t.item}</span>
-								<span className={t.rate >= 0 ? "text-[var(--sea-ink)]" : "text-red-500"}>
+								<span
+									className={
+										t.rate >= 0 ? "text-[var(--sea-ink)]" : "text-red-500"
+									}
+								>
 									{t.rate >= 0 ? "+" : ""}
 									{formatNumber(t.rate)}/min
 								</span>

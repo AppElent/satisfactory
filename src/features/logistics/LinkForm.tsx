@@ -21,7 +21,9 @@ export default function LinkForm({
 	onCreate: (draft: LinkDraft) => void;
 }) {
 	const [fromFactoryId, setFrom] = useState(factories[0]?._id ?? "");
-	const [toFactoryId, setTo] = useState(factories[1]?._id ?? factories[0]?._id ?? "");
+	const [toFactoryId, setTo] = useState(
+		factories[1]?._id ?? factories[0]?._id ?? "",
+	);
 	const [item, setItem] = useState("");
 	const [rate, setRate] = useState(60);
 	const [mode, setMode] = useState<LinkDraft["mode"]>("belt");

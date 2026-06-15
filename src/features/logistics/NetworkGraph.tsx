@@ -33,7 +33,11 @@ export default function NetworkGraph({
 				"elk.layered.spacing.nodeNodeBetweenLayers": "90",
 				"elk.spacing.nodeNode": "40",
 			},
-			children: factories.map((f) => ({ id: f._id, width: NODE_W, height: NODE_H })),
+			children: factories.map((f) => ({
+				id: f._id,
+				width: NODE_W,
+				height: NODE_H,
+			})),
 			edges: transports.map((t) => ({
 				id: t._id,
 				sources: [t.fromFactoryId],
@@ -51,7 +55,11 @@ export default function NetworkGraph({
 					const bal = net.byFactory.get(f._id);
 					const hasNeed = (bal?.needs.length ?? 0) > 0;
 					const hasSurplus = (bal?.surplus.length ?? 0) > 0;
-					const border = hasNeed ? "#d9534f" : hasSurplus ? "#4fb8b2" : "var(--line)";
+					const border = hasNeed
+						? "#d9534f"
+						: hasSurplus
+							? "#4fb8b2"
+							: "var(--line)";
 					return {
 						id: f._id,
 						position: pos.get(f._id) ?? { x: 0, y: 0 },
@@ -85,14 +93,20 @@ export default function NetworkGraph({
 	}, [factories, transports]);
 
 	return (
-		<div style={{ height: 480 }} className="rounded-xl border border-[var(--line)]">
+		<div
+			style={{ height: 480 }}
+			className="rounded-xl border border-[var(--line)]"
+		>
 			<ReactFlow
 				nodes={nodes}
 				edges={edges}
 				fitView
 				proOptions={{ hideAttribution: true }}
 				onNodeClick={(_, node) =>
-					navigate({ to: "/factories/$factoryId", params: { factoryId: node.id } })
+					navigate({
+						to: "/factories/$factoryId",
+						params: { factoryId: node.id },
+					})
 				}
 			>
 				<Background />

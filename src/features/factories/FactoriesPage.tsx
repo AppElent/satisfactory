@@ -5,6 +5,7 @@ import {
 	useQuery,
 } from "convex/react";
 import { useState } from "react";
+import SummaryCard from "#/features/logistics/SummaryCard";
 import { api } from "#convex/_generated/api";
 import FactoryCard from "./FactoryCard";
 import ManualFactoryForm from "./ManualFactoryForm";
@@ -12,6 +13,7 @@ import SignInPrompt from "./SignInPrompt";
 
 function FactoriesList() {
 	const factories = useQuery(api.factories.list);
+	const transports = useQuery(api.transports.list);
 	const [creating, setCreating] = useState(false);
 
 	return (
@@ -26,6 +28,9 @@ function FactoriesList() {
 					New factory
 				</button>
 			</div>
+			{factories && factories.length > 0 && transports && (
+				<SummaryCard factories={factories} transports={transports} />
+			)}
 			{creating && <ManualFactoryForm onClose={() => setCreating(false)} />}
 			{factories === undefined ? (
 				<p className="text-sm text-[var(--sea-ink-soft)]">Loading…</p>
