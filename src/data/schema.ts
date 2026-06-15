@@ -92,6 +92,16 @@ export const resourceSchema = z.object({
 	speed: z.number(),
 });
 
+export const resourceNodeSchema = z.object({
+	id: z.string(),
+	/** World coordinates in centimetres (origin at centre). */
+	x: z.number(),
+	y: z.number(),
+	/** Resource item slug (e.g. "iron-ore"). */
+	type: z.string(),
+	purity: z.enum(["impure", "normal", "pure"]),
+});
+
 export const generatorSchema = z.object({
 	className: z.string(),
 	/** Building slug. */
@@ -133,6 +143,7 @@ export type Building = z.infer<typeof buildingSchema>;
 export type Buildable = z.infer<typeof buildableSchema>;
 export type Schematic = z.infer<typeof schematicSchema>;
 export type Resource = z.infer<typeof resourceSchema>;
+export type ResourceNode = z.infer<typeof resourceNodeSchema>;
 export type Generator = z.infer<typeof generatorSchema>;
 export type Miner = z.infer<typeof minerSchema>;
 export type GameData = z.infer<typeof gameDataSchema>;
