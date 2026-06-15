@@ -74,7 +74,7 @@ export const FEATURES: Feature[] = [
 		id: "map",
 		title: "Map",
 		path: "/map",
-		status: "planned",
+		status: "beta",
 		icon: MapIcon,
 		description:
 			"The full world map with resource nodes and your factory pins — save-file loading planned.",

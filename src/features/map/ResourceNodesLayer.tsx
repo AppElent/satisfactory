@@ -31,7 +31,11 @@ export default function ResourceNodesLayer({
 				const { px, py } = worldToPixel(node);
 				const item = getItem(node.type);
 				return (
-					<Marker key={node.id} position={[py, px]} icon={nodeIcon(node.purity)}>
+					<Marker
+						key={node.id}
+						position={[py, px]}
+						icon={nodeIcon(node.purity)}
+					>
 						<Popup>
 							<span className="text-xs capitalize">
 								{item?.name ?? node.type} — {node.purity}
