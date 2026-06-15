@@ -4,6 +4,7 @@ import { mutation, query } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 
 const itemRate = v.object({ item: v.string(), rate: v.number() });
+const location = v.object({ x: v.number(), y: v.number() });
 const status = v.union(
 	v.literal("planned"),
 	v.literal("building"),
@@ -72,6 +73,7 @@ export const create = mutation({
 		notes: v.optional(v.string()),
 		status,
 		production,
+		location: v.optional(location),
 	},
 	handler: async (ctx, args) => {
 		const userId = await requireUser(ctx);
@@ -94,6 +96,7 @@ export const update = mutation({
 		status: v.optional(status),
 		production: v.optional(production),
 		actuals: v.optional(v.array(itemRate)),
+		location: v.optional(location),
 	},
 	handler: async (ctx, { id, ...patch }) => {
 		await ownFactory(ctx, id);
