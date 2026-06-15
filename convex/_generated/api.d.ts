@@ -9,6 +9,7 @@
  */
 
 import type * as factories from "../factories.js";
+import type * as transports from "../transports.js";
 
 import type {
   ApiFromModules,
@@ -18,6 +19,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   factories: typeof factories;
+  transports: typeof transports;
 }>;
 
 /**

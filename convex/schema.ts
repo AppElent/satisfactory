@@ -37,4 +37,22 @@ export default defineSchema({
 		createdAt: v.number(),
 		updatedAt: v.number(),
 	}).index("by_user", ["userId"]),
+
+	transports: defineTable({
+		userId: v.string(),
+		fromFactoryId: v.id("factories"),
+		toFactoryId: v.id("factories"),
+		item: v.string(),
+		rate: v.number(),
+		mode: v.union(
+			v.literal("belt"),
+			v.literal("pipe"),
+			v.literal("truck"),
+			v.literal("train"),
+			v.literal("drone"),
+		),
+		note: v.optional(v.string()),
+		createdAt: v.number(),
+		updatedAt: v.number(),
+	}).index("by_user", ["userId"]),
 });
