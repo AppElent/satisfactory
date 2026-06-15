@@ -1,6 +1,7 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useMutation } from "convex/react";
 import { useState } from "react";
+import { useToast } from "#/components/Toast";
 import { api } from "#convex/_generated/api";
 import ItemRateEditor from "./ItemRateEditor";
 import type { FactoryStatus, ItemRate } from "./types";
@@ -19,6 +20,7 @@ export default function ManualFactoryForm({
 }) {
 	const create = useMutation(api.factories.create);
 	const navigate = useNavigate();
+	const { toast } = useToast();
 	const [name, setName] = useState("");
 	const [status, setStatus] = useState<FactoryStatus>("planned");
 	const [inputs, setInputs] = useState<ItemRate[]>([]);
@@ -35,6 +37,8 @@ export default function ManualFactoryForm({
 				production: { source: "manual", inputs, outputs, machines: [] },
 			});
 			navigate({ to: "/factories/$factoryId", params: { factoryId: id } });
+		} catch {
+			toast("Couldn't create the factory.");
 		} finally {
 			setSaving(false);
 		}

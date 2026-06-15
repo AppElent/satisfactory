@@ -2,6 +2,7 @@ import { SignInButton } from "@clerk/clerk-react";
 import { useNavigate } from "@tanstack/react-router";
 import { Authenticated, Unauthenticated, useMutation } from "convex/react";
 import { useState } from "react";
+import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
 import type { ProblemSpec, Solution } from "#/features/calculator/solver";
 import { api } from "#convex/_generated/api";
@@ -16,6 +17,7 @@ function SaveButton({
 }) {
 	const create = useMutation(api.factories.create);
 	const navigate = useNavigate();
+	const { toast } = useToast();
 	const [saving, setSaving] = useState(false);
 
 	const save = async () => {
@@ -33,6 +35,8 @@ function SaveButton({
 				},
 			});
 			navigate({ to: "/factories/$factoryId", params: { factoryId: id } });
+		} catch {
+			toast("Couldn't save this plan as a factory.");
 		} finally {
 			setSaving(false);
 		}
