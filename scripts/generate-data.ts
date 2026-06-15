@@ -1,4 +1,6 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { z } from "zod";
+import { resourceNodeSchema } from "../src/data/schema.ts";
 import { sourceDataSchema } from "./lib/source-schema.ts";
 import { transform } from "./lib/transform.ts";
 
@@ -17,5 +19,18 @@ for (const [name, entries] of Object.entries(data)) {
 	);
 	console.log(`${name}: ${entries.length}`);
 }
+
+const NODES_SOURCE = "data/vendor/resource-nodes.json";
+const nodes = existsSync(NODES_SOURCE)
+	? z
+			.array(resourceNodeSchema)
+			.parse(JSON.parse(readFileSync(NODES_SOURCE, "utf8")))
+	: [];
+writeFileSync(
+	`${OUT_DIR}/resource-nodes.json`,
+	`${JSON.stringify(nodes, null, 1)}\n`,
+);
+console.log(`resource-nodes: ${nodes.length}`);
+
 console.log(`warnings: ${warnings.length}`);
 for (const w of warnings) console.warn(`  ${w}`);

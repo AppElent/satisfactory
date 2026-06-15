@@ -8,6 +8,7 @@ import generatorsJson from "./generated/generators.json";
 import itemsJson from "./generated/items.json";
 import minersJson from "./generated/miners.json";
 import recipesJson from "./generated/recipes.json";
+import resourceNodesJson from "./generated/resource-nodes.json";
 import resourcesJson from "./generated/resources.json";
 import schematicsJson from "./generated/schematics.json";
 import type {
@@ -18,6 +19,7 @@ import type {
 	Miner,
 	Recipe,
 	Resource,
+	ResourceNode,
 	Schematic,
 } from "./schema";
 
@@ -27,6 +29,7 @@ const buildings = buildingsJson as Building[];
 const buildables = buildablesJson as Buildable[];
 const schematics = schematicsJson as Schematic[];
 const resources = resourcesJson as Resource[];
+const resourceNodes = resourceNodesJson as ResourceNode[];
 const generators = generatorsJson as Generator[];
 const miners = minersJson as Miner[];
 
@@ -53,6 +56,7 @@ export const listBuildings = (): Building[] => buildings;
 export const listBuildables = (): Buildable[] => buildables;
 export const listSchematics = (): Schematic[] => schematics;
 export const listResources = (): Resource[] => resources;
+export const listResourceNodes = (): ResourceNode[] => resourceNodes;
 export const listGenerators = (): Generator[] => generators;
 export const listMiners = (): Miner[] => miners;
 
