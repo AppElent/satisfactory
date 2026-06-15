@@ -17,12 +17,11 @@ etc.). Tiles are served for native zoom 3–8.
 
 **Hotlink protection:** SC returns 403 for tile requests with a foreign
 `Referer`, and browsers block the cross-origin images (ORB). So the default
-`TILE_URL` points at the same-origin path `/sc-tiles/{z}/{x}/{y}.png`, proxied
-to SC server-side. The proxy is configured for **dev** in `vite.config.ts`
-(`server.proxy`, with a clean `Referer`). **Production** (Cloudflare Workers)
-needs an equivalent `/sc-tiles` route, or set `VITE_MAP_TILE_URL` to a
-self-hosted tile pyramid — otherwise the map falls back to the neutral
-background in the deployed build.
+`TILE_URL` points at the same-origin path `/sc-tiles/{z}/{x}/{y}.png`, which the
+custom Cloudflare Worker entry (`src/server-entry.ts`, wired via
+`wrangler.jsonc` `main`) proxies to SC server-side with a clean `Referer`. This
+runs in both dev (Miniflare) and the deployed Worker. Set `VITE_MAP_TILE_URL`
+to override with self-hosted tiles.
 
 ## Projection
 
