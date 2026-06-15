@@ -1,6 +1,7 @@
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { useMutation, useQuery } from "convex/react";
 import { useState } from "react";
+import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
 import ResultTabs from "#/features/calculator/ResultTabs";
 import { formatNumber, formatPower } from "#/lib/format";
@@ -22,7 +23,11 @@ export default function FactoryDetail() {
 	const update = useMutation(api.factories.update);
 	const remove = useMutation(api.factories.remove);
 	const navigate = useNavigate();
+	const { toast } = useToast();
 	const [tab, setTab] = useState<Tab>("Overview");
+
+	const patch = (args: Parameters<typeof update>[0]) =>
+		update(args).catch(() => toast("Couldn't save changes."));
 
 	if (factory === undefined) {
 		return <main className="page-wrap px-4 py-8 text-sm">Loading…</main>;
@@ -61,7 +66,7 @@ export default function FactoryDetail() {
 		const i = next.findIndex((a) => a.item === item);
 		if (i >= 0) next[i] = { item, rate };
 		else next.push({ item, rate });
-		update({ id: factory._id, actuals: next });
+		patch({ id: factory._id, actuals: next });
 	};
 
 	return (
@@ -69,15 +74,19 @@ export default function FactoryDetail() {
 			<div className="flex items-center justify-between">
 				<input
 					value={factory.name}
-					onChange={(e) => update({ id: factory._id, name: e.target.value })}
+					onChange={(e) => patch({ id: factory._id, name: e.target.value })}
 					aria-label="Factory name"
 					className="bg-transparent text-2xl font-bold text-[var(--sea-ink)] outline-none"
 				/>
 				<button
 					type="button"
 					onClick={async () => {
-						await remove({ id: factory._id });
-						navigate({ to: "/factories" });
+						try {
+							await remove({ id: factory._id });
+							navigate({ to: "/factories" });
+						} catch {
+							toast("Couldn't delete this factory.");
+						}
 					}}
 					className="text-sm text-[var(--sea-ink-soft)] hover:text-red-500"
 				>
@@ -165,7 +174,7 @@ export default function FactoryDetail() {
 			{tab === "Notes" && (
 				<textarea
 					value={factory.notes ?? ""}
-					onChange={(e) => update({ id: factory._id, notes: e.target.value })}
+					onChange={(e) => patch({ id: factory._id, notes: e.target.value })}
 					placeholder="Notes…"
 					aria-label="Notes"
 					className="min-h-32 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] p-3 text-sm"

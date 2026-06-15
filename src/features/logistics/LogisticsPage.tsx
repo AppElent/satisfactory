@@ -6,6 +6,7 @@ import {
 	useQuery,
 } from "convex/react";
 import { lazy, Suspense, useState } from "react";
+import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
 import { formatNumber } from "#/lib/format";
 import { api } from "#convex/_generated/api";
@@ -38,6 +39,7 @@ function Network() {
 	const transports = useQuery(api.transports.list);
 	const create = useMutation(api.transports.create);
 	const remove = useMutation(api.transports.remove);
+	const { toast } = useToast();
 	const [prefill, setPrefill] = useState<
 		{ fromFactoryId: string; item: string } | undefined
 	>(undefined);
@@ -61,7 +63,7 @@ function Network() {
 			rate: draft.rate,
 			mode: draft.mode,
 			note: draft.note,
-		});
+		}).catch(() => toast("Couldn't create the link."));
 
 	const net = computeNetwork(factories, transports);
 	const suggestions = [...net.byFactory]
@@ -117,7 +119,11 @@ function Network() {
 							</span>
 							<button
 								type="button"
-								onClick={() => remove({ id: t._id })}
+								onClick={() =>
+									remove({ id: t._id }).catch(() =>
+										toast("Couldn't remove the link."),
+									)
+								}
 								aria-label={`Remove ${getItem(t.item)?.name ?? t.item} link`}
 								className="text-[var(--sea-ink-soft)] hover:text-red-500"
 							>
