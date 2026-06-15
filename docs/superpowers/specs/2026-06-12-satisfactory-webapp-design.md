@@ -30,7 +30,7 @@ Each phase ships independently. Every feature has at least a placeholder route f
 2. **Overviews** — items, recipes, buildings, buildables, schematics — done
 3. **Calculator** — LP solver + graph/table results — done (3a+3b)
 4. **Factories** — save, efficiency, build costs — done
-5. **Map** — tiles, resource nodes, factory pins
+5. **Map** — tiles, resource nodes, factory pins — done
 6. **Logistics** — factory network + transport math
 
 ## 1. Architecture & data pipeline
