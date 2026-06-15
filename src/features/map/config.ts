@@ -32,7 +32,7 @@ export const MIN_ZOOM = 3;
 export const MAX_NATIVE_ZOOM = ZOOM_RATIO; // 8 — tiles exist up to here
 export const MAX_ZOOM = ZOOM_RATIO + 2; // allow a little overzoom
 
-/** Tile-layer URL template. Defaults to SC's game-map tiles; env can override. */
+/** Tile-layer URL template. Defaults to the same-origin `/sc-tiles` proxy
+ *  (SC blocks direct hotlinking); env can override with self-hosted tiles. */
 export const TILE_URL: string =
-	env.VITE_MAP_TILE_URL ??
-	"https://static.satisfactory-calculator.com/imgMap/gameLayer/Stable/{z}/{x}/{y}.png";
+	env.VITE_MAP_TILE_URL ?? "/sc-tiles/{z}/{x}/{y}.png";
