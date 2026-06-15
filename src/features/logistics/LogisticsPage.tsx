@@ -7,12 +7,31 @@ import {
 } from "convex/react";
 import { lazy, Suspense, useState } from "react";
 import { getItem } from "#/data";
+import { formatNumber } from "#/lib/format";
 import { api } from "#convex/_generated/api";
 import LinkForm, { type LinkDraft } from "./LinkForm";
 import { computeNetwork, suggestSources } from "./logistics";
 import SummaryCard from "./SummaryCard";
+import { beltFor, pipeFor } from "./throughput";
 
 const NetworkGraph = lazy(() => import("./NetworkGraph"));
+
+/** Derived belt/pipe sizing, or the free-text note for other modes. */
+function linkSettings(
+	mode: LinkDraft["mode"],
+	rate: number,
+	note?: string,
+): string {
+	if (mode === "belt") {
+		const { tier, count } = beltFor(rate);
+		return `Mk${tier} ×${count} belt`;
+	}
+	if (mode === "pipe") {
+		const { tier, count } = pipeFor(rate);
+		return `Mk${tier} ×${count} pipe`;
+	}
+	return note ? `${mode} · ${note}` : mode;
+}
 
 function Network() {
 	const factories = useQuery(api.factories.list);
@@ -93,12 +112,13 @@ function Network() {
 							className="flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2 text-sm"
 						>
 							<span className="flex-1">
-								{t.item} · {t.rate}/min · {t.mode}
+								{getItem(t.item)?.name ?? t.item} · {formatNumber(t.rate)}/min ·{" "}
+								{linkSettings(t.mode, t.rate, t.note)}
 							</span>
 							<button
 								type="button"
 								onClick={() => remove({ id: t._id })}
-								aria-label={`Remove ${t.item} link`}
+								aria-label={`Remove ${getItem(t.item)?.name ?? t.item} link`}
 								className="text-[var(--sea-ink-soft)] hover:text-red-500"
 							>
 								×

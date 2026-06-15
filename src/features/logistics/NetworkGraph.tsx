@@ -25,6 +25,12 @@ export default function NetworkGraph({
 
 	useEffect(() => {
 		const net = computeNetwork(factories, transports);
+		// Drop transports whose endpoints no longer exist (e.g. a deleted
+		// factory) — elk rejects edges that reference a missing node.
+		const ids = new Set(factories.map((f) => f._id));
+		const linked = transports.filter(
+			(t) => ids.has(t.fromFactoryId) && ids.has(t.toFactoryId),
+		);
 		const elkGraph = {
 			id: "root",
 			layoutOptions: {
@@ -38,7 +44,7 @@ export default function NetworkGraph({
 				width: NODE_W,
 				height: NODE_H,
 			})),
-			edges: transports.map((t) => ({
+			edges: linked.map((t) => ({
 				id: t._id,
 				sources: [t.fromFactoryId],
 				targets: [t.toFactoryId],
@@ -78,7 +84,7 @@ export default function NetworkGraph({
 				}),
 			);
 			setEdges(
-				transports.map((t) => ({
+				linked.map((t) => ({
 					id: t._id,
 					source: t.fromFactoryId,
 					target: t.toFactoryId,
