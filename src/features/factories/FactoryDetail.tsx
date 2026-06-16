@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
 import ResultTabs from "#/features/calculator/ResultTabs";
+import { useGameId } from "#/features/games/useGameId";
 import { formatNumber, formatPower } from "#/lib/format";
 import { api } from "#convex/_generated/api";
 import type { Id } from "#convex/_generated/dataModel";
@@ -16,7 +17,8 @@ const TABS = ["Overview", "Plan", "Build cost", "Notes"] as const;
 type Tab = (typeof TABS)[number];
 
 export default function FactoryDetail() {
-	const { factoryId } = useParams({ from: "/factories/$factoryId" });
+	const gameId = useGameId();
+	const { factoryId } = useParams({ from: "/g/$gameId/factories/$factoryId" });
 	const factory = useQuery(api.factories.get, {
 		id: factoryId as Id<"factories">,
 	});
@@ -37,7 +39,11 @@ export default function FactoryDetail() {
 			<main className="page-wrap px-4 py-8">
 				<p className="text-sm text-[var(--sea-ink-soft)]">
 					Factory not found.{" "}
-					<Link to="/factories" className="underline">
+					<Link
+						to="/g/$gameId/factories"
+						params={{ gameId }}
+						className="underline"
+					>
 						Back to factories
 					</Link>
 				</p>
@@ -83,7 +89,10 @@ export default function FactoryDetail() {
 					onClick={async () => {
 						try {
 							await remove({ id: factory._id });
-							navigate({ to: "/factories" });
+							navigate({
+								to: "/g/$gameId/factories",
+								params: { gameId },
+							});
 						} catch {
 							toast("Couldn't delete this factory.");
 						}

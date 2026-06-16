@@ -1,6 +1,7 @@
 import { Authenticated, Unauthenticated } from "convex/react";
 import { useState } from "react";
 import type { ResourceNode } from "#/data/schema";
+import { useGameId } from "#/features/games/useGameId";
 import FactoryPinsLayer from "./FactoryPinsLayer";
 import LayerPanel from "./LayerPanel";
 import MapView from "./MapView";
@@ -13,6 +14,7 @@ const ALL_PURITIES = new Set<ResourceNode["purity"]>([
 ]);
 
 export default function MapPage() {
+	const gameId = useGameId();
 	const [showFactories, setShowFactories] = useState(true);
 	const [showNodes, setShowNodes] = useState(true);
 
@@ -37,7 +39,7 @@ export default function MapPage() {
 					{showNodes && <ResourceNodesLayer purities={ALL_PURITIES} />}
 					{showFactories && (
 						<Authenticated>
-							<FactoryPinsLayer />
+							<FactoryPinsLayer gameId={gameId} />
 						</Authenticated>
 					)}
 				</MapView>

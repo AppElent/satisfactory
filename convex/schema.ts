@@ -19,9 +19,44 @@ const production = v.union(
 	}),
 );
 
+const role = v.union(
+	v.literal("owner"),
+	v.literal("editor"),
+	v.literal("viewer"),
+);
+
 export default defineSchema({
-	factories: defineTable({
+	games: defineTable({
+		ownerId: v.string(),
+		name: v.string(),
+		description: v.optional(v.string()),
+		createdAt: v.number(),
+		updatedAt: v.number(),
+	}),
+
+	gameMembers: defineTable({
+		gameId: v.id("games"),
 		userId: v.string(),
+		role,
+		createdAt: v.number(),
+	})
+		.index("by_game", ["gameId"])
+		.index("by_user", ["userId"])
+		.index("by_game_user", ["gameId", "userId"]),
+
+	gameInvites: defineTable({
+		gameId: v.id("games"),
+		token: v.string(),
+		role: v.union(v.literal("editor"), v.literal("viewer")),
+		createdBy: v.string(),
+		createdAt: v.number(),
+	})
+		.index("by_token", ["token"])
+		.index("by_game", ["gameId"]),
+
+	factories: defineTable({
+		gameId: v.id("games"),
+		createdBy: v.string(),
 		name: v.string(),
 		description: v.optional(v.string()),
 		notes: v.optional(v.string()),
@@ -36,10 +71,12 @@ export default defineSchema({
 		actuals: v.optional(v.array(itemRate)),
 		createdAt: v.number(),
 		updatedAt: v.number(),
-	}).index("by_user", ["userId"]),
+	})
+		.index("by_game", ["gameId"]),
 
 	transports: defineTable({
-		userId: v.string(),
+		gameId: v.id("games"),
+		createdBy: v.string(),
 		fromFactoryId: v.id("factories"),
 		toFactoryId: v.id("factories"),
 		item: v.string(),
@@ -54,5 +91,6 @@ export default defineSchema({
 		note: v.optional(v.string()),
 		createdAt: v.number(),
 		updatedAt: v.number(),
-	}).index("by_user", ["userId"]),
+	})
+		.index("by_game", ["gameId"]),
 });

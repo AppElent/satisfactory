@@ -1,13 +1,13 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/logistics")({
+export const Route = createFileRoute("/factories")({
 	beforeLoad: () => {
 		const last =
 			typeof localStorage !== "undefined"
 				? localStorage.getItem("activeGameId")
 				: null;
 		throw redirect({
-			to: last ? "/g/$gameId/logistics" : "/games",
+			to: last ? "/g/$gameId/factories" : "/games",
 			params: last ? { gameId: last } : undefined,
 		});
 	},

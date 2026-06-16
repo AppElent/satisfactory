@@ -1,7 +1,8 @@
 import { v } from "convex/values";
-import type { MutationCtx, QueryCtx } from "./_generated/server";
-import { mutation, query } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
+import type { MutationCtx } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
+import { requireMember } from "./games";
 
 const itemRate = v.object({ item: v.string(), rate: v.number() });
 const location = v.object({ x: v.number(), y: v.number() });
@@ -27,30 +28,21 @@ const production = v.union(
 	}),
 );
 
-/** Clerk subject for the caller, or throw if unauthenticated. */
-async function requireUser(ctx: QueryCtx | MutationCtx): Promise<string> {
-	const identity = await ctx.auth.getUserIdentity();
-	if (!identity) throw new Error("Not authenticated");
-	return identity.subject;
-}
-
-/** Load a factory and assert the caller owns it. */
-async function ownFactory(ctx: MutationCtx, id: Id<"factories">) {
-	const userId = await requireUser(ctx);
+/** Load a factory and assert the caller is an editor of its game. */
+async function editFactory(ctx: MutationCtx, id: Id<"factories">) {
 	const factory = await ctx.db.get(id);
-	if (!factory || factory.userId !== userId) {
-		throw new Error("Factory not found");
-	}
+	if (!factory?.gameId) throw new Error("Factory not found");
+	await requireMember(ctx, factory.gameId, "editor");
 	return factory;
 }
 
 export const list = query({
-	args: {},
-	handler: async (ctx) => {
-		const userId = await requireUser(ctx);
+	args: { gameId: v.id("games") },
+	handler: async (ctx, { gameId }) => {
+		await requireMember(ctx, gameId, "viewer");
 		return await ctx.db
 			.query("factories")
-			.withIndex("by_user", (q) => q.eq("userId", userId))
+			.withIndex("by_game", (q) => q.eq("gameId", gameId))
 			.order("desc")
 			.collect();
 	},
@@ -59,15 +51,20 @@ export const list = query({
 export const get = query({
 	args: { id: v.id("factories") },
 	handler: async (ctx, { id }) => {
-		const userId = await requireUser(ctx);
 		const factory = await ctx.db.get(id);
-		if (!factory || factory.userId !== userId) return null;
+		if (!factory?.gameId) return null;
+		try {
+			await requireMember(ctx, factory.gameId, "viewer");
+		} catch {
+			return null;
+		}
 		return factory;
 	},
 });
 
 export const create = mutation({
 	args: {
+		gameId: v.id("games"),
 		name: v.string(),
 		description: v.optional(v.string()),
 		notes: v.optional(v.string()),
@@ -76,11 +73,11 @@ export const create = mutation({
 		location: v.optional(location),
 	},
 	handler: async (ctx, args) => {
-		const userId = await requireUser(ctx);
+		const { userId } = await requireMember(ctx, args.gameId, "editor");
 		const now = Date.now();
 		return await ctx.db.insert("factories", {
 			...args,
-			userId,
+			createdBy: userId,
 			createdAt: now,
 			updatedAt: now,
 		});
@@ -99,9 +96,9 @@ export const update = mutation({
 		location: v.optional(location),
 	},
 	handler: async (ctx, { id, ...patch }) => {
-		await ownFactory(ctx, id);
+		await editFactory(ctx, id);
 		const clean = Object.fromEntries(
-			Object.entries(patch).filter(([, v]) => v !== undefined),
+			Object.entries(patch).filter(([, value]) => value !== undefined),
 		);
 		await ctx.db.patch(id, { ...clean, updatedAt: Date.now() });
 	},
@@ -110,7 +107,7 @@ export const update = mutation({
 export const remove = mutation({
 	args: { id: v.id("factories") },
 	handler: async (ctx, { id }) => {
-		await ownFactory(ctx, id);
+		await editFactory(ctx, id);
 		await ctx.db.delete(id);
 	},
 });

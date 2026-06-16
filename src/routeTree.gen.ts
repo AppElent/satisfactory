@@ -11,22 +11,29 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as FactoriesRouteImport } from './routes/factories'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as DataRouteRouteImport } from './routes/data/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as FactoriesIndexRouteImport } from './routes/factories.index'
+import { Route as GamesIndexRouteImport } from './routes/games.index'
 import { Route as DataIndexRouteImport } from './routes/data/index'
-import { Route as FactoriesFactoryIdRouteImport } from './routes/factories.$factoryId'
+import { Route as InviteTokenRouteImport } from './routes/invite.$token'
+import { Route as GGameIdRouteImport } from './routes/g.$gameId'
 import { Route as DataSchematicsIndexRouteImport } from './routes/data/schematics.index'
 import { Route as DataRecipesIndexRouteImport } from './routes/data/recipes.index'
 import { Route as DataItemsIndexRouteImport } from './routes/data/items.index'
 import { Route as DataBuildingsIndexRouteImport } from './routes/data/buildings.index'
 import { Route as DataBuildablesIndexRouteImport } from './routes/data/buildables.index'
+import { Route as GGameIdSettingsRouteImport } from './routes/g.$gameId.settings'
+import { Route as GGameIdMapRouteImport } from './routes/g.$gameId.map'
+import { Route as GGameIdLogisticsRouteImport } from './routes/g.$gameId.logistics'
 import { Route as DataSchematicsSlugRouteImport } from './routes/data/schematics.$slug'
 import { Route as DataRecipesSlugRouteImport } from './routes/data/recipes.$slug'
 import { Route as DataItemsSlugRouteImport } from './routes/data/items.$slug'
 import { Route as DataBuildingsSlugRouteImport } from './routes/data/buildings.$slug'
 import { Route as DataBuildablesSlugRouteImport } from './routes/data/buildables.$slug'
+import { Route as GGameIdFactoriesIndexRouteImport } from './routes/g.$gameId.factories.index'
+import { Route as GGameIdFactoriesFactoryIdRouteImport } from './routes/g.$gameId.factories.$factoryId'
 
 const MapRoute = MapRouteImport.update({
   id: '/map',
@@ -36,6 +43,11 @@ const MapRoute = MapRouteImport.update({
 const LogisticsRoute = LogisticsRouteImport.update({
   id: '/logistics',
   path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FactoriesRoute = FactoriesRouteImport.update({
+  id: '/factories',
+  path: '/factories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalculatorRoute = CalculatorRouteImport.update({
@@ -53,9 +65,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FactoriesIndexRoute = FactoriesIndexRouteImport.update({
-  id: '/factories/',
-  path: '/factories/',
+const GamesIndexRoute = GamesIndexRouteImport.update({
+  id: '/games/',
+  path: '/games/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataIndexRoute = DataIndexRouteImport.update({
@@ -63,9 +75,14 @@ const DataIndexRoute = DataIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DataRouteRoute,
 } as any)
-const FactoriesFactoryIdRoute = FactoriesFactoryIdRouteImport.update({
-  id: '/factories/$factoryId',
-  path: '/factories/$factoryId',
+const InviteTokenRoute = InviteTokenRouteImport.update({
+  id: '/invite/$token',
+  path: '/invite/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GGameIdRoute = GGameIdRouteImport.update({
+  id: '/g/$gameId',
+  path: '/g/$gameId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataSchematicsIndexRoute = DataSchematicsIndexRouteImport.update({
@@ -93,6 +110,21 @@ const DataBuildablesIndexRoute = DataBuildablesIndexRouteImport.update({
   path: '/buildables/',
   getParentRoute: () => DataRouteRoute,
 } as any)
+const GGameIdSettingsRoute = GGameIdSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => GGameIdRoute,
+} as any)
+const GGameIdMapRoute = GGameIdMapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => GGameIdRoute,
+} as any)
+const GGameIdLogisticsRoute = GGameIdLogisticsRouteImport.update({
+  id: '/logistics',
+  path: '/logistics',
+  getParentRoute: () => GGameIdRoute,
+} as any)
 const DataSchematicsSlugRoute = DataSchematicsSlugRouteImport.update({
   id: '/schematics/$slug',
   path: '/schematics/$slug',
@@ -118,66 +150,98 @@ const DataBuildablesSlugRoute = DataBuildablesSlugRouteImport.update({
   path: '/buildables/$slug',
   getParentRoute: () => DataRouteRoute,
 } as any)
+const GGameIdFactoriesIndexRoute = GGameIdFactoriesIndexRouteImport.update({
+  id: '/factories/',
+  path: '/factories/',
+  getParentRoute: () => GGameIdRoute,
+} as any)
+const GGameIdFactoriesFactoryIdRoute =
+  GGameIdFactoriesFactoryIdRouteImport.update({
+    id: '/factories/$factoryId',
+    path: '/factories/$factoryId',
+    getParentRoute: () => GGameIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
   '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
-  '/factories/$factoryId': typeof FactoriesFactoryIdRoute
+  '/g/$gameId': typeof GGameIdRouteWithChildren
+  '/invite/$token': typeof InviteTokenRoute
   '/data/': typeof DataIndexRoute
-  '/factories/': typeof FactoriesIndexRoute
+  '/games/': typeof GamesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
   '/data/recipes/$slug': typeof DataRecipesSlugRoute
   '/data/schematics/$slug': typeof DataSchematicsSlugRoute
+  '/g/$gameId/logistics': typeof GGameIdLogisticsRoute
+  '/g/$gameId/map': typeof GGameIdMapRoute
+  '/g/$gameId/settings': typeof GGameIdSettingsRoute
   '/data/buildables/': typeof DataBuildablesIndexRoute
   '/data/buildings/': typeof DataBuildingsIndexRoute
   '/data/items/': typeof DataItemsIndexRoute
   '/data/recipes/': typeof DataRecipesIndexRoute
   '/data/schematics/': typeof DataSchematicsIndexRoute
+  '/g/$gameId/factories/$factoryId': typeof GGameIdFactoriesFactoryIdRoute
+  '/g/$gameId/factories/': typeof GGameIdFactoriesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
-  '/factories/$factoryId': typeof FactoriesFactoryIdRoute
+  '/g/$gameId': typeof GGameIdRouteWithChildren
+  '/invite/$token': typeof InviteTokenRoute
   '/data': typeof DataIndexRoute
-  '/factories': typeof FactoriesIndexRoute
+  '/games': typeof GamesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
   '/data/recipes/$slug': typeof DataRecipesSlugRoute
   '/data/schematics/$slug': typeof DataSchematicsSlugRoute
+  '/g/$gameId/logistics': typeof GGameIdLogisticsRoute
+  '/g/$gameId/map': typeof GGameIdMapRoute
+  '/g/$gameId/settings': typeof GGameIdSettingsRoute
   '/data/buildables': typeof DataBuildablesIndexRoute
   '/data/buildings': typeof DataBuildingsIndexRoute
   '/data/items': typeof DataItemsIndexRoute
   '/data/recipes': typeof DataRecipesIndexRoute
   '/data/schematics': typeof DataSchematicsIndexRoute
+  '/g/$gameId/factories/$factoryId': typeof GGameIdFactoriesFactoryIdRoute
+  '/g/$gameId/factories': typeof GGameIdFactoriesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
   '/calculator': typeof CalculatorRoute
+  '/factories': typeof FactoriesRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
-  '/factories/$factoryId': typeof FactoriesFactoryIdRoute
+  '/g/$gameId': typeof GGameIdRouteWithChildren
+  '/invite/$token': typeof InviteTokenRoute
   '/data/': typeof DataIndexRoute
-  '/factories/': typeof FactoriesIndexRoute
+  '/games/': typeof GamesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
   '/data/buildings/$slug': typeof DataBuildingsSlugRoute
   '/data/items/$slug': typeof DataItemsSlugRoute
   '/data/recipes/$slug': typeof DataRecipesSlugRoute
   '/data/schematics/$slug': typeof DataSchematicsSlugRoute
+  '/g/$gameId/logistics': typeof GGameIdLogisticsRoute
+  '/g/$gameId/map': typeof GGameIdMapRoute
+  '/g/$gameId/settings': typeof GGameIdSettingsRoute
   '/data/buildables/': typeof DataBuildablesIndexRoute
   '/data/buildings/': typeof DataBuildingsIndexRoute
   '/data/items/': typeof DataItemsIndexRoute
   '/data/recipes/': typeof DataRecipesIndexRoute
   '/data/schematics/': typeof DataSchematicsIndexRoute
+  '/g/$gameId/factories/$factoryId': typeof GGameIdFactoriesFactoryIdRoute
+  '/g/$gameId/factories/': typeof GGameIdFactoriesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -185,70 +249,93 @@ export interface FileRouteTypes {
     | '/'
     | '/data'
     | '/calculator'
+    | '/factories'
     | '/logistics'
     | '/map'
-    | '/factories/$factoryId'
+    | '/g/$gameId'
+    | '/invite/$token'
     | '/data/'
-    | '/factories/'
+    | '/games/'
     | '/data/buildables/$slug'
     | '/data/buildings/$slug'
     | '/data/items/$slug'
     | '/data/recipes/$slug'
     | '/data/schematics/$slug'
+    | '/g/$gameId/logistics'
+    | '/g/$gameId/map'
+    | '/g/$gameId/settings'
     | '/data/buildables/'
     | '/data/buildings/'
     | '/data/items/'
     | '/data/recipes/'
     | '/data/schematics/'
+    | '/g/$gameId/factories/$factoryId'
+    | '/g/$gameId/factories/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/calculator'
+    | '/factories'
     | '/logistics'
     | '/map'
-    | '/factories/$factoryId'
+    | '/g/$gameId'
+    | '/invite/$token'
     | '/data'
-    | '/factories'
+    | '/games'
     | '/data/buildables/$slug'
     | '/data/buildings/$slug'
     | '/data/items/$slug'
     | '/data/recipes/$slug'
     | '/data/schematics/$slug'
+    | '/g/$gameId/logistics'
+    | '/g/$gameId/map'
+    | '/g/$gameId/settings'
     | '/data/buildables'
     | '/data/buildings'
     | '/data/items'
     | '/data/recipes'
     | '/data/schematics'
+    | '/g/$gameId/factories/$factoryId'
+    | '/g/$gameId/factories'
   id:
     | '__root__'
     | '/'
     | '/data'
     | '/calculator'
+    | '/factories'
     | '/logistics'
     | '/map'
-    | '/factories/$factoryId'
+    | '/g/$gameId'
+    | '/invite/$token'
     | '/data/'
-    | '/factories/'
+    | '/games/'
     | '/data/buildables/$slug'
     | '/data/buildings/$slug'
     | '/data/items/$slug'
     | '/data/recipes/$slug'
     | '/data/schematics/$slug'
+    | '/g/$gameId/logistics'
+    | '/g/$gameId/map'
+    | '/g/$gameId/settings'
     | '/data/buildables/'
     | '/data/buildings/'
     | '/data/items/'
     | '/data/recipes/'
     | '/data/schematics/'
+    | '/g/$gameId/factories/$factoryId'
+    | '/g/$gameId/factories/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DataRouteRoute: typeof DataRouteRouteWithChildren
   CalculatorRoute: typeof CalculatorRoute
+  FactoriesRoute: typeof FactoriesRoute
   LogisticsRoute: typeof LogisticsRoute
   MapRoute: typeof MapRoute
-  FactoriesFactoryIdRoute: typeof FactoriesFactoryIdRoute
-  FactoriesIndexRoute: typeof FactoriesIndexRoute
+  GGameIdRoute: typeof GGameIdRouteWithChildren
+  InviteTokenRoute: typeof InviteTokenRoute
+  GamesIndexRoute: typeof GamesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -265,6 +352,13 @@ declare module '@tanstack/react-router' {
       path: '/logistics'
       fullPath: '/logistics'
       preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/factories': {
+      id: '/factories'
+      path: '/factories'
+      fullPath: '/factories'
+      preLoaderRoute: typeof FactoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calculator': {
@@ -288,11 +382,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/factories/': {
-      id: '/factories/'
-      path: '/factories'
-      fullPath: '/factories/'
-      preLoaderRoute: typeof FactoriesIndexRouteImport
+    '/games/': {
+      id: '/games/'
+      path: '/games'
+      fullPath: '/games/'
+      preLoaderRoute: typeof GamesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data/': {
@@ -302,11 +396,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataIndexRouteImport
       parentRoute: typeof DataRouteRoute
     }
-    '/factories/$factoryId': {
-      id: '/factories/$factoryId'
-      path: '/factories/$factoryId'
-      fullPath: '/factories/$factoryId'
-      preLoaderRoute: typeof FactoriesFactoryIdRouteImport
+    '/invite/$token': {
+      id: '/invite/$token'
+      path: '/invite/$token'
+      fullPath: '/invite/$token'
+      preLoaderRoute: typeof InviteTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/g/$gameId': {
+      id: '/g/$gameId'
+      path: '/g/$gameId'
+      fullPath: '/g/$gameId'
+      preLoaderRoute: typeof GGameIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data/schematics/': {
@@ -344,6 +445,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataBuildablesIndexRouteImport
       parentRoute: typeof DataRouteRoute
     }
+    '/g/$gameId/settings': {
+      id: '/g/$gameId/settings'
+      path: '/settings'
+      fullPath: '/g/$gameId/settings'
+      preLoaderRoute: typeof GGameIdSettingsRouteImport
+      parentRoute: typeof GGameIdRoute
+    }
+    '/g/$gameId/map': {
+      id: '/g/$gameId/map'
+      path: '/map'
+      fullPath: '/g/$gameId/map'
+      preLoaderRoute: typeof GGameIdMapRouteImport
+      parentRoute: typeof GGameIdRoute
+    }
+    '/g/$gameId/logistics': {
+      id: '/g/$gameId/logistics'
+      path: '/logistics'
+      fullPath: '/g/$gameId/logistics'
+      preLoaderRoute: typeof GGameIdLogisticsRouteImport
+      parentRoute: typeof GGameIdRoute
+    }
     '/data/schematics/$slug': {
       id: '/data/schematics/$slug'
       path: '/schematics/$slug'
@@ -378,6 +500,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/data/buildables/$slug'
       preLoaderRoute: typeof DataBuildablesSlugRouteImport
       parentRoute: typeof DataRouteRoute
+    }
+    '/g/$gameId/factories/': {
+      id: '/g/$gameId/factories/'
+      path: '/factories'
+      fullPath: '/g/$gameId/factories/'
+      preLoaderRoute: typeof GGameIdFactoriesIndexRouteImport
+      parentRoute: typeof GGameIdRoute
+    }
+    '/g/$gameId/factories/$factoryId': {
+      id: '/g/$gameId/factories/$factoryId'
+      path: '/factories/$factoryId'
+      fullPath: '/g/$gameId/factories/$factoryId'
+      preLoaderRoute: typeof GGameIdFactoriesFactoryIdRouteImport
+      parentRoute: typeof GGameIdRoute
     }
   }
 }
@@ -414,14 +550,35 @@ const DataRouteRouteWithChildren = DataRouteRoute._addFileChildren(
   DataRouteRouteChildren,
 )
 
+interface GGameIdRouteChildren {
+  GGameIdLogisticsRoute: typeof GGameIdLogisticsRoute
+  GGameIdMapRoute: typeof GGameIdMapRoute
+  GGameIdSettingsRoute: typeof GGameIdSettingsRoute
+  GGameIdFactoriesFactoryIdRoute: typeof GGameIdFactoriesFactoryIdRoute
+  GGameIdFactoriesIndexRoute: typeof GGameIdFactoriesIndexRoute
+}
+
+const GGameIdRouteChildren: GGameIdRouteChildren = {
+  GGameIdLogisticsRoute: GGameIdLogisticsRoute,
+  GGameIdMapRoute: GGameIdMapRoute,
+  GGameIdSettingsRoute: GGameIdSettingsRoute,
+  GGameIdFactoriesFactoryIdRoute: GGameIdFactoriesFactoryIdRoute,
+  GGameIdFactoriesIndexRoute: GGameIdFactoriesIndexRoute,
+}
+
+const GGameIdRouteWithChildren =
+  GGameIdRoute._addFileChildren(GGameIdRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DataRouteRoute: DataRouteRouteWithChildren,
   CalculatorRoute: CalculatorRoute,
+  FactoriesRoute: FactoriesRoute,
   LogisticsRoute: LogisticsRoute,
   MapRoute: MapRoute,
-  FactoriesFactoryIdRoute: FactoriesFactoryIdRoute,
-  FactoriesIndexRoute: FactoriesIndexRoute,
+  GGameIdRoute: GGameIdRouteWithChildren,
+  InviteTokenRoute: InviteTokenRoute,
+  GamesIndexRoute: GamesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

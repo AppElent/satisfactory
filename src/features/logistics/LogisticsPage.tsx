@@ -8,6 +8,7 @@ import {
 import { lazy, Suspense, useState } from "react";
 import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
+import { useGameId } from "#/features/games/useGameId";
 import { formatNumber } from "#/lib/format";
 import { api } from "#convex/_generated/api";
 import LinkForm, { type LinkDraft } from "./LinkForm";
@@ -35,8 +36,9 @@ function linkSettings(
 }
 
 function Network() {
-	const factories = useQuery(api.factories.list);
-	const transports = useQuery(api.transports.list);
+	const gameId = useGameId();
+	const factories = useQuery(api.factories.list, { gameId });
+	const transports = useQuery(api.transports.list, { gameId });
 	const create = useMutation(api.transports.create);
 	const remove = useMutation(api.transports.remove);
 	const { toast } = useToast();
@@ -57,6 +59,7 @@ function Network() {
 
 	const onCreate = (draft: LinkDraft) =>
 		create({
+			gameId,
 			fromFactoryId: draft.fromFactoryId as (typeof factories)[number]["_id"],
 			toFactoryId: draft.toFactoryId as (typeof factories)[number]["_id"],
 			item: draft.item,
@@ -140,7 +143,11 @@ function Network() {
 					</p>
 				}
 			>
-				<NetworkGraph factories={factories} transports={transports} />
+				<NetworkGraph
+					factories={factories}
+					transports={transports}
+					gameId={gameId}
+				/>
 			</Suspense>
 		</div>
 	);

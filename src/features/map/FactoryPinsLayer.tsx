@@ -5,7 +5,7 @@ import { Marker, Popup, useMapEvents } from "react-leaflet";
 import { efficiency } from "#/features/factories/derive";
 import { plannedOutputs } from "#/features/factories/factory-view";
 import { api } from "#convex/_generated/api";
-import type { Doc } from "#convex/_generated/dataModel";
+import type { Doc, Id } from "#convex/_generated/dataModel";
 import { gameToLatLng, latLngToGame } from "./coords";
 
 const pinIcon = L.divIcon({
@@ -20,8 +20,8 @@ function pinLatLng(factory: Doc<"factories">): [number, number] | undefined {
 	return gameToLatLng(factory.location);
 }
 
-export default function FactoryPinsLayer() {
-	const factories = useQuery(api.factories.list);
+export default function FactoryPinsLayer({ gameId }: { gameId: Id<"games"> }) {
+	const factories = useQuery(api.factories.list, { gameId });
 	const update = useMutation(api.factories.update);
 	const create = useMutation(api.factories.create);
 	const navigate = useNavigate();
@@ -30,12 +30,16 @@ export default function FactoryPinsLayer() {
 		contextmenu: async (e) => {
 			const location = latLngToGame(e.latlng.lat, e.latlng.lng);
 			const id = await create({
+				gameId,
 				name: "New factory",
 				status: "planned",
 				production: { source: "manual", inputs: [], outputs: [], machines: [] },
 				location,
 			});
-			navigate({ to: "/factories/$factoryId", params: { factoryId: id } });
+			navigate({
+				to: "/g/$gameId/factories/$factoryId",
+				params: { gameId, factoryId: id },
+			});
 		},
 	});
 
@@ -75,8 +79,8 @@ export default function FactoryPinsLayer() {
 									</span>
 								)}
 								<Link
-									to="/factories/$factoryId"
-									params={{ factoryId: factory._id }}
+									to="/g/$gameId/factories/$factoryId"
+									params={{ gameId, factoryId: factory._id }}
 									className="text-xs underline"
 								>
 									Open factory
