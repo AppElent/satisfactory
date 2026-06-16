@@ -1,4 +1,10 @@
-import { Background, type Edge, type Node, ReactFlow } from "@xyflow/react";
+import {
+	Background,
+	type Edge,
+	type Node,
+	Position,
+	ReactFlow,
+} from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import ELK from "elkjs/lib/elk.bundled.js";
 import { useEffect, useState } from "react";
@@ -81,6 +87,8 @@ export default function ProductionGraph({ solution }: { solution: Solution }) {
 						id: n.id,
 						position: pos.get(n.id) ?? { x: 0, y: 0 },
 						data: { label: `${title} — ${sub}` },
+						sourcePosition: Position.Right,
+						targetPosition: Position.Left,
 						style: {
 							width: NODE_W,
 							height: NODE_H,

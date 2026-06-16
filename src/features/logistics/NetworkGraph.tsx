@@ -1,4 +1,10 @@
-import { Background, type Edge, type Node, ReactFlow } from "@xyflow/react";
+import {
+	Background,
+	type Edge,
+	type Node,
+	Position,
+	ReactFlow,
+} from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { useNavigate } from "@tanstack/react-router";
 import ELK from "elkjs/lib/elk.bundled.js";
@@ -72,6 +78,8 @@ export default function NetworkGraph({
 						id: f._id,
 						position: pos.get(f._id) ?? { x: 0, y: 0 },
 						data: { label: f.name },
+						sourcePosition: Position.Right,
+						targetPosition: Position.Left,
 						style: {
 							width: NODE_W,
 							height: NODE_H,
