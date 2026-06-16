@@ -1,3 +1,4 @@
+import type { ProblemSpec } from "#/features/calculator/solver";
 import { decodeSnapshot } from "./snapshot";
 import type { ItemRate, Production } from "./types";
 
@@ -14,4 +15,17 @@ export function plannedInputs(production: Production): ItemRate[] {
 	const snapshot = decodeSnapshot(production.plan);
 	if (!snapshot) return [];
 	return [...snapshot.solution.rawInputs, ...snapshot.solution.providedInputs];
+}
+
+/** A calculator ProblemSpec that reproduces this factory's production. */
+export function factoryToSpec(production: Production): ProblemSpec {
+	if (production.source === "manual") {
+		return {
+			targets: production.outputs,
+			availableInputs: production.inputs,
+			allowedAlternates: [],
+		};
+	}
+	const snapshot = decodeSnapshot(production.plan);
+	return snapshot?.spec ?? { targets: [], allowedAlternates: [] };
 }

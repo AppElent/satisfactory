@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { plannedInputs, plannedOutputs } from "./factory-view";
+import { factoryToSpec, plannedInputs, plannedOutputs } from "./factory-view";
 
 describe("plannedOutputs", () => {
 	it("reads outputs from a manual production", () => {
@@ -75,5 +75,51 @@ describe("plannedInputs", () => {
 
 	it("returns [] for an unparseable plan", () => {
 		expect(plannedInputs({ source: "plan", plan: "broken" })).toEqual([]);
+	});
+});
+
+describe("factoryToSpec", () => {
+	it("maps a manual production to targets + available inputs", () => {
+		expect(
+			factoryToSpec({
+				source: "manual",
+				inputs: [{ item: "iron-ore", rate: 30 }],
+				outputs: [{ item: "iron-plate", rate: 60 }],
+				machines: [],
+			}),
+		).toEqual({
+			targets: [{ item: "iron-plate", rate: 60 }],
+			availableInputs: [{ item: "iron-ore", rate: 30 }],
+			allowedAlternates: [],
+		});
+	});
+
+	it("returns the stored spec for a plan production", () => {
+		const spec = {
+			targets: [{ item: "screw", rate: 100 }],
+			allowedAlternates: ["recipe-x"],
+		};
+		const plan = JSON.stringify({
+			spec,
+			solution: {
+				status: "optimal",
+				recipes: [],
+				outputs: [],
+				rawInputs: [],
+				providedInputs: [],
+				byproducts: [],
+				flows: [],
+				power: 0,
+				buildCost: [],
+			},
+		});
+		expect(factoryToSpec({ source: "plan", plan })).toEqual(spec);
+	});
+
+	it("falls back to an empty spec for an unparseable plan", () => {
+		expect(factoryToSpec({ source: "plan", plan: "broken" })).toEqual({
+			targets: [],
+			allowedAlternates: [],
+		});
 	});
 });
