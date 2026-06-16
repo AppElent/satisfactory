@@ -127,11 +127,10 @@ Full new `validateSearch` in `src/routes/calculator.tsx`:
 ```ts
 	validateSearch: (
 		search: Record<string, unknown>,
-	): { plan?: string; fromFactory?: string; fromGame?: string } => ({
+	): { plan?: string; game?: string; factory?: string } => ({
 		plan: typeof search.plan === "string" ? search.plan : undefined,
-		fromFactory:
-			typeof search.fromFactory === "string" ? search.fromFactory : undefined,
-		fromGame: typeof search.fromGame === "string" ? search.fromGame : undefined,
+		game: typeof search.game === "string" ? search.game : undefined,
+		factory: typeof search.factory === "string" ? search.factory : undefined,
 	}),
 ```
 
@@ -144,8 +143,8 @@ Change the search read:
 ```tsx
 	const search = useSearch({ strict: false }) as {
 		plan?: string;
-		fromFactory?: string;
-		fromGame?: string;
+		game?: string;
+		factory?: string;
 	};
 ```
 
@@ -153,8 +152,8 @@ Capture the round-trip params once (they don't change during a session):
 
 ```tsx
 	const [roundTrip] = useState(() => ({
-		fromFactory: search.fromFactory,
-		fromGame: search.fromGame,
+		game: search.game,
+		factory: search.factory,
 	}));
 ```
 
@@ -166,10 +165,8 @@ Update the URL-mirror effect to keep them in the search object:
 			to: "/calculator",
 			search: {
 				...(planParam ? { plan: planParam } : {}),
-				...(roundTrip.fromFactory
-					? { fromFactory: roundTrip.fromFactory }
-					: {}),
-				...(roundTrip.fromGame ? { fromGame: roundTrip.fromGame } : {}),
+				...(roundTrip.game ? { game: roundTrip.game } : {}),
+				...(roundTrip.factory ? { factory: roundTrip.factory } : {}),
 			},
 			replace: true,
 		});
@@ -184,8 +181,8 @@ In CalculatorPage's results area, change `<SaveAsFactoryButton spec={spec} solut
 							<SaveAsFactoryButton
 								spec={spec}
 								solution={solution}
-								fromFactory={roundTrip.fromFactory}
-								fromGame={roundTrip.fromGame}
+								game={roundTrip.game}
+								factory={roundTrip.factory}
 							/>
 ```
 
@@ -211,13 +208,13 @@ Change the inner `SaveButton` signature + add the update mutation:
 function SaveButton({
 	spec,
 	solution,
-	fromFactory,
-	fromGame,
+	game,
+	factory,
 }: {
 	spec: ProblemSpec;
 	solution: Solution;
-	fromFactory?: string;
-	fromGame?: string;
+	game?: string;
+	factory?: string;
 }) {
 	const create = useMutation(api.factories.create);
 	const update = useMutation(api.factories.update);
@@ -228,20 +225,20 @@ function SaveButton({
 	const [selectedGameId, setSelectedGameId] = useState<Id<"games"> | "">("");
 ```
 
-After the existing `save` function, add a `saveToFactory`:
+After the existing `save` function, add a `saveToFactory` (the update is by factory id; the `game` param only drives the back-navigation):
 
 ```tsx
 	const saveToFactory = async () => {
-		if (!fromFactory || !fromGame) return;
+		if (!game || !factory) return;
 		setSaving(true);
 		try {
 			await update({
-				id: fromFactory as Id<"factories">,
+				id: factory as Id<"factories">,
 				production: { source: "plan", plan: encodeSnapshot({ spec, solution }) },
 			});
 			navigate({
 				to: "/g/$gameId/factories/$factoryId",
-				params: { gameId: fromGame, factoryId: fromFactory },
+				params: { gameId: game, factoryId: factory },
 			});
 		} catch {
 			toast("Couldn't save changes to this factory.");
@@ -251,12 +248,12 @@ After the existing `save` function, add a `saveToFactory`:
 	};
 ```
 
-Render the update button before the existing markup's `return`, when `fromFactory` is set. Replace the final `return (...)` so it shows the "Save changes to this factory" button (primary) plus the existing game-picker + "Save as new factory" controls:
+Render the update button before the existing markup's `return`, when `game` + `factory` are set. Replace the final `return (...)` so it shows the "Save changes to this factory" button (primary) plus the existing game-picker + "Save as new factory" controls:
 
 ```tsx
 	return (
 		<div className="flex items-center gap-2">
-			{fromFactory && fromGame && (
+			{game && factory && (
 				<button
 					type="button"
 					onClick={saveToFactory}
@@ -286,7 +283,7 @@ Render the update button before the existing markup's `return`, when `fromFactor
 				disabled={saving || !gameId}
 				className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--sea-ink)] disabled:opacity-50"
 			>
-				{fromFactory ? "Save as new factory" : "Save as factory"}
+				{factory ? "Save as new factory" : "Save as factory"}
 			</button>
 		</div>
 	);
@@ -300,8 +297,8 @@ Update the default export to forward the props:
 export default function SaveAsFactoryButton(props: {
 	spec: ProblemSpec;
 	solution: Solution;
-	fromFactory?: string;
-	fromGame?: string;
+	game?: string;
+	factory?: string;
 }) {
 	return (
 		<>
@@ -397,8 +394,8 @@ In the header row (the `<div className="flex items-center justify-between">` wit
 					to="/calculator"
 					search={{
 						plan: encodePlan(factoryToSpec(factory.production)),
-						fromFactory: factory._id,
-						fromGame: gameId,
+						game: gameId,
+						factory: factory._id,
 					}}
 					className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--sea-ink)]"
 				>
@@ -873,5 +870,5 @@ git commit -m "chore: phase 8 final wiring + verification"
 ## Self-review notes (coverage vs spec)
 
 - §1 `factoryToSpec` → Task 1. §2 manual graph (solve I/O) → Task 4 (Steps 1, 3). §3 open-in-calculator + save-back-in-place → Tasks 2, 3, 4. §4 factory editing (status/description/manual production + MachineEditor) → Tasks 4, 5. §5 game editing (rename/description/delete) → Task 6. §6 error handling (toast wraps, `factoryToSpec` empty fallback, infeasible/empty solve states) → Tasks 1, 3, 4, 6. §7 testing → Task 1 (pure), component/manual per UI task.
-- Type consistency: `factoryToSpec(production): ProblemSpec` (Task 1) used in Tasks 4. `fromFactory`/`fromGame` strings threaded through the route search (Task 2) → `SaveAsFactoryButton` props (Task 3) ← factory detail `Link` search (Task 4). `MachineCount` (existing type) used by `MachineEditor` (Task 5) and `ManualFactoryForm`. `FactoryStatus` used by the status select (Task 4) and form (Task 5).
-- The calculator URL-mirror effect (Task 2) preserves `fromFactory`/`fromGame` so the round-trip params survive plan edits.
+- Type consistency: `factoryToSpec(production): ProblemSpec` (Task 1) used in Tasks 4. The `game` + `factory` id strings are threaded through the route search (Task 2) → `SaveAsFactoryButton` props (Task 3) ← factory detail `Link` search (Task 4). The save button's `update` is by `factory` id (the server resolves membership from the row); `game` only drives the back-navigation route. `MachineCount` (existing type) used by `MachineEditor` (Task 5) and `ManualFactoryForm`. `FactoryStatus` used by the status select (Task 4) and form (Task 5).
+- The calculator URL-mirror effect (Task 2) preserves `game` + `factory` so the round-trip params survive plan edits.
