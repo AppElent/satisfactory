@@ -49,7 +49,7 @@ export default function MachineEditor({
 						min={0}
 						value={r.count}
 						aria-label="Machine count"
-						onChange={(e) => set(i, { ...r, count: Number(e.target.value) })}
+						onChange={(e) => set(i, { ...r, count: Number(e.target.value) || 0 })}
 						className="w-16 rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-right text-sm"
 					/>
 					<input
