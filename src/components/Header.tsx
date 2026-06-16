@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { FEATURES } from "#/config/features";
+import GameSwitcher from "#/features/games/GameSwitcher";
 import ClerkHeader from "../integrations/clerk/header-user.tsx";
 import ThemeToggle from "./ThemeToggle";
 
@@ -35,7 +36,12 @@ export default function Header() {
 							return (
 								<Link
 									key={feature.id}
-									to={scopedPath as "/g/$gameId/factories" | "/g/$gameId/map" | "/g/$gameId/logistics"}
+									to={
+										scopedPath as
+											| "/g/$gameId/factories"
+											| "/g/$gameId/map"
+											| "/g/$gameId/logistics"
+									}
 									params={{ gameId: activeGameId }}
 									className="nav-link"
 									activeProps={{ className: "nav-link is-active" }}
@@ -85,6 +91,7 @@ export default function Header() {
 				</div>
 
 				<div className="ml-auto flex items-center gap-1.5 sm:gap-2">
+					<GameSwitcher />
 					<ClerkHeader />
 					<ThemeToggle />
 				</div>
