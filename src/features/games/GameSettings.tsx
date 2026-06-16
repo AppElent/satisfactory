@@ -1,5 +1,6 @@
+import { useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery } from "convex/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "#convex/_generated/api";
 import type { Id } from "#convex/_generated/dataModel";
 import { useGameId } from "./useGameId";
@@ -12,7 +13,19 @@ export default function GameSettings() {
 	const createInvite = useMutation(api.games.createInvite);
 	const revokeInvite = useMutation(api.games.revokeInvite);
 	const removeMember = useMutation(api.games.removeMember);
+	const rename = useMutation(api.games.rename);
+	const removeGame = useMutation(api.games.remove);
+	const navigate = useNavigate();
 	const [role, setRole] = useState<"editor" | "viewer">("editor");
+	const [name, setName] = useState("");
+	const [description, setDescription] = useState("");
+
+	useEffect(() => {
+		if (game) {
+			setName(game.name);
+			setDescription(game.description ?? "");
+		}
+	}, [game]);
 
 	if (!game)
 		return <main className="page-wrap px-4 py-8 text-sm">Loading…</main>;
@@ -93,6 +106,54 @@ export default function GameSettings() {
 							</button>
 						</div>
 					))}
+				</section>
+			)}
+
+			{isOwner && (
+				<section className="flex flex-col gap-2">
+					<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+						Game
+					</h2>
+					<input
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+						aria-label="Game name"
+						className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm"
+					/>
+					<input
+						value={description}
+						onChange={(e) => setDescription(e.target.value)}
+						placeholder="Description…"
+						aria-label="Game description"
+						className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm"
+					/>
+					<div className="flex gap-2">
+						<button
+							type="button"
+							onClick={() =>
+								rename({ gameId, name: name.trim(), description }).catch(
+									() => {},
+								)
+							}
+							disabled={!name.trim()}
+							className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)] disabled:opacity-50"
+						>
+							Save game
+						</button>
+						<button
+							type="button"
+							onClick={async () => {
+								if (!confirm(`Delete "${game.name}" and all its factories?`))
+									return;
+								await removeGame({ gameId });
+								localStorage.removeItem("activeGameId");
+								navigate({ to: "/games" });
+							}}
+							className="rounded-lg px-3 py-2 text-sm text-red-500"
+						>
+							Delete game
+						</button>
+					</div>
 				</section>
 			)}
 		</main>
