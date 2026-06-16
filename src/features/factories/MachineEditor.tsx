@@ -30,6 +30,7 @@ export default function MachineEditor({
 				Machines
 			</h3>
 			{rows.map((r, i) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: rows have no stable id; index is intentional here
 				<div key={`${r.building}-${i}`} className="flex items-center gap-2">
 					<select
 						aria-label="Building"

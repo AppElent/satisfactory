@@ -75,7 +75,9 @@ export default function ManualFactoryForm({
 				});
 			}
 		} catch {
-			toast(factoryId ? "Couldn't save changes." : "Couldn't create the factory.");
+			toast(
+				factoryId ? "Couldn't save changes." : "Couldn't create the factory.",
+			);
 		} finally {
 			setSaving(false);
 		}
