@@ -4,14 +4,16 @@ import { useState } from "react";
 import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
 import ResultTabs from "#/features/calculator/ResultTabs";
+import { encodePlan } from "#/features/calculator/plan-codec";
+import { useSolver } from "#/features/calculator/useSolver";
 import { useGameId } from "#/features/games/useGameId";
 import { formatNumber, formatPower } from "#/lib/format";
 import { api } from "#convex/_generated/api";
 import type { Id } from "#convex/_generated/dataModel";
 import { efficiency, manualBuildCost, manualPower } from "./derive";
-import { plannedOutputs } from "./factory-view";
+import { factoryToSpec, plannedOutputs } from "./factory-view";
 import { decodeSnapshot } from "./snapshot";
-import type { ItemRate } from "./types";
+import type { FactoryStatus, ItemRate } from "./types";
 
 const TABS = ["Overview", "Plan", "Build cost", "Notes"] as const;
 type Tab = (typeof TABS)[number];
@@ -30,6 +32,12 @@ export default function FactoryDetail() {
 
 	const patch = (args: Parameters<typeof update>[0]) =>
 		update(args).catch(() => toast("Couldn't save changes."));
+
+	const manualSpec =
+		factory && factory.production.source === "manual"
+			? factoryToSpec(factory.production)
+			: { targets: [], allowedAlternates: [] };
+	const { solution: manualSolution, solving } = useSolver(manualSpec);
 
 	if (factory === undefined) {
 		return <main className="page-wrap px-4 py-8 text-sm">Loading…</main>;
@@ -77,22 +85,46 @@ export default function FactoryDetail() {
 
 	return (
 		<main className="page-wrap flex flex-col gap-6 px-4 py-8">
-			<div className="flex items-center justify-between">
+			<div className="flex items-center gap-3">
 				<input
 					value={factory.name}
 					onChange={(e) => patch({ id: factory._id, name: e.target.value })}
 					aria-label="Factory name"
-					className="bg-transparent text-2xl font-bold text-[var(--sea-ink)] outline-none"
+					className="flex-1 bg-transparent text-2xl font-bold text-[var(--sea-ink)] outline-none"
 				/>
+				<select
+					aria-label="Status"
+					value={factory.status}
+					onChange={(e) =>
+						patch({ id: factory._id, status: e.target.value as FactoryStatus })
+					}
+					className="rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-sm capitalize"
+				>
+					{(["planned", "building", "operational", "paused"] as const).map(
+						(s) => (
+							<option key={s} value={s}>
+								{s}
+							</option>
+						),
+					)}
+				</select>
+				<Link
+					to="/calculator"
+					search={{
+						plan: encodePlan(factoryToSpec(factory.production)),
+						game: gameId,
+						factory: factory._id,
+					}}
+					className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--sea-ink)]"
+				>
+					Open in calculator
+				</Link>
 				<button
 					type="button"
 					onClick={async () => {
 						try {
 							await remove({ id: factory._id });
-							navigate({
-								to: "/g/$gameId/factories",
-								params: { gameId },
-							});
+							navigate({ to: "/g/$gameId/factories", params: { gameId } });
 						} catch {
 							toast("Couldn't delete this factory.");
 						}
@@ -102,6 +134,16 @@ export default function FactoryDetail() {
 					Delete
 				</button>
 			</div>
+
+			<input
+				value={factory.description ?? ""}
+				onChange={(e) =>
+					patch({ id: factory._id, description: e.target.value })
+				}
+				placeholder="Short description…"
+				aria-label="Description"
+				className="bg-transparent text-sm text-[var(--sea-ink-soft)] outline-none"
+			/>
 
 			<div className="flex gap-1 border-b border-[var(--line)]">
 				{TABS.map((t) => (
@@ -155,11 +197,23 @@ export default function FactoryDetail() {
 			)}
 
 			{tab === "Plan" &&
-				(snapshot ? (
-					<ResultTabs solution={snapshot.solution} />
+				(factory.production.source === "plan" ? (
+					snapshot ? (
+						<ResultTabs solution={snapshot.solution} />
+					) : (
+						<p className="text-sm text-[var(--sea-ink-soft)]">
+							This plan could not be read.
+						</p>
+					)
+				) : manualSolution ? (
+					<ResultTabs solution={manualSolution} />
+				) : solving ? (
+					<p className="p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+						Solving…
+					</p>
 				) : (
 					<p className="text-sm text-[var(--sea-ink-soft)]">
-						This factory was entered manually — no calculator plan attached.
+						Add outputs to this factory to see a production graph.
 					</p>
 				))}
 
