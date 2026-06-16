@@ -10,6 +10,7 @@
 
 import type * as factories from "../factories.js";
 import type * as games from "../games.js";
+import type * as migrations from "../migrations.js";
 import type * as transports from "../transports.js";
 
 import type {
@@ -21,6 +22,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   factories: typeof factories;
   games: typeof games;
+  migrations: typeof migrations;
   transports: typeof transports;
 }>;
 
