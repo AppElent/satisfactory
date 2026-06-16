@@ -5,7 +5,8 @@ import { useToast } from "#/components/Toast";
 import { api } from "#convex/_generated/api";
 import type { Id } from "#convex/_generated/dataModel";
 import ItemRateEditor from "./ItemRateEditor";
-import type { FactoryStatus, ItemRate } from "./types";
+import MachineEditor from "./MachineEditor";
+import type { FactoryStatus, ItemRate, MachineCount } from "./types";
 
 const STATUSES: FactoryStatus[] = [
 	"planned",
@@ -14,38 +15,67 @@ const STATUSES: FactoryStatus[] = [
 	"paused",
 ];
 
+interface Initial {
+	name: string;
+	status: FactoryStatus;
+	inputs: ItemRate[];
+	outputs: ItemRate[];
+	machines: MachineCount[];
+}
+
 export default function ManualFactoryForm({
 	gameId,
+	factoryId,
+	initial,
 	onClose,
 }: {
 	gameId: Id<"games">;
+	factoryId?: Id<"factories">;
+	initial?: Initial;
 	onClose: () => void;
 }) {
 	const create = useMutation(api.factories.create);
+	const update = useMutation(api.factories.update);
 	const navigate = useNavigate();
 	const { toast } = useToast();
-	const [name, setName] = useState("");
-	const [status, setStatus] = useState<FactoryStatus>("planned");
-	const [inputs, setInputs] = useState<ItemRate[]>([]);
-	const [outputs, setOutputs] = useState<ItemRate[]>([]);
+	const [name, setName] = useState(initial?.name ?? "");
+	const [status, setStatus] = useState<FactoryStatus>(
+		initial?.status ?? "planned",
+	);
+	const [inputs, setInputs] = useState<ItemRate[]>(initial?.inputs ?? []);
+	const [outputs, setOutputs] = useState<ItemRate[]>(initial?.outputs ?? []);
+	const [machines, setMachines] = useState<MachineCount[]>(
+		initial?.machines ?? [],
+	);
 	const [saving, setSaving] = useState(false);
 
 	const submit = async () => {
 		if (!name.trim()) return;
 		setSaving(true);
 		try {
-			const id = await create({
-				gameId,
-				name: name.trim(),
-				status,
-				production: { source: "manual", inputs, outputs, machines: [] },
-			});
-			navigate({
-				to: "/g/$gameId/factories/$factoryId",
-				params: { gameId, factoryId: id },
-			});
+			const production = {
+				source: "manual" as const,
+				inputs,
+				outputs,
+				machines,
+			};
+			if (factoryId) {
+				await update({ id: factoryId, name: name.trim(), status, production });
+				onClose();
+			} else {
+				const id = await create({
+					gameId,
+					name: name.trim(),
+					status,
+					production,
+				});
+				navigate({
+					to: "/g/$gameId/factories/$factoryId",
+					params: { gameId, factoryId: id },
+				});
+			}
 		} catch {
-			toast("Couldn't create the factory.");
+			toast(factoryId ? "Couldn't save changes." : "Couldn't create the factory.");
 		} finally {
 			setSaving(false);
 		}
@@ -74,6 +104,7 @@ export default function ManualFactoryForm({
 			</select>
 			<ItemRateEditor label="Outputs" rows={outputs} onChange={setOutputs} />
 			<ItemRateEditor label="Inputs" rows={inputs} onChange={setInputs} />
+			<MachineEditor rows={machines} onChange={setMachines} />
 			<div className="flex gap-2">
 				<button
 					type="button"
@@ -81,7 +112,7 @@ export default function ManualFactoryForm({
 					disabled={saving || !name.trim()}
 					className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)] disabled:opacity-50"
 				>
-					Save factory
+					{factoryId ? "Save changes" : "Save factory"}
 				</button>
 				<button
 					type="button"

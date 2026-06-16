@@ -12,6 +12,7 @@ import { api } from "#convex/_generated/api";
 import type { Id } from "#convex/_generated/dataModel";
 import { efficiency, manualBuildCost, manualPower } from "./derive";
 import { factoryToSpec, plannedOutputs } from "./factory-view";
+import ManualFactoryForm from "./ManualFactoryForm";
 import { decodeSnapshot } from "./snapshot";
 import type { FactoryStatus, ItemRate } from "./types";
 
@@ -29,6 +30,7 @@ export default function FactoryDetail() {
 	const navigate = useNavigate();
 	const { toast } = useToast();
 	const [tab, setTab] = useState<Tab>("Overview");
+	const [editing, setEditing] = useState(false);
 
 	const patch = (args: Parameters<typeof update>[0]) =>
 		update(args).catch(() => toast("Couldn't save changes."));
@@ -144,6 +146,33 @@ export default function FactoryDetail() {
 				aria-label="Description"
 				className="bg-transparent text-sm text-[var(--sea-ink-soft)] outline-none"
 			/>
+
+			{factory.production.source === "manual" && (
+				<div>
+					{editing ? (
+						<ManualFactoryForm
+							gameId={gameId}
+							factoryId={factory._id}
+							initial={{
+								name: factory.name,
+								status: factory.status,
+								inputs: factory.production.inputs,
+								outputs: factory.production.outputs,
+								machines: factory.production.machines,
+							}}
+							onClose={() => setEditing(false)}
+						/>
+					) : (
+						<button
+							type="button"
+							onClick={() => setEditing(true)}
+							className="self-start rounded-lg border border-[var(--line)] px-3 py-2 text-sm text-[var(--sea-ink)]"
+						>
+							Edit production
+						</button>
+					)}
+				</div>
+			)}
 
 			<div className="flex gap-1 border-b border-[var(--line)]">
 				{TABS.map((t) => (
