@@ -14,8 +14,11 @@ import SignInPrompt from "./SignInPrompt";
 
 function FactoriesList() {
 	const gameId = useGameId();
-	const factories = useQuery(api.factories.list, { gameId });
-	const transports = useQuery(api.transports.list, { gameId });
+	const factories = useQuery(api.factories.list, gameId ? { gameId } : "skip");
+	const transports = useQuery(
+		api.transports.list,
+		gameId ? { gameId } : "skip",
+	);
 	const [creating, setCreating] = useState(false);
 
 	return (

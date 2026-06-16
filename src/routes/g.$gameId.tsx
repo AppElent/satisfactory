@@ -15,7 +15,10 @@ export const Route = createFileRoute("/g/$gameId")({
 
 function GameGuard() {
 	const { gameId } = useParams({ from: "/g/$gameId" });
-	const game = useQuery(api.games.get, { gameId: gameId as Id<"games"> });
+	const game = useQuery(
+		api.games.get,
+		gameId ? { gameId: gameId as Id<"games"> } : "skip",
+	);
 
 	if (game === undefined) {
 		return <main className="page-wrap px-4 py-10 text-sm">Loading…</main>;

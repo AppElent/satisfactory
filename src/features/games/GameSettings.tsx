@@ -6,9 +6,9 @@ import { useGameId } from "./useGameId";
 
 export default function GameSettings() {
 	const gameId = useGameId();
-	const game = useQuery(api.games.get, { gameId });
-	const members = useQuery(api.games.members, { gameId });
-	const invites = useQuery(api.games.listInvites, { gameId });
+	const game = useQuery(api.games.get, gameId ? { gameId } : "skip");
+	const members = useQuery(api.games.members, gameId ? { gameId } : "skip");
+	const invites = useQuery(api.games.listInvites, gameId ? { gameId } : "skip");
 	const createInvite = useMutation(api.games.createInvite);
 	const revokeInvite = useMutation(api.games.revokeInvite);
 	const removeMember = useMutation(api.games.removeMember);

@@ -21,7 +21,7 @@ function pinLatLng(factory: Doc<"factories">): [number, number] | undefined {
 }
 
 export default function FactoryPinsLayer({ gameId }: { gameId: Id<"games"> }) {
-	const factories = useQuery(api.factories.list, { gameId });
+	const factories = useQuery(api.factories.list, gameId ? { gameId } : "skip");
 	const update = useMutation(api.factories.update);
 	const create = useMutation(api.factories.create);
 	const navigate = useNavigate();
