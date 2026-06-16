@@ -10,7 +10,6 @@ export const stripLegacyUserId = mutation({
 		for (const f of factories) {
 			const raw = f as Record<string, unknown>;
 			if ("userId" in raw) {
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				await (ctx.db as any).patch(f._id, { userId: undefined });
 				patched++;
 			}
@@ -19,7 +18,6 @@ export const stripLegacyUserId = mutation({
 		for (const t of transports) {
 			const raw = t as Record<string, unknown>;
 			if ("userId" in raw) {
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				await (ctx.db as any).patch(t._id, { userId: undefined });
 				patched++;
 			}
