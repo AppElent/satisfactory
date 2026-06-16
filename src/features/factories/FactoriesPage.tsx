@@ -5,8 +5,8 @@ import {
 	useQuery,
 } from "convex/react";
 import { useState } from "react";
-import SummaryCard from "#/features/logistics/SummaryCard";
 import { useGameId } from "#/features/games/useGameId";
+import SummaryCard from "#/features/logistics/SummaryCard";
 import { api } from "#convex/_generated/api";
 import FactoryCard from "./FactoryCard";
 import ManualFactoryForm from "./ManualFactoryForm";

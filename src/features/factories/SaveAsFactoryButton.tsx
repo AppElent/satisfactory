@@ -1,6 +1,11 @@
 import { SignInButton } from "@clerk/clerk-react";
 import { useNavigate } from "@tanstack/react-router";
-import { Authenticated, Unauthenticated, useMutation, useQuery } from "convex/react";
+import {
+	Authenticated,
+	Unauthenticated,
+	useMutation,
+	useQuery,
+} from "convex/react";
 import { useState } from "react";
 import { useToast } from "#/components/Toast";
 import { getItem } from "#/data";
@@ -26,11 +31,13 @@ function SaveButton({
 	const activeGameId =
 		selectedGameId ||
 		(typeof localStorage !== "undefined"
-			? (localStorage.getItem("activeGameId") as Id<"games"> | null) ?? ""
+			? ((localStorage.getItem("activeGameId") as Id<"games"> | null) ?? "")
 			: "");
 
 	const gameId = (
-		games?.some((g) => g._id === activeGameId) ? activeGameId : (games?.[0]?._id ?? "")
+		games?.some((g) => g._id === activeGameId)
+			? activeGameId
+			: (games?.[0]?._id ?? "")
 	) as Id<"games"> | "";
 
 	const save = async () => {
@@ -66,7 +73,10 @@ function SaveButton({
 	if (games !== undefined && games.length === 0) {
 		return (
 			<span className="text-sm text-[var(--sea-ink-soft)]">
-				<a href="/games" className="underline">Create a game</a> to save factories.
+				<a href="/games" className="underline">
+					Create a game
+				</a>{" "}
+				to save factories.
 			</span>
 		);
 	}

@@ -17,12 +17,14 @@ import { Route as DataRouteRouteImport } from './routes/data/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GamesIndexRouteImport } from './routes/games.index'
 import { Route as DataIndexRouteImport } from './routes/data/index'
+import { Route as InviteTokenRouteImport } from './routes/invite.$token'
 import { Route as GGameIdRouteImport } from './routes/g.$gameId'
 import { Route as DataSchematicsIndexRouteImport } from './routes/data/schematics.index'
 import { Route as DataRecipesIndexRouteImport } from './routes/data/recipes.index'
 import { Route as DataItemsIndexRouteImport } from './routes/data/items.index'
 import { Route as DataBuildingsIndexRouteImport } from './routes/data/buildings.index'
 import { Route as DataBuildablesIndexRouteImport } from './routes/data/buildables.index'
+import { Route as GGameIdSettingsRouteImport } from './routes/g.$gameId.settings'
 import { Route as GGameIdMapRouteImport } from './routes/g.$gameId.map'
 import { Route as GGameIdLogisticsRouteImport } from './routes/g.$gameId.logistics'
 import { Route as DataSchematicsSlugRouteImport } from './routes/data/schematics.$slug'
@@ -73,6 +75,11 @@ const DataIndexRoute = DataIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DataRouteRoute,
 } as any)
+const InviteTokenRoute = InviteTokenRouteImport.update({
+  id: '/invite/$token',
+  path: '/invite/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GGameIdRoute = GGameIdRouteImport.update({
   id: '/g/$gameId',
   path: '/g/$gameId',
@@ -102,6 +109,11 @@ const DataBuildablesIndexRoute = DataBuildablesIndexRouteImport.update({
   id: '/buildables/',
   path: '/buildables/',
   getParentRoute: () => DataRouteRoute,
+} as any)
+const GGameIdSettingsRoute = GGameIdSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => GGameIdRoute,
 } as any)
 const GGameIdMapRoute = GGameIdMapRouteImport.update({
   id: '/map',
@@ -158,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
   '/g/$gameId': typeof GGameIdRouteWithChildren
+  '/invite/$token': typeof InviteTokenRoute
   '/data/': typeof DataIndexRoute
   '/games/': typeof GamesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
@@ -167,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/data/schematics/$slug': typeof DataSchematicsSlugRoute
   '/g/$gameId/logistics': typeof GGameIdLogisticsRoute
   '/g/$gameId/map': typeof GGameIdMapRoute
+  '/g/$gameId/settings': typeof GGameIdSettingsRoute
   '/data/buildables/': typeof DataBuildablesIndexRoute
   '/data/buildings/': typeof DataBuildingsIndexRoute
   '/data/items/': typeof DataItemsIndexRoute
@@ -182,6 +196,7 @@ export interface FileRoutesByTo {
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
   '/g/$gameId': typeof GGameIdRouteWithChildren
+  '/invite/$token': typeof InviteTokenRoute
   '/data': typeof DataIndexRoute
   '/games': typeof GamesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
@@ -191,6 +206,7 @@ export interface FileRoutesByTo {
   '/data/schematics/$slug': typeof DataSchematicsSlugRoute
   '/g/$gameId/logistics': typeof GGameIdLogisticsRoute
   '/g/$gameId/map': typeof GGameIdMapRoute
+  '/g/$gameId/settings': typeof GGameIdSettingsRoute
   '/data/buildables': typeof DataBuildablesIndexRoute
   '/data/buildings': typeof DataBuildingsIndexRoute
   '/data/items': typeof DataItemsIndexRoute
@@ -208,6 +224,7 @@ export interface FileRoutesById {
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
   '/g/$gameId': typeof GGameIdRouteWithChildren
+  '/invite/$token': typeof InviteTokenRoute
   '/data/': typeof DataIndexRoute
   '/games/': typeof GamesIndexRoute
   '/data/buildables/$slug': typeof DataBuildablesSlugRoute
@@ -217,6 +234,7 @@ export interface FileRoutesById {
   '/data/schematics/$slug': typeof DataSchematicsSlugRoute
   '/g/$gameId/logistics': typeof GGameIdLogisticsRoute
   '/g/$gameId/map': typeof GGameIdMapRoute
+  '/g/$gameId/settings': typeof GGameIdSettingsRoute
   '/data/buildables/': typeof DataBuildablesIndexRoute
   '/data/buildings/': typeof DataBuildingsIndexRoute
   '/data/items/': typeof DataItemsIndexRoute
@@ -235,6 +253,7 @@ export interface FileRouteTypes {
     | '/logistics'
     | '/map'
     | '/g/$gameId'
+    | '/invite/$token'
     | '/data/'
     | '/games/'
     | '/data/buildables/$slug'
@@ -244,6 +263,7 @@ export interface FileRouteTypes {
     | '/data/schematics/$slug'
     | '/g/$gameId/logistics'
     | '/g/$gameId/map'
+    | '/g/$gameId/settings'
     | '/data/buildables/'
     | '/data/buildings/'
     | '/data/items/'
@@ -259,6 +279,7 @@ export interface FileRouteTypes {
     | '/logistics'
     | '/map'
     | '/g/$gameId'
+    | '/invite/$token'
     | '/data'
     | '/games'
     | '/data/buildables/$slug'
@@ -268,6 +289,7 @@ export interface FileRouteTypes {
     | '/data/schematics/$slug'
     | '/g/$gameId/logistics'
     | '/g/$gameId/map'
+    | '/g/$gameId/settings'
     | '/data/buildables'
     | '/data/buildings'
     | '/data/items'
@@ -284,6 +306,7 @@ export interface FileRouteTypes {
     | '/logistics'
     | '/map'
     | '/g/$gameId'
+    | '/invite/$token'
     | '/data/'
     | '/games/'
     | '/data/buildables/$slug'
@@ -293,6 +316,7 @@ export interface FileRouteTypes {
     | '/data/schematics/$slug'
     | '/g/$gameId/logistics'
     | '/g/$gameId/map'
+    | '/g/$gameId/settings'
     | '/data/buildables/'
     | '/data/buildings/'
     | '/data/items/'
@@ -310,6 +334,7 @@ export interface RootRouteChildren {
   LogisticsRoute: typeof LogisticsRoute
   MapRoute: typeof MapRoute
   GGameIdRoute: typeof GGameIdRouteWithChildren
+  InviteTokenRoute: typeof InviteTokenRoute
   GamesIndexRoute: typeof GamesIndexRoute
 }
 
@@ -371,6 +396,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DataIndexRouteImport
       parentRoute: typeof DataRouteRoute
     }
+    '/invite/$token': {
+      id: '/invite/$token'
+      path: '/invite/$token'
+      fullPath: '/invite/$token'
+      preLoaderRoute: typeof InviteTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/g/$gameId': {
       id: '/g/$gameId'
       path: '/g/$gameId'
@@ -412,6 +444,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/data/buildables/'
       preLoaderRoute: typeof DataBuildablesIndexRouteImport
       parentRoute: typeof DataRouteRoute
+    }
+    '/g/$gameId/settings': {
+      id: '/g/$gameId/settings'
+      path: '/settings'
+      fullPath: '/g/$gameId/settings'
+      preLoaderRoute: typeof GGameIdSettingsRouteImport
+      parentRoute: typeof GGameIdRoute
     }
     '/g/$gameId/map': {
       id: '/g/$gameId/map'
@@ -514,6 +553,7 @@ const DataRouteRouteWithChildren = DataRouteRoute._addFileChildren(
 interface GGameIdRouteChildren {
   GGameIdLogisticsRoute: typeof GGameIdLogisticsRoute
   GGameIdMapRoute: typeof GGameIdMapRoute
+  GGameIdSettingsRoute: typeof GGameIdSettingsRoute
   GGameIdFactoriesFactoryIdRoute: typeof GGameIdFactoriesFactoryIdRoute
   GGameIdFactoriesIndexRoute: typeof GGameIdFactoriesIndexRoute
 }
@@ -521,6 +561,7 @@ interface GGameIdRouteChildren {
 const GGameIdRouteChildren: GGameIdRouteChildren = {
   GGameIdLogisticsRoute: GGameIdLogisticsRoute,
   GGameIdMapRoute: GGameIdMapRoute,
+  GGameIdSettingsRoute: GGameIdSettingsRoute,
   GGameIdFactoriesFactoryIdRoute: GGameIdFactoriesFactoryIdRoute,
   GGameIdFactoriesIndexRoute: GGameIdFactoriesIndexRoute,
 }
@@ -536,6 +577,7 @@ const rootRouteChildren: RootRouteChildren = {
   LogisticsRoute: LogisticsRoute,
   MapRoute: MapRoute,
   GGameIdRoute: GGameIdRouteWithChildren,
+  InviteTokenRoute: InviteTokenRoute,
   GamesIndexRoute: GamesIndexRoute,
 }
 export const routeTree = rootRouteImport

@@ -143,7 +143,11 @@ function Network() {
 					</p>
 				}
 			>
-				<NetworkGraph factories={factories} transports={transports} gameId={gameId} />
+				<NetworkGraph
+					factories={factories}
+					transports={transports}
+					gameId={gameId}
+				/>
 			</Suspense>
 		</div>
 	);

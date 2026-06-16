@@ -60,7 +60,9 @@ function GamesList() {
 							onClick={() => localStorage.setItem("activeGameId", g._id)}
 							className="flex flex-col gap-1 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-4 hover:border-[var(--sea-ink)]"
 						>
-							<span className="font-semibold text-[var(--sea-ink)]">{g.name}</span>
+							<span className="font-semibold text-[var(--sea-ink)]">
+								{g.name}
+							</span>
 							<span className="text-xs capitalize text-[var(--sea-ink-soft)]">
 								{g.role}
 							</span>

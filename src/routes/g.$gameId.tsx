@@ -1,6 +1,11 @@
-import { createFileRoute, Link, Outlet, useParams } from "@tanstack/react-router";
-import { Authenticated, Unauthenticated, useQuery } from "convex/react";
 import { SignInButton } from "@clerk/clerk-react";
+import {
+	createFileRoute,
+	Link,
+	Outlet,
+	useParams,
+} from "@tanstack/react-router";
+import { Authenticated, Unauthenticated, useQuery } from "convex/react";
 import { api } from "#convex/_generated/api";
 import type { Id } from "#convex/_generated/dataModel";
 
