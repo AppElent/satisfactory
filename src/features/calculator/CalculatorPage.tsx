@@ -13,13 +13,21 @@ import { useSolver } from "./useSolver";
 type Weighting = "balanced" | "minimize-ore";
 
 export default function CalculatorPage() {
-	const search = useSearch({ strict: false }) as { plan?: string };
+	const search = useSearch({ strict: false }) as {
+		plan?: string;
+		game?: string;
+		factory?: string;
+	};
 	const navigate = useNavigate();
 
 	// Initialize state once from the ?plan= URL param (if present and valid).
 	const [initial] = useState(() =>
 		typeof search.plan === "string" ? decodePlan(search.plan) : undefined,
 	);
+	const [roundTrip] = useState(() => ({
+		game: search.game,
+		factory: search.factory,
+	}));
 	const [targets, setTargets] = useState<Target[]>(initial?.targets ?? []);
 	const [availableInputs, setAvailableInputs] = useState<AvailableInput[]>(
 		initial?.availableInputs ?? [],
@@ -48,10 +56,14 @@ export default function CalculatorPage() {
 	useEffect(() => {
 		navigate({
 			to: "/calculator",
-			search: planParam ? { plan: planParam } : {},
+			search: {
+				...(planParam ? { plan: planParam } : {}),
+				...(roundTrip.game ? { game: roundTrip.game } : {}),
+				...(roundTrip.factory ? { factory: roundTrip.factory } : {}),
+			},
 			replace: true,
 		});
-	}, [planParam, navigate]);
+	}, [planParam, navigate, roundTrip]);
 
 	return (
 		<main className="page-wrap px-4 py-8">
@@ -90,7 +102,12 @@ export default function CalculatorPage() {
 					) : solution ? (
 						<div className="flex flex-col gap-4">
 							<div className="flex justify-end">
-								<SaveAsFactoryButton spec={spec} solution={solution} />
+								<SaveAsFactoryButton
+									spec={spec}
+									solution={solution}
+									game={roundTrip.game}
+									factory={roundTrip.factory}
+								/>
 							</div>
 							<ResultTabs solution={solution} />
 						</div>
