@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import EntityIcon from "#/components/EntityIcon";
 import { getItem } from "#/data";
 import { formatNumber } from "#/lib/format";
-import type { Doc } from "#convex/_generated/dataModel";
+import type { Doc, Id } from "#convex/_generated/dataModel";
 import { efficiency } from "./derive";
 import { plannedOutputs } from "./factory-view";
 
@@ -15,8 +15,10 @@ const STATUS_LABEL: Record<Doc<"factories">["status"], string> = {
 
 export default function FactoryCard({
 	factory,
+	gameId,
 }: {
 	factory: Doc<"factories">;
+	gameId: Id<"games">;
 }) {
 	const outputs = plannedOutputs(factory.production);
 	const eff = factory.actuals
@@ -24,8 +26,8 @@ export default function FactoryCard({
 		: undefined;
 	return (
 		<Link
-			to="/factories/$factoryId"
-			params={{ factoryId: factory._id }}
+			to="/g/$gameId/factories/$factoryId"
+			params={{ gameId, factoryId: factory._id }}
 			className="flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-4 hover:border-[var(--sea-ink)]"
 		>
 			<div className="flex items-center justify-between">

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import LogisticsPage from "#/features/logistics/LogisticsPage";
 
-export const Route = createFileRoute("/logistics")({
+export const Route = createFileRoute("/g/$gameId/logistics")({
 	component: LogisticsPage,
 });

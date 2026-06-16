@@ -3,7 +3,7 @@ import { lazy, Suspense } from "react";
 
 const MapPage = lazy(() => import("#/features/map/MapPage"));
 
-export const Route = createFileRoute("/map")({
+export const Route = createFileRoute("/g/$gameId/map")({
 	ssr: false,
 	component: () => (
 		<Suspense

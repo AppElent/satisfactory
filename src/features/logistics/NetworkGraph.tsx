@@ -5,7 +5,7 @@ import ELK from "elkjs/lib/elk.bundled.js";
 import { useEffect, useState } from "react";
 import { getItem } from "#/data";
 import { formatNumber } from "#/lib/format";
-import type { Doc } from "#convex/_generated/dataModel";
+import type { Doc, Id } from "#convex/_generated/dataModel";
 import { computeNetwork } from "./logistics";
 
 const elk = new ELK();
@@ -15,9 +15,11 @@ const NODE_H = 60;
 export default function NetworkGraph({
 	factories,
 	transports,
+	gameId,
 }: {
 	factories: Doc<"factories">[];
 	transports: Doc<"transports">[];
+	gameId: Id<"games">;
 }) {
 	const navigate = useNavigate();
 	const [nodes, setNodes] = useState<Node[]>([]);
@@ -110,8 +112,8 @@ export default function NetworkGraph({
 				proOptions={{ hideAttribution: true }}
 				onNodeClick={(_, node) =>
 					navigate({
-						to: "/factories/$factoryId",
-						params: { factoryId: node.id },
+						to: "/g/$gameId/factories/$factoryId",
+						params: { gameId, factoryId: node.id },
 					})
 				}
 			>

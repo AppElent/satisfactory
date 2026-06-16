@@ -3,6 +3,7 @@ import { useMutation } from "convex/react";
 import { useState } from "react";
 import { useToast } from "#/components/Toast";
 import { api } from "#convex/_generated/api";
+import type { Id } from "#convex/_generated/dataModel";
 import ItemRateEditor from "./ItemRateEditor";
 import type { FactoryStatus, ItemRate } from "./types";
 
@@ -14,8 +15,10 @@ const STATUSES: FactoryStatus[] = [
 ];
 
 export default function ManualFactoryForm({
+	gameId,
 	onClose,
 }: {
+	gameId: Id<"games">;
 	onClose: () => void;
 }) {
 	const create = useMutation(api.factories.create);
@@ -32,11 +35,15 @@ export default function ManualFactoryForm({
 		setSaving(true);
 		try {
 			const id = await create({
+				gameId,
 				name: name.trim(),
 				status,
 				production: { source: "manual", inputs, outputs, machines: [] },
 			});
-			navigate({ to: "/factories/$factoryId", params: { factoryId: id } });
+			navigate({
+				to: "/g/$gameId/factories/$factoryId",
+				params: { gameId, factoryId: id },
+			});
 		} catch {
 			toast("Couldn't create the factory.");
 		} finally {
