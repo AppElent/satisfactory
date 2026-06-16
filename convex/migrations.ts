@@ -1,49 +1,39 @@
-import type { Id } from "./_generated/dataModel";
 import { mutation } from "./_generated/server";
 
-/** One-shot: move every pre-games factory/transport into a default game per
- *  owner. Idempotent — rows that already have a gameId are skipped. */
-export const migrateToGames = mutation({
+/** Strip the legacy userId field from all factories and transports.
+ *  Needed when tightening the schema after the initial gameId migration. */
+export const stripLegacyUserId = mutation({
 	args: {},
 	handler: async (ctx) => {
 		const factories = await ctx.db.query("factories").collect();
-		const transports = await ctx.db.query("transports").collect();
-
-		// One default game per distinct legacy userId.
-		const gameByUser = new Map<string, Id<"games">>();
-		const now = Date.now();
-		const ensureGame = async (userId: string) => {
-			const cached = gameByUser.get(userId);
-			if (cached) return cached;
-			const gameId = await ctx.db.insert("games", {
-				ownerId: userId,
-				name: "My Factories",
-				createdAt: now,
-				updatedAt: now,
-			});
-			await ctx.db.insert("gameMembers", {
-				gameId,
-				userId,
-				role: "owner",
-				createdAt: now,
-			});
-			gameByUser.set(userId, gameId);
-			return gameId;
-		};
-
-		let migrated = 0;
+		let patched = 0;
 		for (const f of factories) {
-			if (f.gameId || !f.userId) continue;
-			const gameId = await ensureGame(f.userId);
-			await ctx.db.patch(f._id, { gameId, createdBy: f.userId });
-			migrated++;
+			const raw = f as Record<string, unknown>;
+			if ("userId" in raw) {
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				await (ctx.db as any).patch(f._id, { userId: undefined });
+				patched++;
+			}
 		}
+		const transports = await ctx.db.query("transports").collect();
 		for (const t of transports) {
-			if (t.gameId || !t.userId) continue;
-			const gameId = await ensureGame(t.userId);
-			await ctx.db.patch(t._id, { gameId, createdBy: t.userId });
-			migrated++;
+			const raw = t as Record<string, unknown>;
+			if ("userId" in raw) {
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				await (ctx.db as any).patch(t._id, { userId: undefined });
+				patched++;
+			}
 		}
-		return { games: gameByUser.size, migrated };
+		return { patched };
+	},
+});
+
+/** One-shot: move every pre-games factory/transport into a default game per
+ *  owner. Idempotent — all rows now have gameId after the initial migration. */
+export const migrateToGames = mutation({
+	args: {},
+	handler: async (_ctx) => {
+		// Migration already ran; all rows have gameId and createdBy.
+		return { games: 0, migrated: 0 };
 	},
 });

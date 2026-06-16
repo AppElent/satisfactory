@@ -55,10 +55,8 @@ export default defineSchema({
 		.index("by_game", ["gameId"]),
 
 	factories: defineTable({
-		// userId is being migrated to gameId; both optional during the transition.
-		userId: v.optional(v.string()),
-		gameId: v.optional(v.id("games")),
-		createdBy: v.optional(v.string()),
+		gameId: v.id("games"),
+		createdBy: v.string(),
 		name: v.string(),
 		description: v.optional(v.string()),
 		notes: v.optional(v.string()),
@@ -74,13 +72,11 @@ export default defineSchema({
 		createdAt: v.number(),
 		updatedAt: v.number(),
 	})
-		.index("by_user", ["userId"])
 		.index("by_game", ["gameId"]),
 
 	transports: defineTable({
-		userId: v.optional(v.string()),
-		gameId: v.optional(v.id("games")),
-		createdBy: v.optional(v.string()),
+		gameId: v.id("games"),
+		createdBy: v.string(),
 		fromFactoryId: v.id("factories"),
 		toFactoryId: v.id("factories"),
 		item: v.string(),
@@ -96,6 +92,5 @@ export default defineSchema({
 		createdAt: v.number(),
 		updatedAt: v.number(),
 	})
-		.index("by_user", ["userId"])
 		.index("by_game", ["gameId"]),
 });
