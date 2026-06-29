@@ -63,7 +63,10 @@ export const NAV_GROUPS: NavGroup[] = [
 ];
 
 /** Resolve an item's href given the active game id (or null). */
-export function resolveHref(item: NavItem, activeGameId: string | null): string {
+export function resolveHref(
+	item: NavItem,
+	activeGameId: string | null,
+): string {
 	if (!item.gameScopedPath) return item.to;
 	return activeGameId ? `/g/${activeGameId}/${item.gameScopedPath}` : "/games";
 }
