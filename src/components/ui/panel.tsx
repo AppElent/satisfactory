@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import { cn } from "#/lib/utils";
 
-interface PanelProps extends HTMLAttributes<HTMLDivElement> {
+interface PanelProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   title?: ReactNode;
   /** Right-side content in the header strip (buttons, counts). */
   headerAction?: ReactNode;
