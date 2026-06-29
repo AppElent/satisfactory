@@ -1,0 +1,88 @@
+/* FICSIT Design System — Color Tokens. FICSIT orange on cool graphite. */
+:root {
+  --orange-300: #FDC79E;
+  --orange-400: #FBAA6E;
+  --orange-500: #FA9549;
+  --orange-600: #F57D20;
+  --orange-700: #E2670C;
+  --orange-800: #B85109;
+
+  --graphite-950: #0E1013;
+  --graphite-900: #15181C;
+  --graphite-850: #1A1E23;
+  --graphite-800: #1F242A;
+  --graphite-700: #2A3038;
+  --graphite-600: #363D47;
+  --graphite-500: #4A525E;
+  --graphite-400: #6B7480;
+  --graphite-300: #8C94A0;
+  --graphite-200: #B6BCC6;
+  --graphite-100: #D9DDE3;
+  --graphite-050: #EEF0F3;
+
+  --slate-300: #9aa2c4;
+  --slate-400: #818AAD;
+  --slate-500: #5F668C;
+  --slate-600: #4C5273;
+  --slate-700: #3A3F59;
+
+  --concrete-400: #9a9a9a;
+  --concrete-500: #787878;
+  --concrete-600: #5D5D5D;
+
+  --green-400: #8FD65A;
+  --green-500: #6FBF3C;
+  --green-600: #56A02B;
+  --yellow-400: #F6CE63;
+  --yellow-500: #F2C14E;
+  --yellow-600: #D9A52E;
+  --red-400: #F0686C;
+  --red-500: #E5484D;
+  --red-600: #C7363B;
+  --blue-400: #5DB4EC;
+  --blue-500: #3FA7D6;
+  --blue-600: #2D86B0;
+
+  --bg-base: var(--graphite-950);
+  --bg-surface: var(--graphite-900);
+  --bg-raised: var(--graphite-850);
+  --bg-inset: var(--graphite-800);
+  --bg-overlay: rgba(8, 9, 11, 0.72);
+  --surface-card: var(--graphite-850);
+  --surface-panel: var(--graphite-900);
+  --surface-input: var(--graphite-800);
+  --surface-hover: rgba(255, 255, 255, 0.04);
+  --surface-active: rgba(255, 255, 255, 0.07);
+
+  --text-primary: #F4F6F8;
+  --text-secondary: var(--graphite-200);
+  --text-muted: var(--graphite-400);
+  --text-disabled: var(--graphite-500);
+  --text-on-accent: #1A0E03;
+  --text-accent: var(--orange-500);
+  --text-link: var(--orange-400);
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.11);
+  --border-strong: rgba(255, 255, 255, 0.20);
+  --border-accent: var(--orange-500);
+
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-400);
+  --accent-press: var(--orange-600);
+  --accent-soft: rgba(250, 149, 73, 0.14);
+  --accent-soft-hover: rgba(250, 149, 73, 0.22);
+  --focus-ring: rgba(250, 149, 73, 0.55);
+
+  --success: var(--green-500);
+  --success-soft: rgba(111, 191, 60, 0.15);
+  --warning: var(--yellow-500);
+  --warning-soft: rgba(242, 193, 78, 0.15);
+  --danger: var(--red-500);
+  --danger-soft: rgba(229, 72, 77, 0.15);
+  --info: var(--blue-500);
+  --info-soft: rgba(63, 167, 214, 0.15);
+
+  --hazard-a: var(--orange-500);
+  --hazard-b: var(--graphite-950);
+}
