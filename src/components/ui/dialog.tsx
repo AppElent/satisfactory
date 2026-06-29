@@ -1,5 +1,5 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import type { ComponentPropsWithoutRef, ElementRef } from "react";
+import type { ComponentPropsWithoutRef, ComponentRef } from "react";
 import { forwardRef } from "react";
 import { cn } from "#/lib/utils";
 
@@ -10,7 +10,7 @@ export const DialogTitle = DialogPrimitive.Title;
 export const DialogDescription = DialogPrimitive.Description;
 
 export const DialogContent = forwardRef<
-	ElementRef<typeof DialogPrimitive.Content>,
+	ComponentRef<typeof DialogPrimitive.Content>,
 	ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
 	<DialogPrimitive.Portal>
