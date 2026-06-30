@@ -159,7 +159,9 @@ function Network() {
 export default function LogisticsPage() {
 	return (
 		<main className="page-wrap flex flex-col gap-6 px-4 py-8">
-			<h1 className="text-2xl font-bold text-[var(--text-primary)]">Logistics</h1>
+			<h1 className="text-2xl font-bold text-[var(--text-primary)]">
+				Logistics
+			</h1>
 			<Unauthenticated>
 				<div className="rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-8 text-center">
 					<p className="text-sm text-[var(--text-muted)]">

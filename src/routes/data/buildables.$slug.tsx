@@ -18,7 +18,10 @@ export const Route = createFileRoute("/data/buildables/$slug")({
 	notFoundComponent: () => (
 		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown buildable.{" "}
-			<Link to="/data/buildables" className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
+			<Link
+				to="/data/buildables"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all buildables
 			</Link>
 		</p>

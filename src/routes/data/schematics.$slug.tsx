@@ -17,7 +17,10 @@ export const Route = createFileRoute("/data/schematics/$slug")({
 	notFoundComponent: () => (
 		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown schematic.{" "}
-			<Link to="/data/schematics" className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
+			<Link
+				to="/data/schematics"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all schematics
 			</Link>
 		</p>

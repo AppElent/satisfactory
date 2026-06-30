@@ -22,7 +22,10 @@ export const Route = createFileRoute("/data/items/$slug")({
 	notFoundComponent: () => (
 		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown item.{" "}
-			<Link to="/data/items" className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
+			<Link
+				to="/data/items"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all items
 			</Link>
 		</p>

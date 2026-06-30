@@ -18,7 +18,10 @@ export const Route = createFileRoute("/data/recipes/$slug")({
 	notFoundComponent: () => (
 		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown recipe.{" "}
-			<Link to="/data/recipes" className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
+			<Link
+				to="/data/recipes"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all recipes
 			</Link>
 		</p>

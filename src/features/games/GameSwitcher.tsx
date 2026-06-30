@@ -12,7 +12,10 @@ function Switcher() {
 			: undefined);
 	if (!games || games.length === 0) {
 		return (
-			<Link to="/games" className="text-sm text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
+			<Link
+				to="/games"
+				className="text-sm text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Games
 			</Link>
 		);
