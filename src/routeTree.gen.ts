@@ -9,8 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignUpRouteImport } from './routes/sign-up'
+import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as LogisticsRouteImport } from './routes/logistics'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as FactoriesRouteImport } from './routes/factories'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as DataRouteRouteImport } from './routes/data/route'
@@ -35,6 +38,16 @@ import { Route as DataBuildablesSlugRouteImport } from './routes/data/buildables
 import { Route as GGameIdFactoriesIndexRouteImport } from './routes/g.$gameId.factories.index'
 import { Route as GGameIdFactoriesFactoryIdRouteImport } from './routes/g.$gameId.factories.$factoryId'
 
+const SignUpRoute = SignUpRouteImport.update({
+  id: '/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MapRoute = MapRouteImport.update({
   id: '/map',
   path: '/map',
@@ -43,6 +56,11 @@ const MapRoute = MapRouteImport.update({
 const LogisticsRoute = LogisticsRouteImport.update({
   id: '/logistics',
   path: '/logistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FactoriesRoute = FactoriesRouteImport.update({
@@ -167,8 +185,11 @@ export interface FileRoutesByFullPath {
   '/data': typeof DataRouteRouteWithChildren
   '/calculator': typeof CalculatorRoute
   '/factories': typeof FactoriesRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
   '/g/$gameId': typeof GGameIdRouteWithChildren
   '/invite/$token': typeof InviteTokenRoute
   '/data/': typeof DataIndexRoute
@@ -193,8 +214,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
   '/factories': typeof FactoriesRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
   '/g/$gameId': typeof GGameIdRouteWithChildren
   '/invite/$token': typeof InviteTokenRoute
   '/data': typeof DataIndexRoute
@@ -221,8 +245,11 @@ export interface FileRoutesById {
   '/data': typeof DataRouteRouteWithChildren
   '/calculator': typeof CalculatorRoute
   '/factories': typeof FactoriesRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/logistics': typeof LogisticsRoute
   '/map': typeof MapRoute
+  '/sign-in': typeof SignInRoute
+  '/sign-up': typeof SignUpRoute
   '/g/$gameId': typeof GGameIdRouteWithChildren
   '/invite/$token': typeof InviteTokenRoute
   '/data/': typeof DataIndexRoute
@@ -250,8 +277,11 @@ export interface FileRouteTypes {
     | '/data'
     | '/calculator'
     | '/factories'
+    | '/forgot-password'
     | '/logistics'
     | '/map'
+    | '/sign-in'
+    | '/sign-up'
     | '/g/$gameId'
     | '/invite/$token'
     | '/data/'
@@ -276,8 +306,11 @@ export interface FileRouteTypes {
     | '/'
     | '/calculator'
     | '/factories'
+    | '/forgot-password'
     | '/logistics'
     | '/map'
+    | '/sign-in'
+    | '/sign-up'
     | '/g/$gameId'
     | '/invite/$token'
     | '/data'
@@ -303,8 +336,11 @@ export interface FileRouteTypes {
     | '/data'
     | '/calculator'
     | '/factories'
+    | '/forgot-password'
     | '/logistics'
     | '/map'
+    | '/sign-in'
+    | '/sign-up'
     | '/g/$gameId'
     | '/invite/$token'
     | '/data/'
@@ -331,8 +367,11 @@ export interface RootRouteChildren {
   DataRouteRoute: typeof DataRouteRouteWithChildren
   CalculatorRoute: typeof CalculatorRoute
   FactoriesRoute: typeof FactoriesRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   LogisticsRoute: typeof LogisticsRoute
   MapRoute: typeof MapRoute
+  SignInRoute: typeof SignInRoute
+  SignUpRoute: typeof SignUpRoute
   GGameIdRoute: typeof GGameIdRouteWithChildren
   InviteTokenRoute: typeof InviteTokenRoute
   GamesIndexRoute: typeof GamesIndexRoute
@@ -340,6 +379,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sign-up': {
+      id: '/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/map': {
       id: '/map'
       path: '/map'
@@ -352,6 +405,13 @@ declare module '@tanstack/react-router' {
       path: '/logistics'
       fullPath: '/logistics'
       preLoaderRoute: typeof LogisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/factories': {
@@ -574,8 +634,11 @@ const rootRouteChildren: RootRouteChildren = {
   DataRouteRoute: DataRouteRouteWithChildren,
   CalculatorRoute: CalculatorRoute,
   FactoriesRoute: FactoriesRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   LogisticsRoute: LogisticsRoute,
   MapRoute: MapRoute,
+  SignInRoute: SignInRoute,
+  SignUpRoute: SignUpRoute,
   GGameIdRoute: GGameIdRouteWithChildren,
   InviteTokenRoute: InviteTokenRoute,
   GamesIndexRoute: GamesIndexRoute,
