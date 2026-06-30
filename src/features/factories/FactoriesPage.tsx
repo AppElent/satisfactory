@@ -29,7 +29,9 @@ function FactoriesList() {
 				<div className="flex items-center gap-2">
 					<Icon name="factory" size={15} className="text-[var(--orange-400)]" />
 					<span className="text-[12px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
-						{factories !== undefined ? `${factories.length} site${factories.length !== 1 ? "s" : ""}` : "…"}
+						{factories !== undefined
+							? `${factories.length} site${factories.length !== 1 ? "s" : ""}`
+							: "…"}
 					</span>
 				</div>
 				<Button onClick={() => setCreating(true)}>New Factory</Button>
