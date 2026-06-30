@@ -1,3 +1,4 @@
+import { AuthConfigProvider, type AuthConfig } from "@appelent/auth";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import {
@@ -16,6 +17,19 @@ import appCss from "../styles.css?url";
 interface MyRouterContext {
 	queryClient: QueryClient;
 }
+
+const authConfig: AuthConfig = {
+	appName: "Satisfactory Planner",
+	paths: {
+		signIn: "/sign-in",
+		signUp: "/sign-up",
+		forgotPassword: "/forgot-password",
+		afterAuth: "/",
+		account: "/account",
+	},
+	features: { forgotPassword: true },
+	socialProviders: [],
+};
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
 	head: () => ({
@@ -37,21 +51,23 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[var(--accent-soft)]">
 				<ClerkProvider>
-					<ConvexProvider>
-						<ToastProvider>
-							<AppShell>{children}</AppShell>
-						</ToastProvider>
-						<TanStackDevtools
-							config={{ position: "bottom-right" }}
-							plugins={[
-								{
-									name: "Tanstack Router",
-									render: <TanStackRouterDevtoolsPanel />,
-								},
-								TanStackQueryDevtools,
-							]}
-						/>
-					</ConvexProvider>
+					<AuthConfigProvider config={authConfig}>
+						<ConvexProvider>
+							<ToastProvider>
+								<AppShell>{children}</AppShell>
+							</ToastProvider>
+							<TanStackDevtools
+								config={{ position: "bottom-right" }}
+								plugins={[
+									{
+										name: "Tanstack Router",
+										render: <TanStackRouterDevtoolsPanel />,
+									},
+									TanStackQueryDevtools,
+								]}
+							/>
+						</ConvexProvider>
+					</AuthConfigProvider>
 				</ClerkProvider>
 				<Scripts />
 			</body>
