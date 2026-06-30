@@ -13,7 +13,7 @@ const PURITY_COLOR: Record<ResourceNode["purity"], string> = {
 function nodeIcon(purity: ResourceNode["purity"]) {
 	return L.divIcon({
 		className: "",
-		html: `<div style="width:10px;height:10px;border-radius:50%;background:${PURITY_COLOR[purity]};border:1px solid var(--surface)"></div>`,
+		html: `<div style="width:10px;height:10px;border-radius:50%;background:${PURITY_COLOR[purity]};border:1px solid var(--surface-card)"></div>`,
 		iconSize: [10, 10],
 		iconAnchor: [5, 5],
 	});

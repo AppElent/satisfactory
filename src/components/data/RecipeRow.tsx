@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import EntityIcon from "#/components/EntityIcon";
+import { Badge } from "#/components/ui/badge";
+import { Icon } from "#/components/ui/icon";
 import { getBuildable, getBuilding, getItem } from "#/data";
 import type { Recipe } from "#/data/schema";
 import { formatNumber, perMinute } from "#/lib/format";
@@ -24,25 +25,57 @@ export default function RecipeRow({ recipe }: { recipe: Recipe }) {
 		<Link
 			to="/data/recipes/$slug"
 			params={{ slug: recipe.slug }}
-			className="flex items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2 text-sm no-underline transition hover:border-[var(--chip-line)]"
+			className="flex items-center gap-4 rounded-[var(--radius-md)] border border-[var(--border-default)] bg-[var(--surface-card)] px-[18px] py-[14px] no-underline shadow-[var(--bevel-top),var(--shadow-sm)] transition hover:border-[var(--border-strong)]"
 		>
-			{recipe.alternate && (
-				<span className="rounded-full bg-[var(--link-bg-hover)] px-2 py-0.5 text-[10px] uppercase text-[var(--sea-ink-soft)]">
-					alt
+			{/* Name + building */}
+			<div className="w-[150px] shrink-0">
+				<div className="font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[0.02em] text-[var(--text-primary)]">
+					{recipe.name}
+				</div>
+				{machine && (
+					<div className="mt-[3px] text-[11px] text-[var(--text-muted)]">
+						{machine.name}
+					</div>
+				)}
+			</div>
+
+			{/* Ingredients → arrow → products */}
+			<div className="flex min-w-0 flex-1 items-center gap-[10px]">
+				<span className="truncate font-[var(--font-mono)] text-[12px] text-[var(--text-secondary)]">
+					{recipe.ingredients
+						.map((ing) => {
+							const ref = resolveRef(ing.item);
+							return `${formatNumber(perMinute(ing.amount, recipe.time))}× ${ref.name}`;
+						})
+						.join(", ")}
 				</span>
+				<Icon
+					name="arrow"
+					size={18}
+					className="shrink-0 text-[var(--orange-500)]"
+				/>
+				<span className="shrink-0 font-[var(--font-mono)] text-[12px] text-[var(--orange-300)]">
+					{recipe.products
+						.map((p) => {
+							const ref = resolveRef(p.item);
+							return `${formatNumber(perMinute(p.amount, recipe.time))}× ${ref.name}`;
+						})
+						.join(", ")}
+				</span>
+			</div>
+
+			{/* Alt badge */}
+			{recipe.alternate && (
+				<Badge tone="accent" size="sm">
+					Alt
+				</Badge>
 			)}
-			<span className="font-medium text-[var(--sea-ink)]">{recipe.name}</span>
-			<span className="ml-auto flex items-center gap-2 text-xs text-[var(--sea-ink-soft)]">
-				{recipe.products.map((p) => {
-					const ref = resolveRef(p.item);
-					return (
-						<span key={p.item} className="flex items-center gap-1">
-							<EntityIcon icon={ref.icon} name={ref.name} size={18} />
-							{formatNumber(perMinute(p.amount, recipe.time))}/min
-						</span>
-					);
-				})}
-				{machine ? `· ${machine.name}` : ""}
+
+			{/* Rate */}
+			<span className="w-[70px] shrink-0 text-right font-[var(--font-mono)] text-[12px] text-[var(--text-muted)]">
+				{recipe.products[0]
+					? `${formatNumber(perMinute(recipe.products[0].amount, recipe.time))}/min`
+					: ""}
 			</span>
 		</Link>
 	);

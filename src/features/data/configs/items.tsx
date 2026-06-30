@@ -21,7 +21,7 @@ export const itemsListConfig: EntityListConfig<Item> = {
 	renderCard: (item) => (
 		<>
 			<EntityIcon icon={item.icon} name={item.name} size={48} />
-			<span className="text-xs font-medium text-[var(--sea-ink)]">
+			<span className="text-xs font-medium text-[var(--text-primary)]">
 				{item.name}
 			</span>
 		</>

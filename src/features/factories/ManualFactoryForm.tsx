@@ -84,19 +84,19 @@ export default function ManualFactoryForm({
 	};
 
 	return (
-		<div className="flex flex-col gap-4 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-4">
+		<div className="flex flex-col gap-4 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
 			<input
 				value={name}
 				onChange={(e) => setName(e.target.value)}
 				placeholder="Factory name"
 				aria-label="Factory name"
-				className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm"
+				className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-3 py-2 text-sm"
 			/>
 			<select
 				value={status}
 				onChange={(e) => setStatus(e.target.value as FactoryStatus)}
 				aria-label="Status"
-				className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm capitalize"
+				className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-3 py-2 text-sm capitalize"
 			>
 				{STATUSES.map((s) => (
 					<option key={s} value={s}>
@@ -112,14 +112,14 @@ export default function ManualFactoryForm({
 					type="button"
 					onClick={submit}
 					disabled={saving || !name.trim()}
-					className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)] disabled:opacity-50"
+					className="rounded-lg bg-[var(--orange-500)] px-3 py-2 text-sm font-medium text-[var(--text-on-accent)] disabled:opacity-50"
 				>
 					{factoryId ? "Save changes" : "Save factory"}
 				</button>
 				<button
 					type="button"
 					onClick={onClose}
-					className="rounded-lg px-3 py-2 text-sm text-[var(--sea-ink-soft)]"
+					className="rounded-lg px-3 py-2 text-sm text-[var(--text-muted)]"
 				>
 					Cancel
 				</button>

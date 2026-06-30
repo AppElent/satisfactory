@@ -23,15 +23,15 @@ export default function SummaryCard({
 	const power = factories.reduce((s, f) => s + factoryPower(f), 0);
 
 	return (
-		<div className="flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-4">
+		<div className="flex flex-col gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
 			<div className="flex items-center justify-between">
-				<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+				<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 					Network totals
 				</h2>
 				<span className="text-sm font-semibold">{formatPower(power)}</span>
 			</div>
 			{net.totals.length === 0 ? (
-				<p className="text-sm text-[var(--sea-ink-soft)]">Balanced.</p>
+				<p className="text-sm text-[var(--text-muted)]">Balanced.</p>
 			) : (
 				<div className="flex flex-col gap-1">
 					{net.totals.map((t) => {
@@ -46,7 +46,7 @@ export default function SummaryCard({
 								<span className="flex-1">{item?.name ?? t.item}</span>
 								<span
 									className={
-										t.rate >= 0 ? "text-[var(--sea-ink)]" : "text-red-500"
+										t.rate >= 0 ? "text-[var(--text-primary)]" : "text-red-500"
 									}
 								>
 									{t.rate >= 0 ? "+" : ""}

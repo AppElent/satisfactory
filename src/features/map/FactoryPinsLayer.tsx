@@ -10,7 +10,7 @@ import { gameToLatLng, latLngToGame } from "./coords";
 
 const pinIcon = L.divIcon({
 	className: "",
-	html: `<div style="width:14px;height:14px;border-radius:50%;background:var(--sea-ink);border:2px solid var(--surface)"></div>`,
+	html: `<div style="width:14px;height:14px;border-radius:50%;background:var(--text-primary);border:2px solid var(--surface-card)"></div>`,
 	iconSize: [14, 14],
 	iconAnchor: [7, 7],
 });

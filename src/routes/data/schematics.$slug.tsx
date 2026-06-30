@@ -15,9 +15,12 @@ export const Route = createFileRoute("/data/schematics/$slug")({
 	},
 	component: SchematicDetail,
 	notFoundComponent: () => (
-		<p className="py-12 text-center text-[var(--sea-ink-soft)]">
+		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown schematic.{" "}
-			<Link to="/data/schematics" className="nav-link">
+			<Link
+				to="/data/schematics"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all schematics
 			</Link>
 		</p>
@@ -60,7 +63,7 @@ function SchematicDetail() {
 							return (
 								<span
 									key={part.item}
-									className="flex items-center gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-1 text-sm"
+									className="flex items-center gap-1 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-1 text-sm"
 								>
 									<EntityIcon
 										icon={item?.icon}
@@ -86,7 +89,7 @@ function SchematicDetail() {
 									key={recipeSlug}
 									to="/data/recipes/$slug"
 									params={{ slug: recipeSlug }}
-									className="rounded-full border border-[var(--line)] px-3 py-1 text-xs no-underline hover:border-[var(--chip-line)]"
+									className="rounded-full border border-[var(--border-default)] px-3 py-1 text-xs no-underline hover:border-[var(--border-default)]"
 								>
 									{recipe.name}
 								</Link>
@@ -107,7 +110,7 @@ function SchematicDetail() {
 									key={reqSlug}
 									to="/data/schematics/$slug"
 									params={{ slug: reqSlug }}
-									className="rounded-full border border-[var(--line)] px-3 py-1 text-xs no-underline hover:border-[var(--chip-line)]"
+									className="rounded-full border border-[var(--border-default)] px-3 py-1 text-xs no-underline hover:border-[var(--border-default)]"
 								>
 									{req.name}
 								</Link>

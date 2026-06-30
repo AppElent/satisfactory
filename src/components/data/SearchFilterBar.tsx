@@ -1,3 +1,6 @@
+import { Icon } from "#/components/ui/icon";
+import { Input } from "#/components/ui/input";
+
 export interface FilterOption {
 	value: string;
 	label: string;
@@ -25,26 +28,33 @@ export default function SearchFilterBar({
 }: SearchFilterBarProps) {
 	return (
 		<div className="flex flex-col gap-3">
-			<input
-				type="search"
-				aria-label="Search"
-				value={search}
-				onChange={(e) => onSearchChange(e.target.value)}
-				placeholder="Search…"
-				className="w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-4 py-2 text-sm text-[var(--sea-ink)] placeholder:text-[var(--sea-ink-soft)]"
-			/>
+			<div className="relative flex items-center">
+				<Icon
+					name="search"
+					size={16}
+					className="pointer-events-none absolute left-3 text-[var(--text-muted)]"
+				/>
+				<Input
+					type="search"
+					aria-label="Search"
+					value={search}
+					onChange={(e) => onSearchChange(e.target.value)}
+					placeholder="Filter by name…"
+					className="pl-9"
+				/>
+			</div>
 			{filters.map((filter) => (
 				<div key={filter.key} className="flex flex-wrap items-center gap-2">
-					<span className="text-xs font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+					<span className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 						{filter.label}
 					</span>
-					<Chip
+					<FilterChip
 						label="All"
 						active={filter.selected === ""}
 						onClick={() => filter.onChange("")}
 					/>
 					{filter.options.map((option) => (
-						<Chip
+						<FilterChip
 							key={option.value}
 							label={option.label}
 							active={filter.selected === option.value}
@@ -57,7 +67,7 @@ export default function SearchFilterBar({
 	);
 }
 
-function Chip({
+function FilterChip({
 	label,
 	active,
 	onClick,
@@ -71,10 +81,10 @@ function Chip({
 			type="button"
 			aria-pressed={active}
 			onClick={onClick}
-			className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
+			className={`inline-flex h-[30px] cursor-pointer items-center rounded-[var(--radius-sm)] border px-3 text-[11px] font-semibold uppercase tracking-[0.06em] transition ${
 				active
-					? "border-[var(--chip-line)] bg-[var(--chip-bg)] text-[var(--sea-ink)]"
-					: "border-[var(--line)] text-[var(--sea-ink-soft)] hover:border-[var(--chip-line)]"
+					? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--orange-400)]"
+					: "border-[var(--border-default)] bg-[var(--bg-inset)] text-[var(--text-muted)] hover:border-[var(--border-strong)]"
 			}`}
 		>
 			{label}

@@ -27,7 +27,7 @@ export default function MapView({ children }: { children?: ReactNode }) {
 			style={{
 				height: "70vh",
 				width: "100%",
-				background: "var(--chip-bg)",
+				background: "var(--bg-inset)",
 				borderRadius: "0.75rem",
 			}}
 		>

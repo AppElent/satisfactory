@@ -5,6 +5,8 @@ import {
 	useQuery,
 } from "convex/react";
 import { useState } from "react";
+import { Button } from "#/components/ui/button";
+import { Icon } from "#/components/ui/icon";
 import { useGameId } from "#/features/games/useGameId";
 import SummaryCard from "#/features/logistics/SummaryCard";
 import { api } from "#convex/_generated/api";
@@ -22,16 +24,17 @@ function FactoriesList() {
 	const [creating, setCreating] = useState(false);
 
 	return (
-		<div className="flex flex-col gap-6">
+		<div className="flex flex-col gap-5">
 			<div className="flex items-center justify-between">
-				<h1 className="text-2xl font-bold text-[var(--sea-ink)]">Factories</h1>
-				<button
-					type="button"
-					onClick={() => setCreating(true)}
-					className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)]"
-				>
-					New factory
-				</button>
+				<div className="flex items-center gap-2">
+					<Icon name="factory" size={15} className="text-[var(--orange-400)]" />
+					<span className="text-[12px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
+						{factories !== undefined
+							? `${factories.length} site${factories.length !== 1 ? "s" : ""}`
+							: "…"}
+					</span>
+				</div>
+				<Button onClick={() => setCreating(true)}>New Factory</Button>
 			</div>
 			{factories && factories.length > 0 && transports && (
 				<SummaryCard factories={factories} transports={transports} />
@@ -40,13 +43,13 @@ function FactoriesList() {
 				<ManualFactoryForm gameId={gameId} onClose={() => setCreating(false)} />
 			)}
 			{factories === undefined ? (
-				<p className="text-sm text-[var(--sea-ink-soft)]">Loading…</p>
+				<p className="text-sm text-[var(--text-muted)]">Loading…</p>
 			) : factories.length === 0 ? (
-				<p className="rounded-xl border border-dashed border-[var(--line)] p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+				<p className="rounded-[var(--radius-md)] border border-dashed border-[var(--border-default)] p-8 text-center text-sm text-[var(--text-muted)]">
 					No factories yet. Create one here or from a calculator plan.
 				</p>
 			) : (
-				<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
 					{factories.map((f) => (
 						<FactoryCard key={f._id} factory={f} gameId={gameId} />
 					))}
@@ -58,9 +61,9 @@ function FactoriesList() {
 
 export default function FactoriesPage() {
 	return (
-		<main className="page-wrap px-4 py-8">
+		<main className="mx-auto max-w-[1280px] px-7 pb-[60px] pt-6 flex flex-col gap-5">
 			<AuthLoading>
-				<p className="text-sm text-[var(--sea-ink-soft)]">Loading…</p>
+				<p className="text-sm text-[var(--text-muted)]">Loading…</p>
 			</AuthLoading>
 			<Unauthenticated>
 				<SignInPrompt />

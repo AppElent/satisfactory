@@ -27,7 +27,7 @@ export const buildablesListConfig: EntityListConfig<Buildable> = {
 	renderCard: (buildable) => (
 		<>
 			<EntityIcon icon={buildable.icon} name={buildable.name} size={48} />
-			<span className="text-xs font-medium text-[var(--sea-ink)]">
+			<span className="text-xs font-medium text-[var(--text-primary)]">
 				{buildable.name}
 			</span>
 		</>

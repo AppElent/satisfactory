@@ -1,6 +1,10 @@
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Panel } from "#/components/ui/panel";
+import { Stat } from "#/components/ui/stat";
+import { getItem } from "#/data";
 import SaveAsFactoryButton from "#/features/factories/SaveAsFactoryButton";
+import { formatNumber, formatPower } from "#/lib/format";
 import AvailableInputsEditor from "./AvailableInputsEditor";
 import CalculatorControls, { WEIGHTING_PRESETS } from "./CalculatorControls";
 import { decodePlan, encodePlan } from "./plan-codec";
@@ -11,6 +15,8 @@ import TargetEditor from "./TargetEditor";
 import { useSolver } from "./useSolver";
 
 type Weighting = "balanced" | "minimize-ore";
+
+const name = (s: string) => getItem(s)?.name ?? s;
 
 export default function CalculatorPage() {
 	const search = useSearch({ strict: false }) as {
@@ -66,42 +72,103 @@ export default function CalculatorPage() {
 	}, [planParam, navigate, roundTrip]);
 
 	return (
-		<main className="page-wrap px-4 py-8">
-			<h1 className="mb-6 text-2xl font-bold text-[var(--sea-ink)]">
-				Production calculator
-			</h1>
-			<div className="grid gap-8 lg:grid-cols-[320px_1fr]">
-				<div className="flex flex-col gap-6">
+		<div className="mx-auto grid max-w-[1320px] grid-cols-[332px_1fr] items-start gap-6 px-7 pb-[60px] pt-6">
+			<div className="flex flex-col gap-[18px]">
+				<Panel className="p-[18px]">
 					<CalculatorControls
 						mode={mode}
 						onModeChange={setMode}
 						weighting={weighting}
 						onWeightingChange={setWeighting}
 					/>
-					<TargetEditor targets={targets} onChange={setTargets} />
-					<AvailableInputsEditor
-						inputs={availableInputs}
-						onChange={setAvailableInputs}
-					/>
-					<RecipeOptions
-						allowedAlternates={allowedAlternates}
-						onChange={setAllowedAlternates}
-					/>
-				</div>
-				<div>
-					{targets.length === 0 ? (
-						<p className="rounded-xl border border-dashed border-[var(--line)] p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+				</Panel>
+				<Panel title="Targets">
+					<div className="p-4">
+						<TargetEditor targets={targets} onChange={setTargets} />
+					</div>
+				</Panel>
+				<Panel title="Available Inputs">
+					<div className="p-4">
+						<AvailableInputsEditor
+							inputs={availableInputs}
+							onChange={setAvailableInputs}
+						/>
+					</div>
+				</Panel>
+				<Panel title="Alternate Recipes">
+					<div className="p-4">
+						<RecipeOptions
+							allowedAlternates={allowedAlternates}
+							onChange={setAllowedAlternates}
+						/>
+					</div>
+				</Panel>
+			</div>
+			<div className="flex min-w-0 flex-col gap-[18px]">
+				{targets.length === 0 ? (
+					<Panel className="p-8">
+						<p className="text-center text-[13px] text-[var(--text-muted)]">
 							{mode === "maximize"
 								? "Add a target item and an available input to maximize output."
 								: "Add a target item to plan a production line."}
 						</p>
-					) : solving && !solution ? (
-						<p className="p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+					</Panel>
+				) : solving && !solution ? (
+					<Panel className="p-8">
+						<p className="text-center text-[13px] text-[var(--text-muted)]">
 							Solving…
 						</p>
-					) : solution ? (
-						<div className="flex flex-col gap-4">
-							<div className="flex justify-end">
+					</Panel>
+				) : solution ? (
+					<>
+						{solution.status !== "infeasible" && (
+							<div className="grid grid-cols-4 gap-3.5">
+								<Panel topRail className="px-[18px] py-[15px]">
+									<Stat
+										label="Total Power"
+										value={formatPower(solution.power).replace(/\s*MW$/, "")}
+										unit="MW"
+									/>
+								</Panel>
+								<Panel className="px-[18px] py-[15px]">
+									<Stat
+										label="Machines"
+										value={String(
+											solution.recipes.reduce(
+												(s, u) => s + Math.ceil(u.machines),
+												0,
+											),
+										)}
+									/>
+								</Panel>
+								<Panel className="px-[18px] py-[15px]">
+									<Stat
+										label={
+											solution.rawInputs[0]
+												? name(solution.rawInputs[0].item)
+												: "Raw inputs"
+										}
+										value={
+											solution.rawInputs[0]
+												? formatNumber(solution.rawInputs[0].rate)
+												: "0"
+										}
+										unit="/min"
+									/>
+								</Panel>
+								<Panel className="px-[18px] py-[15px]">
+									<Stat
+										label="Byproducts"
+										value={String(solution.byproducts.length)}
+									/>
+								</Panel>
+							</div>
+						)}
+						<Panel>
+							<div className="px-[18px] pt-2.5">
+								<ResultTabs solution={solution} />
+							</div>
+							<div className="flex justify-end px-[18px] pb-3">
 								<SaveAsFactoryButton
 									spec={spec}
 									solution={solution}
@@ -109,11 +176,10 @@ export default function CalculatorPage() {
 									factory={roundTrip.factory}
 								/>
 							</div>
-							<ResultTabs solution={solution} />
-						</div>
-					) : null}
-				</div>
+						</Panel>
+					</>
+				) : null}
 			</div>
-		</main>
+		</div>
 	);
 }

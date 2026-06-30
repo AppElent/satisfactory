@@ -25,6 +25,41 @@ export const WEIGHTING_PRESETS: Record<
 	"minimize-ore": { "iron-ore": 3, "copper-ore": 3, "caterium-ore": 3 },
 };
 
+function Segmented<T extends string>({
+	label,
+	value,
+	options,
+	onChange,
+}: {
+	label: string;
+	value: T;
+	options: readonly { value: T; label: string }[];
+	onChange: (v: T) => void;
+}) {
+	return (
+		<div>
+			<div className="mb-2.5 text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+				{label}
+			</div>
+			<div className="flex gap-0.5 rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--bg-inset)] p-[3px] shadow-[var(--bevel-inset)]">
+				{options.map((opt) => {
+					const active = value === opt.value;
+					return (
+						<button
+							key={opt.value}
+							type="button"
+							onClick={() => onChange(opt.value)}
+							className={`relative h-8 flex-1 rounded-[2px] text-[12px] font-semibold uppercase tracking-[0.06em] ${active ? "bg-[var(--accent)] text-[var(--text-on-accent)] shadow-[var(--bevel-top),var(--shadow-sm)]" : "bg-transparent text-[var(--text-muted)]"}`}
+						>
+							{opt.label}
+						</button>
+					);
+				})}
+			</div>
+		</div>
+	);
+}
+
 export default function CalculatorControls({
 	mode,
 	onModeChange,
@@ -32,49 +67,19 @@ export default function CalculatorControls({
 	onWeightingChange,
 }: CalculatorControlsProps) {
 	return (
-		<div className="flex flex-col gap-3">
-			<div className="flex flex-col gap-1">
-				<span className="text-xs font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
-					Mode
-				</span>
-				<div className="flex gap-1">
-					{MODES.map((opt) => (
-						<button
-							key={opt.value}
-							type="button"
-							onClick={() => onModeChange(opt.value)}
-							className={`rounded-full border px-3 py-1 text-xs font-medium ${
-								mode === opt.value
-									? "border-[var(--chip-line)] bg-[var(--chip-bg)] text-[var(--sea-ink)]"
-									: "border-[var(--line)] text-[var(--sea-ink-soft)]"
-							}`}
-						>
-							{opt.label}
-						</button>
-					))}
-				</div>
-			</div>
-			<div className="flex flex-col gap-1">
-				<span className="text-xs font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
-					Resource weighting
-				</span>
-				<div className="flex gap-1">
-					{WEIGHTINGS.map((opt) => (
-						<button
-							key={opt.value}
-							type="button"
-							onClick={() => onWeightingChange(opt.value)}
-							className={`rounded-full border px-3 py-1 text-xs font-medium ${
-								weighting === opt.value
-									? "border-[var(--chip-line)] bg-[var(--chip-bg)] text-[var(--sea-ink)]"
-									: "border-[var(--line)] text-[var(--sea-ink-soft)]"
-							}`}
-						>
-							{opt.label}
-						</button>
-					))}
-				</div>
-			</div>
+		<div className="flex flex-col gap-[18px]">
+			<Segmented
+				label="Solve Mode"
+				value={mode}
+				options={MODES}
+				onChange={onModeChange}
+			/>
+			<Segmented
+				label="Resource Weighting"
+				value={weighting}
+				options={WEIGHTINGS}
+				onChange={onWeightingChange}
+			/>
 		</div>
 	);
 }

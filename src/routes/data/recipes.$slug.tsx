@@ -16,9 +16,12 @@ export const Route = createFileRoute("/data/recipes/$slug")({
 	},
 	component: RecipeDetail,
 	notFoundComponent: () => (
-		<p className="py-12 text-center text-[var(--sea-ink-soft)]">
+		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown recipe.{" "}
-			<Link to="/data/recipes" className="nav-link">
+			<Link
+				to="/data/recipes"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all recipes
 			</Link>
 		</p>
@@ -65,10 +68,10 @@ function PartList({
 					const row = (
 						<span className="flex items-center gap-2">
 							<EntityIcon icon={r.icon} name={r.name} size={24} />
-							<span className="font-medium text-[var(--sea-ink)]">
+							<span className="font-medium text-[var(--text-primary)]">
 								{r.name}
 							</span>
-							<span className="ml-auto text-xs text-[var(--sea-ink-soft)]">
+							<span className="ml-auto text-xs text-[var(--text-muted)]">
 								{formatNumber(part.amount)} ·{" "}
 								{formatNumber(perMinute(part.amount, time))}/min
 							</span>
@@ -77,7 +80,7 @@ function PartList({
 					return (
 						<div
 							key={part.item}
-							className="rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2 text-sm"
+							className="rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2 text-sm"
 						>
 							{r.to === "item" ? (
 								<Link

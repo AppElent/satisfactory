@@ -2,6 +2,7 @@ import { useNavigate, useSearch } from "@tanstack/react-router";
 import { useMemo } from "react";
 import EntityCardGrid from "#/components/data/EntityCardGrid";
 import SearchFilterBar from "#/components/data/SearchFilterBar";
+import { Panel } from "#/components/ui/panel";
 import type { EntityListConfig } from "./list-config";
 
 interface EntityListPageProps<T extends { slug: string }> {
@@ -61,17 +62,21 @@ export default function EntityListPage<T extends { slug: string }>({
 					onChange: (v) => setParam(filter.key, v),
 				}))}
 			/>
-			<p className="text-xs text-[var(--sea-ink-soft)]">
+			<p className="text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--text-muted)]">
 				{results.length} result{results.length === 1 ? "" : "s"}
 			</p>
-			<EntityCardGrid
-				items={results.map((entity) => ({
-					slug: entity.slug,
-					to: config.detailTo,
-					params: { slug: entity.slug },
-					content: config.renderCard(entity),
-				}))}
-			/>
+			<Panel>
+				<div className="p-4">
+					<EntityCardGrid
+						items={results.map((entity) => ({
+							slug: entity.slug,
+							to: config.detailTo,
+							params: { slug: entity.slug },
+							content: config.renderCard(entity),
+						}))}
+					/>
+				</div>
+			</Panel>
 		</div>
 	);
 }

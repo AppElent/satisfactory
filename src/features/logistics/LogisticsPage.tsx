@@ -50,11 +50,11 @@ function Network() {
 	>(undefined);
 
 	if (factories === undefined || transports === undefined) {
-		return <p className="text-sm text-[var(--sea-ink-soft)]">Loading…</p>;
+		return <p className="text-sm text-[var(--text-muted)]">Loading…</p>;
 	}
 	if (factories.length === 0) {
 		return (
-			<p className="rounded-xl border border-dashed border-[var(--line)] p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+			<p className="rounded-xl border border-dashed border-[var(--border-default)] p-8 text-center text-sm text-[var(--text-muted)]">
 				Create factories first, then link them here.
 			</p>
 		);
@@ -88,8 +88,8 @@ function Network() {
 			<div className="flex flex-col gap-4">
 				<LinkForm factories={factories} prefill={prefill} onCreate={onCreate} />
 				{suggestions.length > 0 && (
-					<div className="flex flex-col gap-2 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-4">
-						<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+					<div className="flex flex-col gap-2 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
+						<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 							Suggested links
 						</h2>
 						{suggestions.map((s) =>
@@ -103,7 +103,7 @@ function Network() {
 											item: s.need.item,
 										})
 									}
-									className="rounded-lg border border-[var(--line)] px-3 py-2 text-left text-xs text-[var(--sea-ink)] hover:border-[var(--sea-ink)]"
+									className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-left text-xs text-[var(--text-primary)] hover:border-[var(--text-primary)]"
 								>
 									{getItem(s.need.item)?.name ?? s.need.item}: source from a
 									factory with surplus
@@ -117,7 +117,7 @@ function Network() {
 					{transports.map((t) => (
 						<div
 							key={t._id}
-							className="flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2 text-sm"
+							className="flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2 text-sm"
 						>
 							<span className="flex-1">
 								{getItem(t.item)?.name ?? t.item} · {formatNumber(t.rate)}/min ·{" "}
@@ -131,7 +131,7 @@ function Network() {
 									)
 								}
 								aria-label={`Remove ${getItem(t.item)?.name ?? t.item} link`}
-								className="text-[var(--sea-ink-soft)] hover:text-red-500"
+								className="text-[var(--text-muted)] hover:text-red-500"
 							>
 								×
 							</button>
@@ -141,7 +141,7 @@ function Network() {
 			</div>
 			<Suspense
 				fallback={
-					<p className="p-8 text-center text-sm text-[var(--sea-ink-soft)]">
+					<p className="p-8 text-center text-sm text-[var(--text-muted)]">
 						Loading graph…
 					</p>
 				}
@@ -159,17 +159,19 @@ function Network() {
 export default function LogisticsPage() {
 	return (
 		<main className="page-wrap flex flex-col gap-6 px-4 py-8">
-			<h1 className="text-2xl font-bold text-[var(--sea-ink)]">Logistics</h1>
+			<h1 className="text-2xl font-bold text-[var(--text-primary)]">
+				Logistics
+			</h1>
 			<Unauthenticated>
-				<div className="rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-8 text-center">
-					<p className="text-sm text-[var(--sea-ink-soft)]">
+				<div className="rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-8 text-center">
+					<p className="text-sm text-[var(--text-muted)]">
 						Sign in to connect your factories into a logistics network.
 					</p>
 					<div className="mt-4">
 						<SignInButton mode="modal">
 							<button
 								type="button"
-								className="rounded-lg bg-[var(--sea-ink)] px-4 py-2 text-sm font-medium text-[var(--surface)]"
+								className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
 							>
 								Sign in
 							</button>

@@ -36,7 +36,7 @@ export const schematicsListConfig: EntityListConfig<Schematic> = {
 	renderCard: (schematic) => (
 		<>
 			<EntityIcon icon={schematic.icon} name={schematic.name} size={48} />
-			<span className="text-xs font-medium text-[var(--sea-ink)]">
+			<span className="text-xs font-medium text-[var(--text-primary)]">
 				{schematic.name}
 			</span>
 		</>

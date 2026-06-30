@@ -17,7 +17,7 @@ function Accept() {
 	if (info === undefined) return <p className="text-sm">Loading…</p>;
 	if (info === null)
 		return (
-			<p className="text-sm text-[var(--sea-ink-soft)]">
+			<p className="text-sm text-[var(--text-muted)]">
 				This invite is no longer valid.{" "}
 				<Link to="/games" className="underline">
 					Your games
@@ -33,13 +33,13 @@ function Accept() {
 
 	return (
 		<div className="flex flex-col items-center gap-4 text-center">
-			<p className="text-sm text-[var(--sea-ink)]">
+			<p className="text-sm text-[var(--text-primary)]">
 				You've been invited to <strong>{info.gameName}</strong> as {info.role}.
 			</p>
 			<button
 				type="button"
 				onClick={join}
-				className="rounded-lg bg-[var(--sea-ink)] px-4 py-2 text-sm font-medium text-[var(--surface)]"
+				className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
 			>
 				Join game
 			</button>
@@ -52,14 +52,14 @@ export default function AcceptInvite() {
 		<main className="page-wrap px-4 py-12">
 			<Unauthenticated>
 				<div className="text-center">
-					<p className="text-sm text-[var(--sea-ink-soft)]">
+					<p className="text-sm text-[var(--text-muted)]">
 						Sign in to accept this invite.
 					</p>
 					<div className="mt-4">
 						<SignInButton mode="modal">
 							<button
 								type="button"
-								className="rounded-lg bg-[var(--sea-ink)] px-4 py-2 text-sm font-medium text-[var(--surface)]"
+								className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
 							>
 								Sign in
 							</button>

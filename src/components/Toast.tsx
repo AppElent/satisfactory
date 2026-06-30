@@ -47,7 +47,7 @@ export default function ToastProvider({ children }: { children: ReactNode }) {
 						className={`pointer-events-auto rounded-lg border px-4 py-2 text-sm shadow-lg ${
 							t.tone === "error"
 								? "border-red-400 bg-red-50 text-red-700"
-								: "border-[var(--line)] bg-[var(--chip-bg)] text-[var(--sea-ink)]"
+								: "border-[var(--border-default)] bg-[var(--bg-inset)] text-[var(--text-primary)]"
 						}`}
 					>
 						{t.message}

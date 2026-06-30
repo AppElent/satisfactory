@@ -99,7 +99,7 @@ function SaveButton({
 
 	if (games !== undefined && games.length === 0) {
 		return (
-			<span className="text-sm text-[var(--sea-ink-soft)]">
+			<span className="text-sm text-[var(--text-muted)]">
 				<a href="/games" className="underline">
 					Create a game
 				</a>{" "}
@@ -115,7 +115,7 @@ function SaveButton({
 					type="button"
 					onClick={saveToFactory}
 					disabled={saving}
-					className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)] disabled:opacity-50"
+					className="rounded-lg bg-[var(--orange-500)] px-3 py-2 text-sm font-medium text-[var(--text-on-accent)] disabled:opacity-50"
 				>
 					Save changes to this factory
 				</button>
@@ -125,7 +125,7 @@ function SaveButton({
 					aria-label="Save to game"
 					value={gameId}
 					onChange={(e) => setSelectedGameId(e.target.value as Id<"games">)}
-					className="rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-sm"
+					className="rounded-md border border-[var(--border-default)] bg-[var(--bg-inset)] px-2 py-1 text-sm"
 				>
 					{games.map((g) => (
 						<option key={g._id} value={g._id}>
@@ -138,7 +138,7 @@ function SaveButton({
 				type="button"
 				onClick={save}
 				disabled={saving || !gameId}
-				className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--sea-ink)] disabled:opacity-50"
+				className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-sm font-medium text-[var(--text-primary)] disabled:opacity-50"
 			>
 				{factory ? "Save as new factory" : "Save as factory"}
 			</button>
@@ -161,7 +161,7 @@ export default function SaveAsFactoryButton(props: {
 				<SignInButton mode="modal">
 					<button
 						type="button"
-						className="rounded-lg border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--sea-ink-soft)]"
+						className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-sm font-medium text-[var(--text-muted)]"
 					>
 						Sign in to save as factory
 					</button>

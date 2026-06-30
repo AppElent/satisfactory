@@ -1,4 +1,5 @@
 import EntityIcon from "#/components/EntityIcon";
+import { Input } from "#/components/ui/input";
 import { getItem } from "#/data";
 import ItemPicker from "./ItemPicker";
 import type { Target } from "./solver";
@@ -17,35 +18,35 @@ export default function TargetEditor({ targets, onChange }: TargetEditorProps) {
 
 	return (
 		<div className="flex flex-col gap-3">
-			<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
-				Targets
-			</h2>
 			{targets.map((t) => {
 				const item = getItem(t.item);
 				return (
-					<div key={t.item} className="flex items-center gap-2">
+					<div
+						key={t.item}
+						className="flex items-center gap-2 rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2"
+					>
 						<EntityIcon
 							icon={item?.icon}
 							name={item?.name ?? t.item}
 							size={24}
 						/>
-						<span className="flex-1 text-sm text-[var(--sea-ink)]">
+						<span className="flex-1 text-sm text-[var(--text-primary)]">
 							{item?.name ?? t.item}
 						</span>
-						<input
+						<Input
 							type="number"
 							min={0}
 							value={t.rate}
 							onChange={(e) => setRate(t.item, Number(e.target.value))}
 							aria-label={`${item?.name ?? t.item} per minute`}
-							className="w-20 rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-right text-sm"
+							className="w-20 text-right font-[var(--font-mono)] text-[var(--orange-400)]"
 						/>
-						<span className="text-xs text-[var(--sea-ink-soft)]">/min</span>
+						<span className="text-xs text-[var(--text-muted)]">/min</span>
 						<button
 							type="button"
 							onClick={() => remove(t.item)}
 							aria-label={`Remove ${item?.name ?? t.item}`}
-							className="rounded-md px-2 text-[var(--sea-ink-soft)] hover:text-[var(--sea-ink)]"
+							className="rounded-[var(--radius-sm)] px-2 text-[var(--text-muted)] hover:text-[var(--text-primary)]"
 						>
 							×
 						</button>

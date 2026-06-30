@@ -17,9 +17,12 @@ export const Route = createFileRoute("/data/buildings/$slug")({
 	},
 	component: BuildingDetail,
 	notFoundComponent: () => (
-		<p className="py-12 text-center text-[var(--sea-ink-soft)]">
+		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown building.{" "}
-			<Link to="/data/buildings" className="nav-link">
+			<Link
+				to="/data/buildings"
+				className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
+			>
 				Browse all buildings
 			</Link>
 		</p>
@@ -80,7 +83,7 @@ function BuildingDetail() {
 							return (
 								<span
 									key={part.item}
-									className="flex items-center gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-1 text-sm"
+									className="flex items-center gap-1 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-1 text-sm"
 								>
 									<EntityIcon
 										icon={item?.icon}

@@ -26,7 +26,7 @@ function GameGuard() {
 	if (game === null) {
 		return (
 			<main className="page-wrap px-4 py-10">
-				<p className="text-sm text-[var(--sea-ink-soft)]">
+				<p className="text-sm text-[var(--text-muted)]">
 					You don't have access to this game.{" "}
 					<Link to="/games" className="underline">
 						Your games
@@ -43,14 +43,14 @@ function GameLayout() {
 		<>
 			<Unauthenticated>
 				<main className="page-wrap px-4 py-10 text-center">
-					<p className="text-sm text-[var(--sea-ink-soft)]">
+					<p className="text-sm text-[var(--text-muted)]">
 						Sign in to open this game.
 					</p>
 					<div className="mt-4">
 						<SignInButton mode="modal">
 							<button
 								type="button"
-								className="rounded-lg bg-[var(--sea-ink)] px-4 py-2 text-sm font-medium text-[var(--surface)]"
+								className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
 							>
 								Sign in
 							</button>
