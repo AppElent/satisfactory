@@ -33,11 +33,10 @@ export default function MachineEditor({
 			<h3 className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--text-muted)]">
 				Machines
 			</h3>
-			{rows.map((r, rowIdx) => {
-				const i = rowIdx;
+			{rows.map((r, i) => {
 				return (
 					<div
-						key={`${r.building}-${i}`}
+						key={r.building}
 						className="flex items-center gap-2 rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2"
 					>
 						<select
