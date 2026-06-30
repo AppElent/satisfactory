@@ -1,4 +1,4 @@
-import { AuthConfigProvider, type AuthConfig } from "@appelent/auth";
+import { type AuthConfig, AuthConfigProvider } from "@appelent/auth";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import {

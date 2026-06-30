@@ -31,7 +31,11 @@ describe("AccountPanel", () => {
 
 	it("saves profile changes", async () => {
 		render(<AccountPanel />);
-		fireEvent.submit(screen.getByText("Save profile").closest("form")!);
+		const form = screen.getByText("Save profile").closest("form");
+		if (!form) {
+			throw new Error("Expected the profile form to be rendered");
+		}
+		fireEvent.submit(form);
 		await waitFor(() =>
 			expect(update).toHaveBeenCalledWith({
 				firstName: "Ada",
