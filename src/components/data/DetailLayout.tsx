@@ -19,20 +19,29 @@ export default function DetailLayout({
 }: DetailLayoutProps) {
 	return (
 		<article className="flex flex-col gap-6">
-			<Link to="/data" className="nav-link w-fit text-sm">
+			<Link
+				to="/data"
+				className="w-fit text-[13px] font-semibold uppercase tracking-[0.06em] text-[var(--text-muted)] no-underline transition hover:text-[var(--text-secondary)]"
+			>
 				← All data
 			</Link>
 			<header className="flex items-center gap-4">
-				<EntityIcon icon={icon} name={name} size={56} />
+				<div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[var(--radius-md)] border border-[var(--border-default)] bg-[var(--bg-inset)]">
+					<EntityIcon icon={icon} name={name} size={40} />
+				</div>
 				<div>
-					<p className="text-xs font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+					<p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
 						{kicker}
 					</p>
-					<h1 className="text-2xl font-bold text-[var(--sea-ink)]">{name}</h1>
+					<h1 className="font-[var(--font-display)] text-2xl font-bold uppercase tracking-[0.02em] text-[var(--text-primary)]">
+						{name}
+					</h1>
 				</div>
 			</header>
 			{description && (
-				<p className="max-w-2xl text-[var(--sea-ink-soft)]">{description}</p>
+				<p className="max-w-2xl text-[13px] leading-relaxed text-[var(--text-secondary)]">
+					{description}
+				</p>
 			)}
 			{children}
 		</article>
@@ -48,7 +57,7 @@ export function DetailSection({
 }) {
 	return (
 		<section className="flex flex-col gap-2">
-			<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+			<h2 className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
 				{title}
 			</h2>
 			{children}
@@ -66,12 +75,12 @@ export function StatGrid({
 			{stats.map((stat) => (
 				<div
 					key={stat.label}
-					className="rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-2"
+					className="rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--surface-card)] px-3 py-2 shadow-[var(--bevel-top),var(--shadow-sm)]"
 				>
-					<p className="text-[10px] uppercase text-[var(--sea-ink-soft)]">
+					<p className="text-[10px] uppercase tracking-[0.08em] text-[var(--text-muted)]">
 						{stat.label}
 					</p>
-					<p className="text-sm font-semibold text-[var(--sea-ink)]">
+					<p className="font-[var(--font-mono)] text-[13px] font-semibold text-[var(--text-primary)]">
 						{stat.value}
 					</p>
 				</div>

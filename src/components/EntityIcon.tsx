@@ -15,7 +15,7 @@ export default function EntityIcon({
 		return (
 			<span
 				aria-hidden
-				className={`inline-flex items-center justify-center rounded-md bg-[var(--chip-bg)] text-[var(--sea-ink-soft)] ${className ?? ""}`}
+				className={`inline-flex items-center justify-center rounded-[var(--radius-sm)] bg-[var(--bg-inset)] text-[var(--text-muted)] ${className ?? ""}`}
 				style={{ width: size, height: size, fontSize: size * 0.45 }}
 			>
 				{name.charAt(0).toUpperCase()}
