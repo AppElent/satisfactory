@@ -41,12 +41,31 @@ function label(node: GraphNode): { title: string; sub: string } {
 	};
 }
 
-const KIND_BG: Record<GraphNode["kind"], string> = {
-	recipe: "var(--chip-bg)",
-	input: "var(--link-bg-hover)",
-	provided: "var(--link-bg-hover)",
-	output: "var(--link-bg-hover)",
-	byproduct: "var(--link-bg-hover)",
+const KIND_STYLE: Record<
+	GraphNode["kind"],
+	{ background: string; border: string; boxShadow?: string }
+> = {
+	recipe: {
+		background: "var(--bg-inset)",
+		border: "1px solid var(--border-default)",
+	},
+	input: {
+		background: "var(--bg-inset)",
+		border: "1px solid var(--border-default)",
+	},
+	provided: {
+		background: "var(--bg-inset)",
+		border: "1px solid var(--border-default)",
+	},
+	output: {
+		background: "var(--accent-soft)",
+		border: "1px solid var(--accent)",
+		boxShadow: "var(--glow-accent-strong)",
+	},
+	byproduct: {
+		background: "var(--bg-inset)",
+		border: "1px solid var(--border-default)",
+	},
 };
 
 export default function ProductionGraph({ solution }: { solution: Solution }) {
@@ -83,6 +102,7 @@ export default function ProductionGraph({ solution }: { solution: Solution }) {
 			setNodes(
 				graph.nodes.map((n) => {
 					const { title, sub } = label(n);
+					const kindStyle = KIND_STYLE[n.kind];
 					return {
 						id: n.id,
 						position: pos.get(n.id) ?? { x: 0, y: 0 },
@@ -93,10 +113,11 @@ export default function ProductionGraph({ solution }: { solution: Solution }) {
 							width: NODE_W,
 							height: NODE_H,
 							fontSize: 12,
-							borderRadius: 8,
-							border: "1px solid var(--line)",
-							background: KIND_BG[n.kind],
-							color: "var(--sea-ink)",
+							borderRadius: "var(--radius-sm)",
+							border: kindStyle.border,
+							background: kindStyle.background,
+							boxShadow: kindStyle.boxShadow,
+							color: "var(--text-primary)",
 							padding: 6,
 						},
 					};
@@ -108,7 +129,7 @@ export default function ProductionGraph({ solution }: { solution: Solution }) {
 					source: e.source,
 					target: e.target,
 					label: `${formatNumber(e.rate)}/min`,
-					labelStyle: { fontSize: 10, fill: "var(--sea-ink-soft)" },
+					labelStyle: { fontSize: 10, fill: "var(--orange-400)" },
 				})),
 			);
 		});
@@ -120,7 +141,7 @@ export default function ProductionGraph({ solution }: { solution: Solution }) {
 	return (
 		<div
 			style={{ height: 480 }}
-			className="rounded-xl border border-[var(--line)]"
+			className="rounded-[var(--radius-sm)] border border-[var(--border-default)]"
 		>
 			<ReactFlow
 				nodes={nodes}

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Input } from "#/components/ui/input";
+import { Switch } from "#/components/ui/switch";
 import { listRecipes } from "#/data";
 
 interface RecipeOptionsProps {
@@ -32,33 +34,26 @@ export default function RecipeOptions({
 
 	return (
 		<div className="flex flex-col gap-2">
-			<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
-				Alternate recipes{" "}
-				<span className="font-normal normal-case">
-					({allowed.size} enabled)
-				</span>
-			</h2>
-			<input
+			<Input
 				type="search"
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
 				placeholder="Filter alternates…"
 				aria-label="Filter alternate recipes"
-				className="w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-4 py-2 text-sm"
 			/>
 			<div className="flex max-h-64 flex-col gap-1 overflow-y-auto">
 				{alts.map((r) => (
-					<label
+					<div
 						key={r.slug}
-						className="flex cursor-pointer items-center gap-2 rounded-md px-2 py-1 text-sm hover:bg-[var(--link-bg-hover)]"
+						className="flex cursor-pointer items-center gap-3 rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2 text-sm"
 					>
-						<input
-							type="checkbox"
+						<Switch
 							checked={allowed.has(r.slug)}
-							onChange={() => toggle(r.slug)}
+							onCheckedChange={() => toggle(r.slug)}
+							aria-label={r.name}
 						/>
-						{r.name}
-					</label>
+						<span className="flex-1 text-[var(--text-primary)]">{r.name}</span>
+					</div>
 				))}
 			</div>
 		</div>
