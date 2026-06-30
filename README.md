@@ -9,6 +9,16 @@ npm install
 npm run dev
 ```
 
+## Private package access
+
+This app depends on `@appelent/auth` from GitHub Packages. Before `npm install`,
+export a GitHub token with `read:packages`:
+
+    export NODE_AUTH_TOKEN=ghp_xxx   # never commit this
+
+The committed `.npmrc` references `${NODE_AUTH_TOKEN}` only. CI/Cloudflare builds
+must provide the same secret.
+
 # Building For Production
 
 To build this application for production:
