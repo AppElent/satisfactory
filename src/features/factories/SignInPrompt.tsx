@@ -18,9 +18,9 @@ export default function SignInPrompt() {
 				))}
 			</ul>
 			<div className="mt-6">
-				<Link to="/sign-in">
-					<Button type="button">Sign in</Button>
-				</Link>
+				<Button asChild>
+					<Link to="/sign-in">Sign in</Link>
+				</Button>
 			</div>
 		</div>
 	);
