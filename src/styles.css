@@ -24,10 +24,9 @@
   --secondary-foreground: var(--text-primary);
   --muted: var(--bg-inset);
   --muted-foreground: var(--text-muted);
-  /* shadcn's --accent is a neutral hover surface, NOT the FICSIT orange.
-     FICSIT orange stays available as --orange-500 / --primary. */
-  --accent: var(--surface-hover);
-  --accent-foreground: var(--text-primary);
+  /* Raw --accent stays the FICSIT orange (defined in ficsit/colors.css).
+     shadcn's neutral hover need is mapped on --color-accent / --color-accent-foreground
+     in @theme inline below, so it does not clobber the FICSIT orange. */
   --destructive: var(--red-500);
   --destructive-foreground: var(--text-primary);
   --border: var(--border-default);
@@ -43,6 +42,20 @@
   --sidebar-accent-foreground: var(--text-primary);
   --sidebar-border: var(--border-subtle);
   --sidebar-ring: var(--focus-ring);
+}
+
+/* @appelent/auth token bridge — dark-only, mapped to FICSIT */
+.dark {
+  --auth-bg: var(--graphite-950);
+  --auth-card-bg: var(--surface-card);
+  --auth-field-bg: var(--bg-inset);
+  --auth-border: var(--border-default);
+  --auth-fg: var(--text-primary);
+  --auth-muted: var(--text-secondary);
+  --auth-accent: var(--accent);
+  --auth-accent-fg: var(--text-on-accent);
+  --auth-error: var(--destructive);
+  --auth-radius: var(--radius-md);
 }
 
 @theme inline {
@@ -61,8 +74,9 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  /* shadcn bg-accent / text-accent-foreground utilities = neutral hover surface */
+  --color-accent: var(--surface-hover);
+  --color-accent-foreground: var(--text-primary);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
