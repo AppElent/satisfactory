@@ -16,6 +16,7 @@ import { Route as LogisticsRouteImport } from './routes/logistics'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as FactoriesRouteImport } from './routes/factories'
 import { Route as CalculatorRouteImport } from './routes/calculator'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as DataRouteRouteImport } from './routes/data/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GamesIndexRouteImport } from './routes/games.index'
@@ -71,6 +72,11 @@ const FactoriesRoute = FactoriesRouteImport.update({
 const CalculatorRoute = CalculatorRouteImport.update({
   id: '/calculator',
   path: '/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DataRouteRoute = DataRouteRouteImport.update({
@@ -183,6 +189,7 @@ const GGameIdFactoriesFactoryIdRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
+  '/account': typeof AccountRoute
   '/calculator': typeof CalculatorRoute
   '/factories': typeof FactoriesRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -212,6 +219,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/calculator': typeof CalculatorRoute
   '/factories': typeof FactoriesRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -243,6 +251,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/data': typeof DataRouteRouteWithChildren
+  '/account': typeof AccountRoute
   '/calculator': typeof CalculatorRoute
   '/factories': typeof FactoriesRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -275,6 +284,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/data'
+    | '/account'
     | '/calculator'
     | '/factories'
     | '/forgot-password'
@@ -304,6 +314,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/account'
     | '/calculator'
     | '/factories'
     | '/forgot-password'
@@ -334,6 +345,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/data'
+    | '/account'
     | '/calculator'
     | '/factories'
     | '/forgot-password'
@@ -365,6 +377,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DataRouteRoute: typeof DataRouteRouteWithChildren
+  AccountRoute: typeof AccountRoute
   CalculatorRoute: typeof CalculatorRoute
   FactoriesRoute: typeof FactoriesRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
@@ -426,6 +439,13 @@ declare module '@tanstack/react-router' {
       path: '/calculator'
       fullPath: '/calculator'
       preLoaderRoute: typeof CalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/data': {
@@ -632,6 +652,7 @@ const GGameIdRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DataRouteRoute: DataRouteRouteWithChildren,
+  AccountRoute: AccountRoute,
   CalculatorRoute: CalculatorRoute,
   FactoriesRoute: FactoriesRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,
