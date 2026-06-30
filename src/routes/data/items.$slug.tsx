@@ -20,9 +20,9 @@ export const Route = createFileRoute("/data/items/$slug")({
 	},
 	component: ItemDetail,
 	notFoundComponent: () => (
-		<p className="py-12 text-center text-[var(--sea-ink-soft)]">
+		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown item.{" "}
-			<Link to="/data/items" className="nav-link">
+			<Link to="/data/items" className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
 				Browse all items
 			</Link>
 		</p>
@@ -72,7 +72,7 @@ function ItemDetail() {
 
 			<a
 				href={`/calculator?target=${item.slug}`}
-				className="nav-link w-fit text-sm"
+				className="w-fit text-sm text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]"
 			>
 				Open in calculator →
 			</a>
@@ -99,7 +99,7 @@ function ItemDetail() {
 
 			<DetailSection title="Unlocked by">
 				{unlocks.length === 0 ? (
-					<p className="text-sm text-[var(--sea-ink-soft)]">
+					<p className="text-sm text-[var(--text-muted)]">
 						Available from the start.
 					</p>
 				) : (
@@ -109,7 +109,7 @@ function ItemDetail() {
 								key={schematic.slug}
 								to="/data/schematics/$slug"
 								params={{ slug: schematic.slug }}
-								className="rounded-full border border-[var(--line)] px-3 py-1 text-xs no-underline hover:border-[var(--chip-line)]"
+								className="rounded-full border border-[var(--border-default)] px-3 py-1 text-xs no-underline hover:border-[var(--border-default)]"
 							>
 								{schematic.name}
 							</Link>

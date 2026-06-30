@@ -12,7 +12,7 @@ function Switcher() {
 			: undefined);
 	if (!games || games.length === 0) {
 		return (
-			<Link to="/games" className="nav-link text-sm">
+			<Link to="/games" className="text-sm text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
 				Games
 			</Link>
 		);
@@ -26,7 +26,7 @@ function Switcher() {
 				localStorage.setItem("activeGameId", e.target.value);
 				window.location.href = `/g/${e.target.value}/factories`;
 			}}
-			className="rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-sm"
+			className="rounded-md border border-[var(--border-default)] bg-[var(--bg-inset)] px-2 py-1 text-sm"
 		>
 			{games.map((g) => (
 				<option key={g._id} value={g._id}>

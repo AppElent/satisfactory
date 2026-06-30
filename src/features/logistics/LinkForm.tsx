@@ -42,8 +42,8 @@ export default function LinkForm({
 	};
 
 	return (
-		<div className="flex flex-col gap-3 rounded-xl border border-[var(--line)] bg-[var(--chip-bg)] p-4">
-			<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+		<div className="flex flex-col gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
+			<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 				New link
 			</h2>
 			<label className="flex flex-col gap-1 text-sm">
@@ -52,7 +52,7 @@ export default function LinkForm({
 					aria-label="From factory"
 					value={fromFactoryId}
 					onChange={(e) => setFrom(e.target.value)}
-					className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-2 py-1"
+					className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-2 py-1"
 				>
 					{factories.map((f) => (
 						<option key={f._id} value={f._id}>
@@ -67,7 +67,7 @@ export default function LinkForm({
 					aria-label="To factory"
 					value={toFactoryId}
 					onChange={(e) => setTo(e.target.value)}
-					className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-2 py-1"
+					className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-2 py-1"
 				>
 					{factories.map((f) => (
 						<option key={f._id} value={f._id}>
@@ -83,7 +83,7 @@ export default function LinkForm({
 					value={item}
 					onChange={(e) => setItem(e.target.value)}
 					placeholder="item slug"
-					className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-2 py-1"
+					className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-2 py-1"
 				/>
 			</label>
 			<label className="flex flex-col gap-1 text-sm">
@@ -94,7 +94,7 @@ export default function LinkForm({
 					min={0}
 					value={rate}
 					onChange={(e) => setRate(Number(e.target.value))}
-					className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-2 py-1"
+					className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-2 py-1"
 				/>
 			</label>
 			<label className="flex flex-col gap-1 text-sm">
@@ -103,7 +103,7 @@ export default function LinkForm({
 					aria-label="Mode"
 					value={mode}
 					onChange={(e) => setMode(e.target.value as LinkDraft["mode"])}
-					className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-2 py-1 capitalize"
+					className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-2 py-1 capitalize"
 				>
 					{MODES.map((m) => (
 						<option key={m} value={m}>
@@ -115,7 +115,7 @@ export default function LinkForm({
 			<button
 				type="button"
 				onClick={submit}
-				className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)]"
+				className="rounded-lg bg-[var(--orange-500)] px-3 py-2 text-sm font-medium text-[var(--text-on-accent)]"
 			>
 				Add link
 			</button>

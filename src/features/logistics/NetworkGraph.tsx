@@ -73,7 +73,7 @@ export default function NetworkGraph({
 						? "#d9534f"
 						: hasSurplus
 							? "#4fb8b2"
-							: "var(--line)";
+							: "var(--border-default)";
 					return {
 						id: f._id,
 						position: pos.get(f._id) ?? { x: 0, y: 0 },
@@ -86,8 +86,8 @@ export default function NetworkGraph({
 							fontSize: 13,
 							borderRadius: 8,
 							border: `2px solid ${border}`,
-							background: "var(--chip-bg)",
-							color: "var(--sea-ink)",
+							background: "var(--bg-inset)",
+							color: "var(--text-primary)",
 							padding: 8,
 						},
 					};
@@ -99,7 +99,7 @@ export default function NetworkGraph({
 					source: t.fromFactoryId,
 					target: t.toFactoryId,
 					label: `${getItem(t.item)?.name ?? t.item} · ${formatNumber(t.rate)}/min · ${t.mode}`,
-					labelStyle: { fontSize: 10, fill: "var(--sea-ink-soft)" },
+					labelStyle: { fontSize: 10, fill: "var(--text-muted)" },
 				})),
 			);
 		});
@@ -111,7 +111,7 @@ export default function NetworkGraph({
 	return (
 		<div
 			style={{ height: 480 }}
-			className="rounded-xl border border-[var(--line)]"
+			className="rounded-xl border border-[var(--border-default)]"
 		>
 			<ReactFlow
 				nodes={nodes}

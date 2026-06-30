@@ -35,7 +35,7 @@ export const recipesListConfig: EntityListConfig<Recipe> = {
 		return (
 			<>
 				<EntityIcon icon={product.icon} name={product.name} size={48} />
-				<span className="text-xs font-medium text-[var(--sea-ink)]">
+				<span className="text-xs font-medium text-[var(--text-primary)]">
 					{recipe.name}
 				</span>
 			</>

@@ -40,25 +40,25 @@ export default function GameSettings() {
 
 	return (
 		<main className="page-wrap flex flex-col gap-6 px-4 py-8">
-			<h1 className="text-2xl font-bold text-[var(--sea-ink)]">
+			<h1 className="text-2xl font-bold text-[var(--text-primary)]">
 				{game.name} — settings
 			</h1>
 
 			<section className="flex flex-col gap-2">
-				<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+				<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 					Members
 				</h2>
 				{members?.map((m) => (
 					<div key={m._id} className="flex items-center gap-3 text-sm">
 						<span className="flex-1">{m.userId}</span>
-						<span className="capitalize text-[var(--sea-ink-soft)]">
+						<span className="capitalize text-[var(--text-muted)]">
 							{m.role}
 						</span>
 						{isOwner && m.role !== "owner" && (
 							<button
 								type="button"
 								onClick={() => removeMember({ gameId, userId: m.userId })}
-								className="text-[var(--sea-ink-soft)] hover:text-red-500"
+								className="text-[var(--text-muted)] hover:text-red-500"
 							>
 								Remove
 							</button>
@@ -69,7 +69,7 @@ export default function GameSettings() {
 
 			{isOwner && (
 				<section className="flex flex-col gap-2">
-					<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+					<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 						Invite link
 					</h2>
 					<div className="flex gap-2">
@@ -77,7 +77,7 @@ export default function GameSettings() {
 							aria-label="Invite role"
 							value={role}
 							onChange={(e) => setRole(e.target.value as "editor" | "viewer")}
-							className="rounded-md border border-[var(--line)] bg-[var(--chip-bg)] px-2 py-1 text-sm capitalize"
+							className="rounded-md border border-[var(--border-default)] bg-[var(--bg-inset)] px-2 py-1 text-sm capitalize"
 						>
 							<option value="editor">editor</option>
 							<option value="viewer">viewer</option>
@@ -85,7 +85,7 @@ export default function GameSettings() {
 						<button
 							type="button"
 							onClick={invite}
-							className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)]"
+							className="rounded-lg bg-[var(--orange-500)] px-3 py-2 text-sm font-medium text-[var(--text-on-accent)]"
 						>
 							Create + copy link
 						</button>
@@ -100,7 +100,7 @@ export default function GameSettings() {
 								onClick={() =>
 									revokeInvite({ inviteId: inv._id as Id<"gameInvites"> })
 								}
-								className="text-[var(--sea-ink-soft)] hover:text-red-500"
+								className="text-[var(--text-muted)] hover:text-red-500"
 							>
 								Revoke
 							</button>
@@ -111,21 +111,21 @@ export default function GameSettings() {
 
 			{isOwner && (
 				<section className="flex flex-col gap-2">
-					<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--sea-ink-soft)]">
+					<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
 						Game
 					</h2>
 					<input
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 						aria-label="Game name"
-						className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm"
+						className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-3 py-2 text-sm"
 					/>
 					<input
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
 						placeholder="Description…"
 						aria-label="Game description"
-						className="rounded-md border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm"
+						className="rounded-md border border-[var(--border-default)] bg-[var(--surface-card)] px-3 py-2 text-sm"
 					/>
 					<div className="flex gap-2">
 						<button
@@ -136,7 +136,7 @@ export default function GameSettings() {
 								)
 							}
 							disabled={!name.trim()}
-							className="rounded-lg bg-[var(--sea-ink)] px-3 py-2 text-sm font-medium text-[var(--surface)] disabled:opacity-50"
+							className="rounded-lg bg-[var(--orange-500)] px-3 py-2 text-sm font-medium text-[var(--text-on-accent)] disabled:opacity-50"
 						>
 							Save game
 						</button>

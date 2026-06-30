@@ -8,7 +8,7 @@ export const Route = createFileRoute("/g/$gameId/map")({
 	component: () => (
 		<Suspense
 			fallback={
-				<main className="page-wrap px-4 py-10 text-sm text-[var(--sea-ink-soft)]">
+				<main className="page-wrap px-4 py-10 text-sm text-[var(--text-muted)]">
 					Loading map…
 				</main>
 			}

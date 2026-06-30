@@ -16,9 +16,9 @@ export const Route = createFileRoute("/data/buildables/$slug")({
 	},
 	component: BuildableDetail,
 	notFoundComponent: () => (
-		<p className="py-12 text-center text-[var(--sea-ink-soft)]">
+		<p className="py-12 text-center text-[var(--text-muted)]">
 			Unknown buildable.{" "}
-			<Link to="/data/buildables" className="nav-link">
+			<Link to="/data/buildables" className="text-[var(--text-muted)] no-underline hover:text-[var(--text-primary)]">
 				Browse all buildables
 			</Link>
 		</p>
@@ -72,7 +72,7 @@ function BuildableDetail() {
 							return (
 								<span
 									key={part.item}
-									className="flex items-center gap-1 rounded-lg border border-[var(--line)] bg-[var(--chip-bg)] px-3 py-1 text-sm"
+									className="flex items-center gap-1 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-1 text-sm"
 								>
 									<EntityIcon
 										icon={item?.icon}

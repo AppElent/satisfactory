@@ -35,10 +35,10 @@ export default function ItemPicker({
 				onChange={(e) => setQuery(e.target.value)}
 				placeholder={placeholder}
 				aria-label={placeholder}
-				className="w-full rounded-full border border-[var(--line)] bg-[var(--chip-bg)] px-4 py-2 text-sm"
+				className="w-full rounded-full border border-[var(--border-default)] bg-[var(--bg-inset)] px-4 py-2 text-sm"
 			/>
 			{matches.length > 0 && (
-				<div className="absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--header-bg)] shadow-lg">
+				<div className="absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-[var(--border-default)] bg-[var(--graphite-900)] shadow-lg">
 					{matches.map((i) => (
 						<button
 							key={i.slug}
@@ -47,7 +47,7 @@ export default function ItemPicker({
 								onPick(i.slug);
 								setQuery("");
 							}}
-							className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-[var(--link-bg-hover)]"
+							className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-[var(--surface-hover)]"
 						>
 							<EntityIcon icon={i.icon} name={i.name} size={20} />
 							{i.name}

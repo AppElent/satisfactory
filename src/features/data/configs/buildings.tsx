@@ -24,7 +24,7 @@ export const buildingsListConfig: EntityListConfig<Building> = {
 	renderCard: (building) => (
 		<>
 			<EntityIcon icon={building.icon} name={building.name} size={48} />
-			<span className="text-xs font-medium text-[var(--sea-ink)]">
+			<span className="text-xs font-medium text-[var(--text-primary)]">
 				{building.name}
 			</span>
 		</>
