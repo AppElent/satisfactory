@@ -1,5 +1,4 @@
-import { SignInButton } from "@clerk/clerk-react";
-import { useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
 	Authenticated,
 	Unauthenticated,
@@ -158,14 +157,12 @@ export default function SaveAsFactoryButton(props: {
 				<SaveButton {...props} />
 			</Authenticated>
 			<Unauthenticated>
-				<SignInButton mode="modal">
-					<button
-						type="button"
-						className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-sm font-medium text-[var(--text-muted)]"
-					>
-						Sign in to save as factory
-					</button>
-				</SignInButton>
+				<Link
+					to="/sign-in"
+					className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-sm font-medium text-[var(--text-muted)]"
+				>
+					Sign in to save as factory
+				</Link>
 			</Unauthenticated>
 		</>
 	);

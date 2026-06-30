@@ -1,4 +1,3 @@
-import { SignInButton } from "@clerk/clerk-react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import {
 	Authenticated,
@@ -85,14 +84,12 @@ export default function GamesPage() {
 						Sign in to create and manage games.
 					</p>
 					<div className="mt-4">
-						<SignInButton mode="modal">
-							<button
-								type="button"
-								className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
-							>
-								Sign in
-							</button>
-						</SignInButton>
+						<Link
+							to="/sign-in"
+							className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
+						>
+							Sign in
+						</Link>
 					</div>
 				</div>
 			</Unauthenticated>

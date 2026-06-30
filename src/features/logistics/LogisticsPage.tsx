@@ -1,4 +1,4 @@
-import { SignInButton } from "@clerk/clerk-react";
+import { Link } from "@tanstack/react-router";
 import {
 	Authenticated,
 	Unauthenticated,
@@ -168,14 +168,12 @@ export default function LogisticsPage() {
 						Sign in to connect your factories into a logistics network.
 					</p>
 					<div className="mt-4">
-						<SignInButton mode="modal">
-							<button
-								type="button"
-								className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
-							>
-								Sign in
-							</button>
-						</SignInButton>
+						<Link
+							to="/sign-in"
+							className="rounded-lg bg-[var(--orange-500)] px-4 py-2 text-sm font-medium text-[var(--text-on-accent)]"
+						>
+							Sign in
+						</Link>
 					</div>
 				</div>
 			</Unauthenticated>
