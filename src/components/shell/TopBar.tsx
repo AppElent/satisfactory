@@ -101,6 +101,7 @@ export default function TopBar() {
 					<button
 						type="button"
 						aria-label="Search"
+						onMouseDown={(e) => e.preventDefault()}
 						onClick={() => setSearchOpen((open) => !open)}
 						className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] text-[var(--text-muted)] hover:bg-[var(--surface-hover)]"
 					>
