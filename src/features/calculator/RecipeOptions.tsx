@@ -176,7 +176,10 @@ export default function RecipeOptions({
 		.filter((group) => group.recipes.length > 0);
 
 	const commitPolicy = (next: AlternatePolicyState) => {
-		onPolicyChange?.(next);
+		if (onPolicyChange) {
+			onPolicyChange(next);
+			return;
+		}
 		onChange(next.allowedAlternates);
 	};
 
