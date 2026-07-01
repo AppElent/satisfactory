@@ -1,18 +1,27 @@
 import { useNavigate, useSearch } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { DualPaneLayout } from "#/components/ui/dual-pane-layout";
 import { Panel } from "#/components/ui/panel";
 import { Stat } from "#/components/ui/stat";
-import { getItem } from "#/data";
+import { getItem, listRecipes, listSchematics } from "#/data";
 import SaveAsFactoryButton from "#/features/factories/SaveAsFactoryButton";
 import { formatNumber, formatPower } from "#/lib/format";
 import AvailableInputsEditor from "./AvailableInputsEditor";
+import {
+	type AlternatePolicyState,
+	deriveBuiltInPresets,
+	policyFromAllowed,
+	toggleAlternate,
+	validAlternateRecipeSlugs,
+} from "./alternate-presets";
 import CalculatorControls, { WEIGHTING_PRESETS } from "./CalculatorControls";
 import { decodePlan, encodePlan } from "./plan-codec";
 import RecipeOptions from "./RecipeOptions";
 import ResultTabs from "./ResultTabs";
 import type { AvailableInput, ProblemSpec, Target } from "./solver";
 import TargetEditor from "./TargetEditor";
+import UsedAlternatesReview from "./UsedAlternatesReview";
+import { useAlternatePresets } from "./useAlternatePresets";
 import { useSolver } from "./useSolver";
 
 type Weighting = "balanced" | "minimize-ore";
@@ -35,12 +44,28 @@ export default function CalculatorPage() {
 		game: search.game,
 		factory: search.factory,
 	}));
+	const recipes = useMemo(() => listRecipes(), []);
+	const schematics = useMemo(() => listSchematics(), []);
+	const builtInPresets = useMemo(
+		() => deriveBuiltInPresets(recipes, schematics),
+		[recipes, schematics],
+	);
+	const validAlternateSlugs = useMemo(
+		() => validAlternateRecipeSlugs(recipes),
+		[recipes],
+	);
+	const { customPresets, savePreset } =
+		useAlternatePresets(validAlternateSlugs);
+	const allPresets = useMemo(
+		() => [...builtInPresets, ...customPresets],
+		[builtInPresets, customPresets],
+	);
 	const [targets, setTargets] = useState<Target[]>(initial?.targets ?? []);
 	const [availableInputs, setAvailableInputs] = useState<AvailableInput[]>(
 		initial?.availableInputs ?? [],
 	);
-	const [allowedAlternates, setAllowedAlternates] = useState<string[]>(
-		initial?.allowedAlternates ?? [],
+	const [alternatePolicy, setAlternatePolicy] = useState<AlternatePolicyState>(
+		() => policyFromAllowed(initial?.allowedAlternates ?? [], builtInPresets),
 	);
 	const [mode, setMode] = useState<"produce" | "maximize">(
 		initial?.mode ?? "produce",
@@ -49,6 +74,10 @@ export default function CalculatorPage() {
 		initial?.resourceWeights ? "minimize-ore" : "balanced",
 	);
 
+	const allowedAlternates = alternatePolicy.allowedAlternates;
+	const setAllowedAlternates = (next: string[]) => {
+		setAlternatePolicy(policyFromAllowed(next, allPresets));
+	};
 	const spec: ProblemSpec = {
 		mode,
 		targets,
@@ -105,6 +134,10 @@ export default function CalculatorPage() {
 								<RecipeOptions
 									allowedAlternates={allowedAlternates}
 									onChange={setAllowedAlternates}
+									policy={alternatePolicy}
+									onPolicyChange={setAlternatePolicy}
+									customPresets={customPresets}
+									onSavePreset={savePreset}
 								/>
 							</div>
 						</Panel>
@@ -175,6 +208,15 @@ export default function CalculatorPage() {
 										</Panel>
 									</div>
 								)}
+								<UsedAlternatesReview
+									solution={solution}
+									allowedAlternates={allowedAlternates}
+									onToggle={(recipeSlug) =>
+										setAlternatePolicy((current) =>
+											toggleAlternate(current, recipeSlug, allPresets),
+										)
+									}
+								/>
 								<Panel>
 									<div className="px-[18px] pt-2.5">
 										<ResultTabs solution={solution} />
