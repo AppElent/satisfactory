@@ -204,6 +204,7 @@ export function policyFromAllowed(
 	const allowed = uniqueSorted(allowedAlternates);
 	const exact = presets.find(
 		(preset) =>
+			preset.id !== "none" &&
 			preset.recipeSlugs.length === allowed.length &&
 			uniqueSorted(preset.recipeSlugs).every(
 				(slug, index) => slug === allowed[index],
