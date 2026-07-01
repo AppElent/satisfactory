@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { DualPaneLayout } from "./dual-pane-layout";
 
@@ -50,7 +50,7 @@ describe("DualPaneLayout", () => {
 		expect(screen.queryByText("Results content")).toBeNull();
 	});
 
-	it("renders tabs with both pane labels below desktop width", () => {
+	it("switches panes when the other tab is clicked", () => {
 		stubMatchMedia(false);
 		render(
 			<DualPaneLayout
@@ -61,8 +61,9 @@ describe("DualPaneLayout", () => {
 				gridClassName="grid-cols-2"
 			/>,
 		);
-		expect(screen.getByRole("tab", { name: "Setup" })).toBeDefined();
-		expect(screen.getByRole("tab", { name: "Results" })).toBeDefined();
+		fireEvent.mouseDown(screen.getByRole("tab", { name: "Results" }));
+		expect(screen.getByText("Results content")).toBeDefined();
+		expect(screen.queryByText("Setup content")).toBeNull();
 	});
 
 	it("honors defaultTab='right'", () => {
