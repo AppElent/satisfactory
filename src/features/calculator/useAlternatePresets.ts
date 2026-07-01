@@ -1,8 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import {
-	sanitizeSavedPreset,
-	type AlternatePreset,
-} from "./alternate-presets";
+import { type AlternatePreset, sanitizeSavedPreset } from "./alternate-presets";
 
 const STORAGE_KEY = "satisfactory.alternatePresets.v1";
 
@@ -45,6 +42,7 @@ export function useAlternatePresets(validRecipeSlugs: Set<string>) {
 		readPresets(validRecipeSlugs),
 	);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: validRecipeKey captures the Set contents; depending on the Set object can loop when callers construct it inline.
 	useEffect(() => {
 		setCustomPresets(readPresets(validRecipeSlugs));
 	}, [validRecipeKey]);
@@ -67,9 +65,7 @@ export function useAlternatePresets(validRecipeSlugs: Set<string>) {
 			};
 
 			setCustomPresets((current) => {
-				const existing = current.find(
-					(preset) => preset.id === sanitized.id,
-				);
+				const existing = current.find((preset) => preset.id === sanitized.id);
 				const next =
 					args.mode === "overwrite" && existing
 						? current.map((preset) =>
@@ -85,7 +81,7 @@ export function useAlternatePresets(validRecipeSlugs: Set<string>) {
 
 			return sanitized;
 		},
-		[validRecipeKey, validRecipeSlugs],
+		[validRecipeSlugs],
 	);
 
 	return useMemo(

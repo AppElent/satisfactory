@@ -154,9 +154,7 @@ export function deriveBuiltInPresets(
 			?.recipes.map((info) => info.recipe.slug) ?? [],
 	);
 	const all = uniqueSorted(
-		groups.flatMap((group) =>
-			group.recipes.map((info) => info.recipe.slug),
-		),
+		groups.flatMap((group) => group.recipes.map((info) => info.recipe.slug)),
 	);
 	const presets: Array<[BuiltInAlternatePresetId, string, string[]]> = [
 		["none", "None", []],
@@ -224,7 +222,9 @@ export function toggleAlternate(
 	slug: string,
 	presets: AlternatePreset[],
 ): AlternatePolicyState {
-	const base = new Set(findPreset(state.basePresetId, presets)?.recipeSlugs ?? []);
+	const base = new Set(
+		findPreset(state.basePresetId, presets)?.recipeSlugs ?? [],
+	);
 	const allowed = new Set(state.allowedAlternates);
 	if (allowed.has(slug)) allowed.delete(slug);
 	else allowed.add(slug);
@@ -264,7 +264,8 @@ export function sanitizeSavedPreset(
 ): AlternatePreset | undefined {
 	if (!value || typeof value !== "object") return undefined;
 	const record = value as Partial<AlternatePreset>;
-	if (typeof record.id !== "string" || record.id.trim() === "") return undefined;
+	if (typeof record.id !== "string" || record.id.trim() === "")
+		return undefined;
 	if (typeof record.name !== "string" || record.name.trim() === "")
 		return undefined;
 	if (!Array.isArray(record.recipeSlugs)) return undefined;
@@ -292,6 +293,8 @@ export function sanitizeSavedPreset(
 	};
 }
 
-export function validAlternateRecipeSlugs(recipes = listRecipes()): Set<string> {
+export function validAlternateRecipeSlugs(
+	recipes = listRecipes(),
+): Set<string> {
 	return new Set(automatableAlternates(recipes).map((recipe) => recipe.slug));
 }

@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import type { Recipe, Schematic } from "#/data/schema";
 import {
+	type AlternatePolicyState,
+	type AlternatePreset,
 	applyPreset,
 	deriveBuiltInPresets,
 	groupAlternateRecipes,
 	sanitizeSavedPreset,
 	toggleAlternate,
-	type AlternatePolicyState,
-	type AlternatePreset,
 } from "./alternate-presets";
 
 function recipe(overrides: Partial<Recipe>): Recipe {
@@ -122,9 +122,7 @@ describe("groupAlternateRecipes", () => {
 		expect(groups[0].recipes.map((r) => r.recipe.slug)).toEqual([
 			"recipe-tier-4",
 		]);
-		expect(groups[1].recipes.map((r) => r.recipe.slug)).toEqual([
-			"recipe-mam",
-		]);
+		expect(groups[1].recipes.map((r) => r.recipe.slug)).toEqual(["recipe-mam"]);
 		expect(groups[2].recipes.map((r) => r.recipe.slug)).toEqual([
 			"recipe-other",
 		]);
