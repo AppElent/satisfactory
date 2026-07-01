@@ -7,7 +7,10 @@ import {
 } from "convex/react";
 import { lazy, Suspense, useState } from "react";
 import { useToast } from "#/components/Toast";
-import { DualPaneLayout, useIsDesktopDualPane } from "#/components/ui/dual-pane-layout";
+import {
+	DualPaneLayout,
+	useIsDesktopDualPane,
+} from "#/components/ui/dual-pane-layout";
 import { getItem } from "#/data";
 import { useGameId } from "#/features/games/useGameId";
 import { formatNumber } from "#/lib/format";
@@ -93,7 +96,11 @@ function Network() {
 			leftLabel="Panel"
 			left={
 				<div className="flex flex-col gap-4">
-					<LinkForm factories={factories} prefill={prefill} onCreate={onCreate} />
+					<LinkForm
+						factories={factories}
+						prefill={prefill}
+						onCreate={onCreate}
+					/>
 					{suggestions.length > 0 && (
 						<div className="flex flex-col gap-2 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
 							<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
@@ -127,8 +134,8 @@ function Network() {
 								className="flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2 text-sm"
 							>
 								<span className="flex-1">
-									{getItem(t.item)?.name ?? t.item} · {formatNumber(t.rate)}/min ·{" "}
-									{linkSettings(t.mode, t.rate, t.note)}
+									{getItem(t.item)?.name ?? t.item} · {formatNumber(t.rate)}/min
+									· {linkSettings(t.mode, t.rate, t.note)}
 								</span>
 								<button
 									type="button"

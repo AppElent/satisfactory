@@ -45,7 +45,10 @@ export default function MoreMenu({
 							return (
 								<span
 									key={item.id}
-									className={cn(base, "cursor-default text-[var(--text-disabled)]")}
+									className={cn(
+										base,
+										"cursor-default text-[var(--text-disabled)]",
+									)}
 								>
 									{inner}
 								</span>

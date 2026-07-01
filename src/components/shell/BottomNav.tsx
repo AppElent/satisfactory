@@ -3,8 +3,12 @@ import { useState } from "react";
 import { Icon } from "#/components/ui/icon";
 import { cn } from "#/lib/utils";
 import MoreMenu from "./MoreMenu";
+import {
+	phoneOverflowNavItems,
+	phonePrimaryNavItems,
+	resolveHref,
+} from "./nav-model";
 import { isItemActive } from "./Sidebar";
-import { phoneOverflowNavItems, phonePrimaryNavItems, resolveHref } from "./nav-model";
 
 export default function BottomNav() {
 	const pathname = useRouterState({ select: (s) => s.location.pathname });

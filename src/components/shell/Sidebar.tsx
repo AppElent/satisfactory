@@ -63,9 +63,7 @@ export default function Sidebar({
 			<div
 				className={cn(
 					"flex items-center gap-3 border-b border-[var(--border-subtle)]",
-					rail
-						? "justify-center px-0 py-[18px]"
-						: "px-[18px] pb-4 pt-[18px]",
+					rail ? "justify-center px-0 py-[18px]" : "px-[18px] pb-4 pt-[18px]",
 				)}
 			>
 				<div className="relative flex h-[34px] w-[34px] flex-none items-center justify-center">

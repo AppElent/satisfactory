@@ -1,7 +1,10 @@
 import { Authenticated, Unauthenticated } from "convex/react";
 import { useState } from "react";
 import { Button } from "#/components/ui/button";
-import { DualPaneLayout, useIsDesktopDualPane } from "#/components/ui/dual-pane-layout";
+import {
+	DualPaneLayout,
+	useIsDesktopDualPane,
+} from "#/components/ui/dual-pane-layout";
 import { Panel } from "#/components/ui/panel";
 import type { ResourceNode } from "#/data/schema";
 import { useGameId } from "#/features/games/useGameId";

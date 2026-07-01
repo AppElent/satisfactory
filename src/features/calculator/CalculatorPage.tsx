@@ -134,7 +134,10 @@ export default function CalculatorPage() {
 										<Panel topRail className="px-[18px] py-[15px]">
 											<Stat
 												label="Total Power"
-												value={formatPower(solution.power).replace(/\s*MW$/, "")}
+												value={formatPower(solution.power).replace(
+													/\s*MW$/,
+													"",
+												)}
 												unit="MW"
 											/>
 										</Panel>

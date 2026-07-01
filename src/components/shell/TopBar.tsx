@@ -136,6 +136,7 @@ export default function TopBar() {
 							className="flex-none text-[var(--text-muted)]"
 						/>
 						<input
+							// biome-ignore lint/a11y/noAutofocus: opened by an explicit user tap on the search icon, not on page load
 							autoFocus
 							placeholder="Search items, recipes, buildings…"
 							onBlur={() => setSearchOpen(false)}
