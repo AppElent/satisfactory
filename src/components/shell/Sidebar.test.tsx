@@ -1,5 +1,38 @@
+import {
+	createMemoryHistory,
+	createRootRoute,
+	createRouter,
+	RouterProvider,
+} from "@tanstack/react-router";
+import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { isItemActive } from "./Sidebar";
+import Sidebar, { isItemActive } from "./Sidebar";
+
+function renderSidebar(variant: "full" | "rail") {
+	const rootRoute = createRootRoute({
+		component: () => <Sidebar variant={variant} />,
+	});
+	const router = createRouter({
+		routeTree: rootRoute,
+		history: createMemoryHistory({ initialEntries: ["/"] }),
+	});
+	// biome-ignore lint/suspicious/noExplicitAny: test-only router typing
+	return render(<RouterProvider router={router as any} />);
+}
+
+describe("Sidebar", () => {
+	it("shows nav labels and the brand subtitle in full mode", async () => {
+		const { findByText } = renderSidebar("full");
+		expect(await findByText("Factories")).toBeDefined();
+		expect(await findByText("Factory Planner")).toBeDefined();
+	});
+
+	it("hides nav labels and the brand subtitle in rail mode", () => {
+		const { queryByText } = renderSidebar("rail");
+		expect(queryByText("Factories")).toBeNull();
+		expect(queryByText("Factory Planner")).toBeNull();
+	});
+});
 
 describe("isItemActive", () => {
 	it("marks factories active on the list route", () => {

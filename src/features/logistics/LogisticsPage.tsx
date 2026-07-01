@@ -7,6 +7,10 @@ import {
 } from "convex/react";
 import { lazy, Suspense, useState } from "react";
 import { useToast } from "#/components/Toast";
+import {
+	DualPaneLayout,
+	useIsDesktopDualPane,
+} from "#/components/ui/dual-pane-layout";
 import { getItem } from "#/data";
 import { useGameId } from "#/features/games/useGameId";
 import { formatNumber } from "#/lib/format";
@@ -48,6 +52,9 @@ function Network() {
 	const [prefill, setPrefill] = useState<
 		{ fromFactoryId: string; item: string } | undefined
 	>(undefined);
+	// Forces NetworkGraph to remount when the layout mode flips between the
+	// Tabs view and the side-by-side grid, so it re-measures its container.
+	const isDesktop = useIsDesktopDualPane();
 
 	if (factories === undefined || transports === undefined) {
 		return <p className="text-sm text-[var(--text-muted)]">Loading…</p>;
@@ -84,75 +91,88 @@ function Network() {
 		.filter((s) => s.sources.length > 0);
 
 	return (
-		<div className="grid gap-6 lg:grid-cols-[300px_1fr]">
-			<div className="flex flex-col gap-4">
-				<LinkForm factories={factories} prefill={prefill} onCreate={onCreate} />
-				{suggestions.length > 0 && (
-					<div className="flex flex-col gap-2 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
-						<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
-							Suggested links
-						</h2>
-						{suggestions.map((s) =>
-							s.sources.map((src) => (
+		<DualPaneLayout
+			gridClassName="grid-cols-[300px_1fr] gap-6"
+			leftLabel="Panel"
+			left={
+				<div className="flex flex-col gap-4">
+					<LinkForm
+						factories={factories}
+						prefill={prefill}
+						onCreate={onCreate}
+					/>
+					{suggestions.length > 0 && (
+						<div className="flex flex-col gap-2 rounded-xl border border-[var(--border-default)] bg-[var(--bg-inset)] p-4">
+							<h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--text-muted)]">
+								Suggested links
+							</h2>
+							{suggestions.map((s) =>
+								s.sources.map((src) => (
+									<button
+										key={`${s.factoryId}:${s.need.item}:${src.factoryId}`}
+										type="button"
+										onClick={() =>
+											setPrefill({
+												fromFactoryId: src.factoryId,
+												item: s.need.item,
+											})
+										}
+										className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-left text-xs text-[var(--text-primary)] hover:border-[var(--text-primary)]"
+									>
+										{getItem(s.need.item)?.name ?? s.need.item}: source from a
+										factory with surplus
+									</button>
+								)),
+							)}
+						</div>
+					)}
+					<SummaryCard factories={factories} transports={transports} />
+					<div className="flex flex-col gap-2">
+						{transports.map((t) => (
+							<div
+								key={t._id}
+								className="flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2 text-sm"
+							>
+								<span className="flex-1">
+									{getItem(t.item)?.name ?? t.item} · {formatNumber(t.rate)}/min
+									· {linkSettings(t.mode, t.rate, t.note)}
+								</span>
 								<button
-									key={`${s.factoryId}:${s.need.item}:${src.factoryId}`}
 									type="button"
 									onClick={() =>
-										setPrefill({
-											fromFactoryId: src.factoryId,
-											item: s.need.item,
-										})
+										remove({ id: t._id }).catch(() =>
+											toast("Couldn't remove the link."),
+										)
 									}
-									className="rounded-lg border border-[var(--border-default)] px-3 py-2 text-left text-xs text-[var(--text-primary)] hover:border-[var(--text-primary)]"
+									aria-label={`Remove ${getItem(t.item)?.name ?? t.item} link`}
+									className="text-[var(--text-muted)] hover:text-red-500"
 								>
-									{getItem(s.need.item)?.name ?? s.need.item}: source from a
-									factory with surplus
+									×
 								</button>
-							)),
-						)}
+							</div>
+						))}
 					</div>
-				)}
-				<SummaryCard factories={factories} transports={transports} />
-				<div className="flex flex-col gap-2">
-					{transports.map((t) => (
-						<div
-							key={t._id}
-							className="flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-inset)] px-3 py-2 text-sm"
-						>
-							<span className="flex-1">
-								{getItem(t.item)?.name ?? t.item} · {formatNumber(t.rate)}/min ·{" "}
-								{linkSettings(t.mode, t.rate, t.note)}
-							</span>
-							<button
-								type="button"
-								onClick={() =>
-									remove({ id: t._id }).catch(() =>
-										toast("Couldn't remove the link."),
-									)
-								}
-								aria-label={`Remove ${getItem(t.item)?.name ?? t.item} link`}
-								className="text-[var(--text-muted)] hover:text-red-500"
-							>
-								×
-							</button>
-						</div>
-					))}
 				</div>
-			</div>
-			<Suspense
-				fallback={
-					<p className="p-8 text-center text-sm text-[var(--text-muted)]">
-						Loading graph…
-					</p>
-				}
-			>
-				<NetworkGraph
-					factories={factories}
-					transports={transports}
-					gameId={gameId}
-				/>
-			</Suspense>
-		</div>
+			}
+			rightLabel="Network"
+			right={
+				<Suspense
+					fallback={
+						<p className="p-8 text-center text-sm text-[var(--text-muted)]">
+							Loading graph…
+						</p>
+					}
+				>
+					<NetworkGraph
+						key={isDesktop ? "desktop" : "mobile"}
+						factories={factories}
+						transports={transports}
+						gameId={gameId}
+					/>
+				</Suspense>
+			}
+			defaultTab="right"
+		/>
 	);
 }
 

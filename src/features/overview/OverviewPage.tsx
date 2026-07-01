@@ -79,10 +79,54 @@ function effColor(eff: number) {
 			: "var(--red-400)";
 }
 
+function FactoryEfficiencyMeter({ eff }: { eff: number | null }) {
+	return (
+		<div className="flex flex-1 items-center gap-2.5">
+			{eff == null ? (
+				<div className="h-[7px] flex-1 rounded-[2px] border border-[var(--border-default)] bg-[var(--bg-inset)] shadow-[var(--bevel-inset)]" />
+			) : (
+				<Progress className="flex-1" value={eff} tone={effFillTone(eff)} />
+			)}
+			<span
+				className="w-[34px] text-right font-[var(--font-mono)] text-[12px]"
+				style={{
+					color: eff == null ? "var(--text-disabled)" : effColor(eff),
+				}}
+			>
+				{eff == null ? "—" : `${eff}%`}
+			</span>
+		</div>
+	);
+}
+
+function FactoryNameCell({ factory }: { factory: OvFactory }) {
+	return (
+		<div className="flex min-w-0 items-center gap-2.5">
+			<span
+				className="h-2.5 w-2.5 flex-none rounded-full"
+				style={{
+					background:
+						factory.eff == null ? "var(--graphite-400)" : effColor(factory.eff),
+					boxShadow:
+						factory.eff == null ? "none" : `0 0 8px ${effColor(factory.eff)}`,
+				}}
+			/>
+			<div className="min-w-0">
+				<div className="truncate text-[14px] font-semibold text-[var(--text-primary)]">
+					{factory.name}
+				</div>
+				<div className="truncate text-[11px] text-[var(--text-muted)]">
+					{factory.outputs}
+				</div>
+			</div>
+		</div>
+	);
+}
+
 export default function OverviewPage() {
 	return (
 		<div className="mx-auto flex max-w-[1280px] flex-col gap-[22px] px-7 pb-[60px] pt-[26px]">
-			<div className="grid grid-cols-4 gap-4">
+			<div className="grid grid-cols-2 gap-4 md:grid-cols-4">
 				<Panel topRail className="px-5 py-[18px]">
 					<Stat
 						label="Total Power Draw"
@@ -121,7 +165,7 @@ export default function OverviewPage() {
 				</Panel>
 			</div>
 
-			<div className="grid grid-cols-[1.6fr_1fr] items-start gap-[22px]">
+			<div className="grid items-start gap-[22px] lg:grid-cols-[1.6fr_1fr]">
 				<Panel
 					title="Factory Network"
 					headerAction={
@@ -137,57 +181,39 @@ export default function OverviewPage() {
 						{FACTORIES.map((f) => (
 							<div
 								key={f.name}
-								className="grid grid-cols-[minmax(0,1.7fr)_70px_minmax(90px,1fr)_16px] items-center gap-3.5 border-t border-[var(--border-subtle)] px-5 py-3.5 first:border-t-0"
+								className="border-t border-[var(--border-subtle)] first:border-t-0"
 							>
-								<div className="flex min-w-0 items-center gap-2.5">
-									<span
-										className="h-2.5 w-2.5 flex-none rounded-full"
-										style={{
-											background:
-												f.eff == null ? "var(--graphite-400)" : effColor(f.eff),
-											boxShadow:
-												f.eff == null ? "none" : `0 0 8px ${effColor(f.eff)}`,
-										}}
-									/>
-									<div className="min-w-0">
-										<div className="truncate text-[14px] font-semibold text-[var(--text-primary)]">
-											{f.name}
-										</div>
-										<div className="truncate text-[11px] text-[var(--text-muted)]">
-											{f.outputs}
-										</div>
+								{/* Phone/tablet: stacked card */}
+								<div className="flex flex-col gap-2.5 px-5 py-3.5 md:hidden">
+									<div className="flex items-center justify-between gap-3">
+										<FactoryNameCell factory={f} />
+										<Icon
+											name="chevron"
+											size={16}
+											className="flex-none text-[var(--text-disabled)]"
+										/>
+									</div>
+									<div className="flex items-center gap-3.5 pl-5">
+										<span className="font-[var(--font-mono)] text-[12px] text-[var(--text-secondary)]">
+											{f.power}
+										</span>
+										<FactoryEfficiencyMeter eff={f.eff} />
 									</div>
 								</div>
-								<div className="text-right font-[var(--font-mono)] text-[12px] text-[var(--text-secondary)]">
-									{f.power}
+
+								{/* Desktop: original 4-column row */}
+								<div className="hidden grid-cols-[minmax(0,1.7fr)_70px_minmax(90px,1fr)_16px] items-center gap-3.5 px-5 py-3.5 md:grid">
+									<FactoryNameCell factory={f} />
+									<div className="text-right font-[var(--font-mono)] text-[12px] text-[var(--text-secondary)]">
+										{f.power}
+									</div>
+									<FactoryEfficiencyMeter eff={f.eff} />
+									<Icon
+										name="chevron"
+										size={16}
+										className="text-[var(--text-disabled)]"
+									/>
 								</div>
-								<div className="flex items-center gap-2.5">
-									{f.eff == null ? (
-										<div className="h-[7px] flex-1 rounded-[2px] border border-[var(--border-default)] bg-[var(--bg-inset)] shadow-[var(--bevel-inset)]" />
-									) : (
-										<Progress
-											className="flex-1"
-											value={f.eff}
-											tone={effFillTone(f.eff)}
-										/>
-									)}
-									<span
-										className="w-[34px] text-right font-[var(--font-mono)] text-[12px]"
-										style={{
-											color:
-												f.eff == null
-													? "var(--text-disabled)"
-													: effColor(f.eff),
-										}}
-									>
-										{f.eff == null ? "—" : `${f.eff}%`}
-									</span>
-								</div>
-								<Icon
-									name="chevron"
-									size={16}
-									className="text-[var(--text-disabled)]"
-								/>
 							</div>
 						))}
 					</div>
