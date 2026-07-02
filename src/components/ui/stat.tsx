@@ -32,7 +32,7 @@ export function Stat({
 				{label}
 			</span>
 			<span className="flex items-baseline gap-1.5">
-				<span className="font-[var(--font-mono)] text-[30px] leading-none text-[var(--text-primary)]">
+				<span className="font-mono text-[30px] leading-none text-[var(--text-primary)]">
 					{value}
 				</span>
 				{unit && (

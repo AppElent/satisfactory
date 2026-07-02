@@ -135,7 +135,7 @@ export default function FactoryDetail() {
 						value={factory.name}
 						onChange={(e) => patch({ id: factory._id, name: e.target.value })}
 						aria-label="Factory name"
-						className="w-auto flex-1 bg-transparent font-[var(--font-display)] text-[28px] font-extrabold uppercase tracking-[0.02em] text-[var(--text-primary)] border-transparent focus-visible:border-[var(--border-accent)] h-auto py-1"
+						className="w-auto flex-1 bg-transparent font-display text-[28px] font-extrabold uppercase tracking-[0.02em] text-[var(--text-primary)] border-transparent focus-visible:border-[var(--border-accent)] h-auto py-1"
 					/>
 					<Badge tone={statusBadgeTone(factory.status)} dot>
 						{STATUS_LABEL[factory.status]}
@@ -248,7 +248,7 @@ export default function FactoryDetail() {
 										Overall Efficiency
 									</span>
 									<span
-										className="font-[var(--font-mono)] text-[22px] font-bold"
+										className="font-mono text-[22px] font-bold"
 										style={{ color: effColor(effPct) }}
 									>
 										{effPct}%
@@ -267,7 +267,7 @@ export default function FactoryDetail() {
 										<span className="flex-1 text-[var(--text-primary)]">
 											{item?.name ?? o.item}
 										</span>
-										<span className="font-[var(--font-mono)] text-[var(--text-muted)] text-[12px]">
+										<span className="font-mono text-[var(--text-muted)] text-[12px]">
 											planned {formatNumber(o.rate)}/min
 										</span>
 										<Input
@@ -325,7 +325,7 @@ export default function FactoryDetail() {
 							<span className="text-[12px] uppercase tracking-[0.08em] font-semibold text-[var(--text-secondary)]">
 								Power
 							</span>
-							<span className="font-[var(--font-mono)] text-[var(--orange-400)] font-bold">
+							<span className="font-mono text-[var(--orange-400)] font-bold">
 								{formatPower(manualPower(machines))}
 							</span>
 						</div>
@@ -340,7 +340,7 @@ export default function FactoryDetail() {
 										<span className="truncate text-[var(--text-secondary)]">
 											{item?.name ?? c.item}
 										</span>
-										<span className="font-[var(--font-mono)] font-semibold text-[var(--text-primary)]">
+										<span className="font-mono font-semibold text-[var(--text-primary)]">
 											{formatNumber(c.rate)}
 										</span>
 									</div>

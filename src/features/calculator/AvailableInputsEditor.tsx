@@ -49,7 +49,7 @@ export default function AvailableInputsEditor({
 								)
 							}
 							aria-label={`${item?.name ?? input.item} available per minute`}
-							className="w-20 text-right font-[var(--font-mono)] text-[var(--orange-400)]"
+							className="w-20 text-right font-mono text-[var(--orange-400)]"
 						/>
 						<span className="text-xs text-[var(--text-muted)]">/min</span>
 						<button

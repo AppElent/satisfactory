@@ -34,7 +34,7 @@ export default function FactoryCard({
 		>
 			<div className="flex items-start justify-between gap-2.5">
 				<div className="min-w-0">
-					<div className="font-[var(--font-display)] text-[17px] font-bold uppercase leading-[1.1] tracking-[0.02em] text-[var(--text-primary)]">
+					<div className="font-display text-[17px] font-bold uppercase leading-[1.1] tracking-[0.02em] text-[var(--text-primary)]">
 						{factory.name}
 					</div>
 				</div>
@@ -55,7 +55,7 @@ export default function FactoryCard({
 							<span className="flex-1 truncate text-[var(--text-secondary)]">
 								{item?.name ?? o.item}
 							</span>
-							<span className="font-[var(--font-mono)] text-[var(--orange-400)]">
+							<span className="font-mono text-[var(--orange-400)]">
 								{formatNumber(o.rate)}
 							</span>
 							<span className="text-[10px] text-[var(--text-muted)]">/min</span>
@@ -74,7 +74,7 @@ export default function FactoryCard({
 						tone={effProgressTone(effPct)}
 					/>
 					<span
-						className="font-[var(--font-mono)] text-[13px]"
+						className="font-mono text-[13px]"
 						style={{ color: effColor(effPct) }}
 					>
 						{effPct}%

@@ -201,7 +201,6 @@ export default function OverviewPage() {
 									</div>
 								</div>
 
-								{/* Desktop: original 4-column row */}
 								<div className="hidden grid-cols-[minmax(0,1.7fr)_70px_minmax(90px,1fr)_16px] items-center gap-3.5 px-5 py-3.5 md:grid">
 									<FactoryNameCell factory={f} />
 									<div className="text-right font-[var(--font-mono)] text-[12px] text-[var(--text-secondary)]">
@@ -223,7 +222,7 @@ export default function OverviewPage() {
 					<Panel
 						title="Alerts"
 						headerAction={
-							<span className="font-[var(--font-mono)] text-[12px] text-[var(--text-muted)]">
+							<span className="font-mono text-[12px] text-[var(--text-muted)]">
 								{ALERTS.length}
 							</span>
 						}
@@ -261,19 +260,19 @@ export default function OverviewPage() {
 						<div className="mt-1.5 text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
 							Active Milestone
 						</div>
-						<div className="mt-[7px] font-[var(--font-display)] text-[19px] font-bold uppercase leading-[1.1] tracking-[0.03em] text-[var(--text-primary)]">
+						<div className="mt-[7px] font-display text-[19px] font-bold uppercase leading-[1.1] tracking-[0.03em] text-[var(--text-primary)]">
 							Tier 7 — Bauxite Refinement
 						</div>
 						<div className="mb-[7px] mt-[15px] flex items-baseline justify-between">
 							<span className="text-[11px] uppercase tracking-[0.1em] text-[var(--text-muted)]">
 								HUB Progress
 							</span>
-							<span className="font-[var(--font-mono)] text-[13px] text-[var(--orange-400)]">
+							<span className="font-mono text-[13px] text-[var(--orange-400)]">
 								68%
 							</span>
 						</div>
 						<Progress value={68} tone="accent" glow className="h-2.5" />
-						<div className="mt-2.5 font-[var(--font-mono)] text-[11px] text-[var(--text-muted)]">
+						<div className="mt-2.5 font-mono text-[11px] text-[var(--text-muted)]">
 							Needs: 4× Adaptive Control Unit · 50× Modular Frame
 						</div>
 					</Panel>

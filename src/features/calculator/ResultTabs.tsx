@@ -42,7 +42,7 @@ function FlowList({ title, flows }: { title: string; flows: Flow[] }) {
 					<span className="flex-1 text-[var(--text-primary)]">
 						{name(f.item)}
 					</span>
-					<span className="font-[var(--font-mono)] text-[var(--orange-400)]">
+					<span className="font-mono text-[var(--orange-400)]">
 						{formatNumber(f.rate)}/min
 					</span>
 				</div>
@@ -102,7 +102,7 @@ export default function ResultTabs({ solution }: { solution: Solution }) {
 								<span className="flex-1 text-[var(--text-primary)]">
 									{name(u.recipe)}
 								</span>
-								<span className="font-[var(--font-mono)] text-[var(--orange-400)]">
+								<span className="font-mono text-[var(--orange-400)]">
 									{formatNumber(u.machines)}×
 								</span>
 								<span className="text-xs text-[var(--text-muted)]">
@@ -138,7 +138,7 @@ export default function ResultTabs({ solution }: { solution: Solution }) {
 				<div className="flex flex-col gap-4">
 					<div className="rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--bg-inset)] px-4 py-3">
 						<p className="text-xs uppercase text-[var(--text-muted)]">Power</p>
-						<p className="font-[var(--font-mono)] text-lg text-[var(--orange-400)]">
+						<p className="font-mono text-lg text-[var(--orange-400)]">
 							{formatPower(solution.power)}
 						</p>
 					</div>
@@ -160,7 +160,7 @@ export default function ResultTabs({ solution }: { solution: Solution }) {
 									<span className="flex-1 text-[var(--text-primary)]">
 										{name(c.item)}
 									</span>
-									<span className="font-[var(--font-mono)] text-[var(--orange-400)]">
+									<span className="font-mono text-[var(--orange-400)]">
 										{formatNumber(c.rate)}
 									</span>
 								</div>

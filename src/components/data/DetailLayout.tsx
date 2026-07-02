@@ -33,7 +33,7 @@ export default function DetailLayout({
 					<p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
 						{kicker}
 					</p>
-					<h1 className="font-[var(--font-display)] text-2xl font-bold uppercase tracking-[0.02em] text-[var(--text-primary)]">
+					<h1 className="font-display text-2xl font-bold uppercase tracking-[0.02em] text-[var(--text-primary)]">
 						{name}
 					</h1>
 				</div>
@@ -80,7 +80,7 @@ export function StatGrid({
 					<p className="text-[10px] uppercase tracking-[0.08em] text-[var(--text-muted)]">
 						{stat.label}
 					</p>
-					<p className="font-[var(--font-mono)] text-[13px] font-semibold text-[var(--text-primary)]">
+					<p className="font-mono text-[13px] font-semibold text-[var(--text-primary)]">
 						{stat.value}
 					</p>
 				</div>

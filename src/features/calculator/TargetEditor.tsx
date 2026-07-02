@@ -39,7 +39,7 @@ export default function TargetEditor({ targets, onChange }: TargetEditorProps) {
 							value={t.rate}
 							onChange={(e) => setRate(t.item, Number(e.target.value))}
 							aria-label={`${item?.name ?? t.item} per minute`}
-							className="w-20 text-right font-[var(--font-mono)] text-[var(--orange-400)]"
+							className="w-20 text-right font-mono text-[var(--orange-400)]"
 						/>
 						<span className="text-xs text-[var(--text-muted)]">/min</span>
 						<button

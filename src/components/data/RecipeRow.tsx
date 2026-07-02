@@ -29,7 +29,7 @@ export default function RecipeRow({ recipe }: { recipe: Recipe }) {
 		>
 			{/* Name + building */}
 			<div className="w-[150px] shrink-0">
-				<div className="font-[var(--font-display)] text-[14px] font-bold uppercase tracking-[0.02em] text-[var(--text-primary)]">
+				<div className="font-display text-[14px] font-bold uppercase tracking-[0.02em] text-[var(--text-primary)]">
 					{recipe.name}
 				</div>
 				{machine && (
@@ -41,7 +41,7 @@ export default function RecipeRow({ recipe }: { recipe: Recipe }) {
 
 			{/* Ingredients → arrow → products */}
 			<div className="flex min-w-0 flex-1 items-center gap-[10px]">
-				<span className="truncate font-[var(--font-mono)] text-[12px] text-[var(--text-secondary)]">
+				<span className="truncate font-mono text-[12px] text-[var(--text-secondary)]">
 					{recipe.ingredients
 						.map((ing) => {
 							const ref = resolveRef(ing.item);
@@ -54,7 +54,7 @@ export default function RecipeRow({ recipe }: { recipe: Recipe }) {
 					size={18}
 					className="shrink-0 text-[var(--orange-500)]"
 				/>
-				<span className="shrink-0 font-[var(--font-mono)] text-[12px] text-[var(--orange-300)]">
+				<span className="shrink-0 font-mono text-[12px] text-[var(--orange-300)]">
 					{recipe.products
 						.map((p) => {
 							const ref = resolveRef(p.item);
@@ -72,7 +72,7 @@ export default function RecipeRow({ recipe }: { recipe: Recipe }) {
 			)}
 
 			{/* Rate */}
-			<span className="w-[70px] shrink-0 text-right font-[var(--font-mono)] text-[12px] text-[var(--text-muted)]">
+			<span className="w-[70px] shrink-0 text-right font-mono text-[12px] text-[var(--text-muted)]">
 				{recipe.products[0]
 					? `${formatNumber(perMinute(recipe.products[0].amount, recipe.time))}/min`
 					: ""}
