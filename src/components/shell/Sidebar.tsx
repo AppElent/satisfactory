@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Icon } from "#/components/ui/icon";
 import { Progress } from "#/components/ui/progress";
+import GameSwitcher from "#/features/games/GameSwitcher";
 import { cn } from "#/lib/utils";
 import { NAV_GROUPS, type NavItem, resolveHref } from "./nav-model";
 
@@ -82,6 +83,15 @@ export default function Sidebar({
 				)}
 			</div>
 
+			{!rail && (
+				<div className="border-b border-[var(--border-subtle)] px-3 py-3">
+					<div className="px-1 pb-1.5 text-[10px] uppercase tracking-[0.16em] text-[var(--text-disabled)]">
+						Active Game
+					</div>
+					<GameSwitcher />
+				</div>
+			)}
+
 			<nav
 				className={cn(
 					"flex flex-1 flex-col gap-0.5 py-3.5",
@@ -113,7 +123,18 @@ export default function Sidebar({
 												: "text-[var(--text-muted)]",
 										)}
 									/>
-									{!rail && <span className="relative">{item.label}</span>}
+									{!rail && (
+										<span
+											className={cn(
+												"relative",
+												item.disabled
+													? "text-[var(--text-disabled)]"
+													: "text-[var(--text-secondary)]",
+											)}
+										>
+											{item.label}
+										</span>
+									)}
 									{!rail && item.badge && <BadgePill kind={item.badge} />}
 								</>
 							);

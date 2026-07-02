@@ -1,5 +1,6 @@
 import { useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
+import GlobalSearch from "#/components/shell/GlobalSearch";
 import { Icon } from "#/components/ui/icon";
 import GameSwitcher from "#/features/games/GameSwitcher";
 import ClerkHeader from "#/integrations/clerk/header-user";
@@ -81,22 +82,10 @@ export default function TopBar() {
 					)}
 				</div>
 
-				{/* Desktop search: persistent input, lg+ only */}
 				<div className="ml-auto hidden w-[280px] flex-none lg:block">
-					<div className="flex h-[38px] items-center gap-2.5 rounded-[var(--radius-sm)] border border-[var(--border-default)] bg-[var(--surface-input)] px-3 shadow-[var(--bevel-inset)]">
-						<Icon
-							name="search"
-							size={16}
-							className="flex-none text-[var(--text-muted)]"
-						/>
-						<input
-							placeholder="Search items, recipes, buildings…"
-							className="min-w-0 flex-1 bg-transparent text-[13px] text-[var(--text-primary)] outline-none placeholder:text-[var(--text-muted)]"
-						/>
-					</div>
+					<GlobalSearch />
 				</div>
 
-				{/* Collapsed search below lg: icon button, expands to an overlay input on tap */}
 				<div className="flex-none lg:hidden">
 					<button
 						type="button"
@@ -109,7 +98,6 @@ export default function TopBar() {
 					</button>
 				</div>
 
-				{/* Synced status: hidden on phone, dot-only on tablet, dot+label on desktop */}
 				<div className="hidden flex-none items-center gap-2 border-l border-[var(--border-subtle)] pl-3 md:flex">
 					<span className="h-2 w-2 rounded-full bg-[var(--green-500)] shadow-[var(--glow-success)] [animation:ficsit-pulse_2.4s_var(--ease-standard)_infinite]" />
 					<span className="hidden text-[11px] uppercase tracking-[0.12em] text-[var(--text-muted)] lg:inline">
@@ -117,8 +105,7 @@ export default function TopBar() {
 					</span>
 				</div>
 
-				{/* GameSwitcher: hidden on phone (lives in the More sheet instead) */}
-				<div className="hidden flex-none md:block">
+				<div className="hidden flex-none md:block lg:hidden">
 					<GameSwitcher />
 				</div>
 

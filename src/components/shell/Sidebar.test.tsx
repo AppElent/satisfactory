@@ -5,8 +5,12 @@ import {
 	RouterProvider,
 } from "@tanstack/react-router";
 import { render } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import Sidebar, { isItemActive } from "./Sidebar";
+
+vi.mock("#/features/games/GameSwitcher", () => ({
+	default: () => <div>Active Game Switcher</div>,
+}));
 
 function renderSidebar(variant: "full" | "rail") {
 	const rootRoute = createRootRoute({
