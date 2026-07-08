@@ -6,6 +6,11 @@ export default defineConfig({
 	plugins: [viteReact()],
 	test: {
 		environment: "jsdom",
+		environmentOptions: {
+			jsdom: {
+				url: "http://localhost/",
+			},
+		},
 		setupFiles: ["./vitest.setup.ts"],
 		exclude: [
 			...configDefaults.exclude,
