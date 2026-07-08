@@ -1,0 +1,13 @@
+# Normalize all text files to LF in the repo and on checkout (all platforms).
+# Biome formats to LF; without this, Windows checkouts get CRLF and fail `biome check`.
+* text=auto eol=lf
+
+# Binary assets — never normalize.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary

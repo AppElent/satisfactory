@@ -1,0 +1,195 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import 'tw-animate-css';
+
+@import './styles/ficsit/fonts.css';
+@import './styles/ficsit/colors.css';
+@import './styles/ficsit/typography.css';
+@import './styles/ficsit/spacing.css';
+@import './styles/ficsit/effects.css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* shadcn semantic vars → FICSIT tokens (proper dark theme for ui/ primitives) */
+  --background: var(--graphite-950);
+  --foreground: var(--text-primary);
+  --card: var(--surface-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-panel);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--orange-500);
+  --primary-foreground: var(--text-on-accent);
+  --secondary: var(--bg-inset);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-inset);
+  --muted-foreground: var(--text-muted);
+  /* Raw --accent stays the FICSIT orange (defined in ficsit/colors.css).
+     shadcn's neutral hover need is mapped on --color-accent / --color-accent-foreground
+     in @theme inline below, so it does not clobber the FICSIT orange. */
+  --destructive: var(--red-500);
+  --destructive-foreground: var(--text-primary);
+  --border: var(--border-default);
+  --input: var(--border-default);
+  --ring: var(--focus-ring);
+  --radius: 5px;
+
+  --sidebar: var(--graphite-900);
+  --sidebar-foreground: var(--text-secondary);
+  --sidebar-primary: var(--orange-500);
+  --sidebar-primary-foreground: var(--text-on-accent);
+  --sidebar-accent: var(--accent-soft);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--focus-ring);
+}
+
+/* @appelent/auth token bridge — dark-only, mapped to FICSIT */
+.dark {
+  --auth-bg: var(--graphite-950);
+  --auth-card-bg: var(--surface-card);
+  --auth-field-bg: var(--bg-inset);
+  --auth-border: var(--border-default);
+  --auth-fg: var(--text-primary);
+  --auth-muted: var(--text-secondary);
+  --auth-accent: var(--accent);
+  --auth-accent-fg: var(--text-on-accent);
+  --auth-error: var(--destructive);
+  --auth-radius: var(--radius-md);
+}
+
+@theme inline {
+  --font-sans: 'Saira', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Saira Condensed', 'Arial Narrow', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  /* shadcn bg-accent / text-accent-foreground utilities = neutral hover surface */
+  --color-accent: var(--surface-hover);
+  --color-accent-foreground: var(--text-primary);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  background-color: var(--graphite-950);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--graphite-600);
+  border-radius: 5px;
+  border: 2px solid var(--graphite-950);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes ficsit-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+a {
+  color: var(--text-link);
+  text-decoration-color: rgba(50, 143, 151, 0.4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+code {
+  font-size: 0.9em;
+  border: 1px solid var(--border-default);
+  background: color-mix(in oklab, var(--surface-card) 82%, white 18%);
+  border-radius: 7px;
+  padding: 2px 7px;
+}
+
+pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.prose pre {
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  background: #1d2e45;
+  color: #e8efff;
+}
+
+.page-wrap {
+  width: min(1080px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
