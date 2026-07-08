@@ -1,5 +1,6 @@
 import { Checkbox } from "#/components/ui/checkbox";
 import { getBuilding, getItem, getRecipe } from "#/data";
+import type { Recipe } from "#/data/schema";
 import type { Solution } from "./solver";
 
 interface UsedAlternatesReviewProps {
@@ -18,7 +19,7 @@ export default function UsedAlternatesReview({
 	const allowed = new Set(allowedAlternates);
 	const usedAlternates = solution.recipes
 		.map((usage) => getRecipe(usage.recipe))
-		.filter((recipe) => recipe?.alternate);
+		.filter((recipe): recipe is Recipe => recipe?.alternate === true);
 
 	if (usedAlternates.length === 0) return null;
 
