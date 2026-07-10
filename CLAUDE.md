@@ -56,3 +56,25 @@ Custom Worker `fetch` handler, **not** the default `@tanstack/react-start/server
 ## Supply-chain / pnpm config
 
 `pnpm-workspace.yaml` holds `allowBuilds` (only `esbuild`, `workerd`, `sharp` — the last two are pulled in by `wrangler`/`miniflare` for local Worker execution; `@clerk/shared`'s postinstall is just a telemetry notice and stays denied) and `minimumReleaseAge: 4320` (3-day cooldown on new package versions, excluding `@appelent/*`). If a transitive dependency gets blocked by the release-age cooldown, prefer pinning it to an older compatible version via `overrides` (with a comment explaining why) over relaxing the policy.
+
+<!-- appelent-managed:start -->
+## Appelent Managed Project
+
+This repo follows the shared Appelent project baseline.
+
+Source of truth:
+- `C:\Users\ericj\.claude\appelent\projects.json`
+- `C:\Users\ericj\.claude\appelent\capabilities.json`
+- `C:\Users\ericj\.claude\skills`
+
+Web/browser fallback:
+- `.claude\appelent`
+- `.claude\skills`
+
+Before adding functionality that could apply to multiple apps, check whether it belongs in:
+- an existing or new `@appelent/*` package
+- `custom-bootstrap`
+- a capability skill such as `add-cli` or `add-i18n`
+
+If you add, remove, or generalize cross-app functionality, update the Appelent registry files or explain why no registry change is needed.
+<!-- appelent-managed:end -->
