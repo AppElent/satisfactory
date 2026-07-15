@@ -7,6 +7,7 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { useEffect } from "react";
 import AppShell from "../components/shell/AppShell";
 import ToastProvider from "../components/Toast";
 import ClerkProvider from "../integrations/clerk/provider";
@@ -37,9 +38,14 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			{ charSet: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
 			{ title: "Satisfactory Planner" },
+			{ name: "theme-color", content: "#000000" },
+			{ name: "apple-mobile-web-app-capable", content: "yes" },
+			{ name: "apple-mobile-web-app-status-bar-style", content: "default" },
 		],
 		links: [
 			{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+			{ rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+			{ rel: "manifest", href: "/manifest.webmanifest" },
 			{ rel: "stylesheet", href: appCss },
 		],
 	}),
@@ -47,6 +53,14 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+	useEffect(() => {
+		if (typeof window === "undefined" || !("serviceWorker" in navigator))
+			return;
+		navigator.serviceWorker.register("/sw.js").catch(() => {
+			// non-fatal: app still works without offline/installable support
+		});
+	}, []);
+
 	return (
 		<html lang="en" className="dark" suppressHydrationWarning>
 			<head>
